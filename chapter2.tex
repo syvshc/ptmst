@@ -1768,4 +1768,772 @@ P(X \geqslant x) \leqslant \frac{E\left(\mathrm{e}^{a X}\right)}{\mathrm{e}^{a x
 
 11.已知正常成人男性每毫升血液中的白细胞数平均是7300,标准差是700.试利用切比雪夫不等式估计每升血液中的白细胞数在5200至9400之间的概率的下界.
 
-新增测试
+\section{常用高散分布}
+
+每个随机变量都有一个分布，不同的随机变量可以有不同的分布，也可以有相同的分布，随机变量有千千万万个，但常用分布并不多.常用分布亦分为两类：离散分布和连续分布，本节讲常用离散分布，下节讲常用连续分布。
+
+\subsection{二项分布}
+
+\subsubsection{二项分布}
+
+如果记$ X $为n重伯努利试验中成功（记为事件$ A $）的次数，则$ X $的可能取值为 $0,1, \cdots, n$ .记$ p $为每次试验中$ A $发生的概率，即$ P（A）=p $，则$ P（\bar{A}）=1-p $.
+
+因为$ n $重伯努利试验的基本结果可以记作
+
+
+\[
+\omega=\left(\omega_{1}, \omega_{2}, \cdots, \omega_{n}\right)
+\]
+
+其中 $\omega_{i}$ 或者为$ A $，或者为$ \bar{A} $.这样的$ \omega $共有 $2^{n}$ 个，这 $2^{n}$ 个样本点$ \omega $组成了样本空间$ \Omega $.
+
+下面求$ X $的分布列，即求事件 $\{X=k\}$ 的概率.若某个样本点
+
+\[
+\omega=\left(\omega_{1}, \omega_{2}, \cdots, \omega_{n}\right) \in | X=k \}
+\]
+
+意味着 $\omega_{1}, \omega_{2}, \cdots, \omega_{n}$ 中有$ k $个$ A $，$ n-k $个$ \bar{A} $，所以由独立性知，
+
+\[
+P(\omega)=p^{k}(1-p)^{n-k}
+\]
+
+而事件 $\{X=k\}$ 中这样的$ \omega $共有 $\left( \begin{array}{l}{n} \\ {k}\end{array}\right)$ 个，所以$ x $的分布列为
+
+\begin{equation}
+P(X=k)=\left( \begin{array}{l}{n} \\ {k}\end{array}\right) p^{k}(1-p)^{n-k}, k=0,1, \cdots, n \label{eq:2.4.1}
+\end{equation}
+
+
+这个分布称为\textbf{二项分布}，记为 $X \sim b(n, p)$ .
+
+容易验证其和恒为1，即
+
+\[
+\sum_{n=0}^{n} \left( \begin{array}{l}{n} \\ {k}\end{array}\right) p^{k}(1-p)^{n-k}=[p+(1-p)]^{n}=1
+\]
+
+由此可见，二项概率 $\left( \begin{array}{l}{n} \\ {k}\end{array}\right) p^{k}(1-p)^{n-k}$ “恰好是二项式 $(p+(1-p))^{n}$ 的展开式中的第$ k+1 $项，这正是其名称的由来.
+
+二项分布是一种常用的离散分布，臂如，
+
+\begin{itemize}
+	\item 检查10个产品，10个产品中不合格品的个数X服从二项分布$ b（10，p） $，其中p为不合格品率；
+	\item 调查50个人，50个人中患色盲的人数Y服从二项分布$ b（50，p） $，其中$ p $为色盲率；
+	\item 射击5次，5次中命中次数$ Z $服从二项分布$ b（5，p） $，其中$ p $为射手的命中率。
+\end{itemize}
+
+\begin{example}
+	某特效药的临床有效率为0.95，今有10人服用，问至少有8人治愈的概率是多少？
+	
+	\textbf{解} 设$ X $为10人中被治愈的人数，则 $X \sim b(10,0.95)$ ，而所求概率为
+	
+	\[
+	\begin{aligned} P(X \geqslant 8) &=P(X=8)+P(X=9)+P(X=10) \\ &=\left( \begin{array}{c}{10} \\ {8}\end{array}\right) 0.95^{8} 0.05^{2}+\left( \begin{array}{c}{10} \\ {9}\end{array}\right) 0.95^{9} 0.05+\left( \begin{array}{c}{10} \\ {10}\end{array}\right) 0.95^{10} \\ &=0.0746+0.3151+0.5988=0.9885 \end{aligned}
+	\]
+	
+	10人中有8人以上被治愈的概率为0.9885.
+	
+\end{example}
+
+\begin{example}
+	设 $X-b(2, p), Y \sim b(3, p)$ .若 $P(X \geqslant 1)=5 / 9$ ，试求$ P（Y=1） $.
+	
+	\textbf{解} 由 $P(X \geqslant 1)=5 / 9$ ，知$ P（X=0）=4/9 $，所以$ （1-p）^{2}=4/9 $，由此得$ p=1/3 $.再由 $Y \sim b(3, p)$ 可得
+	\[
+	P(Y \geqslant 1)=1-P(Y=0)=1-\left(1-\frac{1}{3}\right)^{3}=\frac{19}{27}
+	\]
+	
+\end{example}
+
+\subsubsection{二点分布}
+
+$ n=1 $时的二项分布$ b（1，p） $称为二点分布，或称$ 0-1 $分布，其分布列为：
+
+\begin{equation}
+P(X=x)=p^{x}(1-p)^{1-x}, x=0,1 \label{eq:2.4.2}
+\end{equation}
+
+或记为
+
+\[
+\begin{array}{c|cc}
+X     & 0     & 1 \\\midrule
+P     & 1-p   & p \\
+\end{array}
+\]
+
+二点分布$ b（1，p） $主要用来描述一次伯努利试验中成功（记为$ A $）出现次数（0或1）.
+很多随机现象的样本空间$ a $常可一分为二，记为$ A $与$ \bar{A} $，由此形成伯努利试验.$ n $重伯努利试验是由$ n $个相同的、独立进行的伯努利试验组成，若将第$ i $个伯努利试验中$ A $出现的次数记为 $X_{i}(i=1,2, \cdots, n)$ ，则 $\boldsymbol{X}_{\mathbf{i}}$ 相互独立，且服从相同的二点分布$ b（1，p） $.此时其和
+
+\[
+X=X_{1}+X_{2}+\cdots+X_{n}
+\]
+
+就是$ n $重伯努利试验中A出现的总次数，它服从二项分布$ b（n，p） $.这就是二项分布$ b（n，p） $与二点分布$ b（1，p） $之间的联系，即二项分布随机变量是$ n $个独立同分布的二点分布随机变量之和.
+
+\subsubsection{二项分布的数学期望和方差}
+
+设随机变量 $X \sim b(n, p)$ ，则
+
+\[
+\begin{aligned} E(X) &=\sum_{k=0}^{n} k \left( \begin{array}{c}{n} \\ {k}\end{array}\right) p^{k}(1-p)^{n-k}=n p \sum_{k=1}^{n} \left( \begin{array}{c}{n-1} \\ {k-1}\end{array}\right) p^{k-1}(1-p)^{(n-1)-(k-1)} \\ &=n p[p+(1-p)]^{n-1}=n p \end{aligned}
+\]
+
+又因为
+
+\[
+\begin{array}{ll}
+{E\left(X^{2}\right)} & {=\sum_{k=0}^{n} k^{2} \left( 
+	\begin{array}{c}
+	{n} \\ 
+	{k}
+	\end{array}
+	\right) 
+	p^{k}(1-p)^{n-k}=\sum_{k=1}^{n}(k-1+1) k \left( 
+	\begin{array}{c}{n} \\ 
+	{k}
+	\end{array}
+	\right) 
+	p^{k}(1-p)^{n-k}} \\ 
+{}&{=\sum_{k=1}^{n} k(k-1) \left( 
+	\begin{array}{c}{n} \\ 
+	{k}
+	\end{array}
+	\right) 
+	p^{k}(1-p)^{n-k}+\sum_{k=1}^{n} k \left( 
+	\begin{array}{c}{n} \\ 
+	{k}
+	\end{array}
+	\right) 
+	p^{k}(1-p)^{n-k}} \\ 
+{}&{=\sum_{k=1}^{n} k(k-1) \left( 
+	\begin{array}{c}{n} \\ 
+	{k}
+	\end{array}
+	\right) 
+	p^{k}(1-p)^{n-k}+n p} \\ 
+{}&{=n(n-1) p^{2} \sum_{k=2}^{n} \left( 
+	\begin{array}{c}{n-2} \\ 
+	{k-2}
+	\end{array}
+	\right) 
+	p^{k-2}(1-p)^{(n-2)-(k-2)}+n p} \\ 
+{}&{=n(n-1) p^{2}+n p}
+\end{array}
+\]
+
+由此得$ X $的方差为
+
+\[
+\operatorname{var}(X)=E\left(X^{2}\right)-(E(X))^{2}=n(n-1) p^{2}+n p-(n p)^{2}=n p(1-p)
+\]
+
+因为二点分布是$ n=1 $时的二项分布$ b（1，p） $，所以二点分布的数学期望为$ p $，方差为$ p（1-p） $.
+
+为了看出不同的$ p $的值，其二项分布$ b（n，p） $的变化情况，下表给出了$ n=10 $时，不同$ p $值的二项分布的概率值，其线条图见图~\ref{fig:2-4-1}.
+
+\begin{table}[htbp]
+	\centering
+	\caption{一些二项分布的凝率值}
+	\begin{tabular}{c|ccccccccccc}
+		\toprule
+		$ k $     & 0     & 1     & 2     & 3     & 4     & 5     & 6     & 7     & 8     & 9     & 10 \\\midrule
+		$ b(10,0.2) $ & 0.107 & 0.268 & 0.302 & 0.201 & 0.088 & 0.027 & 0.006 & 0.001 &       &       &  \\
+		$ b(10,0.5) $ & 0.001 & 0.01  & 0.044 & 0.117 & 0.205 & 0.246 & 0.205 & 0.117 & 0.044 & 0.01  & 0.001 \\
+		$ b(10,0.8) $ &       &       &       & 0.001 & 0.006 & 0.027 & 0.088 & 0.201 & 0.302 & 0.268 & 0.107 \\\bottomrule
+	\end{tabular}%
+	\label{tab:2.4.1}%
+\end{table}%
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{2-4-1}
+	\caption{二项分布$ b（n，p） $的线条图}
+	\label{fig:2-4-1}
+\end{figure}
+
+从上图可以看出：
+\begin{itemize}
+	\item 位于均值np附近概率较大；
+	\item 随着p的增加，分布的蜂逐渐右移.
+\end{itemize}
+
+\begin{example}
+	甲、乙两棋手约定进行10局比赛，以赢的局数多者为胜.设在每局中甲赢的概率为0.6，乙赢的概率为0.4.如果各局比赛是独立进行的，试问甲胜、乙胜、不分胜负的概率各为多少？
+	
+	\textbf{解} 以$ X $表示10局比赛中甲赢的局数，则 $X \sim b(10,0.6)$ .所以
+	
+	\[
+	P（\text{甲胜}）= P(X \geqslant 6)=\sum_{k=6}^{10} \left( 
+	\begin{array}{l}{10} \\ 
+	{k}
+	\end{array}
+	\right) 
+	0.6^{k} 0.4^{10-k}=0.6330 ，
+	\]
+	
+	\[
+	P（\text{乙胜}）= =P(X \leqslant 4)=\sum_{k=0}^{+} \left( 
+	\begin{array}{c}{10} \\ 
+	{k}
+	\end{array}
+	\right) 
+	0.6^{k} 0.4^{10-k}=0.1663 ,
+	\]
+	
+	\[
+	P(\text{不分胜负})=P(X=5)=\left( \begin{array}{c}{10} \\ {5}\end{array}\right) 0.6^{5} 0.4^{5}=0.2007
+	\]
+	
+	可见甲胜的可能性达63.3%，而乙胜的可能性只有16.63%，它比不分胜负的可能性还要小.最后两个概率之和0.3670表示乙不输的概率。
+\end{example}
+
+\subsection{泊松分布}
+
+\subsubsection{泊松分布}
+
+泊松分布是1837年由法国数学家泊松（Poison S.D.1781-1840）首次提出的.泊松分布的概率分布列是
+
+\begin{equation}
+P(X=k)=\frac{\lambda^{k}}{k !} \mathrm{e}^{-\lambda}, k=0,1,2, \cdots \label{eq:2.4.3}
+\end{equation}
+
+其中参数>0，记为 $\mathbf{X} \sim \mathbf{P}(\lambda)$ .
+
+对泊松分布而言，很容易验证其和为1：
+
+\[
+\sum_{k=0}^{+\infty} \frac{\lambda^{k}}{k !} \mathrm{e}^{-\lambda}=\mathrm{e}^{-\lambda} \sum_{k=0}^{+\infty} \frac{\lambda^{k}}{k !}=\mathrm{e}^{-\lambda} \mathrm{e}^{\lambda}=1
+\]
+
+泊松分布是一种常用的离散分布，它常与单位时间（或单位面积、单位产品等）上的计数过程相联系，譬如，
+
+\begin{itemize}
+	\item 在单位时间内，电话总机接到用户呼唤的次数；
+	\item 在单位时间内，一电路受到外界电磁波的冲击次数；
+	\item 1平方米内，玻璃上的气泡数；
+	\item 一铸件上的砂眼数；
+	\item 在单位时间内，某种放射性物质分裂到某区域的质点数，等等。
+\end{itemize}
+
+都服从泊松分布.因此泊松分布的应用面是十分广泛的.
+
+\subsubsection{泊松分布的数学期望和方差}
+
+设随机变量 $X \sim P(\lambda)$ ，则
+
+\[
+E(X)=\sum_{k=0}^{+\infty} k \frac{\lambda^{k}}{k !} \mathrm{e}^{-\lambda}=\lambda \mathrm{e}^{-\lambda} \sum_{k=1}^{+\infty} \frac{\lambda^{k-1}}{(k-1) !}=\lambda \mathrm{e}^{-\lambda} \mathrm{e}^{\lambda}=\lambda
+\]
+
+这表明：泊松分布 $P(\lambda)$ 的数学期望就是参数 $\lambda$ .
+
+又因为
+
+\[
+\begin{aligned} E\left(X^{2}\right) &=\sum_{k=0}^{+\infty} k^{2} \frac{\lambda^{k}}{k !} \mathrm{e}^{-\lambda}=\sum_{k=1}^{+\infty} k \frac{\lambda^{k}}{(k-1) !} \mathrm{e}^{-\lambda} \\ &=\sum_{k=1}^{+\infty}[(k-1)+1] \frac{\lambda^{k}}{(k-1) !} \mathrm{e}^{-\lambda} \\ &=\lambda^{2} \mathrm{e}^{-\lambda} \sum_{k=2}^{+\infty} \frac{\lambda^{k-2}}{(k-2) !}+\lambda \mathrm{e}^{-\lambda} \sum_{k=1}^{+\infty} \frac{\lambda^{k-1}}{(k-1) !} \\ &=\lambda^{2}+\lambda \end{aligned}
+\]
+
+由此得 $ X $ 的方差为
+
+\[
+\operatorname{Var}(X)=E\left(X^{2}\right)-(E(X))^{2}=\lambda^{2}+\lambda-\lambda^{2}=\lambda
+\]
+
+也就是说，泊松分布 $P(\lambda)$ 中的参数 $\lambda$ 既是数学期望又是方差.
+
+为了看出不同的 $\lambda$ 的值，其泊松分布 $P(\lambda)$ 的变化情况，下表给出了$ \lambda =
+0.8，2.0，4.0 $时，泊松分布的概率值，其线条图见图~\ref{fig:2-4-2}.
+
+% Table generated by Excel2LaTeX from sheet '1'
+\begin{table}[htbp]
+	\centering
+	\caption{一些泊松分布的概率值}
+	\begin{tabular}{c|ccccccccccc}
+		\toprule
+		k     & 0     & 1     & 2     & 3     & 4     & 5     & 6     & 7     & 8     & 9     & 10 \\\midrule
+		P(0.8) & 0.449 & 0.36  & 0.144 & 0.038 & 0.008 & 0.001 &       &       &       &       &  \\
+		P(2.0) & 0.135 & 0.271 & 0.271 & 0.18  & 0.09  & 0.036 & 0.012 & 0.004 & 0.001 &       &  \\
+		P(4.0) & 0.018 & 0.074 & 0.146 & 0.195 & 0.196 & 0.156 & 0.104 & 0.06  & 0.03  & 0.013 & 0.005 \\\bottomrule
+	\end{tabular}%
+	\label{tab:2.4.2}%
+\end{table}%
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{2-4-2}
+	\caption{}
+	\label{fig:2-4-2}
+\end{figure}
+
+从上图可以看出：
+
+\begin{itemize}
+	\item 位于均值A附近概率较大；
+	\item 随着A的增加，分布逐渐趋于对称.
+\end{itemize}
+
+\begin{example}
+	一铸件的砂眼（缺陷）数服从参数为1=0.5的泊松分布，试求此铸件上至多有1个砂眼（合格品）的概率和至少有2个砂眼（不合格品）的概率。
+	解以X表示这种铸件的砂眼数，由题意知x~P（0.5）.则此种铸件上至多有1个砂眼的概率为
+	.50-0510.51
+	P（X≤1）=6re-05+4fe-3=0.91.
+	至少有2个砂眼的概率为
+	P（X≥2）=1-P（X≤1）=0.09.
+\end{example}
+
+\begin{example}
+	某商店出售某种商品，由历史销售记录分析表明，月销售量（件）服从参数为8的泊松分布.问在月初进货时，需要多少库存量，才能有$ 90\% $的把握可以满足顾客的需求.
+	
+	\textbf{解}
+	以$ X $表示这种商品的月销售量，则 $X \sim P(8)$ .那么满足要求的是使下式成立的最小正整数$ n $.
+	
+	\[
+	P(X \leqslant n) \geqslant 0.90
+	\]
+	
+	为了寻求此种$ n $，可以利用泊松分布表，附表1对各种 $\lambda$ 的值，给出了泊松分布函数 $P(X \leqslant x)=\sum_{k=0}^{x} \frac{\lambda^{k}}{k !} e^{-\lambda}$ 的数值表.在 $\lambda=8$ 时，可从附表1中查得
+	
+	\[
+	P(X \leqslant 11)=0.888, P(X \leqslant 12)=0.936 .
+	\]
+	
+	所以月初进货12（件）时，能满足$ 93.6\% $的顾客的需求.
+\end{example}
+
+\subsubsection{二项分布的泊松近似}
+
+泊松分布还有一个非常实用的特性，即可以用泊松分布作为二项分布的一种近似.在二项分布$ b（n，p） $中，当$ n $较大时，计算量是令人烦恼的.而在$ p $较小时使用以下的泊松定理，可以减少二项分布中的计算量.
+
+\begin{theorem}
+	（泊松定理）在$ n $重伯努利试验中，记事件$ A $在一次试验中发生的概率为$ p_{n} $（与试验次数$ n $有关），如果当 $n \rightarrow+\infty$ 时，有 $n p_{n} \rightarrow \lambda$ ，则
+	
+	\begin{equation}
+	\lim _{n \rightarrow+\infty} \left( \begin{array}{l}{n} \\ {k}\end{array}\right) p_{n}^{k}\left(1-p_{n}\right)^{n-k}=\frac{\lambda^{k}}{k !} \mathrm{e}^{-\lambda} \label{eq:2.4.4}
+	\end{equation}
+	
+\end{theorem}
+
+\begin{proof}
+	记 $n p_{n}=\lambda_{n}$ ，即 $p_{n}=\lambda_{n} / n$ ，我们可得
+	
+	\[
+	\begin{array}{ll}
+	{\left( 
+		\begin{array}{l}
+		{n} \\ 
+		{k}
+		\end{array}
+		\right) p_{n}^{k}\left(1-p_{n}\right)^{n-k}} & {=\frac{n(n-1) \cdots(n-k+1)}{k !}
+		\left(\frac{\lambda n}{n}\right)^{k}
+		\left(1-\frac{\lambda_{n}}{n}\right)^{n-k}} \\
+	{} & {=\frac{\lambda_{n}^{k}}{k !}
+		\left(1-\frac{1}{n}\right)
+		\left(1-\frac{2}{n}\right)
+		\cdots
+		\left(1-\frac{k-1}{n}\right)
+		\left(1-\frac{\lambda_{n}}{n}\right)^{n}}
+	\end{array}
+	\]
+	
+	对固定的$ k $有
+	
+	\[
+	\begin{array}{l}{\lim _{n \rightarrow+\infty} \lambda_{n}=\lambda_{i}} \\ {\lim _{n \rightarrow+\infty}\left(1-\frac{\lambda_{n}}{n}\right)^{n-k}=e^{-\lambda}} \\ {\lim _{n \rightarrow+\infty}\left(1-\frac{1}{n}\right) \cdots\left(1-\frac{k-1}{n}\right)=1}\end{array}
+	\]
+	
+	从而
+	
+	\[
+	\lim _{n \rightarrow+\infty} \left( \begin{array}{l}{n} \\ {k}\end{array}\right) p_{n}^{k}\left(1-p_{n}\right)^{n-k}=\frac{\lambda^{k}}{k !} \mathrm{e}^{-\lambda}
+	\]
+	
+	对任意的 $k(k=0,1,2, \cdots,)$ 成立.定理得证.
+	
+\end{proof}
+
+由于泊松定理是在 $n p_{n} \rightarrow \lambda$ 条件下获得的，故在计算二项分布$ b（n，p） $时，当$ n $很大，$ p $很小，而乘积 $\lambda=n p$ 大小适中时，可以用泊松分布作近似，即
+
+\begin{equation}
+\left( \begin{array}{l}{n} \\ {k}\end{array}\right) p_{n}^{k}\left(1-p_{n}\right)^{n-k} \approx \frac{(n p)^{k}}{k !} \mathrm{e}^{-n p}, k=0,1,2 \cdots \label{eq:2.4.5}
+\end{equation}
+
+下表给出了按二项分布直接计算与利用泊松分布作近似的一些具体数据.
+从表中可以看出，两者的结果是很接近的，而且当$ n $愈大和$ p $愈小时，近似程度越好.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[htbp]
+	\centering
+	\caption{二项分布与泊松近似的比较}
+	\begin{tabular}{c|c|c|c|c|c}
+		\toprule
+		\multirow{4}{*}{k}   & \multicolumn{4}{c|}{二项分布}                                                                  & 泊松近似                                  \\
+		& \multicolumn{4}{c|}{按 $C_{n}^{k} p^{k}(1-p)^{n-k}$ 计算}                                     & 按 $\frac{(n p)^{k}}{k !} e^{-n p}$ 计算 \\\cline{2-6}
+		& $n=10$               & $n=20$               & $n=40$               & $n=100$              & \multirow{2}{*}{$\lambda=n p=1$}      \\
+		& $p=0.1$              & $p=0.05$             & $p=0.025$            & $p=0.01$             &                                       \\\midrule
+		0                    & 0.349                & 0.358                & 0.363                & 0.366                & 0.368                                 \\
+		1                    & 0.385                & 0.377                & 0.372                & 0.370                & 0.368                                 \\
+		2                    & 0.194                & 0.189                & 0.186                & 0.185                & 0.184                                 \\
+		3                    & 0.057                & 0.060                & 0.060                & 0.061                & 0.061                                 \\
+		4                    & 0.011                & 0.013                & 0.014                & 0.015                & 0.015                                 \\
+		$>4$                 & 0.004                & 0.003                & 0.005                & 0.003                & 0.004                                 \\\bottomrule           
+	\end{tabular}
+	\label{tab:2.4.3}
+\end{table}
+
+以下给出一些利用泊松分布作近似计算的例子.
+
+\begin{example}
+	已知某种疾病的发病率为0.001，某单位共有5000人.问该单位患有这种疾病的人数不超过5人的概率为多少？
+	
+	\textbf{解} 设该单位患有这种疾病的人数为$ X $，则有 $X-b(5000,0.001)$ ，而我们所求的为
+	
+	\[
+	P(X \leqslant 5)=\sum_{k=0}^{3} \left( \begin{array}{c}{5000} \\ {k}\end{array}\right) 0.001^{k} 0.999^{500-k}
+	\]
+	
+	这个概率的计算量很大.由于$ n $很大，$ p $很小，且 $\lambda=n p=5$ .所以用泊松近似得
+	
+	\[
+	P(X \leqslant 5) \approx \sum_{k=0}^{5} \frac{5^{k}}{k !} \mathrm{e}^{-5}=0.616
+	\]
+	
+\end{example}
+
+\begin{example}
+	有10000名同年龄段且同社会阶层的人参加了某保险公司的一
+	项人寿保险.每个投保人在每年初需交纳200元保费，而在这一年中若投保人死亡，则受益人可从保险公司获得100000元的赔偿费.据生命表知这类人的年死亡率为0.001.试求保险公司在这项业务上
+	
+	\begin{enumerate}
+		\item 亏本的概率.
+		\item 至少获利500000元的概率.
+	\end{enumerate}
+	
+	\textbf{解} 设$ X $为10000名投保人在一年中死亡的人数，则$ X $服从二项分布$ b（10000，0.001） $.保险公司在这项业务上一年的总收人为$ 200\times = 2000000（\text{元}） $.因为$ n=10000 $很大，$ p=0.001 $很小，所以用$ \lambda =np=10 $的泊松分布进行近似计算.
+	
+	\begin{enumerate}
+		\item 保险公司在这项业务上“亏本”就相当子$ \{x>20\} $.因此所求概率为P（X>20）=1-P（X≤20）~1-210-e-10=1-0.998=0.002.
+		由此可看出，保险公司在这项业务上亏本的可能性是微小的。
+		\item 保险公司在这项业务上“至少获利500000元”就相当子 $\{X \leqslant 15\}$ .因此所求概率为
+		\[
+		P(X \leqslant 15) \approx \sum_{k=0}^{15} \frac{20^{k}}{k !} \mathrm{e}^{-10}=0.951
+		\]
+		由此可看出，保险公司在这项业务上至少获利500000元的可能性很大.
+	\end{enumerate}
+\end{example}
+
+\begin{example}
+	为保证设备正常工作，需要配备一些维修工.如果各台设备发生故障是相互独立的，且每台设备发生故障的概率都是0.01.试在以下各种情况下，求设备发生故障而不能及时修理的概率.
+	
+	\begin{enumerate}
+		\item 一名维修工负责20台设备.
+		\item 3名维修工负责90台设备.
+		\item 10名维修工负责500台设备.
+	\end{enumerate}
+	
+	\textbf{解}
+	\begin{enumerate}
+		\item 以 $X_{1}$ 表示20台设备中同时发生故障的台数，则 $X_{1} \sim b(20,0.01)$ .
+		用参数为 $\lambda=n p=20 \times 0.01=0.2$ 的泊松分布作近似计算，得所求概率为
+		\[
+		P\left(X_{1}>1\right) \approx 1-\sum_{k=0}^{1} \frac{0.2^{k}}{k !} \mathrm{e}^{-02}=1-0.982=0.018
+		\]
+		\item 以$ X_{2} $表示90台设备中同时发生故障的台数，则 $X_{2} \sim b(90,0.01)$ .用参数为 $\lambda=n p=90 \times 0.01=0.9$ 的泊松分布作近似计算，得所求概率为
+		\[
+		P\left(X_{2}>3\right) \approx 1-\sum_{k=0}^{3} \frac{0.9^{k}}{k !} \mathrm{e}^{-09}=1-0.987=0.013
+		\]
+		注意，此种情况下，不但所求概率比（1）中有所降低，而且3名维修工负责90台设备相当于每个维修工负责30台设备，工作效率是（1）中的1.5倍.
+		\item 
+		（3）以$ X_{3} $表示500台设备中同时发生故障的台数，则 $X_{3} \sim b(500,0.01)$ .
+		用参数为 $\lambda=n p=500 \times 0.01=5$ 的泊松分布作近似计算，得所求概率为
+		\[
+		P\left(X_{3}>10\right) \approx 1-\sum_{k=0}^{10} \frac{5^{k}}{k !} e^{-5}=1-0.986=0.014
+		\]
+		注意，此种情况下所求概率与（2）中基本上一样，而10名维修工负责500台设备相当于每个维修工负责50台设备，工作效率是（2）中的1.67倍，是（1）中的2.5倍
+	\end{enumerate}
+	
+	由此可知：若干维修工共同负责大量设备的维修，将提高工作的效率。
+	
+\end{example}
+
+\subsection{超几何分布}
+
+\subsubsection{超几何分布}
+
+从一个有限总体中进行不放回抽样常会遇到超几何分布。
+
+设有$ N $个产品，其中有$ M $个不合格品.若从中不放回地随机抽取n个，则其中含有的不合格品的个数$ X $服从超几何分布，记为 $X \sim h(n, N, M)$ .超几何分布的概率分布列为（见第一章中例1.2.3）
+
+\begin{equation}
+P(X=k)=\frac{\left( \begin{array}{c}{M} \\ {k}\end{array}\right) \left( \begin{array}{c}{N-M} \\ {n-k}\end{array}\right)}{\left( \begin{array}{c}{N} \\ {n}\end{array}\right)} k=0,1, \cdots, r \label{eq:2.4.6}
+\end{equation}
+
+其中 $r=\min \{M, n$ ，且 $M \leqslant N, n \leqslant N, n, N, M$ 均为正整数.若要验证以上给出的确实为一个概率分布列，只须注意到有组合等式（见习题1.2）
+
+\[
+\sum_{k=0}^{r} \left( \begin{array}{c}{M} \\ {k}\end{array}\right) \left( \begin{array}{c}{N-M} \\ {n-k}\end{array}\right)=\left( \begin{array}{l}{N} \\ {n}\end{array}\right)
+\]
+
+\subsubsection{超几何分布的数学期望和方差}
+
+若 $X \sim h(n, N, M)$ ，则$ X $的数学期望为
+
+\[
+E(X)=\sum_{k=0}^{r} k \frac{\left( 
+	\begin{array}{c}
+	{M} \\ 
+	{k}
+	\end{array}
+	\right) 
+	\left( 
+	\begin{array}{c}
+	{N-M} \\ 
+	{n-k}
+	\end{array}
+	\right)}{\left( 
+	\begin{array}{l}
+	{N} \\ 
+	{n}
+	\end{array}
+	\right)}
+\]
+
+又因为
+
+\[
+\begin{array}{ll}
+{E(X)} & {=\sum_{k=0}^{r} k \frac{\left( \begin{array}{c}{M} \\
+		{k}
+		\end{array}
+		\right) \left( 
+		\begin{array}{c}
+		{N-M} \\ 
+		{n-k}
+		\end{array}
+		\right)}{\left( 
+		\begin{array}{c}
+		{N} \\ 
+		{n}
+		\end{array}
+		\right)}=n \frac{M}{N} \sum_{k=1}^{r} \frac{\left( \begin{array}{c}
+		{M-1} \\ 
+		{k-1}
+		\end{array}
+		\right) \left( 
+		\begin{array}{c}
+		{N-M} \\ 
+		{n-k}
+		\end{array}
+		\right)}{\left( 
+		\begin{array}{c}
+		{N-1} \\ 
+		{n-1}
+		\end{array}
+		\right)}=n \frac{M}{N}} \\
+{} & {=\frac{M(M-1)}{\left( 
+		\begin{array}{l}{N} \\ 
+		{n}
+		\end{array}
+		\right)} \sum_{k=2}^{r} k(k-1) \left( 
+	\begin{array}{c}
+	{M-2} \\ 
+	{k-2}
+	\end{array}
+	\right) \left( 
+	\begin{array}{c}{N-M} \\ 
+	{n-k}
+	\end{array}
+	\right)+n \frac{M}{N}} \\
+{} & {=\frac{M(M-1)}{\left( 
+		\begin{array}{l}
+		{N} \\ 
+		{n}\end{array}
+		\right)} \left( 
+	\begin{array}{l}
+	{N-2} \\ 
+	{n-2}
+	\end{array}
+	\right)+n \frac{M}{N}=\frac{M(M-1) n(n-1)}{N(N-1)}+n \frac{M}{N}} 
+\end{array}
+\]
+
+由此得X的方差为
+
+\[
+\operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}=\frac{n M(N-M)(N-n)}{N^{2}(N-1)}
+\]
+
+\subsubsection{超几何分布的二项近似}
+
+当 $n \ll N$ 时，即抽取个数$ n $远小于产品总数$ N $时，每次抽取后，总体中的不合格品率$ p=M/N $改变甚微，所以不放回抽样可近似地看成放回抽样，这时超几何分布可用二项分布近似：
+
+\begin{equation}
+\frac{\left( 
+	\begin{array}{c}
+	{M} \\ 
+	{k}
+	\end{array}
+	\right) \left( 
+	\begin{array}{c}
+	{N-M} \\ 
+	{n-k}
+	\end{array}
+	\right)}{\left( 
+	\begin{array}{l}
+	{N} \\ 
+	{n}
+	\end{array}
+	\right)} \cong \left( 
+\begin{array}{l}
+{n} \\ 
+{k}
+\end{array}
+\right) p^{k}(1-p)^{n-k}, \text{其中} p=\frac{M}{N}  \label{eq:2.4.7}
+\end{equation}
+
+\subsection{几何分布与负二项分布}
+
+\subsubsection{几何分布}
+
+在伯努利试验序列中，记每次试验中事件$ A $发生的概率为$ p $，如果$ X $为事件$ A $首次出现时的试验次数，则$ X $的可能取值为 $1,2, \cdots$ ，称$ X $服从几何分布，记为 $\boldsymbol{X} \sim G e(p)$ ，其分布列为
+
+\begin{equation}
+P(X=k)=(1-p)^{k-1} p, k=1,2, \cdots \label{eq:2.4.8}
+\end{equation}
+
+实际中有不少随机变量服从几何分布，臂如，
+
+\begin{itemize}
+	\item 某产品的不合格率为0.05，则首次查到不合格品的检查次数 $X \sim Ge（0.05）$ ；
+	\item 某射手的命中率为0.8，则首次击中目标的射击次数$ Y\sim Ge（0.8） $；
+	\item 掷一颗骰子，首次出现6点的投掷次数 $Z-G e(1 / 6)$ ；
+	\item 同时掷两颗骰子，首次达到两个点数之和为8的投掷次数 $W \sim G e(5 / 36)$ .
+\end{itemize}
+
+\subsubsection{几何分布的数学期巍和方差}
+
+设随机变量X服从几何分布$ Ge（p） $，令$ g=1-p $，利用逐项微分可得$ X $的数学期望为
+
+\[
+\begin{aligned} E(X) &=\sum_{k=1}^{+\infty} k p q^{k-1} =p \sum_{k=1}^{+\infty} k q^{k-1}=p \sum_{k=1}^{+\infty} \frac{\mathrm{d} q^{k}}{\mathrm{d} q} \\ &=p \frac{\mathrm{d}}{\mathrm{d} q}\left(\sum_{k=0}^{+\infty} q^{k}\right)=p \frac{\mathrm{d}}{\mathrm{d} q}\left(\frac{1}{1-q}\right)=\frac{p}{(1-q)^{2}}=\frac{1}{\rho} \end{aligned}
+\]
+
+又因为
+
+\[
+\begin{aligned} 
+E\left(X^{2}\right) &=\sum_{i=1}^{+\infty} k^{2} p q^{k-1}=p\left[\sum_{k=1}^{+\infty} k(k-1) q^{k-1}+\sum_{k=1}^{+\infty} k q^{k-1}\right] \\ 
+&=p q \sum_{k=1}^{+\infty} k(k-1) q^{k-2}+\frac{1}{p}=p q \sum_{k=1}^{+\infty} \frac{d^{2}}{d q^{2}} q^{k}+\frac{1}{p}\\
+&  {=p q \frac{d^{2}}{d q^{2}}\left(\sum_{k=0}^{+\infty} q^{k}\right)+\frac{1}{p}=p q \frac{d^{2}}{d q^{2}}\left(\frac{1}{1-q}\right)+\frac{1}{p}}\\
+& {=p q \frac{2}{(1-q)^{3}}+\frac{1}{p}=\frac{2 q}{p^{2}}+\frac{1}{p}}
+\end{aligned}
+\]
+
+由此得$ X $的方差为
+
+\[
+\operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}=\frac{2 q}{p^{2}}+\frac{1}{p}-\frac{1}{p^{2}}=\frac{1-p}{p^{2}}
+\]
+
+
+\subsubsection{几何分布的无记忆性}
+
+\begin{theorem}
+	（几何分布的无记忆性）设 $X \sim G e(p)$ ，则对任意正整数$ m $与$ n $有
+	
+	\begin{equation}
+	P(X>m+n | X>m)=P(X>n) \label{eq:2.4.9}
+	\end{equation}
+\end{theorem}
+
+在证明之前先解释上述概率等式的含义.在一列伯努利试验序列中，若首次成功$ （A） $出现的试验次数$ X $服从几何分布，则事件“$ X>m $”表示前$ m $次试验中$ A $没有出现.假如在接下去的$ n $次试验中$ A $仍未出现，这个事件记为“$ X>m+n $”.这个定理表明：在前$ m $次试验中A没有出现的条件下，则在接下去的$ n $次试验中$ A $仍未出现的概率只与$ n $有关，而与以前的$ m $次试验无关，似乎忘记了前m次试验结果，这就是无记忆性.
+
+
+\begin{proof}
+	因为
+	
+	\[
+	P(X>n)=\sum_{k=n+1}^{+\infty}(1-p)^{k-1} p=\frac{p(1-p)^{n}}{1-(1-p)}=(1-p)^{n}
+	\]
+	
+	所以对任意的正整数$ m $与$ n $，条件概率
+	
+	\[
+	\begin{aligned} P(X>m+n | X>m) &=\frac{P(X>m+n)}{P(X>m)}=\frac{(1-p)^{m+\pi}}{(1-p)^{m}} \\ &=(1-p)^{n}=P(X>n) \end{aligned}
+	\]
+	
+	这就证得了~\ref{eq:2.4.9}式.
+\end{proof}
+
+\subsubsection{负二项分布}
+
+作为几何分布的一种延伸，我们注意下面的负二项分布，亦称巴斯卡分布：
+
+在伯努利试验序列中，记每次试验中事件$ A $发生的概率为$ p $，如果$ X $为事件$ A $第$ r $次出现时的试验次数，则$ X $的可能取值为 $r, r+1, \cdots, r+m, \cdots$ .称$ x $服从负二项分布或巴斯卡分布，其分布列为
+
+\begin{equation}
+P(X=k)=\left( \begin{array}{l}{k-1} \\ {r-1}\end{array}\right) p^{r}(1-p)^{k-r}, k=r, r+1, \cdots \label{eq:2.4.10}
+\end{equation}
+
+记为 $X-N b(r, p)$ .当$ r=1 $时，即为几何分布.
+
+这是因为在$ k $次伯努利试验中，最后一次一定是$ A $，而前$ k-1 $次中$ A $应出现$ r-1 $次，由二项分布知其概率为 $\left( \begin{array}{l}{k-1} \\ {r-1}\end{array}\right) p^{r-1}(1-p)^{k-r}$ ，再乘以最后一次出现$ A $的概率$ p $，即得~\ref{eq:2.4.10}.
+
+可以算得负二项分布的数学期望为 $r / p$ ，方差为$ r（1-p）/p^{2} $.从直观上看这是合理的，因为首次出现$ A $的平均试验次数是$ 1/p $，那么第$ r $个$ A $出现所需的平均试验次数是 $r / p$ .
+
+如果将第一个$ A $出现的试验次数记为 $X_{1}$ ，第二个$ A $出现的试验次数（从第一个$ A $出现之后算起）记为 $X_{2}, \cdots$ ,第$ r $个$ A $出现的试验次数（从第$ r-1 $个$ A $出现之后算起）记为$ X $，，则$ X $；独立同分布，且 $X_{i} \sim G e(p)$ .此时有$ X=X_{1}+ X_{2}+\cdots+X_{r} \sim N b(r, p) $ ，即负二项分布的随机变量可以表示成$ r $个独立同分布的几何分布随机变量之和.
+
+\begin{center}
+	\textbf{习题2.41}
+\end{center}
+
+1.一批产品中有$ 10\% $的不合格品，现从中任取3件，求其中至多有一件不合格品的概率.
+
+2.一条自动化生产线上产品的一级品率为0.8，现检查5件，求至少有2件一级品的概率.
+
+3.某优秀射手命中10环的概率为0.7，命中9环的概率为0.3.试求该射手三次射击所得的环数不少于29环的概率.
+
+4.经验表明：预定餐厅座位而不来就餐的顾客比例为$ 20\% $.如今餐厅有50个座位，但预定给了52位顾客，问到时顾客来到餐厅而没有座位的概率是多少？
+
+5.设随机变量 $X \sim b(n, p)$ ，已知 $E(X)=2.4, \operatorname{Var}(X)=1.44$ ，求两个参数$ n $与$ p $各为多少？
+
+6.设随机变量$ X $服从二项分布$ b（2，p） $，随机变量$ Y $服从二项分布$ b（4，p） $.若 $P(X \geqslant 1）=8/9$ ，试求$ P（Y=1） $.
+
+7.一批产品的不合格品率为0.02，现从中任取40只进行检查，若发现两只或两只以土不合格品就拒收这批产品.分别用以下方法求拒收的概率：
+
+\begin{enumerate}
+	\item 用二项分布作精确计算；
+	\item 用泊松分布作近似计算。
+\end{enumerate}
+
+8.设$ X $服从泊松分布，且已知$ P（X=1）=P（X=2） $，求$ P（X=4） $.
+
+9.已知某商场一天来的顾客数$ X $服从参数为$ A $的泊松分布，而每个来到商场的顾客购物的概率为$ p $，证明：此商场一天内购物的顾客数服从参数为 $\lambda p$ 的泊松分布.
+
+10.从一个装有$ m $个白球、$ n $ 个黑球的袋中返回地摸球，直到摸到白球时停止.试求取出黑球数的期望.
+
+11.某种产品上的缺陷数$ X $服从下列分布列：
+
+\[
+P(X=k)=\frac{1}{2^{k+1}}, k=0,1, \cdots
+\]
+
+求此种产品上的平均缺陷数.
+
+12.设随机变量X的密度函数为
+
+\[
+p(x)=\left\{
+\begin{array}{ll}
+{2 x,} & {0<x<1 ;} \\ 
+{0}    & {\text{其它}}
+\end{array}
+\right.
+\]
+
+以$ Y $表示对X的三次独立重复观寨中事件 $ \{X \leqslant 1 / 2\} $ 出现的次数，试求$ P（Y=2） $.
+
+13.某产品的不合格品率为0.1，每次随机抽取10件进行检验，若发现其中不合格品数多于1，就去调整设备，若检验员每天检验4次，试同每天平均要调整几次设备.
