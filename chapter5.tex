@@ -17,12 +17,12 @@
 在一个统计问题中, 我们把研究对象的全体称为 \textbf{总体}\index{Z!总体}, 构成总体的每个成员称为 \textbf{个体}\index{G!个体}.对多数实际问题, 总体中的个体是一些实在的人或物.比如, 我们要研究某大学的学生身高情况, 则该大学的全体学生构成问题的总体, 而每一个学生即使一个个体.事实上, 每个学生都有许多特征：性别、年龄、身高、体重、名字、籍贯等等, 而在该问题中, 我们关心的只是该校学生的身高如何, 对其他的特征暂不予考虑.这样, 每个学生（个体）所具有的数量指标值——身高就是个体, 而将所有身高全体看成总体.这样一来, 若抛开实际背景, 总体就是一堆数, 这堆数中有大有小, 有的出现的机会多, 有的出现机会小, 因此用一个概率分布去描述和归纳总体是恰当的, 从这个意义看,  \textbf{总体就是一个分布}, 而其数量指标就是服从这个分布的随机变量.以后说``从总体中抽样"与``从分布中抽样"是同一个意思.
 \begin{example}
 考察某厂的产品质量, 将其产品只分为合格品与不合格品, 并以$0$记合格品, 以$1$记不合格品, 则
-\[\text{总体}=\{\text{该厂生产的全部合格品与不合格品}\}=\{\text{由}~0~\text{或}~1~\text{组成的一堆数}\}.\]
+\[\text{总体}=\{\text{该厂生产的全部合格品与不合格品}\}=\{\text{由}\;0\;\text{或}\;1\;\text{组成的一堆数}\}.\]
 若以$p$表示这堆数中$1$的比例（不合格品率）, 则该总体可由一个二点分布表示：
 \begin{center}
 \begin{tabularx}{0.4\textwidth}{Y|YY}
   X&0&1\\
-  \midrule
+  \hline
   P&1-p&p
   \end{tabularx}
 \end{center}
@@ -32,7 +32,7 @@
 \centering
 \begin{tabularx}{\textwidth}{Y|YY}
 X&0&1\\
-\midrule
+\hline
 P&0.983&0.017
 \end{tabularx}
 \end{minipage}\hspace{3\ccwd}
@@ -40,7 +40,7 @@ P&0.983&0.017
 \centering
 \begin{tabularx}{\textwidth}{Y|YY}
 X&0&1\\
-\midrule
+\hline
 P&0.915&0.085
 \end{tabularx}
 \end{minipage}
@@ -48,8 +48,40 @@ P&0.915&0.085
 我们可以看到,第一个工厂的产品质量优于第二个工厂.实际中,分布中的不合格率是未知的,如何对之进行估计是统计学要研究的问题.
 \end{example}
 \begin{example}
-彩电的彩色浓度是彩电质量好坏的一个重要指标. 20世纪70年代在美国销售的SONY牌彩电有两个产地:美国和日本,两地的工厂是按统一设计方案和相同的生产线生产同一型号SONY彩电,连使用说明书和检验合格的标准也是一样的.其中关于彩色浓度X的标准是:目标值为$m$,公差为$5$,即当$X$在$[m-5,m+5]$内该彩电的热情高于购买美产SONY彩电,原因何在?这就要考察这两个总体有什么差别. 1979年4月17日日本《朝日新闻》刊登调查报告指出,日产SONY彩电的彩色浓度服从正态分布$N(m,(5/3)^2)$,而美产SONY彩电的彩色浓度服从$(m-5,m+5)$上的均匀分布,见图~\ref{fig5.1.1}.这两个不同的分布代表了不同的总体,其均值相同(都为$m$),但方差不同.若彩色浓度与$m$的距离在$5/3$以内为\Rmnum{1}级品,在$5/3$到$10/3$之间为\Rmnum{2}级品,在$10/3$到$5$之间为\Rmnum{3}级品,其他为\Rmnum{4}级品.于是日产SONY彩电的\Rmnum{1}级品为美产SONY的两倍出头(见表~\ref{table5.1.1}),这就是美国消费者愿意购买日产SONY的主要原因.
+彩电的彩色浓度是彩电质量好坏的一个重要指标. 20世纪70年代在美国销售的SONY牌彩电有两个产地:美国和日本,两地的工厂是按统一设计方案和相同的生产线生产同一型号SONY彩电,连使用说明书和检验合格的标准也是一样的.其中关于彩色浓度X的标准是:目标值为$m$,公差为$5$,即当$X$在$[m-5,m+5]$内该彩电的热情高于购买美产SONY彩电,原因何在?这就要考察这两个总体有什么差别. 1979年4月17日日本《朝日新闻》刊登调查报告指出,日产SONY彩电的彩色浓度服从正态分布$N(m,(5/3)^2)$,而美产SONY彩电的彩色浓度服从$(m-5,m+5)$上的均匀分布,见图~\ref{fig:5.1.1}.这两个不同的分布代表了不同的总体,其均值相同(都为$m$),但方差不同.若彩色浓度与$m$的距离在$5/3$以内为\Rmnum{1}级品,在$5/3$到$10/3$之间为\Rmnum{2}级品,在$10/3$到$5$之间为\Rmnum{3}级品,其他为\Rmnum{4}级品.于是日产SONY彩电的\Rmnum{1}级品为美产SONY的两倍出头(见表~\ref{table5.1.1}),这就是美国消费者愿意购买日产SONY的主要原因.
 \end{example}
+\begin{figure}[!htp]
+  \centering
+\begin{tikzpicture}[scale=1.2]
+\begin{scope}[semithick]
+\draw(-4,0)--(4,0);
+\foreach \x in{-3,...,3}
+\draw(\x,0)--(\x,0.1);
+\draw[dashed](-3,0)node[below]{$m-5$}--(-3,3.5)(3,0)node[below]{$m+5$}--(3,3.5);
+\end{scope}
+\draw[samples=100,domain=-4:4,thick]plot(\x,{4*(e^(-(\x)^2/4))+0.1});
+\draw(0,0)node[below=1pt]{$m$}--(0,5);
+\foreach \x in {-4,...,4}
+\coordinate(a\x)at(\x,-0.4);
+\begin{scope}[semithick]
+\draw[decorate,decoration=brace](a-3)--node[below=1pt]{\Rmnum{4}}(a-4);
+\draw[decorate,decoration=brace](a-2)--node[below=1pt]{\Rmnum{3}}(a-3);
+\draw[decorate,decoration=brace](a-1)--node[below=1pt]{\Rmnum{2}}(a-2);
+\draw[decorate,decoration=brace](a1)--node[below=1pt]{\Rmnum{1}}(a-1);
+\draw[decorate,decoration=brace](a2)--node[below=1pt]{\Rmnum{2}}(a1);
+\draw[decorate,decoration=brace](a3)--node[below=1pt]{\Rmnum{3}}(a2);
+\draw[decorate,decoration=brace](a4)--node[below=1pt]{\Rmnum{4}}(a3);
+\draw(-3,1.4)[out=60,in=180]to(-2.5,1.8)--(2.5,1.8)[out=0,in=120]to(3,1.4);
+\node[inner sep=0pt,fill=white](a)at(-3,2.5){美产SONY};
+\node[inner sep=0pt](b)at(-2.3,3.8){日产SONY};
+\draw(a.south)--(-2.5,1.8)(b.east)--(-1,3.2);
+\node[inner sep=2pt](c)at(0.5,0.4){$\sigma$};
+\draw(1,0)--(c)--(0,0);
+\end{scope}
+\end{tikzpicture}
+  \caption{SONY彩电彩色浓度分布图}\label{fig:5.1.1}
+\end{figure}
+
 \begin{table}[!htp]
   \centering
   \caption{各等级彩电的比例(\%)}\label{table5.1.1}
@@ -82,7 +114,7 @@ P&0.915&0.085
 这是一个容量为10的样本的观测值,对应的总体为该厂生产的瓶装啤酒的净含量.
 \end{example}
 \begin{example} \textbf{(分组样本)}
-我们考察某厂生产的某种电子元件的寿命,该厂生产的一级将要生产的所有元件是总体是总体(通常可以认为是无限总体),我们选了100只进行寿命试验,由于一些原因,我们不可能每时每刻对试验进行观察,而只能定期(比如每隔24\si{h})进行观察,于是,对每个元件,我们只能观察到其寿命落在某个范围内,这就产生了表~\ref{table5.1.2} 所示的一组样本:
+我们考察某厂生产的某种电子元件的寿命,该厂生产的一级将要生产的所有元件是总体是总体(通常可以认为是无限总体),我们选了100只进行寿命试验,由于一些原因,我们不可能每时每刻对试验进行观察,而只能定期(比如每隔24 \si{h})进行观察,于是,对每个元件,我们只能观察到其寿命落在某个范围内,这就产生了表~\ref{table5.1.2} 所示的一组样本:
 \begin{table}
 \centering  \caption{100只元件的寿命数据}\label{table5.1.2}
 \begin{tabularx}{\textwidth}{YY||YY||YY}
@@ -103,7 +135,7 @@ P&0.915&0.085
 \end{tabularx}
 \end{table}
 
-表~\ref{table5.1.2}中的样本观测值没有具体的数值,只有一个范围,这样的样本称为分组样本\index{F!分组样本}.相应的,例~\ref{exam5.1.3}中的10个啤酒净含量称为完全样本\index{W!完全样本}.分组样本与完全样本相比在信息上总有损失,这是分组样本的缺点.为了获得更多信息,应尽量设法获得完全样本,在不得已场合可使用分组样本(如上例).但在实际中,在样本量特别大时(如$n\geq100$),又常用分组样本来代替完全样本,这时需要对样本进行分组整理,它能简明扼要地表示样本,使人们能更好地认识总体,这是分组样本的优点.
+表~\ref{table5.1.2} 中的样本观测值没有具体的数值,只有一个范围,这样的样本称为分组样本\index{F!分组样本}.相应的,例~\ref{exam5.1.3} 中的10个啤酒净含量称为完全样本\index{W!完全样本}.分组样本与完全样本相比在信息上总有损失,这是分组样本的缺点.为了获得更多信息,应尽量设法获得完全样本,在不得已场合可使用分组样本(如上例).但在实际中,在样本量特别大时(如$n\geq100$),又常用分组样本来代替完全样本,这时需要对样本进行分组整理,它能简明扼要地表示样本,使人们能更好地认识总体,这是分组样本的优点.
 \end{example}
 
 从总体中抽取样本可以有不同的抽法,为了能由样本对总体作出比较可靠的推断,就希望样本能很好的代表总体.这就需要对抽样方法提出一些要求,最常用的``简单随机样本"有如下两个要求:
@@ -154,7 +186,7 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \end{equation}
 则$F_n(x)$是一非减右连续函数,且满足
 \[F_n(-\infty)=0\text{和}F_n(+\infty)=1.\]
-由此可见,$F_n(x)$是一个分布函数,并称$F_n(x)$为 \textbf{经验分布函数}\index{J!经验分布函数}.
+由此可见, $F_n(x)$是一个分布函数,并称$F_n(x)$为 \textbf{经验分布函数}\index{J!经验分布函数}.
 \begin{example}
 某食品厂生产听装饮料,现从生产线上随机抽取5听饮料,称得其净重为(单位:\si{g})
 \[351\quad347\quad355\quad344\quad351\]
@@ -164,13 +196,33 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \[F_n(x)=\begin{cases}
 0,&x<344,\\
 0.2,&344\leq x<347,\\
-0.4,&347\le x<351,\\
-0.8,&351\le x<355,\\
+0.4,&347\leq x<351,\\
+0.8,&351\leq x<355,\\
 1,&x\geq355.
 \end{cases}\]
+\begin{figure}[!htp]
+  \centering
+\begin{tikzpicture}[fill=white,draw=black]
+\begin{scope}[semithick,>=Stealth]
+\draw[decorate,decoration={snake,segment length=1mm,amplitude=0.5mm}]
+(0,0)node[below left]{$O$}--(0.5,0);
+\draw[->](-0.5,0)--(0,0)--(0,6)node[left]{$F_n(x)$};
+\draw[->](0.5,0)--(8,0)node[below]{$x$};
+\end{scope}
+\foreach \x in{1,...,5}\draw(0,\x)--(0.1,\x);
+\node[left]at(0,1){$0.2$};\node[left]at(0,2){$0.4$};\node[left]at(0,3){$0.6$};
+\node[left]at(0,4){$0.8$};\node[left]at(0,5){$1.0$};
+\node[below](a)at(1,0){$344$};\node[below](b)at(2.5,0){$347$};
+\node[below](c)at(4.5,0){$351$};\node[below](d)at(6.5,0){$355$};
+\draw(b)--(2.5,0.1)(c)--(4.5,0.1)(d)--(6.5,0.1);
+\draw[very thick](0.5,0)--(1,0)(1,1)--(2.5,1)(2.5,2)--(4.5,2)(4.5,4)--(6.5,4)(6.5,5)--(8,5);
+\filldraw(1,0)circle(2pt)(2.5,1)circle(2pt)(4.5,2)circle(2pt)(6.5,4)circle(2pt);
+\end{tikzpicture}
+  \caption{经验分布函数}\label{fig:5.2.1}
+\end{figure}
 \end{example}
 
-对每一固定的$x,F_n(x)$是样本中事件``$x_i\leq x$"发生的频率.当$n$固定时,$F_n(x)$是样本的函数,它是一个随机变量,由伯努利大数定律:只要$n$相当大, $F_n(x)$依概率收敛于$F(x)$.更深刻的结果也是存在的,这就是格里纹科定理,下面我们不加证明地加以介绍.
+对每一固定的$x,F_n(x)$是样本中事件``$x_i\leq x$"发生的频率.当$n$固定时, $F_n(x)$是样本的函数,它是一个随机变量,由伯努利大数定律:只要$n$相当大, $F_n(x)$依概率收敛于$F(x)$.更深刻的结果也是存在的,这就是格里纹科定理,下面我们不加证明地加以介绍.
 \begin{theorem}{格里纹科定理}{5.2.1}
 设$x_1,x_2,\dotsc,x_n$是取自总体分布函数为$F(x)$的样本, $F_n(x)$是其经验分布函数,当$n\to\infty$时,有
 \[P\left\{\sup_{-\infty<x<+\infty}|F_n(x)-F(x)|\to0\right\}=1.\]
@@ -665,7 +717,7 @@ x&f_{\text{乙}}&x\cdot f_{\text{乙}}&(x-\bar x_{乙})^2f_{\text{乙}}&(x-\bar 
 \begin{center}
 \begin{tabularx}{0.5\textwidth}{Y|YYY}
 x&0&1&2\\
-\midrule
+\hline
 p&1/3&1/3&1/3
 \end{tabularx}
 \end{center}
@@ -949,4 +1001,121 @@ m_{0.5}\dot{\sim}\left(x_{0.5},\frac1{4n\cdot p^2(x_{0.5})}\right).
 \end{figure}
 
 箱线图可用来对样本数据分布的形状进行大致的判断.图~\ref{fig:5.3.8} 给出三种常见的箱线图,分别对应对称分布、左偏分布和右偏分布.
+\begin{figure}[!htp]
+  \centering
+\begin{tikzpicture}[semithick]
+\draw(0,0)--(1.5,0)(3,0)--(4.2,0)(2.4,0.25)--(2.4,-0.25);
+\draw(1.5,-0.25)--(1.5,0.25)--(3,0.25)--(3,-0.25)--cycle;
+\draw[dashed](0.1,0.05)..controls(1.4,0.1)and(1.7,0.9)..(2.5,1.1)
+[out=10,in=180]to(4.2,0.1);
+\node at(2.27,-0.47){左偏};
+\begin{scope}[xshift=4.5cm]
+\draw(0,0)--(1.6,0)(2.6,0)--(4.2,0)(2.1,0.25)--(2.1,-0.25);
+\draw(1.6,-0.25)--(1.6,0.25)--(2.6,0.25)--(2.6,-0.25)--cycle;
+\draw[dashed](2.1,1.1)[out=0,in=180]to(4.2,0.1);
+\draw[dashed](0,0.1)[out=0,in=180]to(2.1,1.1);
+\node at(2.1,-0.47){对称};
+\end{scope}
+\begin{scope}[xshift=9cm]
+\draw(0,0)--(1.5,0)(3,0)--(4.2,0)(2,0.25)--(2,-0.25);
+\draw(1.5,-0.25)--(1.5,0.25)--(3,0.25)--(3,-0.25)--cycle;
+\draw[dashed](0,0.05)[out=0,in=180]to(1.8,1.1);
+\draw[dashed](1.8,1.1)[out=0,in=180]to(4.1,0.05);
+\node at(2.1,-0.47){右偏};
+\end{scope}
+\end{tikzpicture}
+  \caption{三种常见的箱线图及其对应的分布轮廓}\label{fig:5.3.8}
+\end{figure}
 
+如果我们要对几批数据进行比较,则可以在一张纸上同时画出这批数据的箱线图.图~\ref{fig:5.3.9} 是某厂20天生产的某种产品的直径数据画成的箱线图,从图中可以清楚地看出,第18天的产品出现了异常.
+\begin{xiti}
+\item 在一本书上我们随机地检查了10页,发现每页上的错误数为
+\[4\quad5\quad6\quad0\quad3\quad1\quad4\quad2\quad1\quad4\]
+试计算其样本均值、样本方差和样本标准差.
+\item 证明: 对任意常数$c,d$,有
+\[\sum_{i=1}^n(x_i-c)(y_i-d)=\sum_{i=1}^n(x_i-\bar x)(y_i-\bar y)+n(\bar x-c)(\bar y-d).\]
+\item 设$x_1,\dotsc,x_n$和$y_1,\dotsc,y_n$是两组样本观测值,且有如下关系: $y_I=3x_i-4,i=1,\dotsc,n$,试求样本值$\bar x$和$\bar y$间的关系以及样本方差$s_x^2$和$s_y^2$间的关系.
+\item 记$\bar x_n=\frac1n\sum_{i=1}^n x_i,s_n^2=\frac1{n-1}\sum_{i=1}^n(x_I-\bar x_n)^2,n=1,2,\dotsc$,证明:
+\begin{align*}
+\bar x_{n+1}&=\bar x_n+\frac1{n+1}(x_{n+1}-\bar x_n),\\
+s_{n+1}^2&=\frac{n-1}ns_n^2+\frac1{n+1}(x_{n+1}-\bar x_n)^2.
+\end{align*}
+\item 从同一总体中抽取二个容量分别为$n,m$的样本,样本均值分别为$\bar x_1,\bar x_2$,样本方差分别为$s_1^2,s_2^2$,将二组样本合并,其均值、方差分别为$\bar x,s^2$,证明:
+\begin{align*}
+\bar x&=\frac{n\bar x_1+m\bar x_2}{n+m},\\
+s^2&=\frac{(n-1)S_1^2+(m-1)s_2^2}{n+m-1}+\frac{nm(\bar x_1=\bar x_2)^2}{(n+m)(n+m+1)}.
+\end{align*}
+\item 设有容量为$n$的样本$A$, 它的样本均值为$\bar x_A$,样本标准差为$s_A$,样本极差为$R_A$,样本中位数为$m_A$.现对样本中每一个观测值施行如下变换
+\[y=ax+b,\]
+如此得到样本$B$,试写出样本B的均值、标准差、极差和中位数.
+\item 证明:容量为$2$的样本$x_1,x_2$的方差为
+\[s^2=\frac12(x_1-x_2)^2,\]
+\item 设$x_1,\dotsc,x_n$是来自$U(-1,1)$的样本,试求$E(\bar x)$和$\operatorname{Var}(\bar x)$.
+\item 设总体二阶矩存在, $x_1,\dotsc,x_n$是样本,证明$x_i-\bar x$与$x_j-\bar x(i\ne j)$的相关系数为$-(n-1)^{-1}$.对此你能够给予解释吗?
+\item 利用契贝晓夫不等式求抛均匀硬币多少次才能使正面朝上的频率落在$(0.4,0.6)$间的概率至少为0.9.如何才能更精确地计算这个次数?是多少?
+\item 从指数总体$Exp(1)$抽取了40个样品,试求$\bar x$的渐近分布.
+\item 设$x_1,\dotsc,x_{25}$是从均匀分布$U(0,5)$抽取的样本,试求样本均值$\bar x$的渐近分布.
+\item 设$x_1,\dotsc,x_{20}$是从二点分布$b(1,p)$抽取的样本,试求样本均值$\bar x$的渐近分布.
+\item 设$x_1,\dotsc,x_{8}$是从正态总体$N(10,9)$中抽取的样本,试求样本均值$\bar x$的标准差.
+\item 切尾均值也是一个常用的反映样本数据的特征量,其想法是将数据的两端的值舍去,而用剩下的当中的值为计算样本均值,其计算公式是
+\[\bar x_n=\frac{x_{([n\alpha]+1)}+x_{([n\alpha]+2)}+\dotsb+x_{(n-[n\alpha])}}{n-2[n\alpha]},
+ \;\text{其中}\; 0<\alpha<1/2 \;\text{是切尾系数} ,  \]
+$x_{(1)}\leq x_{(2)}\leq\dotsb\leq x_{(n)}$是有序样本.现我们在某高校采访了16名大学生,了解他们平时的学习情况,以下数据是大学生每周用于看电视的时间:
+\[15\quad14\quad12\quad9\quad20\quad4\quad17\quad26\quad15\quad18\quad6\quad10\quad16
+\quad15\quad5\quad8\]
+取$\alpha=1/16$,试计算其切尾均值.
+\item 有一个分组样本如下:\\[2mm]
+\begin{tabularx}{\textwidth}{YYY}
+\toprule
+\text{区间}&\text{组中值}&\text{频数}\\
+\midrule
+(145,155)&150&4\\
+(155,165)&160&8\\
+(175,185)&180&2\\
+\bottomrule
+\end{tabularx}\\[2mm]
+试求该分组样本的样本均值、样本标准差、样本偏度和样本峰度.
+\item 检查四批产品,其批量与不合格品率如下:\\[2mm]
+\begin{tabularx}{\textwidth}{YYY}
+\toprule
+\text{批号}&\text{批量}&\text{不合格品率}\\
+\midrule
+1&100&0.05\\
+2&300&0.06\\
+3&250&0.04\\
+4&150&0.03\\
+\bottomrule
+\end{tabularx}\\[2mm]
+试求这四批产品的总不合格品率.
+\item 设总体以等概率取$1,2,3,4,5$,现从中抽取一个容量为4的样本,试分别求$x_{(1)}$和$x_{(4)}$的分布.
+\item 设$x_1,\dotsc,x_{16}$是来自$N(8,4)$的样本,试求下列概率:
+\begin{enumerate}
+\item $P(x_{(16)}>10)$.
+\item $P(x_{(1)}>5)$.
+\end{enumerate}
+\item 设总体为威布尔分布,其密度函数为
+\[p(x;m,\eta)=\frac{mx^{m-1}}{\eta^m}\exp\left\{ -\left( \frac{x}{\eta} \right) ^m \right\},\quad x>0,m>0,\eta>0.\]
+现从中得到样本$x_1,\dotsc,x_n$, 证明$x_{(1)}$仍复从威布尔分布,并指出其参数.
+\item 设总体密度函数为$p(x)=6x(1-x),0<x<1,x_1,\dotsc,x_9$是来自该总体的样本,试求样本中位数的分布.
+\item 设$x_1,\dotsc,x_n$是来自$U(0,\theta)$的样本, $x_{(1)}\leq\dotsb\leq x_{(n)}$为次序统计量,令
+\[y_i=\frac{x_{(i)}}{x_{(i+1)}},i=1,\dotsc,n-1,\quad y_n=x_{(n)},\]
+证明$y_1,\dotsc,y_n$相互独立.
+\item 对下列数据构造箱线图:
+\begin{align*}
+472&&425&&447&&377&&341&&369&&412&&419&\\
+400&&382&&366&&425&&399&&398&&423&&384&\\
+418&&392&&372&&418&&374&&385&&439&&428&\\
+429&&428&&430&&413&&405&&381&&403&&479&\\
+381&&443&&441&&433&&419&&379&&386&&387&
+\end{align*}
+\item 根据调查,某集团公司的中层管理人员的年薪数据如下(单位:千元):
+\begin{align*}
+40.6&&39.6&&43.8&&36.2&&40.8&&37.3&&39.2&&42.9&\\
+38.6&&39.6&&40.0&&34.7&&41.7&&45.4&&36.9&&37.8&\\
+44.9&&45.4&&37.0&&35.1&&36.7&&41.3&&38.1&&37.9&\\
+37.1&&37.7&&39.2&&36.9&&44.5&&40.4&&38.4&&38.9&\\
+39.9&&42.2&&43.5&&44.8&&37.7&&34.7&&36.3&&39.7&\\
+42.1&&41.5&&40.6&&38.9&&42.2&&40.3&&35.8&&39.2&
+\end{align*}
+试画出箱线图.
+\end{xiti}
