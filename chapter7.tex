@@ -56,9 +56,21 @@
 	\item 如果 $\left( x _ { 1 } , \cdots , x _ { n } \right) \in \overline { W }$ ，认为 $H_{0}$成立；
 \end{itemize}
 
-一般将$\overline{W}$称为接收域.由此可见，一个拒绝域$W$唯一确定一个检验法则，反之，一个检验法则也唯一确定一个拒绝续.在两个观测值$n=2$场合，图7.1.1给出拒绝域的示意图.
-	
-通常我们将注意力放在拒绝域上.正如在数学上我们不能用一个例子去证明一个结论一样，用一个样本（例子）不能证明一个命题（假设）是成立的，但可以用一个例子（样本）推翻一个命题.因此，从逻辑上看，注重拒绝域是适当的.事实上，在“拒绝原假设”和“拒绝备择假设（从而接收原假设）”之间还有一个模糊域，如今我们把它并入接收域(参见图7.1.1)，所以接收域是复杂的，将之称为保留域也许更恰当，但习惯上已把它称为接收域，没有必要再进行改变，只是应注意它的含义.
+一般将$\overline{W}$称为接收域.由此可见，一个拒绝域$W$唯一确定一个检验法则，反之，一个检验法则也唯一确定一个拒绝续.在两个观测值$n=2$场合，图~\ref{fig7.1.1}给出拒绝域的示意图.
+
+通常我们将注意力放在拒绝域上.正如在数学上我们不能用一个例子去证
+\begin{figure}[!htbp]
+\begin{minipage}[t]{0.60\linewidth}	
+明一个结论一样，用一个样本（例子）不能证明一个命题（假设）是成立的，但可以用一个例子（样本）推翻一个命题.因此，从逻辑上看，注重拒绝域是适当的.事实上，在“拒绝原假设”和“拒绝备择假设（从而接收原假设）”之间还有一个模糊域，如今我们把它并入接收域(参见图~\ref{fig7.1.1})，所以接收域是复杂的，将之称为保留域也许更恰当，但习惯上已把它称为接收域，没有必要再进行改变，只是应注意它的含义.
+\end{minipage}
+\begin{minipage}[t]{0.40\linewidth} 
+	\vspace{-4pt}
+	\begin{flushright}
+		{\includegraphics[width=40mm]{fig7-1-1.pdf}}%
+		\caption{拒绝域示意图}\label{fig7.1.1}
+	\end{flushright}
+\end{minipage} 	
+\end{figure}
 
 \textbf{三、选择显着性水平}
 
@@ -70,7 +82,19 @@
 \begin{equation}\label{eq7.1.2}
 \alpha =P\left(\textrm{接受}H_0\left| H_0\textrm{为真}\right.\right)=P\left(X\in \overline{ W }\right),\theta\in\theta_0
 \end{equation}
-表7.1.1列出了检验的各种情况及两类错误.
+
+表\ref{table7.1.1}列出了检验的各种情况及两类错误.
+\begin{table}[!htp]
+	\centering
+	\caption{检验的两类错误}\label{table7.1.1}
+		\begin{tabular}{lll}
+	\hline
+\multirow{2}{*}{观察数据情况} & \multicolumn{2}{l}{\hspace{4em}总体情况} \\ \cline{2-3} 
+& $H_{0}$为真   & $H_{1}$为真     \\ \hline
+$(x_{1},\dotsc,x_{n})\in W$ & 犯第一类错误 & 正确  \\ 
+$(x_{1},\dotsc,x_{n})\in W^{c}$   & 正确  & 犯第二类错误        \\ \hline
+	\end{tabular}
+\end{table}
 
 犯第一类错误的概率 $\alpha$ 和犯第二类错误的概率 $\beta$ 可以用同一个函数表示，即所谓的势函数.势函数是假设检验中最重要的概念之一，它的定义如下：
 \begin{definition}{}{ybjz}
@@ -92,7 +116,12 @@ g\left(\theta\right)=\left\{\begin{matrix}
 \[
 g\left(\theta\right)=P_{\theta}\left(\overline{x}\leq c\right)=P_{\theta}\left(\frac{\overline{x}-\theta}{4/5}\le\frac{c-\theta}{4/5}\right)=\Phi\left(\frac{c-\theta}{4/5}\right)
 \]
-这个势函数是$\theta$的减函数(见图7.1.2)
+这个势函数是$\theta$的减函数(见图\ref{fig7.1.2})
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.4\textwidth]{fig7-1-2.pdf}
+	\caption{例\ref{exam7.1.1}的势函数$g(\theta)$}\label{fig7.1.2}
+\end{figure}
 
 利用这个势函数容易写出其犯两类错误的概率分别为
 \begin{equation}\label{eq7.1.4}
@@ -198,6 +227,32 @@ W = \left\{ \left( x _ { 1 } , \cdots , x _ { n } \right) : u \geq c \right\}
 \end{equation}
 常简记为${\mu \geq c}$，若要求检验的显著性水平为$\alpha$，则$c$满足
 \[P _ { \mu _ { 0 } } ( u \geq c ) = \alpha\]
+由于在$\mu =\mu_{0}$时$\mu \sim N(0,1)$，故$c=\mu _{1-\alpha}$(见图~\ref{fig7.2.1}(a))，最后的拒绝域为
+\begin{equation}\label{eq7.2.6}
+W = \left| u \geq u _ { 1 - \alpha } \right|
+\end{equation}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{fig7-2-1.png}
+	\caption{$\mu $检验的拒绝域}\label{fig7.2.1}
+\end{figure}
+该检验用的检验统计量是$\mu $统计量，故一般称为$\mu $检验.该检验的势函数是$\mu $的函数，它可用正态分布写出，具体如下：对$\mu \in(\infty,+\infty)$，
+\begin{align*}
+g ( \mu ) &= P _ { \mu } ( \mathbf { X } \in W ) = P _ { \mu } \left( u \geq u _ { 1 - \alpha } \right)\\
+&= P _ { \mu } \left( \frac { \overline { x } - \mu _ { 0 } } { \sigma / \sqrt { n } } \geq u _ { 1 - a } \right)\\
+&= P _ { \mu } \left( \frac { \overline { x } - \mu + \mu - \mu _ { 0 } } { \sigma / \sqrt { n } } \geq u _ { 1 - \alpha } \right)\\
+&= P _ { \mu } \left( \frac { \overline { x } - \mu } { \sigma / \sqrt { n } } \geq \frac { \mu _ { 0 } - \mu } { \sigma / \sqrt { n } } + u _ { 1 - \alpha } \right)\\
+&= 1 - \Phi \left( \sqrt { n } \left( \mu _ { 0 } - \mu \right) / \sigma + u _ { 1 - a } \right)
+\end{align*}
+由此可见，势函数是$\mu $的增函数，其图形见图~\ref{fig7.2.2}（a），由增函数性质知，只要$g(\mu_{0}=\alpha)$就可保证在$\mu \leq \mu_{ 0 }$时有$g(\mu )\leq \mu_{ 0 }$,所以上述求出的检验是水平为$\alpha$的检验.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{fig7-2-1.png}
+	\caption{$g(\mu ) $的图形}\label{fig7.2.2}
+\end{figure}
+
+对单侧检验问题($\ref{eq7.2.1}$)，可以类似进行讨论.仍选用$\mu $作为检验统计量，考虑到($\ref{eq7.2.1}$)的备择假设$H_{1}$在左侧，故其拒绝城应有如下形式
+\[W = | u \leq c |\]
 
 \begin{example}\label{exam7.2.1}
 从甲地发送一个讯号到乙地.设乙地接受到的讯号值是一个服从正态分布$N(\mu ,0.2^{2})$的随机变量，其中$\mu $为甲地发送的真实讯号值.现甲地重复发送同一讯号5次，乙地接收到的讯号值为
