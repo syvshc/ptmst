@@ -2537,3 +2537,845 @@ p(x)=\left\{
 以$ Y $表示对X的三次独立重复观寨中事件 $ \{X \leqslant 1 / 2\} $ 出现的次数，试求$ P（Y=2） $.
 
 13.某产品的不合格品率为0.1，每次随机抽取10件进行检验，若发现其中不合格品数多于1，就去调整设备，若检验员每天检验4次，试同每天平均要调整几次设备.
+
+\section{常用连续分布}
+
+\subsection{正态分布}
+
+正态分布是概率论与数理统计中最重要的一个分布，高斯（Gauss）在研究误差理论时首先用正态分布来刻画误差的分布，所以正态分布又称为高斯分布.本书第四章的中心极限定理表明：一个变量如果是由大量微小的、独立的随机因素的叠加结果，那么这个变量一定是正态变量.因此很多随机变量可以用正态分布描述或近似描述，譬如测量误差、产品重量、人的身高、年降雨量等都可用正态分布描述.
+
+\subsubsection{正态分布的密度函数和分布函数}
+
+若随机变量X的密度函数为
+
+\begin{equation}
+p(x)=\frac{1}{\sqrt{2 \pi} \sigma} \mathrm{e}^{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}},-\infty<x<+\infty \label{eq:2.5.1}
+\end{equation}
+
+则称$ X $服从正态分布，称$ X $为正态变量，记作 $X \sim N\left(\mu, \sigma^{2}\right)$ .其中参数 $-\infty< \mu<+\infty, \sigma>0 $ .其密度函数$ p（x） $的图形如图~\ref{fig:2-5-1}a所示.$ p（x） $是一条钟形曲线，中间高、二边低、左右关于$ u $对称，以是正态分布的中心，且在x=u附近取值的可能性大，在两侧取值的可能性小. $\mu \pm \sigma$ 是该曲线的拐点.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../../Ptmst/figure/2-5-1}
+	\caption{正态分布}
+	\label{fig:2-5-1}
+\end{figure}
+
+正态分布 $N\left(\mu, \sigma^{2}\right)$ 的分布函数为
+
+\begin{equation}
+F(x)=\frac{1}{\sqrt{2 \pi} \sigma} \int_{-\infty}^{x} \mathrm{e}^{-\frac{(t-\mu)^{2}}{2 \sigma^{2}}} \mathrm{d} t \label{eq:2.5.2}
+\end{equation}
+
+它是一条光滑上升的$ S $形曲线，见图~\ref{fig:2-5-1}（b）.
+
+图~\ref{fig:2-5-2}给出了在$ \mu $和。变化时，相应正态密度曲线的变化情况.
+
+从图~\ref{fig:2-5-2}（a）中可以看出：如果固定 $\mu$ ，改变 $\sigma $ 的值，则图形沿$ x $轴平移，而不改变其形状.也就是说正态密度函数的位置由参数 $\mu$ 所确定，因此称 $\mu$ 为位置参数.
+
+·从图~\ref{fig:2-5-2}（b）中可以看出：如果固定$ \mu $，改变 $\sigma$ 的值，则 $\sigma$ 愈小，曲线呈高而瘦； $\sigma$ 愈大，曲线呈矮而胖.也就是说正态密度函数的尺度由参数 $\sigma$ 所确定，因此称 $\sigma$ 为尺度参数.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{2-5-2}
+	\caption{}
+	\label{fig:2-5-2}
+\end{figure}
+
+\subsubsection{标准正态分布}
+
+称 $\mu=0, \sigma=1$ 时的正态分布$ N（0，1） $为标准正态分布.
+
+通常记标准正态变量为 $ U $ ，记标准正态分布的密度函数为 $\varphi(u)$ ，分布函数为面 $\Phi(u)$ ，即
+
+\[
+\begin{array}{ll}
+{\varphi(u)=\frac{1}{\sqrt{2 \pi}} \mathrm{e}^{-\frac{\mu^{2}}{2}}} & {,-\infty<u<+\infty} \\ 
+{\Phi(u)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{u} \mathrm{e}^{-\frac{t^{2}}{2}} \mathrm{d} t} & {,-\infty<u<+\infty}
+\end{array}
+\]
+
+由于标准正态分布的分布函数不含任何未知参数，故其值 $\Phi(u)=P(U \leqslant u ) $ 完全可以算出，附表2对 $u \geqslant 0$ 给出了 $\Phi(u)$ 的值，利用这张表可以算得
+\begin{itemize}
+	\item $\Phi(-u)=1-\Phi(u)$
+	\item $P(U>u)=1-\Phi(u)$
+	\item $P(a<U<b)=\Phi(b)-\Phi(a)$
+	\item $P(|U|<c)=2 \Phi(c)-1$
+\end{itemize}
+
+这些等式都不难推得.
+
+\begin{example}
+	设 $U \sim N(0,1)$ ，利用附表2，求下列事件的概率：
+	
+	\begin{enumerate}
+		\item $ P(U<1.52)=\Phi(1.52)=0.9357 $
+		\item $ P(U>1.52)=1-\Phi(1.52)=1-0.9357=0.0643 $
+		\item $ P(U<-1.52)=1-\Phi(1.52)=0.0643 $
+		\item $ P(-0.75 \leqslant U \leqslant 1.52)=\Phi(1.52)-\Phi(-0.75)=\Phi(1.52)-[1- \Phi(0.75) ]=0.9357-1+0.7734=0.7091 $
+		\item $ P(|U| \leqslant 1.52)=2 \Phi(1.52)-1=2 \times 0.9357-1=0.8714 $
+	\end{enumerate}
+\end{example}
+
+\subsubsection{一般正态分布的标准化}
+
+正态分布有一个家族
+
+\[
+P=\left\{N\left(\mu, \sigma^{2}\right) ;-\infty<\mu<+\infty, \sigma>0\right\}
+\]
+
+标准正态分布$ N（0，1） $是其一个成员.实际上很少有随机变量恰好服从标准正态分布.以下定理说明：对一般正态分布都可以通过一个线性变换（标准化）化成标准正态分布.因此与正态变量有关的一切事件的概率都可通过查标准正态分布函数表获得.由此可见标准正态分布$ N（0，1 $）对一般正态分布 $N\left(\mu, \sigma^{2}\right)$ 的计算起着关键的作用.
+
+\begin{theorem}{}{}
+	若 $X \sim N\left(\mu, \sigma^{2}\right)$ ，则 $U=(X-\mu) / \sigma \sim N(0,1)$ .
+\end{theorem}
+
+\begin{proof}
+	记$ x $与$ U $的分布函数分别为 $p_{X}(x)$ 与 $p_{U}(u)$ ，则由分布函数的定义知
+	
+	\[
+	F_{U}(u)=P(U \leqslant u)=P\left\{\frac{X-u}{\sigma} \leqslant u\right\}=P(X \leqslant \mu+\sigma u)=F_{X}(\mu+\sigma u)
+	\]
+	
+	由于正态分布函数是严格单调增函数，且处处可导，因此若记$ X $与$ U $的密度函数分别为 $p_{X}(x)$ 与 $p_{U}(u)$ ，则有
+	\[
+	p_{U}(u)=\frac{\mathrm{d}}{\mathrm{d} u} F_{X}(\mu+\sigma u)=p_{X}(\mu+\sigma u) \cdot \sigma=\frac{1}{\sqrt{2 \pi}} \mathrm{e}^{-u^{2} / 2}
+	\]
+	
+	由此得
+	
+	\[
+	U=\frac{X-\mu}{\sigma}-N(0,1)
+	\]
+\end{proof}
+
+
+由以上定理，我们马上可以得到一些在实际中有用的计算公式，若$X \sim N\left(\mu, \sigma^{2}\right) $ ，则
+
+\begin{equation}
+P(X \leqslant c)=\Phi\left(\frac{c-\mu}{\sigma}\right) \label{eq:2.5.3}
+\end{equation}
+
+\begin{equation}
+P(a<X \leqslant b)=\Phi\left(\frac{b-\mu}{\sigma}\right)-\Phi\left(\frac{a-\mu}{\sigma}\right) \label{eq:2.5.4}
+\end{equation}
+
+\begin{example}
+	设随机变量$ X $服从正态分布$ N（108，3^{2}） $，试求
+	\begin{enumerate}
+		\item $ P（102<X<117） $；
+		\item 常数$ a $，使得$ P（X<a）=0.95 $.
+	\end{enumerate}
+	
+	解利用公式（2.5.4）及查附表2得
+	\begin{enumerate}
+		\item \[
+		\begin{aligned} P(102<X<117) &=\Phi\left(\frac{117-108}{3}\right)-\Phi\left(\frac{102-108}{3}\right) \\ &=\Phi(3)-\Phi(-2)=\Phi(3)+\Phi(2)-1 \\ &=0.9987+0.9772-1=0.9759 \end{aligned}
+		\]
+		\item 由
+		\[
+		P(X<a)=\Phi\left(\frac{a-108}{3}\right)=0.95, \quad \text{或} \quad \Phi^{-1}(0.95)=\frac{a-108}{3}
+		\]
+		其中 $\Phi^{-1}$ 为 $\Phi$ 的反函数.从附表2由里向外反查得
+		\[
+		\Phi(1.64)=0.9495, \quad \Phi(1.65)=0.9505
+		\]
+		再用线性内插法可得$\Phi(1,645)=0.95$ ，即 $\Phi^{-1}(0.95)=1.645$ ，故
+		\[
+		\frac{a-108}{3}=1.645
+		\]
+		从中解得$ a=112.935 $.
+		从上例我们可以看出，有些场合下给定 $\Phi(x)$ 的值，可以从附表2中由里向外反查表来得到$ a $的值，这种手段在统计中被大量使用.
+	\end{enumerate}
+\end{example}
+
+\begin{example}
+	恒温箱是靠温度调节器根据箱内温度的变化不断进行调整的，所以恒温箱内的实际温度$ X $（单位为$ ^{\circ}\mathrm{C} $）是一个随机变量.如果将温度调节器设定在 $ d^{\circ}\mathrm{C} $ ，且 $X \sim N\left(d, \sigma^{2}\right)$ ，其中 $\sigma$ 反映的是温度调节器的精度.
+	\begin{enumerate}
+		\item 当 $d=90 \quad \mathrm{C}, \sigma=0.5$ 时，试求箱内温度在$ 89^{\circ}C $至$ 91^{\circ}C $的概率.
+		\item 当 $d=90 \quad \mathrm{C}, \sigma=2$ 时，试求箱内温度在$ 89^{\circ}C $至$ 91^{\circ}C $的概率.
+		\item 当 $\sigma=0.5$ 时，要有$ 95\% $的可能性保证箱内温度不低于$ 90^{\circ}C $，问应将温度调节器设定为多少度为宜？
+	\end{enumerate}
+	
+	\textbf{解}
+	\begin{enumerate}
+		\item 所求概率为
+		\[
+		\begin{aligned} P(89 \leqslant X<91) &=\Phi\left(\frac{91-90}{0.5}\right)-\Phi\left(\frac{89-90}{0.5}\right) \\ &=2 \Phi(2)-1=2 \times 0.9772-1=0.9544 \end{aligned}
+		\]
+		这说明如果温度调节器的精度$ a=0.5 $时，箱内温度在$ 89^{\circ}C $至$ 91^{\circ}C $的可能性是很大的.
+		\item 所求概率为
+		\[
+		\begin{aligned} P(89 \leqslant X<91) &=\Phi\left(\frac{91-90}{2}\right)-\Phi\left(\frac{89-90}{2}\right) \\ &=2 \Phi(0.5)-1=2 \times 0.6915-1=0.3830 \end{aligned}
+		\]
+		这说明如果温度调节器的精度 $\sigma=2$ 时，要将箱内温度控制在$ 89^{\circ}C $至$ 91^{\circ}C $之间是较困难的.
+		\item 按题意需求$ d $满足
+		\[
+		P(X \geqslant 90) \geqslant 0.95, \quad \text {即} 1-\Phi\left(\frac{90-d}{0.5}\right) \geqslant 0.95
+		\]
+		所以应该有
+		\[
+		\Phi\left(\frac{90-d}{0.5}\right) \leqslant 0.05
+		\]
+		查附表2得
+		\[
+		\frac{90-d}{0.5} \leqslant-1.645
+		\]
+		所以
+		\[
+		d \geqslant 1.645 \times 0.5+90=90.8225
+		\]
+		故取$ d=91^{\circ}C $可满足要求.
+	\end{enumerate}
+\end{example}
+
+\subsubsection{正态分布的数学期望与方整}
+
+设随机变量 $X \sim N\left(\mu, \sigma^{2}\right)$ ，由于 $U=(X-\mu) / \sigma \sim N(0,1)$ ，所以$ U $的数学期望为
+
+\[
+E(U)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty} u \mathrm{e}^{-\frac{x^{2}}{2}} \mathrm{d} u
+\]
+
+注意到上述积分的被积函数为一个奇函数，所以其积分值等于0，即$ E（U）=0 $.
+又因为 $X=\mu+\sigma U$ ，所以由数学期望的线性性得
+\[
+E(X)=\mu+\sigma \times 0=\mu
+\]
+
+也就是说，正态分布 $N\left(\mu, \sigma^{2}\right)$ 中的$ p $为数学期望.
+
+又因为
+
+\[
+\begin{array}{ll}
+{\operatorname{Var}(U)} & {=E\left(U^{2}\right)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty} u^{2} \mathrm{e}^{-\frac{\mu^{2}}{2}} \mathrm{d} u} \\ 
+{} & {=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty} u \mathrm{d}\left(-\mathrm{e}^{-\frac{\mu^{2}}{2}}\right)} \\ 
+{} & {=\frac{1}{\sqrt{2 \pi}}\left\{-u\left.\mathrm{e}^{-\frac{u^{2}}{2}}\right|_{-\infty} ^{+\infty}+\int_{-\infty}^{+\infty} \mathrm{e}^{-\frac{x^{2}}{2}} \mathrm{d} u\right\}} \\ 
+{} & {=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty} \mathrm{e}^{-\frac{y^{2}}{2}} \mathrm{d} u=\frac{1}{\sqrt{2 \pi}} \sqrt{2 \pi}=1}
+\end{array}
+\]
+
+因为 $X=\sigma U+\mu$ ，所以由方差的性质得
+
+\[
+\operatorname{Var}(X)=\operatorname{Var}(\sigma U+\mu)=\sigma^{2}
+\]
+
+这说明，正态分布 $N\left(\mu, \sigma^{2}\right)$ 中另一个参数 $\sigma^{2}$ 就是方差.
+
+在求正态分布的数学期望和方差中，用到了一种变换：令 $U=(X-\mu) / \sigma$ ，由 $E(U)=0, \operatorname{Var}(U)=1$ ，然后再去求出X的数学期望和方差.这个变换具有普遍意义，也就是对任意随机变量$ X $，如果X的数学期望为 $\mu$ ，方差为 $\sigma^{2}$ ，则称
+
+\[
+X^{*}=\frac{X-\mu}{\sigma}
+\]
+
+为$ X $的标准化随机变量，且可得
+\[
+E\left(X^{*}\right)=0, \quad \operatorname{Var}\left(X^{*}\right)=1
+\]
+
+\subsubsection{正态分布的 $ 3\sigma $ 原则}
+设 $X \sim N\left(\mu, \sigma^{2}\right)$ ，则
+
+\begin{equation}
+P(|X-\mu|<k \sigma)=\Phi(k)-\Phi(-k)=\left\{\begin{array}{ll}{0.6826,} & {k=1} \\ {0.9545,} & {k=2} \\ {0.9973,} & {k=3}\end{array}\right. \label{eq:2.5.5}
+\end{equation}
+
+从上式中可以看出：尽管正态变量的取值范围是 $(-\infty,+\infty)$ ，但它的$ 99.73\% $的值落在 $(\mu-3 a, \mu+3 \sigma)$ 内.这个性质被实际工作者称作是正态分布的“ $ 3\sigma $ 原则 ”.正态分布的 $ 3\sigma $ 原则在实际工作中很有用，工业生产上用的控制图，和一些产品质量指数（如 $C_{p}, C_{*}$ ）都是根据 $ 3\sigma $ 原则制定的
+
+
+\subsection{均匀分布}
+
+\subsubsection{均匀分布的密度函数和分布函数}
+
+若随机变量X的密度函数（见图~\ref{fig:2-5-3}（a））为
+
+\begin{equation}
+p(x)=\left\{
+\begin{array}{ll}
+{\frac{1}{b-a},} & {a}        \\ 
+{0}              &{\text{其它}}
+\end{array}
+\right. \label{eq:2.5.6}
+\end{equation}
+
+则称$ X $服从区间$ （a，b） $上的均匀分布，记作 $X \sim U(a, b)$ ，其分布函数（见图~\ref{fig:2-5-3}（b））为
+
+\begin{equation}
+F(x)=\left\{
+\begin{array}{ll}
+{0,} & {x<a} \\ 
+{\frac{x-a}{b-a},} & {a \leqslant x<b} \\ 
+{1,} & {x \geqslant b}
+\end{array}
+\right. \label{eq:2.5.7}
+\end{equation}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{2-5-3}
+	\caption{$ （a，b） $上的均匀分布}
+	\label{fig:2-5-3}
+\end{figure}
+
+均匀分布的背景可视作随机点$ X $落在区间$ （a，b） $上的位置.均匀分布在实际中经常使用，譬如一个半径为r的汽车轮胎，因为轮胎圆周上的任一点接触地面的可能性是相同的，所以轮胎圆周接触地面的位置$ X $是服从 $(0,2 \pi r)$ 上的均匀分布，这只要看一看报废轮胎的四周磨损程度几乎是相同的就可明白均匀分布的含义了.
+
+\begin{example}
+	设随机变量$ X $服从$ （0，10） $上的均匀分布，现对$ X $进行4次独立观测，试求至少有3次观测值大于5的概率。
+	
+	\textbf{解} 设随机变量$ Y $是4次独立观测中观测值大于5的次数，则 $\mathbf{Y} \sim b(4, p)$ ，其中$ p=P（X>5） $.由 $X \sim U(0,10)$ ，知$ X $的密度函数为
+	
+	\[
+	p(x)=\left\{
+	\begin{array}{ll}
+	{\frac{1}{10},} & {0<x<10} \\ 
+	{0}             & {\text{其它}}
+	\end{array}\right.
+	\]
+	
+	所以
+	
+	\[
+	p=P(X>5)=\int_{5}^{10} \frac{1}{10} \mathrm{d} x=\frac{1}{2}
+	\]
+	
+	于是
+	
+	\[
+	P(Y \geqslant 3)=\left( \begin{array}{l}{4} \\ {3}\end{array}\right) p^{3}(1-p)+\left( \begin{array}{l}{4} \\ {4}\end{array}\right) p^{4}=4\left(\frac{1}{2}\right)^{4}+\left(\frac{1}{2}\right)^{4}=\frac{5}{16}
+	\]
+\end{example}
+
+\subsubsection{均匀分布的数学期望和方差}
+
+设随机变量 $X \sim U(a, b)$ ，则
+
+\[
+E(X)=\int_{a}^{b} \frac{x}{b-a} d x=\frac{b^{2}-a^{2}}{2(b-a)}=\frac{a+b}{2}
+\]
+
+这正是区间$ （a，b） $的中点.
+
+又因为
+
+\[
+E\left(X^{2}\right)=\int_{a}^{b} \frac{x^{2}}{b-a} \mathrm{d} x=\frac{b^{3}-a^{3}}{3(b-a)}=\frac{a^{2}+a b+b^{2}}{3}
+\]
+
+由此得$ X $的方差为
+
+\[
+\operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}=\frac{a^{2}+a b+b^{2}}{3}-\frac{(a+b)^{2}}{4}=\frac{(b-a)^{2}}{12}
+\]
+
+\subsection{指数分布}
+
+\subsubsection{指数分布的密度函数和分布函数}
+
+若随机变量$ X $的密度函数（见图~\ref{fig:2-5-4}）为
+
+\begin{equation}
+p(x)=\left\{\begin{array}{cl}{\lambda \mathrm{e}^{-\lambda x},} & {x \geqslant 0} \\ {0,} & {x<0}\end{array}\right. \label{eq:2.5.8}
+\end{equation}
+
+则称$ X $服从指数分布，记作 $X \sim E x p(\lambda)$ ，其中参数 $\lambda>0$ .指数分布的分布函数为
+
+\begin{equation}
+F(x)=\left\{\begin{array}{cl}{1-\mathrm{e}^{-\lambda x},} & {x \geqslant 0} \\ {0,} & {x<0}\end{array}\right. \label{eq:2.5.9}
+\end{equation}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{2-5-4}
+	\caption{参数为 $\lambda$ 的指数分布密度函数}
+	\label{fig:2-5-4}
+\end{figure}
+
+因为指数分布随机变量只可能取非负实数，所以指数分布常被用作各种“寿命”
+分布，譬如电子元器件的寿命、动物的寿命、电话的通话时间、随机服务系统中的服务时间等都可假定服从指数分布.指数分布在可靠性与排队论中有着广泛的应用.
+
+\subsubsection{指数分布的数学期望和方差}
+
+设随机变量 $X-E x p(\lambda)$ ，则
+
+\[
+\begin{aligned} 
+E(X) &=\int_{0}^{+\infty} x \lambda \mathrm{e}^{-\lambda x} \mathrm{d} x=\int_{0}^{+\infty} x \mathrm{d}\left(-\mathrm{e}^{-\lambda x}\right) \\
+&=-x\left.\mathrm{e}^{-\lambda x}\right|_{0} ^{+\infty}+\int_{0}^{+\infty} \mathrm{e}^{-\lambda x} \mathrm{d} x=-\frac{1}{\lambda}\left.\mathrm{e}^{-\lambda x}\right|_{0} ^{+\infty}=\frac{1}{\lambda} 
+\end{aligned}
+\]
+
+在指数分布中，有时记 $\theta=1 / \lambda$ ，则 $\theta$ 为指数分布的数学期望.
+
+又因为
+
+\[
+\begin{aligned} E\left(X^{2}\right) &=\int_{0}^{+\infty} x^{2} \lambda \mathrm{e}^{-\lambda x} \mathrm{d} x=\int_{0}^{+\infty} x^{2} \mathrm{d}\left(-\mathrm{e}^{-\lambda x}\right) \\ &=-x^{2}\left.\mathrm{e}^{-\lambda x}\right|_{0} ^{+\infty}+2 \int_{0}^{+\infty} x \mathrm{e}^{-\lambda x} \mathrm{d} x=\frac{2}{\lambda^{2}} \end{aligned}
+\]
+
+由此得$ X $的方差为
+
+\[
+\operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}=\frac{2}{\lambda^{2}}-\frac{1}{\lambda^{2}}=\frac{1}{\lambda^{2}}
+\]
+
+\subsubsection{指数分布的无记忆性}
+
+下面给出指数分布在连续分布类中所特有的一个性质.
+
+\begin{theorem}
+	（指数分布的无记忆性）如果 $X-E x p(\lambda)$ ，则对任意$ s>0，t>0 $，有
+	
+	\begin{equation}
+	P(X>s+t | X>s)=P(X>t) \label{eq:2.5.10}
+	\end{equation}
+\end{theorem}
+
+上式的含义为：记$ X $是某种产品的使用寿命$ （h） $，若$ X $服从指数分布，那么已知此产品使用了$ sh $没发生故障，则再能使用th而不发生故障的概率与已使用的$ sh $无关，只相当于重新开始使用$ th $的概率，即对已使用过的$ sh $没有记忆。
+
+\begin{proof}
+	证明因为 $X \sim E x p(\lambda)$ ，所以 $P(X>s)=\mathrm{e}^{-\lambda s}, s>0$ .又因为
+	
+	\[
+	\{X>s+t\} \subseteq\{X>s\}
+	\]
+	
+	于是条件概率
+	
+	\[
+	P(X>s+t | X>s)=\frac{P(X>s+t)}{P(X>s)}=\frac{\mathrm{e}^{-\lambda(s+t)}}{\mathrm{e}^{-\lambda s}}=\mathrm{e}^{-\lambda t}=P(X>t)
+	\]
+	
+	这就证明了~\ref{eq:2.5.10}式.
+\end{proof}
+
+指数分布的无记忆性与几何分布的无记忆性是类似的.
+
+以下例子说明了泊松分布与指数分布的关系.
+
+\begin{example}
+	如果某设备在任何长为$ t $的时间$ [0，t] $内发生故障的次数$ N（t） $服从参数为 $\lambda t$ 的泊松分布，则相继两次故障之间的时间间隔T服从参数为 $\lambda$ 的指数分布.
+	
+	\textbf{解} 设 $N(t) \sim P(\lambda t)$ ，即
+	
+	\[
+	P\{N(t)=k\}=\frac{(\lambda t)^{k}}{k !} \mathrm{e}^{-\lambda t}, \quad k=0,1, \cdots
+	\]
+	
+	注意到两次故障之间的时间间隔T是非负随机变量，且事件 $\{T \geqslant t\}$ 说明此设备在$ [0，t] $内没有发生故障，即 $\{T \geqslant t\}=\{N(t)=0\}$ ，由此我们得
+	
+	当$ t<0 $时，有$F_{T}(t)=P(T \leqslant t)=0$；
+	
+	当 $t \geqslant 0$ 时，有
+	
+	\[
+	F_{T}(t)=P(T \leqslant t)=1-P(T>\iota)=1-P\{N(t)=0\}=1-\mathrm{e}^{-\lambda t}
+	\]
+	
+	所以 $T \sim E x p(\lambda)$ ，即相继两次故障之间的时间间隔T服从参数为 $\lambda$ 的指数分布.
+\end{example}
+
+\subsection{伽玛分布}
+
+\subsubsection{伽玛函数}
+
+称以下函数
+
+\begin{equation}
+\Gamma(\alpha)=\int_{0}^{+\infty} x^{a \cdot 1} \mathrm{e}^{-x} \mathrm{d} x \label{eq:2.5.11}
+\end{equation}
+
+为伽玛函数，其中参数$ a>0 $.伽玛函数具有如下性质：
+
+\begin{itemize}
+	\item $\Gamma(1)=1, \Gamma\left(\frac{1}{2}\right)=\sqrt{\pi}$
+	\item $\Gamma(\alpha+1)=\alpha \Gamma(\alpha)$ （可用分部积分法证得）.当$ a $为自然数$ n $时，有
+	\[
+	\Gamma(n+1)=n \Gamma(n)=n !
+	\]
+\end{itemize}
+
+\subsubsection{伽玛分布}
+
+若随机变量X的密度函数为
+
+\begin{equation}
+p(x)=\left\{\begin{array}{ll}{\frac{\lambda^{a}}{\Gamma(\alpha)} x^{a-1} \mathrm{e}^{-\lambda x},} & {x \geqslant 0} \\ {0,} & {x<0}\end{array}\right. \label{eq:2.5.12}
+\end{equation}
+
+则称$ X $服从伽玛分布，记作 $X \sim G a(\alpha, \lambda)$ ，其中$ a>0 $为形状参数， $\lambda>0$ 为尺度参数.图~\ref{fig:2-5-5}给出若于条 $\lambda$ 固定、$ a $不同的伽玛密度函数曲线，从图中可以看出：
+
+\begin{itemize}
+	\item $ 0<a<1 $时，$ p（x） $是严格下降函数，且在$ x=0 $处有奇异点；
+	\item $ a=1 $时，$ p（x） $是严格下降函数，且在$ x=0 $处$ p（0）=1 $；
+	\item $1<a \leq 2$ 时，$ p（x） $是单峰函数，先上凸、后下凸；
+	\item $ 2<a $时，$ p（x） $是单峰函数，先下凸、中间上凸、后下凸.且$ a $越大，$ p（x） $越近似于正态密度.
+\end{itemize}
+·
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{2-5-5}
+	\caption{$\lambda$ 固定、不同$ a $的伽玛密度函数曲线}
+	\label{fig:2-5-5}
+\end{figure}
+
+\subsubsection{伽玛分布 $G a(\alpha, \lambda)$ 的数学期望和方整}
+
+利用伽玛函数的性质，不难算得伽玛分布 $\operatorname{Ga}(\alpha, \lambda)$ 的数学期望为
+
+\[
+E(X)=\frac{\lambda^{a}}{\Gamma(\alpha)} \int_{0}^{+\infty} x^{\alpha} \mathrm{e}^{-\lambda x} \mathrm{d} x=\frac{\Gamma(\alpha+1)}{\Gamma(\alpha)} \frac{1}{\lambda}=\frac{\alpha}{\lambda}
+\]
+
+又因为
+
+\[
+E\left(X^{2}\right)=\frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_{0}^{+\infty} x^{a+1} \mathrm{e}^{-\lambda x} \mathrm{d} x=\frac{\Gamma(\alpha+2)}{\lambda^{2} \Gamma(\alpha)}=\frac{\alpha(\alpha+1)}{\lambda^{2}}
+\]
+
+由此得$ X $的方差为
+
+\[
+\operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}=\frac{\alpha(\alpha+1)}{\lambda^{2}}-\left(\frac{\alpha}{\lambda}\right)^{2}=\frac{\alpha}{\lambda^{2}}
+\]
+
+\subsubsection{伽玛分布的两个特例}
+
+伽玛分布有两个常用的特例：
+
+\begin{enumerate}
+	\item $ a=1 $时的伽玛分布就是指数分布，即
+	\begin{equation}
+	G a(1, \lambda)=E x p(\lambda) \label{eq:2.5.13}
+	\end{equation}
+	\item 称 $\alpha=n / 2, \lambda=1 / 2$ 时的伽玛分布是自由度为$ n $的 $\chi^{2}$ （卡方）分布，记为 $\chi^{2}(n)$ ，即
+	\begin{equation}
+	G a\left(\frac{n}{2}, \frac{1}{2}\right)=\chi^{2}(n) \label{eq:2.5.14}
+	\end{equation}
+\end{enumerate}
+
+其密度函数为
+
+\begin{equation}
+p(x)=\left\{\begin{array}{ll}
+{\frac{1}{2^{\frac{\pi}{2}} \Gamma\left(\frac{n}{2}\right)} \mathrm{e}^{-\frac{x}{2}} x^{\frac{n}{2}-1},} & {x>0} \\ 
+{0,} & {x \leqslant 0}
+\end{array}\right. \label{eq:2.5.15}
+\end{equation}
+
+这里$ n $是 $\chi^{2}$ 分布的唯一参数，称为自由度，它可以是正实数，但更多的是取正整数，其统计含义以后再介绍.
+
+因为 $\chi^{2}$ 分布是特殊的伽玛分布，故由伽玛分布的期望和方差，很容易得到 $\chi^{2}$ 分布的期望和方差为
+
+\[
+E(X)=n, \quad \operatorname{Var}(X)=2 n
+\]
+
+\begin{example}
+	电子产品的失效常常是由子外界的“冲击引起”.若在$ （0，t） $内发生冲击的次数$ N（t） $服从参数为 $\lambda t$ 的泊松分布，试证第$ n $次冲击来到的时间 $S_{n}$ 服从伽玛分布 $G a(n, \lambda)$ .
+	\textbf{证} 因为事件“第$ n $次冲击来到的时间 $S_{n}$ 。小于等于$ t $”等价于事件“$ （0，t） $
+	内发生冲击的次数$ N（t） $大于等于$ n $”，即
+	
+	\[
+	\left\{S_{n} \leqslant t\right\}=\{N(t) \geqslant n\}
+	\]
+	
+	于是， $S_{n}$ 的分布函数为
+	\[
+	F(t)=P\left(S_{n} \leqslant t\right)=P(N(t) \geqslant n)=\sum_{k=n}^{+\infty} \frac{(\lambda t)^{k}}{k !} \mathrm{e}^{-i t t}
+	\]
+	
+	用分部积分法可以验证下列等式
+	
+	\begin{equation}
+	\sum_{k=0}^{n-1} \frac{(\lambda t)^{k}}{k !} \mathrm{e}^{-\lambda t}=\frac{\lambda^{n}}{\Gamma(n)} \int_{t}^{+\infty} x^{n-1} \mathrm{e}^{-\lambda x} \mathrm{d} x \label{eq:2.5.16}
+	\end{equation}
+	
+	所以
+	
+	\[
+	F(t)=\frac{\lambda^{n}}{\Gamma(n)} \int_{0}^{t} x^{n-1} \mathrm{e}^{-\lambda x} \mathrm{d} x
+	\]
+	
+	这就表明 $S_{n} \sim G a(n, \lambda)$ .证毕.
+\end{example}
+
+\subsection{贝塔分布}
+
+\subsubsection{贝塔函数}
+
+称以下函数
+
+\begin{equation}
+\mathrm{B}(a, b)=\int_{0}^{1} x^{a-1}(1-x)^{b-1} \mathrm{d} x \label{eq:2.5.17}
+\end{equation}
+
+为贝塔函数，其中参数$ a>0，b>0 $.贝塔函数具有如下性质：
+
+\begin{enumerate}
+	\item $\mathbf{B}(a, b)=\mathrm{B}(b, a)$
+	\begin{proof}
+		在~\ref{eq:2.5.17}的积分中令$ y=1-x $，即得
+		\[
+		\mathrm{B}(a, b)=\int_{1}^{0}(1-y)^{a-1} y^{b-1}(-\mathrm{d} y)=\int_{0}^{1}(1-y)^{a-1} y^{b-1} \mathrm{d} y=\mathrm{B}(b, a)
+		\]
+	\end{proof}
+	\item 贝塔函数与伽玛函数间有关系
+	\begin{equation}
+	\mathrm{B}(a, b)=\frac{\Gamma(a) \Gamma(b)}{\Gamma(a+b)} \label{eq:2.5.18}
+	\end{equation}
+	\begin{proof}
+		由伽玛函数的定义知
+		\[
+		\Gamma(a) \Gamma(b)=\int_{0}^{+\infty} \int_{0}^{+\infty} x^{a-1} y^{b-1} e^{-(x+y)} d x d y
+		\]
+		作变量变换$ x=uv $，$ y=u（1-v） $，其雅可比行列式$ J=-u $.故
+		\[
+		\begin{aligned} \Gamma(a) \Gamma(b) &=\int_{0}^{+\infty} \int_{0}^{1}(u v)^{a-1}[u(1-v)]^{b-1} \mathrm{e}^{-k} u \mathrm{d} u \mathrm{d} v \\ &=\int_{0}^{+\infty} u^{a+b-1} \mathrm{e}^{-\pi} \mathrm{d} u \int_{0}^{1} v^{a-1}(1-v)^{b-1} \mathrm{d} v=\Gamma(a+b) \mathrm{B}(a, b) \end{aligned}
+		\]
+		由此证得L~\ref{eq:2.5.18}式.
+	\end{proof}
+\end{enumerate}
+
+\subsection{贝塔分布}
+
+若随机变量$ X $的密度函数为
+
+\begin{equation}
+p(x)=\left\{\begin{array}{ll}
+{\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} x^{a-1}(1-x)^{b-1},} & { 0<x<1}\\ 
+{0,} & {\text{其它}}
+\end{array}
+\right. \label{eq:2.5.19}
+\end{equation}
+
+则称$ X $服从贝塔分布，记作 $X \sim B e(a, b)$ ，其中$ a>0，b>0 $都是形状参数.图~\ref{fig:2-5-6}给出几种典型的贝塔密度函数曲线.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../../Ptmst/figure/2-5-6}
+	\caption{贝塔密度函数曲线}
+	\label{fig:2-5-6}
+\end{figure}
+
+从上图可以看出：
+\begin{itemize}
+	\item $ a<1，b<1 $时，$ p（x） $是下凸的单峰函数.
+	\item $ a>1，b>1 $时，$ p（x） $是上凸的单峰函数.
+	\item $ a<1，b \geqslant 1 $时，$ p（x） $是下凸的单调减函数
+	\item $a \geqslant 1, b<1$ 时，$ p（x） $是下凸的单调增函数.
+	\item $ a=1，b=1 $时，$ p（x） $是常数函数，且$ Be（1，1）=U（0，1） $.
+\end{itemize}
+
+因为服从贝塔分布$ Be（a，b） $的随机变量是仅在区间$ （0，1） $取值的，所以不合格品率、机器的维修率、市场的占有率、射击的命中率等各种比率选用贝塔分布作为它们的概率分布是恰当的，只要选择合适的参数$ a $与$ b $即可.
+
+\subsubsection{贝塔分布$ Be（a，b） $的数学期望和方差}
+
+利用贝塔函数的性质，不难算得贝塔分布$ Be（a，b） $的数学期望为
+
+\[
+\begin{aligned} E(X) &=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \int_{0}^{1} x^{a}(1-x)^{b-1} \mathrm{d} x \\ &=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \cdot \frac{\Gamma(a+1) \Gamma(b)}{\Gamma(a+b+1)}=\frac{a}{a+b} \end{aligned}
+\]
+
+又因为
+
+\[
+\begin{aligned} E\left(X^{2}\right) &=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \int_{0}^{1} x^{a+1}(1-x)^{b-1} \mathrm{d} x=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \cdot \frac{\Gamma(a+2) \Gamma(b)}{\Gamma(a+b+2)} \\ &=\frac{a(a+1)}{(a+b)(a+b+1)} \end{aligned}
+\]
+
+由此得$ X $的方差为
+
+\[
+\operatorname{Var}(X)=\frac{a(a+1)}{(a+b)(a+b+1)}-\left(\frac{a}{a+b}\right)^{2}=\frac{a b}{(a+b)^{2}(a+b+1)}
+\]
+
+以下我们将常用分布的期望和方差以表格形式放在一起.
+
+% Table generated by Excel2LaTeX from sheet '1'
+\begin{table}[htbp]
+	\centering
+	\caption{常用分布的数学期望和方整}
+	\begin{tabular}{c|c|c|c}
+		\toprule
+		分布    & 分布列$ p_{k} $或分布密度$ P(x) $ & 期望    & 方差 \\
+		\midrule
+		$ 0-1 $分布 &    $p_{n}=p^{k}(1-p)^{1-k}, \quad k=0,1$   &   $p$    &  $p(1-p)$ \\
+		\midrule
+		二项分布 $b(n, p)$  &   $p_{k}=\left( \begin{array}{l}{n} \\ {k}\end{array}\right) p^{k}(1-p)^{n-k}, \quad k=0,1, \cdots, n$    &   $n p$    &  $n p(1-p)$ \\
+		\midrule
+		泊松分布 $P(\lambda)$  &   $p_{k}=\frac{\lambda^{k}}{k !} \mathrm{e}^{-\lambda}, \quad k=0,1, \cdots$    &   $\lambda$    &  $\lambda$ \\
+		\midrule
+		超几何分布 $h(n, N, M)$  &   $p_{k}=\frac{\left( \begin{array}{l}{M} \\ {k}\end{array}\right) \left( \begin{array}{l}{N-M} \\ {n-k}\end{array}\right)}{\left( \begin{array}{l}{N} \\ {n}\end{array}\right)}, \begin{array}{l}{k=0,1, \cdots, r} \\ {r=\min \{M, n\}}\end{array}$    &   $n \frac{M}{N}$    &  $\frac{n M(N-M)(N-n)}{N^{2}(N-1)}$ \\
+		\midrule
+		几何分布 $G e(p)$  &    $p_{k}=(1-p)^{k-1} p, \quad k=1,2, \cdots$   &   $\frac{1}{p}$    &  $\frac{1-p}{p^{2}}$ \\
+		\midrule
+		负二项分布 $N b(r, p)$  &   $p_{k}=\left( \begin{array}{l}{k-1} \\ {r-1}\end{array}\right)(1-p)^{k-x} p^{r}, \quad k=r, r+1, \cdots$    &   $\frac{r}{p}$    &  $\frac{r(1-p)}{p^{2}}$ \\
+		\midrule
+		征态分布 $N\left(\mu, \sigma^{2}\right)$   &    $p(x)=\frac{1}{\sqrt{2 \pi} \sigma} \exp \left\{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}\right\}, \quad-\infty<x<+\infty$   &   $\mu$    &  $\sigma^{2}$ \\
+		\midrule
+		均匀分布  &   $p(x)=\frac{1}{b-a}, \quad a<x<b$    &   $\frac{a+b}{2}$    &  $\frac{(b-a)^{2}}{12}$ \\
+		\midrule
+		指数分布 $E x p(\lambda)$   &   $p(x)=\lambda e^{-\lambda x}, \quad x \geqslant 0$    &   $\frac{1}{\lambda}$    &  $\frac{1}{\lambda^{2}}$ \\
+		\midrule
+		伽马分布 $G a(a, \lambda)$   &    $p(x)=\frac{\lambda^{a}}{\Gamma(\alpha)} x^{a-1} \mathrm{e}^{-\lambda x}, \quad x \geqslant 0$   &   $\frac{a}{\lambda}$    &  $\frac{\alpha}{\lambda^{2}}$\\
+		\midrule
+		$\chi^{2}(n)$ 分布    &   $p(x)=\frac{x^{n / 2-1} \mathrm{e}^{-x / 2}}{\Gamma(n / 2) 2^{n / 2}}, \quad x \geqslant 0$     &   $n$    &  2$n$ \\
+		\midrule
+		贝塔分布 $B e(a, b)$  &    $p(x)=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} x^{a-1}(1 \quad x)^{b-1}, \quad 0<x<1$   &    $\frac{a}{a+b}$   &  $\frac{a b}{(a+b)^{2}(a+b+1)}$ \\\bottomrule
+		\multicolumn{2}{c}{注：表中仅列出各分布密度函数的非零区城.} &       &  \\
+	\end{tabular}%
+	\label{tab:2.5.1}%
+\end{table}%
+
+
+
+\begin{center}
+	\textbf{习题2.5}
+\end{center}
+
+1.设随机变量$ X $服从区间$ （2，5） $上的均匀分布，求对$ X $进行3次独立观测中，至少有2次的观测值大于3的概率。
+
+2.在$ （0，1） $上任取一点记为$ X $，试求 $P\left(X^{2}-\frac{3}{4} X+\frac{1}{8} \geqslant 0\right)$ .
+
+3.设$ K $服从$ （1，6） $上的均匀分布，求方程 $x^{2}+K x+1=0$ 有实根的概率.
+
+4.设流经一个 $2 \Omega$ 电阻上的电流I是一个随机变量，它均匀分布在$ 9A $至$ 11A $之间.试求此电阻上消耗的平均功率，其中功率 $W=2 I^{2}$ .
+
+5.某种圆盘的直径在区间$ （a，b） $上跟从均匀分布，试求此种圆盘的平均面积.
+
+6.设某种商品每周的需求量X服从区间$ （10，30） $上均匀分布，而商店进货数为区间$ （10，30） $中的某一整数，商店每销售1单位商品可获利500元；若供大于求则削价处理，每处理1单位商品亏损100元；若供不应求，则可从外部调剂供应，此时每1单位商品仅获利300元，为使商店所获利润期望值不少于9280元，试确定最少进货量。
+
+7.已知 $X \sim E x p(\lambda)$ ，试在 $\lambda=0.1$ 下求 $P(5 \leqslant X \leqslant 20)$ .
+
+8.统计调查表明，英格兰在1875年至1951年期间，在矿山发生10人或10人以上死亡的两次事故之间的时间$ T $（以日计）服从均值为241的指数分布，试求$ P（50<T<100） $.
+
+9.若一次电话通话时间$ X $（分钟）服从参数为0.25的指数分布，试求一次通话的平均时间.
+
+10.某种设备的使用寿命$ X $（以年计）跟从指数分布，其平均寿命为4年.制造此种设备的厂家规定，若设备在使用一年之内损坏，则可以予以调换.如果设备制造厂每售出一台设备可赢利100元，而调换一台设备制造厂需花费300元.试求每台设备的平均利润.
+
+11.设顾客在某银行的窗口等待的时间$ X $（以$ min $计）服从指数分布，其密度函数为
+
+\[
+p(x)=\left\{
+\begin{array}{ll}
+{\frac{1}{5} e^{-\frac{x}{5}}} & {x>0} \\ 
+{0,}  &  {\text{其它}}
+\end{array}\right.
+\]
+某顾客在窗口等待服务，若超过$ 10min $，他就离开.他一个月要到银行5次，以$ Y $表示一个月内他未等到服务而离开窗口的次数，试求 $P(Y \geqslant 1)$ .
+
+12.某仪器装了3个独立工作的同型号电子元件，其寿命（单位：$ h $）都服从同一指数分布，密度函数为
+
+\[
+p(x)=\left\{\begin{array}{ll}
+{\frac{1}{600} e^{-\frac{x}{600}},} & {x>0 ;} \\ 
+{0，} & {\text{其它.}}
+\end{array}\right.
+\]
+试求：此仪器在最初使用的$ 200h $内，至少有一个此种电子元件损坏的概率.
+
+13.设随机变量$ X $的密度函数为
+
+\[
+p(x)=\left\{ \begin{array}{ll}
+{\lambda \mathrm{e}^{-\lambda x},} & {x>0} \\ 
+{0,} & {x \leqslant 0}
+\end{array}\right. \quad(\lambda>0)
+\]
+
+试求$ k $，使得$ P（X>k）=0.5 $.
+
+14.设随机变量$ X $的密度函数为
+
+\[
+p(x)=\left\{\begin{array}{ll}
+{1 / 3,} & {0 \leqslant x \leqslant 1} \\ 
+{2 / 9,} & {3 \leqslant x \leqslant 6} \\ 
+{0} & {\text{其它}}
+\end{array}
+\right.
+\]
+
+若 $P(X \geqslant k)=2 / 3$ ，试求$ k $的取值范围，
+
+15.写出以下正态分布的均值和标准差.
+
+\[
+p_{1}(x)=\frac{1}{\sqrt{\pi}} e^{\left(x^{2}+4 x+4\right)}, \quad p_{2}(x)=\sqrt{\frac{2}{\pi}} \mathrm{e}^{-2 x^{2}}, \quad p_{3}(x)=\frac{1}{\sqrt{\pi}} \mathrm{e}^{-x^{2}}
+\]
+
+16.某地区18岁女青年的血压X（收缩压，以$ mm-Hg $计）服从$ N（110，122） $.试求该地区18岁女育年的血压在100至120的可能性有多大？
+
+17.某地区成年男子的体重$ X（kg） $服从正态分布 $N\left(\mu, d^{2}\right)$ .若已知 $P(X \leqslant 70)=0.5 ， P(X \leqslant 60)=0.25 $ .
+\begin{enumerate}
+	\item 求应 $\mu$ 与 $\sigma$ 各为多少？
+	\item 若在这个地区随机地选出5名成年男子，问其中至少有两人体重超过$ 65kg $的概率是多少？
+\end{enumerate}
+
+18.由某机器生产的螺栓的长度$ （cm） $服从正态分布$ N（l0.05，0.062） $，若规定长度在范国 $10.05 \pm 0.12$ 内为合格品，求螺栓不合格的概率.
+
+19.某地抽样调查结果表明，考生的外语成绩（百分制）近似地凝从 $\mu=72$ 的正态分布，已知96分以上的人数占总数的$ 2.3\% $，试求考生的成绩在60分至84分之间的概率.
+
+20.设$X \sim N\left(3,2^{2}\right)$
+
+\begin{enumerate}
+	\item 求 $P(2<X \leqslant 5)$ ;
+	\item 求 $P(|X|>2)$ ;
+	\item 确定$ c $使得$ P(X>d) \geqslant 0.9  $ , 可$ d $至多为多少？
+\end{enumerate}
+
+21.若 $X \sim N\left(4,3^{2}\right)$ ,
+\begin{enumerate}
+	\item 求 $P(-2<X \leqslant 10)$ ;
+	\item 求$ P（X>3） $；
+	\item 设$ d $满足 $P(X>d)  \geqslant 0.9$ , 问$ d $至多为多少？
+\end{enumerate}
+
+22.测量到某一目标的距离时，发生的随机误差$ X（m） $具有度函数
+
+\[
+p(x)=\frac{1}{40 \sqrt{2 \pi}} \mathrm{e}^{\frac{(x-20)^{2}}{3200}}, \quad-\infty<x<+\infty
+\]
+求在三次测量中，至少有一次误差的绝对值不超过$ 30m $的概率.
+
+23.从甲地飞往乙地的航班，每天上午$ 10：10 $起飞，飞行时间$ X $服从均值是4h，标准差是$ 20min $的正态分布.
+
+\begin{enumerate}
+	\item 该机在下午$ 2：30 $以后到达乙地的概率是多少？
+	\item 该机在下午$ 2：20 $以前到达乙地的概率是多少？
+	\item 该机在下午$ 1：50 $至$ 2：30 $之间到达乙地的概率是多少？
+\end{enumerate}
+
+24.某单位招聘员工，共有10000人报考假设考试成绩服从正态分布，且已知90分以上有359人，60分以下有1151人.现按考试成绩从高分到低分依次录用2500人，试问被录用者中最低分为多少？
+
+25.设随机变量$ X $服从正态分布$ N（60，32） $，试求实数$ a，b，c，d $使得$ X $落在如下五个区间中的概率之比为$ 7：24：38：24：7 $.
+（-o，a]，（a，b]，（b，c]，（c，d]，（d，+o）.
+26.设随机变量X与Y均服从正态分布，X服从N（u，42），Y服从N（u，52），试比较以下p1和pa的大小.
+
+\[
+(-\infty, a], \quad(a, b], \quad(b, c], \quad(c, d], \quad(d,+\infty)
+\]
+
+27.设随机变量$ X $服从正态分布 $N\left(0, \sigma^{2}\right)$ ，若 $P(|X|>k)=0.1$ ，试求$ P（X<k） $.
+
+28.设随机变量$ X $服从正态分布 $N\left(\mu, \sigma^{2}\right)$ ，试问：随着 $\sigma$ 的增大，概率 $P(|X-\mu|<\sigma)$ 是如何变化的？
+
+29.设随机变量$ X $服从参数为$ a=160 $和 $\sigma$ 的正态分布，若要求 $P(120<X \leqslant 200) \geqslant 0.90 $ ，允许$ a $最大为多少？
+
+30.设随机变量 $X \sim N\left(\mu, \sigma^{2}\right)$ ，求 $E | X-\mu | $ 
+
+31.设 $X \sim N\left(0, \sigma^{2}\right)$ ，证明： $E_{1} X |=\sigma \sqrt{\frac{2}{\pi}}$ .
+
+32.设随机变量X服从伽玛分布 $G a(2,0.5)$ ，试求$ P（X<4） $.
+
+33.某地区漏缴税款的比例$ X $服从参数 $ a=2，b=9 $ 的贝塔分布，试求此比例小于$ 10\% $的概率及平均漏缴税款的比例.
+
+34.某班级学生中数学成绩不及格的比率$ x $服从$ a=1，b=4 $的贝塔分布，试求$ P（X>E（X）） $.
+
+\section{随机变量高么的分布}
+
+设$ y=g（x） $是定义在直线上的一个函数，$ X $是一个随机变量，那么$ Y=g（X） $作为X的函数，同样也是一个随机变量.我们要研究的问题是：已知随机变量$ X $的分布，如何求出另一个随机变量$ Y=g（X） $的分布.
+
+寻求随机变量函数的分布，是概率论的基本技巧，在概率论与数理统计中经常要用到这些技巧.下面对离散和连续两种场合分别讨论随机变量函数的分布.
