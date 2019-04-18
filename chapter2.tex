@@ -3379,3 +3379,785 @@ p(x)=\frac{1}{40 \sqrt{2 \pi}} \mathrm{e}^{\frac{(x-20)^{2}}{3200}}, \quad-\inft
 设$ y=g（x） $是定义在直线上的一个函数，$ X $是一个随机变量，那么$ Y=g（X） $作为X的函数，同样也是一个随机变量.我们要研究的问题是：已知随机变量$ X $的分布，如何求出另一个随机变量$ Y=g（X） $的分布.
 
 寻求随机变量函数的分布，是概率论的基本技巧，在概率论与数理统计中经常要用到这些技巧.下面对离散和连续两种场合分别讨论随机变量函数的分布.
+
+\subsubsection{离散随机变最函数的分布}
+
+离散随机变量函数的分布是比较容易求得的.设$ X $是离散随机变量，$ X $的分布列为
+
+\[
+\begin{array}{c|ccccc}
+{X} & {x_{1}} & {x_{2}} & {\dots} & {x_{n}} & {\dots} \\ \hline 
+P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\right)} & {\cdots}
+\end{array}
+\]
+
+则$ Y=g（X） $也是一个离散随机变量，此时$ Y $的分布列就可很简单地表示为
+
+\[
+\begin{array}{c|ccccc}
+{X} & {g(x_{1})} & {g(x_{2})} & {\dots} & {g(x_{n})} & {\dots} \\ \hline 
+P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\right)} & {\cdots}
+\end{array}
+\]
+
+当 $g\left(x_{1}\right), g\left(x_{2}\right), \cdots, g\left(x_{n}\right), \cdots$  中有某些值相等时，则把那些相等的值分别合并，并把对应的概率相加即可.
+
+\begin{example}
+	已知随机变量$ X $的分布列如下，求$ Y=x^{2}+X $的分布列.
+	
+	\[
+	\begin{array}{c|ccccc}
+	x & {-2} & {-1} & {0} & {1} & {2} \\ \midrule
+	P & {0.2} & {0.1} & {0.1} & {0.3} & {0.3} \\ 
+	\end{array}
+	\]
+	
+	\textbf{解} $ Y=x^{2}+X $的分布列为
+	
+	\[
+	\begin{array}{c|ccccc}
+	Y & {2} & {0} & {0} & {2} & {6} \\ \hline 
+	P & {0.2} & {0.1} & {0.1} & {0.3} & {0.3}
+	\end{array}
+	\]
+	
+	再对相等的值合并，得
+	
+	\[
+	\begin{array}{c|ccc}
+	Y & {0} & {2} & {6} \\ \hline 
+	P & {0.2} & {0.5} & {0.3} \\
+	\end{array}
+	\]
+	
+\end{example}
+
+\subsection{连续随机变量函数的分布}
+
+求离散随机变量函数的分布是很简单的事.而对连续随机变量$ X $，我们分以下几种情况讨论$ Y=g（X） $的分布.
+
+\subsubsection{当$ g(x) $为严格单调时}
+
+在这种情况下有以下定理.
+
+\begin{theorem}{}{}
+	设$ X $是连续随机变量，其密度函数为$ p_{x}（x） $ .$ Y=g（X） $是另一个随机变量，若$ y=g（x） $严格单调，其反函数$ h（y） $有连续导函数，则$ Y=g（X） $的密度函数为
+	
+	\begin{equation}
+	p_{Y}(y)=\left\{
+	\begin{array}{ll}
+	{p_{X}[h(y)]\left|h^{\prime}(y)\right|,} & { \mathrm{a}<\mathrm{y}<\mathrm{b}} \\ 
+	{0,} & {\text{其它}}
+	\end{array}\right. \label{eq:2.6.1}
+	\end{equation}
+	
+	其中 $a=\min \{g(-\infty), g(+\infty) |, b=\max \{g(-\infty), g(+\infty)\}$ .
+\end{theorem}
+
+\begin{proof}
+	证明不妨设$ g（x） $是严格单调增函数，这时它的反函数$ h（y） $也是严格单调增函数，且$ h'（y）>0 $.记 $a=g(-\infty), b=g(+\infty)$ ，这意味着$ y=g（x） $仅在区间$ （a，b） $取值，于是
+	
+	当$ y<a $时，
+	
+	\[
+	F_{\mathrm{Y}}(y)=P(Y \leqslant y)=0
+	\]
+	
+	当$ y>b $时，
+	
+	\[
+	F_{\mathrm{Y}}(y)=P(Y \leqslant y)=1
+	\]0
+	
+	当 $a \leqslant y \leqslant b$ 时，
+	
+	\[
+	\begin{aligned} F_{Y}(y) &=P(Y \leqslant y)=P(g(X) \leqslant y) \\ &=P(X \leqslant h(y))=\int_{-\infty}^{h(y)} p(x) \mathrm{d} x \end{aligned}
+	\]
+	
+	由此得$ Y $的密度函数为
+	
+	\[
+	p_{\mathrm{Y}}(y)=\left\{
+	\begin{array}{ll}
+	{p_{X}[h(y)] h^{\prime}(y), } & {a<y<b} \\ 
+	{0} & {\text{其它}}
+	\end{array}\right.
+	\]
+	
+	同理可证当$ g（x） $是严格单调减函数时，结论也成立.但此时要注意$ h’（y）<0 $，故要加绝对值符号，这时 $a=g(+\infty), b=g(-\infty)$ .
+	
+	利用以上定理，我们来证明几个很有用的结论，并用定理形式表示.
+\end{proof}
+
+\begin{theorem}
+	设随机变量$ X $服从正态分布 $N\left(\mu, \sigma^{2}\right)$ ，则当 $a \neq 0$ 时，有$ Y= a X+b \sim N\left(a \mu+b, a^{2} \sigma^{2}\right) $
+\end{theorem}
+
+\begin{proof}
+	当$ a>0 $时，$ Y=ax+b $是严格增函数，仍在 $(-\infty,+\infty)$ 上取值，其反函数为$ X=（Y-b）/a $，由定理2.6.1可得
+	
+	\[
+	\begin{aligned} p_{Y}(y) &=p_{X}\left(\frac{y-b}{a}\right) \frac{1}{a}=\frac{1}{\sqrt{2 \pi} \sigma} \exp \left\{-\frac{1}{2 \sigma^{2}}\left(\frac{y-b}{a}-\mu\right)^{2}\right\} \frac{1}{a} \\ &=\frac{1}{\sqrt{2 \pi}(a \sigma)} \exp \left\{-\frac{(y-a \mu-b)^{2}}{2 a^{2} \sigma^{2}}\right\} \end{aligned}
+	\]
+	
+	这就是正态分布 $N\left(a \mu+b, a^{2} \sigma^{2}\right)$ 的密度函数.
+	
+	当$ a<0 $时，$ Y=aX+b $是严格减函数，仍在 $(-\infty,+\infty)$ 上取值，其反函数为$ X=（Y-b）/a $，由定理2.6.1可得
+	
+	\[
+	p_{Y}(y)=\frac{1}{\sqrt{2 \pi}|a| \sigma} \exp \left\{-\frac{(y-a \mu-b)^{2}}{2 a^{2} \sigma^{2}}\right\}
+	\]
+	
+	这是正态分布 $N\left(a \mu+b, a^{2} \sigma^{2}\right)$ 的密度函数，结论得证.
+	
+\end{proof}
+
+这个定理表明：正态变量的线性变换仍为正态变量，其数学期望和方差可直接从线性变换求得.若取 $a=1 / \sigma, b=-\mu / \sigma$ ，则 $Y=a X+b \sim N(0,1)$ ，此即上一节的定理2.5.1.
+
+\begin{example}
+	\begin{enumerate}
+		\item 设随机变量 $X \sim N\left(0,2^{2}\right)$ ，试求$ Y=3X+5 $的分布。
+		\item 设随机变量 $X \sim N\left(0,2^{2}\right)$ ，试求$ Y=-X $的分布.
+	\end{enumerate}
+	
+	\textbf{解}
+	
+	\begin{enumerate}
+		\item 由定理2.6.2知$ Y $仍是正态变量，其数学期望和方差分别为
+		\[
+		\begin{array}{l}{E(Y)=E(3 X+5)=3 \times 10+5=35} \\ {\operatorname{Var}(Y)=\operatorname{Var}(3 X+5)=9 \times 2^{2}=36}\end{array}
+		\]
+		所以$ Y=3X+5 $的分布为 $N\left(35,6^{2}\right)$ .
+		\item $ Y $仍是正态变量，其数学期望和方差分别为
+		\[
+		\begin{array}{l}{E(Y)=E(-X)=0} \\ {\operatorname{Var}(Y)=\operatorname{Var}(-X)=2^{2}}\end{array}
+		\]
+		所以$ Y=-X $的分布仍为 $N\left(0,2^{2}\right)$ .这表明$ X $与$ -X $有相同的分布，但这两个随机变量是不相等的.所以我们要明确，分布相同与随机变量相等是两个完全不同的概念.
+	\end{enumerate}
+\end{example}
+
+\begin{theorem}
+	(对数正态分布)设随机变量 $X \sim N\left(\mu, \sigma^{2}\right)$ ，则 $Y=e^{x}$ 的概率密度函数为
+	
+	\begin{equation}
+	p_{Y}(y)=\left\{\begin{array}{ll}{\frac{1}{\sqrt{2 \pi} y} \exp \left\{-\frac{(\ln y-\mu)^{2}}{2 \sigma^{2}}\right\},} & {x>0} \\ {0,} & {x \leqslant 0}\end{array}\right. \label{eq:2.6.2}
+	\end{equation}
+\end{theorem}
+
+\begin{proof}
+	$y=e^{x}$是严格增函数，它仅在 $(0,+\infty)$ 上取值，其反函数为 $x=\ln y$ ，由定理2.6.1可得
+	
+	当 $y \leqslant 0$ 时， $F_{Y}(y)=0$ ，从而 $p_{Y}(y)=0$ .
+	
+	当$ y>0 $时，$ Y $的密度函数为
+	
+	\[
+	p_{Y}(y)=\frac{1}{\sqrt{2 \pi \sigma}} \exp \left\{-\frac{(\ln y-\mu)^{2}}{2 \sigma^{2}}\right\} \frac{1}{y}=\frac{1}{\sqrt{2 \pi} y \sigma} \exp \left\{-\frac{(\ln y-\mu)^{2}}{2 \sigma^{2}}\right\}
+	\]
+	
+	定理得证.
+\end{proof} 
+
+
+这个分布被称为对数正态分布，记为 $L N\left(\mu, \sigma^{2}\right)$ ，其中 $\mu$ 称为对数均值， $\mathbf{\sigma}$ 称为对数方差.对数正态分布 $L N\left(\mu, \sigma^{2}\right)$ 也是一个常用分布，实际中有不少随机变量服从对数正态分布，譬如
+
+\begin{itemize}
+	\item 绝缘材料的寿命服从对数正态分布.
+	\item 设备故障的维修时间服从对数正态分布。
+	\item 家中两个小孩的年龄差服从对数正态分布.
+\end{itemize}
+
+\begin{theorem}
+	设随机变量$ X $服从伽玛分布 $\operatorname{Ga}(\alpha, \lambda)$ ，则当$ k>0 $时，有$ Y=kX~Ga（a，1/k） $.
+\end{theorem}
+
+\begin{proof}
+	因为$ k>0 $，所以$ y=kx $是严格增函数，它仍在 $(0,+\infty)$ 上取值，其反函数为$ x=y/k $，由定理2.6.1可得
+	
+	当$ y<0 $时， $p_{Y}(y)=0$ .
+	当 $y \geqslant 0$ 时，
+	
+	\[
+	p_{Y}(y)=p_{X}\left(\frac{y}{k}\right) \frac{1}{k}=\frac{\lambda^{a}}{k \Gamma(\alpha)}\left(\frac{y}{k}\right)^{a-1} \exp \left\{-\lambda \frac{y}{k}\right\}=\frac{(\lambda / k)^{a}}{\Gamma(\alpha)} y^{a-1} \exp \left\{-\frac{\lambda}{k} y\right\}
+	\]
+	
+	此即 $G a(\alpha, \lambda / k)$ 的密度函数，结论得证.
+\end{proof}
+
+这个结论是很有用的，譬如当 $X \sim G a(\alpha, \lambda)$ ，则 $2 \lambda X \sim G a(\alpha, 1 / 2)= \chi^{2}(2 \alpha) $ ，即任一伽玛分布可转化为 $\chi^{2}$ 分布。
+
+\begin{theorem}{}{}
+	若$ X $的分布函数 $F_{X}(x)$ 为严格单调增的连续函数，其反函数 $F_{X}^{-1}(y)$ 存在，则 $Y=F_{X}(X)$ 服从$ （0，1） $上的均匀分布U$ （0，1） $.
+\end{theorem}
+
+\begin{proof}
+	下求 $Y=F_{X}(X)$ 的分布函数.由于分布函数 $ F_{X}(X)$ 仅在$ [0，1] $区间上取值，故
+	
+	当$ y<0 $时，因为 $\left\{F_{X}(X) \leqslant y\right.\}$ 是不可能事件，所以 \[
+	F_{\mathrm{Y}}(y)=P(Y \leqslant y)=P\left(F_{X}(X) \leqslant y\right)=0
+	\]
+	
+	当 $0 \leqslant y<1$ 时，有
+	
+	\[
+	F_{\mathrm{Y}}(y)=P(Y \leqslant y)=P\left(F_{\mathrm{X}}(X) \leqslant y\right)=P\left(X \leqslant F_{\mathrm{x}}^{-1}(y)\right)=F_{\mathrm{X}}\left(F^{-1}(y)\right)=y
+	\]
+	
+	当 $y \geqslant 1$ 时，因为 $\left\{F_{X}(X) \leqslant y\right\}$ 是必然事件，所以
+	
+	\[
+	F_{Y}(y)=P(Y \leqslant y)=P\left(F_{X}\langle X) \leqslant y\right)=1
+	\]
+	
+	综上所述， $Y=F_{X}(X)$ 的分布函数为
+	
+	\[
+	F_{Y}(y)=\left\{\begin{array}{ll}{0,} & {y<0} \\ {y,} & {0 \leqslant y<1} \\ {1,} & {y \geqslant 1}\end{array}\right.
+	\]
+	
+	这正是$ （0，1） $上均匀分布的分布函数，所以 $Y \sim U(0,1)$ .
+\end{proof}
+
+\subsubsection{当$ g（x） $为其他形式时}
+
+以上定理2.6.1在使用时的确很方便，但它要求的条件“$ g（x） $严格单调，反函数连续可微”太高，有些场合就无法满足这个条件，例如$ Y=X^{2} $就无法满足条件.对于无法满足定理2.6.1条件的情况，可以先计算$ Y=g（x） $的分布函数，使其用$ X $的分布函数表示，然后再用求导的方法求出$ Y $的密度函数.下面用两个例子来说明此种方法。
+
+\begin{example}
+	设随机变量$ X $服从标准正态分布$ N（0，1） $，试求了$ Y=X^{2} $的分布.
+	
+	\textbf{解} 解先求$ Y $的分布函数 $F_{Y}(y)$ .由于 $Y=X^{2} \geqslant 0$ ，故当 $y \leqslant 0$ 时，有 $F_{Y}(y)=0$ ，从面 $p_{\mathrm{Y}}(y)=0$ .当$ y>0 $时，有
+	
+	\[
+	F_{Y}(y)=P(Y \leqslant y)=P\left(X^{2} \leqslant y\right)=P(-\sqrt{y} \leqslant X \leqslant \sqrt{y})=2 \Phi(\sqrt{y})-1
+	\]
+	
+	因此$ Y $的分布函数为
+	
+	\[
+	F_{Y}(y)=\left\{\begin{array}{cl}{2 \Phi(\sqrt{y})-1,} & {y>0} \\ {0,} & {y \leqslant 0}\end{array}\right.
+	\]
+	
+	再用求导的方法求出$ Y $的密度函数
+	
+	\[
+	\begin{array}{ll}
+	{p_{\mathrm{Y}}(y)} & {=\left\{
+		\begin{array}{cc}
+		{\varphi(\sqrt{y}) y^{\frac{1}{2}},} & {y>0} \\ 
+		{0,} & {y \leqslant 0}
+		\end{array}\right.}\\
+	{} & {=\left\{
+		\begin{array}{ll}
+		{\frac{1}{\sqrt{2 \pi}} y^{-\frac{1}{2}} \mathrm{e}^{-\frac{y}{2}},} &  {y>0} \\ 
+		{0,} &  {\quad y \leqslant 0}
+		\end{array}\right.}
+	\end{array}
+	\]
+	
+	对照 $\chi^{2}$ 分布的密度函数，可以看出 $Y \sim \chi^{2}(1)$ .	
+\end{example}
+
+\begin{example}
+	设随机变量$ X $的密度函数为
+	
+	\[
+	p_{X}(x)=\left\{\begin{array}{ll}
+	{\frac{2 x}{\pi^{2}},} & {0<x<\pi} \\ 
+	{0,} & {\text{其它}}
+	\end{array}\right.
+	\]
+	
+	求 $Y=\sin X$ 的密度函数 $p_{\mathrm{Y}}(y)$ .
+	\textbf{解} 由于$ X $在$ (0, \pi) $内取值，所以 $\mathbf{Y}=\sin \boldsymbol{X}$ 的可能取值区间为$ （0，1） $.在$ Y $的可能取值区间外， $p_{Y}(y)=0$ .
+	当$ 0<y<1 $时，使 $\{ Y \leqslant y \}$ 的$ x $取值范围为两个互不相交的区间，见图~\ref{fig:2-6-1}.
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{2-6-1}
+		\caption{$y=\sin x$的图形}
+		\label{fig:2-6-1}
+	\end{figure}
+	
+	\[
+	\begin{array}{l}{\Delta_{1}(y)=\left[0, x_{1}\right]=[0, \arcsin y]} \\ {\Delta_{2}(y)=\left[x_{2}, \pi\right]=[\pi-\arcsin y, \pi]}\end{array}
+	\]
+	
+	于是
+	
+	\[
+	\begin{aligned} | Y \leqslant y \} &=| X \in \Delta_{1}(y) \} \cup\left|X \in \Delta_{2}(y)\right| \\ &=\{0 \leqslant X \leqslant \arcsin y\} \cup\{\pi-\arcsin y \leqslant X \leqslant \kappa\} \end{aligned}
+	\]
+	
+	故
+	
+	\[
+	\begin{array}{ll}
+	{F_{\mathrm{Y}}(y)} & {=P(Y \leqslant y)=\int_{0}^{\arcsin y} p_{X}(x) \mathrm{d} x+\int_{x-\text { arcsin } y}^{\pi} p_{X}(x) \mathrm{d} x} \\ 
+	{} & {=\int_{0}^{\arcsin } \frac{2 x}{\pi^{2}} \mathrm{d} x+\int_{\pi-\arcsin y}^{\pi} \frac{2 x}{x^{2}} \mathrm{d} x}
+	\end{array}
+	\]
+	
+	在上式两端对$ y $求导，得
+	
+	\[
+	p_{Y}(y)=\frac{2 \arcsin y}{\pi^{2} \sqrt{1-y^{2}}}+\frac{2(\pi-\arcsin y)}{\pi^{2} \sqrt{1-y^{2}}}=\frac{2}{\pi \sqrt{1-y^{2}}}, \quad 0<y<1
+	\]
+\end{example}
+
+\begin{center}
+	\textbf{习题2.6}
+\end{center}
+
+1.已知离散随机变量$ X $的分布列为
+
+\[
+\begin{array}{c|ccccc}
+X & {-2} & {-1} & {0} & {1} & {3} \\ \hline 
+P & {\frac{1}{5}} & {\frac{1}{6}} & {\frac{1}{5}} & {\frac{1}{15}} & {\frac{11}{30}}
+\end{array}
+\]
+
+试求 $Y=X^{2}$ 与 $z=|X|$ 的分布列.
+
+2.已知随机变量$ X $的密度函数为
+
+\[
+p(x)=\frac{2}{\pi} \cdot \frac{1}{\mathrm{e}^{x}+\mathrm{e}^{-x}}, \quad-\infty<x<+\infty
+\]
+
+试求随机变量$ Y=g（X） $的概率分布，其中
+\[
+g(x)=\left\{
+\begin{array}{ll}
+{-1} & {\text{当} x<0}\\ 
+{1} & {\text{当} x \geqslant 0}
+\end{array}\right.
+\]
+
+3.设随机变量$ X $服从$ （-1，2） $上的均匀分布，记
+
+\[
+Y=\left\{\begin{array}{ll}{1,} & {X \geqslant 0} \\ {-1,} & {X<0}\end{array}\right.
+\]
+
+试求$ Y $的分布列.
+
+4.设 $X \sim U(0,1)$ ，试求$ 1-X $的分布.
+
+5.设随机变量$ X $服从 $(-\pi / 2, \pi / 2)$ 上的均匀分布，求随机变量 $Y=\cos X$ 的密度函数 $p_{Y}(y)$ .
+
+6、设圆的直径服从区间$ （0，1） $上的均匀分布，求圆的面积的密度函数.
+
+7.设随机变量$ x $服从区间$ （1，2） $上的均匀分布，试求 $Y=e^{2 X}$ 的密度函数.
+
+8.设随机变量$ x $服从区间$ （0，2） $上的均匀分布，
+
+\begin{itemize}
+	\item 求$ Y=X^{2} $的密度函数.
+	\item $ P（Y<2） $.
+\end{itemize}
+
+9.设随机变量$ x $凝从区间$ （0，3） $上的均匀分布，求$ Y=5X+2 $的密度函数.
+
+10.设随机变量$ X $服从$ （0，1） $上的均匀分布，试求以下$ Y $的密度函数
+
+\begin{enumerate}
+	\item $ Y=-2\ln x $
+	\item $ Y=3X+1 $
+	\item $ Y=e^{X} $
+	\item $ Y=|\ln X| $
+\end{enumerate}
+
+11.设随机变量X的密度函数为
+
+\[
+p_{X}(x)=\left\{
+\begin{array}{ll}
+{\frac{3}{2} x^{2},} & {-1<x<1} \\ 
+{0,} & {\text{其它}}
+\end{array}\right.
+\]
+
+试求下列随机变量的分布：
+
+\begin{enumerate}
+	\item $Y_{1}=3 X$
+	\item $Y_{2}=3-X$
+	\item $Y_{3}=X^{2}$
+\end{enumerate}
+
+12.设 $X \sim N\left(0, \sigma^{2}\right)$ ，求$ Y=X^{2} $的分布.
+
+13.设 $X \sim \mathrm{N}\left(\mu, \sigma^{2}\right)$ ，求 $Y=e^{x}$ 的数学期望与方差.
+
+14.设随机变量X服从标准正态分布$ N（0，1） $，试求以下$ Y $的密度函数
+
+\begin{enumerate}
+	\item $Y=|X|$
+	\item $Y=2 X^{2}+1$
+\end{enumerate}
+
+15.设随机变量$ X $的密度函数为
+
+\[
+p(x)=\left\{
+\begin{array}{ll}
+{e^{-x},} & {\text{若} x>0} \\ 
+{0,} & {\text{若} x \leqslant 0}
+\end{array}\right.
+\]
+
+试求以下Y的密度函数
+\begin{enumerate}
+	\item $Y=2 X+1$
+	\item $\mathbf{Y}=\mathbf{e}^{X}$
+	\item $Y=X^{2}$
+\end{enumerate}
+
+16.设随机变量$ X $服从参数为2的指数分布，试证 $Y_{1}=\mathrm{e}^{-2 X}$ 和 $Y_{2}=1-\mathrm{e}^{-2 X}$ 都服从区间$ （0，1） $上的均匀分布。
+
+17.设 $Y \sim L N\left(\mu, \sigma^{2}\right)$ ，试证： $: X=\ln Y \sim N\left(\mu, \sigma^{2}\right)$ .
+
+18.设 $Y-L N\left(5,0.12^{2}\right)$ ，试求 $P(Y<188.7)$ .
+
+\section{分布的其他持征款}
+
+数学期望和方差是随机变量最重要的两个特征数.此外，随机变量还有一些其他的特征数，以下逐一给出它们的定义.
+
+\subsection{k阶矩}
+
+\begin{definition}{}{}
+	设$ X $为随机变量，$ k $为正整数.如果以下的数学期望都存在，则称
+	
+	\begin{equation}
+	\mu_{k}=E\left(X^{k}\right) \label{eq:2.7.1}
+	\end{equation}
+	为$ X $的$ k $阶原点矩.称
+	
+	\begin{equation}
+	\nu_{k}=E(X-E(X))^{k} \label{eq:2.7.2}
+	\end{equation}
+	为$ X $的$ k $阶中心矩.
+\end{definition}
+
+
+显然，一阶原点矩就是数学期望，二阶中心矩就是方差.由于 $|X|^{k-1} \leqslant |X|^{k}+1 $ ，故$ k $阶矩存在时，$ k-1 $阶矩也存在，从而低于$ k $的各阶矩都存在.
+
+中心矩和原点矩之间有一个简单的关系，事实上
+
+\[
+v_{k}=E(X-E(X))^{k}=E\left(X-\mu_{1}\right)^{k}=\sum_{i=0}^{k} \left( \begin{array}{l}{k} \\ {i}\end{array}\right) \mu_{i}\left(-\mu_{1}\right)^{k-i}
+\]
+
+故前四阶中心矩可分别用原点矩表示如下：
+
+\[
+\begin{array}{l}{v_{1}=0} \\ {v_{2}=\mu_{2}-\mu_{1}^{2}} \\ {v_{3}=\mu_{3}-3 \mu_{2} \mu_{1}+2 \mu_{1}^{3}} \\ {v_{4}=\mu_{4}-4 \mu_{3} \mu_{1}+6 \mu_{2} \mu_{1}^{2}-3 \mu_{1}^{4}}\end{array}
+\]
+
+\begin{example}
+	设随机变量 $X \sim N\left(0, \sigma^{2}\right)$ ，则
+	
+	\[
+	\begin{aligned} 
+	\mu_{k} &=E\left(X^{k}\right)=\frac{1}{\sqrt{2 \pi} \sigma} \int_{-\infty}^{+\infty} x^{k} \exp \left\{-\frac{x^{2}}{2 \sigma^{2}}\right\} \mathrm{d} x \\ 
+	&=\frac{\sigma^{k}}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty} u^{k} \exp \left\{-\frac{u^{2}}{2}\right\} \mathrm{d} u 
+	\end{aligned}
+	\]
+	
+	在$ k $为奇数时，上述被积函数是奇函数，故
+	
+	\[
+	u_{k}=0, k=1,3,5, \cdots
+	\]
+	
+	在$ k $为偶数时，上述被积函数是偶函数，再利用变换 $z=u^{2} / 2$ ，可得
+	
+	\[
+	\begin{aligned} \mu_{k} &=\sqrt{\frac{2}{\pi}} \sigma^{k} 2^{(k-1) / 2} \int_{0}^{+\infty} z^{(k-1) / 2} \mathrm{e}^{-z} \mathrm{d} z=\sqrt{\frac{2}{\pi}} \sigma^{k} 2^{(k-1) / 2} \Gamma\left(\frac{k+1}{2}\right) \\ &=\sigma^{k}(k-1)(k-3) \cdots 1, \quad k=2,4,6, \cdots \end{aligned}
+	\]
+	
+	故 $\mathrm{N}\left(0, \sigma^{2}\right)$ 分布的前四阶原点矩为
+	
+	\[
+	\mu_{1}=0, \quad \mu_{2}=\sigma^{2}, \quad \mu_{3}=0, \quad \mu_{4}=3 \sigma^{4}
+	\]
+	
+	又因为$ E（X）=0 $，所以有原点矩等于中心矩，即 $\mu_{k}=\nu_{k}, k=1,2, \cdots$ .
+\end{example}
+
+\subsection{变异系数}
+
+方差（或标准差）反映了随机变量取值的波动程度，但在比较两个随机变量的波动大小时，如果仅看方差（或标准差）的大小有时会产生不合理的现象.这有两个原因：
+
+\begin{enumerate}
+	\item 随机变量的取值有量纲，不同量纲的随机变量用其方差（或标准差）去比较它们的波动大小不太合理.
+	\item 在取值的量纲相同的情况下，取值的大小有一个相对性问题，取值较大的随机变量的方差（或标准差）也允许大一些.
+\end{enumerate}
+
+所以要比较两个随机变量的波动大小时，在有些场合使用以下定义的变异系数来进行比较，更具可比性.
+
+\begin{definition}
+	设随机变量$ X $的二阶矩存在，则称比值
+	
+	\begin{equation}
+	C_{v}(X)=\frac{\sqrt{\operatorname{Var}(X)}}{E(X)}=\frac{\sigma(X)}{E(X)} \label{eq:2.7.3}
+	\end{equation}
+	为$ X $的变异系数.
+\end{definition}
+
+因为变异系数是以其数学期望为单位去度量随机变量取值波动程度的特征数，标准差的量纲与数学期望的量纲是一致的，所以变异系数是一个无量纲的数。
+
+\begin{example}
+	用$ X $表示某种同龄树的高度，其量纲是米$ （m） $，用$ Y $表示某年龄段儿童的身高，其量纲也是米$ （m） $.设 $E(X)=10, \operatorname{Var}(X)=1, E(Y)=1, \operatorname{Var}(Y)=0.04 $ ，你是否可以从 $\operatorname{Var}(X)=1$  和 $\operatorname{Var}(Y)=0.04$ 就认为$ Y $的波动小？这就有一个取值相对大小的问题.在此用变异系数进行比较是恰当的.因为X的变异系数为
+	
+	\[
+	C_{v}(X)=\frac{\sigma(X)}{E(X)} \Rightarrow \frac{1}{10}=0.1
+	\]
+	
+	而$ Y $的变异系数为
+	\[
+	C_{v}(Y)=\frac{\sigma(Y)}{E(Y)}=\frac{\sqrt{0.04}}{1}=0.2
+	\]
+	这说明$ Y $的波动比$ X $的波动大.
+\end{example}
+
+\subsection{分位数}
+
+\begin{definition}
+	设连续随机变量$ X $的分布函数为$ F（x） $，密度函数为$ p（x） $.
+	对任意 $p \in(0,1)$ ，称满足条件
+	
+	\begin{equation}
+	F\left(x_{p}\right)=\int_{-\infty}^{x_{p}} p(x) \mathrm{d} x=p \label{eq:2.7.4}
+	\end{equation}
+	的 $x_{p}^{\prime}$ 为此分布的$ p $分位数，又称下侧力分位数.
+	
+	分位数 $x_{p}$ 是把密度函数下的而积分为两块，左侧面积恰好为$ p $（见图~\ref{fig:2-7-1}（a））.
+	
+	同理我们称满足条件
+	\begin{equation}
+	1-F\left(x_{p}^{\prime}\right)=\int_{x_{0}^{\prime}}^{-\infty} p(x) \mathrm{d} x=p \label{eq:2.7.5}
+	\end{equation}
+	的 $x_{p}^{\prime}$ 为此分布的上侧$ p $分位数.
+	上侧分位数 $x_{p}^{\prime}$ 也是把密度函数下的面积分为两块，但右侧面积恰好为$ p $（见图~\ref{fig:2-7-1}（b））.
+\end{definition}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../../Ptmst/figure/2-7-1}
+	\caption{分位数与上侧分位数的区别}
+	\label{fig:2-7-1}
+\end{figure}
+
+要善于区分分位数与上侧分位数的差别，本书指定用分位数表，而有一些书使用的是上侧分位数表，无论用什么表，书中都有说明.
+
+分位数与上侧分位数是可以相互转换的，其转换公式如下.
+
+\begin{equation}
+x_{p}^{\prime}=x_{1-p} ; \quad x_{p}=x_{1-p}^{\prime} \label{eq:2.7.6}
+\end{equation}
+
+\begin{example}
+	标准正态分布$ N（0，1） $的$ p $分位数记为 $u_{p}$ ，它是方程
+	\[
+	\Phi\left(u_{p}\right)=p
+	\]
+	的唯一解，其解为 $u_{p}=\Phi^{-1}(p)$ ，其中 $\Phi^{-1}(\cdot)$ 是标准正态分布函数的反函数.利用标准正态分布函数表（见附表2），我们可由$ p $查得 $u_{p}$ 。譬如 $u_{0.95}=1.96$ .由于标准正态分布的密度函数是偶函数，故其分位数有如下性质：
+	
+	\begin{itemize}
+		\item 当$ p<0.5 $时， $u_{p}<0$ .
+		\item 当$ p>0.5 $时，$u_{p}>0$ .
+		\item 当$ p=0.5 $时， $u_{0.5}=0$ .
+		\item 当 $p_{1}<p_{2}$ 时， $u_{p_{1}}<u_{p_{2}}$ .
+		\item 对任意的$ p $，有 $u_{p}=-u_{1-p}$ .
+	\end{itemize}
+	
+	又由定理2.5.1可知：一般正态分布 $N\left(\mu, \sigma^{2}\right)$ 的$ p $分位数 $x_{p}$ 是方程
+	
+	\[
+	\Phi\left(\frac{x_{p}-\mu}{\sigma}\right)=p
+	\]
+	的解，所以由
+	
+	\[
+	\frac{x_{p}-\mu}{\sigma}=u_{p}
+	\]
+	可得 $x_{p}$ 与 $u_{p}$ 的关系式
+	
+	\begin{equation}
+	x_{p}=\mu+\sigma u_{p} \label{eq:2.7.7}
+	\end{equation}
+	譬如正态分布 $N\left(10,2^{2}\right)$ 的$ 0.95 $分位数为
+	\[
+	x_{0.95}=10+2 u_{0.95}=10+2 \times 1.96=13.92
+	\]
+\end{example}
+
+分位数在统计中经常被使用，特别对统计中常用的三大分布： $\chi^{2}$ 分布、$ t $分布和$ F $分布，都特地编制了它们的分位数表.以后分别以 $\chi_{\mathrm{a}}^{2}(n), t_{\alpha}(n) , F_{a}(n, m) $ 记这些分布的 $\alpha$ 分位数.例 $\alpha=0.05, n=10, m=15$ 时，查附表3、附表4、附表5，可得
+
+\[
+\chi_{1-\alpha}^{2}(n)=18.307 ; \quad t_{1},_{a}(n)=1.8125 ; \quad F_{1-a}(n, m)=2.54
+\]
+
+譬如，记某种轴承的寿命为$ T $， $t_{p}$ 为此寿命分布的$ p $分位数，则 $t_{0.1}=1000 (\mathrm{h}) $ ，表明此种轴承中约有$ 90\% $寿命超过1000小时.若记另一种轴承的寿命为$ Z $，$ p $分位数为 $\boldsymbol{z}_{p}$ 。 则当 $z_{0.1}=1500(\mathrm{h})$ 时，从$ 0.1 $的分位数上说明后者的质量比前者更高一些.
+
+\subsection{中位数}
+
+\begin{definition}
+	设连续随机变量$ X $的分布函数为$ F（x） $，密度函数为$ p（x） $.
+	称$ p=0.5 $时的$ p $分位数 $x_{0.5}$ 为此分布的中位数，即 $x_{0.5}$ 满足
+	
+	\begin{equation}
+	F\left(x_{0.5}\right)=\int_{-\infty}^{x_{0}} p(x) \mathrm{d} x=0.5 \label{eq:2.7.8}
+	\end{equation}
+	
+\end{definition}
+
+中位数的图形见下面图l~\ref{fig:2-7-2}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../../Ptmst/figure/2-7-2}
+	\caption{连续随机变量的中位数}
+	\label{fig:2-7-2}
+\end{figure}
+
+中位数与均值一样都是随机变量位置的特征数，但在某些场合可能中位数比均值更能说明问题.譬如，某班级学生的考试成绩的中位数为80分，则表明斑级中的有一半同学的成绩低于80分，另一半同学的成绩高于80分.而如果考试成绩的均值是80分，则无法得出如此明确的结论.
+
+又譬如，记$ X $为$ A $国人的年龄，$ Y $为$ B $国人的年龄， $x_{0.5}$ 和 $y_{0.5}$ 分别为$ X $和$ Y $的中位数，则$x_{0.5}=40(\text{虽})$说明$ A $国约有一半的人年龄小于等于40岁、一半的人年龄大于等于40岁.而$y_{0.5}=50(\text{岁})$则说明$ B $国更趋于老龄化.
+
+\begin{example}
+	指数分布 $E x p(\lambda)$ 的中位数 $x_{0.5}$ 是方程
+	
+	\[
+	1-\mathrm{e}^{-\lambda x 0.5}=0.5
+	\]
+	的解，解之得
+	\[
+	x_{0.5}=\frac{\ln 2}{\lambda}
+	\]
+	
+	假如，某城市电话的通话时间$ X（min） $服从均值$ E（X）=2（min） $的指数分布，此时由 $\lambda=0.5$ 可得中位数为
+	
+	\[
+	x_{0.5}=\frac{\ln 2}{0.5}=1.39(\min )
+	\]
+	它表明：该城市中约有一半的电话在$ 1.39min $内结束，另一半的通话时间超过$ 1.39 min $.
+\end{example}
+
+\subsection{偏度系数}
+
+\begin{definition}
+	设随机变量$ X $的三阶矩存在，则称比值
+	\begin{equation}
+	\beta_{1}=\frac{E(X-E(X))^{3}}{\left[E(X-E(X))^{2}\right]^{3 / 2}}=\frac{\nu_{3}}{\left(\nu_{2}\right)^{3 / 2}} \label{eq:2.7.9}
+	\end{equation}
+	为$ X $的分布的偏度系数，简称偏度.
+	
+\end{definition}
+
+偏度系数可以描述分布的形状特征，其取值的正负反映的是
+
+\begin{itemize}
+	\item 当 $\beta_{1}>0$ 时，分布为正偏或右偏，见图~\ref{fig:2-7-3}（a）
+	\item 当 $\beta_{1}=0$ 时，分布关于其均值$ E（X） $对称，见图~\ref{fig:2-7-3}（b）.
+	\item 当 $\beta_{1}<0$ 时，分布为负偏或左偏，见图~\ref{fig:2-7-3}.
+\end{itemize}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{2-7-3}
+	\caption{三种不同偏度的分布}
+	\label{fig:2-7-3}
+\end{figure}
+
+
+譬如，正态分布 $N\left(\mu, \sigma^{2}\right)$ 是关于其均值 $E(X)=\mu$ 是对称的，所以正态分布的偏度 $\beta_{1}=0$ .
+
+\subsection{峰度系数}
+
+\begin{definition}
+	设随机变量$ X $的四阶矩存在，则称比值
+	
+	\begin{equation}
+	\beta_{2}=\frac{E(X-E(X))^{4}}{\left[E(X-E(X))^{2}\right]^{2}}-3=\frac{\nu_{4}}{\left(\nu_{2}\right)^{2}}-3 \label{eq:2.7.10}
+	\end{equation}
+	为$ X $的分布的峰度系数，简称峰度.
+\end{definition}
+
+峰度系数也是用于描述分布的形状特征，但峰度系数与偏度系数的差别是：
+偏度系数刻画的是分布的对称性，而峰度系数刻画的是分布的峰峭性.
+
+峰度系数把正态分布的峰峭性作为标准，因为正态分布 $N\left(\mu, \sigma^{2}\right)$ 的四阶中心矩为 $\nu_{4}=3 \sigma^{4}$ ，所以其峰度系数为
+
+\[
+\beta_{2}=\frac{\nu_{4}}{\left(\nu_{2}\right)^{2}}-3=\frac{3 a^{4}}{\sigma^{4}}-3=0
+\]
+
+这说明：任一正态分布的峰度 $\beta_{2}=0$ .
+
+可见，这里谈论的“峰度”不是指密度函数的峰值高低，那么“峰度”的含义到底是什么呢？或者换句话说，我们应该如何刻画密度函数的峰峭性呢？我们知道从图形上看密度函数曲线下的面积等于1，若随机变量取值较集中，则其密度函数的峰值必高无疑，所以密度函数峰值的高低含有随机变量取值的集中程度.为了消除这个因素，我们不妨考察“标准化”后的分布的峰峭性，即用
+
+\[
+X^{*}=\frac{X-E(X)}{\sqrt{\operatorname{Var}(X)}}
+\]
+的四阶原点矩 $E\left[\left(X^{*}\right)^{4}\right]$ 考察密度函数的蜂值，再考虑到任一标准正态分布的四阶原点矩等于3，所以就有了以上峰度系数的定义。
+
+综上所述，一个分布的峰度系数 $\beta_{2}$ 反映了以下情况：
+
+\begin{itemize}
+	\item 当 $\beta_{2}<0$ 时，则标准化后的分布形状比标准正态分布更平坦，称为低峰度.
+	\item 当 $\beta_{2}=0$ 时，则标准化后的分布形状与标准正态分布相当
+	\item 当 $\beta_{2}>0$ 时，则标准化后的分布形状比标准正态分布更尖峭，称为高峰度.
+\end{itemize}
+
+\begin{example}
+	\begin{enumerate}
+		\item 均匀分布$ U（a，b） $的密度函数很平坦，其峰度系数 $\beta_{2}= -1.2 $ .可以预计，当一个分布的峰度 $\beta_{2}<-1.2$ 时，其密度函数会呈$ U $形.
+		\item 指数分布 $E x p(\lambda)$ 的峰度系数 $\beta_{2}=6$ ，所以指数分布比正态分布更尖峭.
+		\item 伽玛分布 $G a(a, \lambda)$ 的偏度系数 $\beta_{1}=2 / \sqrt{\alpha}$ ，峰度系数 $\beta_{2}=6 / \alpha$ ，可见伽玛分布 $G a(\alpha, \lambda)$ 的偏度与峰度只与形状参数 $\alpha$ 有关，而与尺度参数 $\lambda$ 无关.且 $\alpha$  越大， $\beta_{1}$ 与 $\beta_{2}$ 。越小，特别当 $\alpha$  很大时， $\beta_{1}$ 与 $\beta_{2}$ 越接近于零，密度函数越近似于正态密度函数（见图~\ref{fig:2-5-5}）.
+	\end{enumerate}
+\end{example}
+
+\begin{center}
+	\textbf{习题2.7}
+\end{center}
+
+1.设 $X \sim U(a, b)$ ，对$ k=1，2，3，4 $，求 $\mu_{k}=E\left(X^{k}\right) \leftrightarrows v_{k}=E(X-E(X))^{k}$ .进一步求此分布的偏度系数和峰度系数.
+
+2.设 $X \sim U(0, a)$ ，求此分布的变异系数.
+
+3.设 $X \sim G a(\alpha, \lambda)$ ，对$ k=1，2，3 $，求 $\mu_{k}=E\left(X^{k}\right)$ 与 $\nu_{k}=E(X-E(X))^{k}$ .
+
+4.设 $X-\operatorname{Exp}(\lambda)$ ，对$ k=1，2，3，4 $，求： $\mu_{k}=E\left(X^{k}\right)$ 与 $\nu_{k}=E(X-E(X))^{k}$ .进一步求此分布的变异系数、偏度系数和峰度系数.
+
+5.设随机变量$ X $服从正态分布$ N（10，9） $，试求 $x_{0.1}$ 和 $x_{0.9}$ 
+
+6.设 $Y=\ln X$ ，且 $Y \sim N\left(\mu, \sigma^{2}\right)$ .试求 $x_{0.5}$ .
+
+7.设随机变量$ X $服从双参数威布尔分布，其分布函数为
+\[
+F(x)=1-\exp \left\{-\left(\frac{x}{\eta}\right)^{m}\right\}, \quad x>0
+\]
+其中 $\eta>0, m>0$ .试写出该分布的$ p $分位数 $x_{p}$ 的表达式，且求出当 $m=1.5, \eta=1000$ 时的 $x_{0.1}, x_{0.5}, x_{0.8}$ 的值.
+
+8.自由度为2的 $\chi^{2}$ 分布的密度函数为
+
+\[
+p(x)=\frac{1}{2} e^{\frac{x}{2}}, \quad x>0
+\]
+
+试求出其分布函数及分位数 $x_{0.1}, x_{0.5}, x_{0.8}$ .
+
+9.设随机变量$ X $的分布密度函数$ p（x） $关于$ c $点是对称的，且$ E（X） $存在，试证
+
+\begin{enumerate}
+	\item 这个对称点c既是均值又是中位数，即E（X）=x05=c；
+	\item 如果$ c=0 $，则 $x_{p}=-x_{1-p}$ .
+\end{enumerate}（1）
+（2
+
+10.试证随机变量$ X $的偏度系数与峰度系数对位移和改变比例尺是不变的，即对任意的实数 $a, b(b \neq 0), Y=(X-a) / b$ 与$ X $有相同的偏度系数与峰度系数.
+
