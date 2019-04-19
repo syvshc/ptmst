@@ -50,7 +50,7 @@ P&0.915&0.085
 \begin{example}
 彩电的彩色浓度是彩电质量好坏的一个重要指标. 20世纪70年代在美国销售的SONY牌彩电有两个产地:美国和日本,两地的工厂是按统一设计方案和相同的生产线生产同一型号SONY彩电,连使用说明书和检验合格的标准也是一样的.其中关于彩色浓度X的标准是:目标值为$m$,公差为$5$,即当$X$在$[m-5,m+5]$内该彩电的热情高于购买美产SONY彩电,原因何在?这就要考察这两个总体有什么差别. 1979年4月17日日本《朝日新闻》刊登调查报告指出,日产SONY彩电的彩色浓度服从正态分布$N(m,(5/3)^2)$,而美产SONY彩电的彩色浓度服从$(m-5,m+5)$上的均匀分布,见图~\ref{fig:5.1.1}.这两个不同的分布代表了不同的总体,其均值相同(都为$m$),但方差不同.若彩色浓度与$m$的距离在$5/3$以内为\Rmnum{1}级品,在$5/3$到$10/3$之间为\Rmnum{2}级品,在$10/3$到$5$之间为\Rmnum{3}级品,其他为\Rmnum{4}级品.于是日产SONY彩电的\Rmnum{1}级品为美产SONY的两倍出头(见表~\ref{table5.1.1}),这就是美国消费者愿意购买日产SONY的主要原因.
 \end{example}
-\begin{figure}[!htp]
+\begin{figure}[!ht]
   \centering
 \begin{tikzpicture}[scale=1.2]
 \begin{scope}[semithick]
@@ -82,7 +82,7 @@ P&0.915&0.085
   \caption{SONY彩电彩色浓度分布图}\label{fig:5.1.1}
 \end{figure}
 
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{各等级彩电的比例(\%)}\label{table5.1.1}
 \begin{tabularx}{\textwidth}{Z|Z|Z|Z|Z}
@@ -200,7 +200,7 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 0.8,&351\leq x<355,\\
 1,&x\geq355.
 \end{cases}\]
-\begin{figure}[!htp]
+\begin{figure}[!ht]
   \centering
 \begin{tikzpicture}[fill=white,draw=black,scale=0.8]
 \begin{scope}[semithick,>=Stealth]
@@ -255,7 +255,7 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \item  \textbf{统计样本数据落入每个区间的个数——频数},并列出其频数频率分布表.本例的频数频率分布表见表~\ref{table5.2.1}.从表中可以读出很多信息,如: 40\%的工人产量在157到167之间;产量少于167个的有12人,占60\%;产量高于177的有3人,占15\%.
 \end{itemize}
 \end{example}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{例~\ref{exam:5.2.2} 的频数频率分布表}\label{table5.2.1}
 \begin{tabularx}{0.7\textwidth}{cccccc}
@@ -339,7 +339,7 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \begin{example}\label{exam:5.2.4}
 下面的数据是某厂两个车间某天各40名员工生产的产品数量(表~\ref{table5.2.2}).为对其进行比较,我们将这些数据放到一个背靠背茎叶图上(图~\ref{fig:5.2.4}).
 \end{example}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{某厂两个车间40名员工的产量}\label{table5.2.2}
 \begin{tabularx}{\textwidth}{YYYYYY|YYYYYY}
@@ -356,7 +356,7 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \bottomrule
 \end{tabularx}
 \end{table}
-\begin{figure}[!htp]
+\begin{figure}[!ht]
   \centering
 \begin{tabularx}{0.6\textwidth}{R|c|L}
 甲车间\hfill620&5&6\hfill 乙车间\\
@@ -374,7 +374,7 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \[149\quad156\quad160\quad138\quad149\quad153\quad153\quad169\quad156\quad156\]
 试由这批数据构造经验分布函数并作图.
 \item 下表是经过整理后得到的分组样本
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
 \begin{tabularx}{0.9\textwidth}{Z|ZZZZZ}
 组序&1&2&3&4&5\\
@@ -474,7 +474,7 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \[\bar x=\frac1{20}(79+84+\dotsb+125)=99.4.\]
 将这20个数据分组可得到如表~\ref{table5.3.1}的频数频率分布:
 \end{example}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{~\ref{exam:5.3.1}的频数频率分布表}\label{table5.3.1}
 \begin{tabularx}{\textwidth}{ZZZZZ}
@@ -520,7 +520,7 @@ $\sum(x_i-\bar x)=\sum x_i-n\bar x=\sum x_i-n\cdot\big(\sum x_i\big)/n=0$.
 \begin{example}\label{exam:5.3.2}
 设有一个由20个数组成的总体,现从该总体抽取容量为5的样本.图~\ref{fig:5.3.1} 画出第一个样本的抽样过程,左侧是该总体,右侧是从总体中随机地抽出的样本,这里一共抽出4个样本,每个样本有5个观测值,我们计算了各个样本的样本均值.从例中可以看到,每一个样本的样本均值都有差别.
 \end{example}
-\begin{figure}[!htp]
+\begin{figure}[!ht]
 \centering
 \begin{tikzpicture}[yscale=0.7,xscale=0.8,inner sep=0.5pt]
 \begin{scope}
@@ -560,7 +560,7 @@ $\sum(x_i-\bar x)=\sum x_i-n\bar x=\sum x_i-n\cdot\big(\sum x_i\big)/n=0$.
 \end{figure}
 
 设想类似抽取样本5、样本6 \raisebox{0.3em}{\tikz\foreach \x in{0.1,0.2,...,0.6}\fill(\x,3)circle(0.7pt);} 每次都计算样本均值,他们之间的差异是由于抽样的随机性引起的.假如无限制地抽下去,这样我们可以得到大量的$\bar x$的值,图~\ref{fig:5.3.2} 就是用这样得到的500个的值所形成的直方图,它反映了$\bar x$的抽样分布.
-\begin{figure}[!htp]
+\begin{figure}[!ht]
   \centering
 \begin{tikzpicture}[yscale=0.34,xscale=0.6,>=Stealth,semithick]
 \draw[decorate,decoration={snake,segment length=1mm,amplitude=0.5mm}]
@@ -603,7 +603,7 @@ $\sum(x_i-\bar x)=\sum x_i-n\bar x=\sum x_i-n\cdot\big(\sum x_i\big)/n=0$.
 \begin{example}\label{exam:5.3.3}
 图~\ref{fig:5.3.3} 给出三个不同总体样本均值的分布.三个总体分别是:
 \ding{172}均匀分布、\ding{173}倒三角分布、\ding{174}指数分布,随着样本量的增加,样本均值的抽样分布逐渐向正态分布逼近,他们均值保持不变,而方差则缩小为原来的$1/n$.当样本量为30时,我们看到三个抽样分布都近似于正态分布.下面对之进行说明.
-\begin{figure}[!htp]
+\begin{figure}[!ht]
   \centering
 \begin{tikzpicture}[>=Stealth,xscale=0.7,yscale=0.6,thick,samples=100]
 \node[align=center] at(1.5,3){$\bar X$的分布\\($n=30$)};
@@ -749,7 +749,7 @@ s^2=\frac1{n-1}\sum_{i=1}^kf_i(x_i-\bar x)^2=\frac1{n-1}\Bigl[\sum_{i=1}^kf_ix_i
 \end{equation}
 其中$x_i,f_i$分别为第$i$个区间的组中值和频数, $\bar x$为~\eqref{eq:5.3.2} 中给出的样本均值.
 \begin{example}\label{exam:5.3.4}
-考察~\ref{exam:5.3.1} 的样本,我们已经算得$\bar x=99.4$,其样本方差与样本标准差分别为
+考察例~\ref{exam:5.3.1} 的样本,我们已经算得$\bar x=99.4$,其样本方差与样本标准差分别为
 \begin{align*}
 s^2&=\frac1{20-1}[(79-99.4)^2+(84-99.4)^2+\dotsb+(125-99.4)^2]133.9368,\\
 s&=\sqrt{133.9368}=11.5731,
@@ -790,7 +790,7 @@ E(\bar x)=\frac1nE\Bigl(\sum_{i=1}^nx_i\Bigr)=\frac{n\mu}n=\mu,\\
 \operatorname{Var}(\bar x)=\frac1{n^2}\operatorname{Var}\Bigl(\sum_{i=1}^nx_i\Bigr)
 =\frac{n\sigma^2}{n^2}=\frac{\sigma^2}n,
 \end{gather*}
-故~\eqref{eq:5.3.7} 成立.下证~\ref{eq:5.3.8} ,注意到
+故~\eqref{eq:5.3.7} 成立.下证~\eqref{eq:5.3.8} ,注意到
 \[\sum_{i=1}^n(x_i-\bar x)^2=\sum_{i=1}^nx_i^2-n\bar x^2,\]
 而$Ex_i^2=(Ex_i)^2+\operatorname{Var}(x_i)=\mu^2+\sigma^2,E(\bar x^2)=(E\bar x)^2+\operatorname(Var)(\bar x)=\mu^2+\sigma^2/n$,于是
 \[E\Bigl(\sum_{i=1}^n(x_i-\bar x)^2\Bigr)=n(\mu^2+\sigma^2)-n(\mu^2+\sigma^2/n)=(n-1)\sigma^2,\]
@@ -818,7 +818,50 @@ b_k=\frac1n\sum_{i=1}^n(x_i-\bar x)^k
 \end{equation}
 为样本偏度\index{Y!样本偏度}.
 \end{definition}
-样本偏度$\gamma_1$反映了总体分布密度曲线的对称性信息.如果数据完全对称,则不难看出$b_3=0$.对不对称的数据则$b_3=0$.这里用$b_3$除以$b_2^{3/2}$是为了消除量纲的影响,$\gamma_1$是个相对数,它很好地刻画了数据分布的偏斜方向和程度.如果$\gamma_1$表示样本对称(见图~\ref{fig:5.3.4(a)}),如果$\gamma_1>0$表示样本的右尾长,即样本中有几个较大的数,这反映总体分布是正偏的或右偏的(见图~\ref{fig:5.3.4(b)}),如果$\gamma_1<0$表示分布的左尾长,即样本中有几个特小的数,这反映总体分布是负偏的或左偏的(见图~\ref{fig:5.3.4(c)}).
+样本偏度$\gamma_1$反映了总体分布密度曲线的对称性信息.如果数据完全对称,则不难看出$b_3=0$.对不对称的数据则$b_3=0$.这里用$b_3$除以$b_2^{3/2}$是为了消除量纲的影响,$\gamma_1$是个相对数,它很好地刻画了数据分布的偏斜方向和程度.如果$\gamma_1$表示样本对称(见图~\ref{fig:5.3.4}\subref{fig:5.3.4(a)} ),如果$\gamma_1>0$表示样本的右尾长,即样本中有几个较大的数,这反映总体分布是正偏的或右偏的(见图~\ref{fig:5.3.4}\subref{fig:5.3.4(b)} ),如果$\gamma_1<0$表示分布的左尾长,即样本中有几个特小的数,这反映总体分布是负偏的或左偏的(见图~\ref{fig:5.3.4}\subref{fig:5.3.4(c)} ).
+\begin{figure}[!ht]
+\centering
+\subfloat[样本$(4,7,8,9,12)$的偏度\label{fig:5.3.4(a)}]{
+\begin{minipage}[b]{0.3\textwidth}
+\begin{tikzpicture}[semithick]
+\draw(0,0)--(\textwidth,0);
+\node[below]at(0.2\textwidth,0){4};\node[below]at(0.5\textwidth,0){8};
+\node[below]at(0.8\textwidth,0){12};\node[below]at(0.425\textwidth,0){7};
+\node[below]at(0.575\textwidth,0){9};
+\foreach \x in{0.2,0.425,0.5,0.575,0.8}
+\draw(\x\textwidth,0)--(\x\textwidth,0.06);
+\draw[samples=100,domain=0.3:4.15,dashed,thick]plot(\x,{2*e^(-(\x-2.2)^2)+0.1});
+\end{tikzpicture}
+\end{minipage}
+}
+\subfloat[样本$(7,8,9,12,15)$的偏度\label{fig:5.3.4(b)}]{
+\begin{minipage}[b]{0.3\textwidth}
+\begin{tikzpicture}[semithick]
+\draw(0,0)--(\textwidth,0);
+\node[below]at(0.2\textwidth,0){7};\node[below]at(0.275\textwidth,0){8};
+\node[below]at(0.35\textwidth,0){9};\node[below]at(0.575\textwidth,0){12};
+\node[below]at(0.8\textwidth,0){15};
+\foreach \x in{0.2,0.275,0.35,0.575,0.8}
+\draw(\x\textwidth,0)--(\x\textwidth,0.06);
+\draw[samples=100,domain=0.3:4.15,dashed,thick]plot(\x,{1.6*e^(-(\x-1.5)^2)+0.1});
+\end{tikzpicture}
+\end{minipage}
+}
+\subfloat[样本$(1,4,7,8,9)$的偏度\label{fig:5.3.4(c)}]{
+\begin{minipage}[b]{0.3\textwidth}
+\begin{tikzpicture}[semithick]
+\draw(0,0)--(\textwidth,0);
+\node[below]at(0.1\textwidth,0){1};\node[below]at(0.45\textwidth,0){4};
+\node[below]at(0.625\textwidth,0){7};\node[below]at(0.7\textwidth,0){8};
+\node[below]at(0.775\textwidth,0){9};
+\foreach \x in{0.1,0.45,0.625,0.7,0.775}
+\draw(\x\textwidth,0)--(\x\textwidth,0.06);
+\draw[samples=100,domain=0.3:4.15,dashed,thick]plot(\x,{1.6*e^(-(\x-2.8)^2)+0.1});
+\end{tikzpicture}
+\end{minipage}
+}
+\caption{样本偏度$\gamma_1$的例子(样本量$n=5$)}\label{fig:5.3.4}
+\end{figure}
 \begin{definition}{}{5.3.6}
 设$x_1,x_2,\dotsc,x_n$是样本,则统计量
 \begin{equation}\label{eq:5.3.12}
@@ -830,27 +873,7 @@ b_k=\frac1n\sum_{i=1}^n(x_i-\bar x)^k
 样本峰度$\gamma_2$反映了总体分布密度曲线在其峰值附近的陡峭程度.当$\gamma_2>0$时,分布密度曲线在其峰值附近比正态分布来得陡,称为尖顶型;当$\gamma_2<0$时,分布密度曲线在其峰值附近比正态分布来得平坦,称为平顶型.
 \begin{example}\label{exam:5.3.3}
 表~\ref{tab:5.3.3} 是两个班(每班50名同学)的英语课程的考试成绩.
-
-下面我们分别计算两个班级的平均成绩、标准差、样本偏度及样本峰度.表
-~\ref{tab:5.3.4} 和表~\ref{tab:5.3.5} 分别给出甲班和乙班的计算过程.
-
-可算得两个班的平均成绩、标准差、偏态系数、峰态系数分别为:
-\begin{align*}
-\begin{gathered}
-\bar x_{\text{甲}}=\frac{3790}{50}=75.8,\\
-s_{\text{甲}}=\sqrt{\frac{5368}{49}=10.47},\\
-\gamma_{1\text{甲}}=\frac{-8908.8/50}{(5368/50)^{3/2}}=-0.16,\\
-\gamma_{2\text{甲}}=\frac{1987874.56/50}{(5368/50)^2}-3=0.45,
-\end{gathered}\qquad
-\begin{gathered}
-\bar x_{\text{乙}}=\frac{3790}{50}=75.8,\\
-s_{\text{乙}}=\sqrt{\frac{5168}{49}}=10.27,\\
-\gamma_{1\text{乙}}=\frac{3571.2/50}{(5168/50)^{3/2}}=0.068,\\
-\gamma_{2乙}=\frac{1208706.56/50}{(5168/50)^2}-3=-0.74.
-\end{gathered}
-\end{align*}
-\end{example}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{两个班级的英语成绩}\label{tab:5.3.3}
 \begin{tabularx}{\textwidth}{ZZZZ}
@@ -866,7 +889,10 @@ $40\sim49$&45&1&0\\
 \bottomrule
 \end{tabularx}
 \end{table}
-\begin{table}[!htp]
+
+下面我们分别计算两个班级的平均成绩、标准差、样本偏度及样本峰度.表
+~\ref{tab:5.3.4} 和表~\ref{tab:5.3.5} 分别给出甲班和乙班的计算过程.
+\begin{table}[!ht]
   \centering
   \caption{甲班成绩的计算过程}\label{tab:5.3.4}
 \begin{tabularx}{\textwidth}{YYYYYY}
@@ -884,7 +910,7 @@ x&f_{\text{甲}}&x\cdot f_{\text{甲}}&(x-\bar x_{甲})^2f_{\text{甲}}&(x-\bar 
 \bottomrule
 \end{tabularx}
 \end{table}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{乙班成绩的计算过程}\label{tab:5.3.5}
 \begin{tabularx}{\textwidth}{YYYYYY}
@@ -900,6 +926,26 @@ x&f_{\text{乙}}&x\cdot f_{\text{乙}}&(x-\bar x_{乙})^2f_{\text{乙}}&(x-\bar 
 \bottomrule
 \end{tabularx}
 \end{table}
+可算得两个班的平均成绩、标准差、偏态系数、峰态系数分别为:
+\begin{align*}
+\begin{gathered}
+\bar x_{\text{甲}}=\frac{3790}{50}=75.8,\\
+s_{\text{甲}}=\sqrt{\frac{5368}{49}=10.47},\\
+\gamma_{1\text{甲}}=\frac{-8908.8/50}{(5368/50)^{3/2}}=-0.16,\\
+\gamma_{2\text{甲}}=\frac{1987874.56/50}{(5368/50)^2}-3=0.45,
+\end{gathered}\qquad
+\begin{gathered}
+\bar x_{\text{乙}}=\frac{3790}{50}=75.8,\\
+s_{\text{乙}}=\sqrt{\frac{5168}{49}}=10.27,\\
+\gamma_{1\text{乙}}=\frac{3571.2/50}{(5168/50)^{3/2}}=0.068,\\
+\gamma_{2乙}=\frac{1208706.56/50}{(5168/50)^2}-3=-0.74.
+\end{gathered}
+\end{align*}
+
+
+
+
+\end{example}
 \subsection{次序统计量及其分布}
 除了样本矩以外,另一类常见的统计量是 \textbf{次序统计量}\index{C!次序统计量},它在实际和理论中都有广泛的应用.
 \subsubsection{定义}
@@ -919,7 +965,7 @@ p&1/3&1/3&1/3
 \end{center}
 现从中抽取容量为3的样本,其一切可能取值有$3^3=27$种,现将它们列在表~\ref{tab:5.3.6} 左侧,其右侧相应的次序统计量观测值.
 \end{example}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{例~\ref{exam:5.3.6} 中样本取值及其次序统计量}\label{tab:5.3.6}
 \begin{tabularx}{\textwidth}{YYY|YYY||YYY|YYY}
@@ -1001,7 +1047,7 @@ p_k(x)=\frac{n!}{(k-1)!(n-k)!}(F(x))^{k-1}(1-F(x))^{n-k}p(x).
 \end{theorem}
 \begin{proof}
 对任意的实数$x$,考虑次序统计量$x_{(k)}$取值落在小区间$(x,x+\Delta x]$内这一事件,它等价``样本容量为$n$的样本中有1个观测值落在$(x,x+△x]$之间,而有$k-1$个观测值小于等于$x$,有$n一k$个观测值大于$x+△x$'',其直观示意见图~\ref{fig:5.3.5}.
-\begin{figure}[!htp]
+\begin{figure}[!ht]
   \centering
 \begin{tikzpicture}[semithick]
 \draw(-4,0)--(4,0);\coordinate(a)at(-1,0);\node[below=2pt]at(a){$x$};
@@ -1062,13 +1108,15 @@ P(x_{(2)}<1/2)&=\int_0^{1/2}60x^5(1-x^3)^3\dd x\\
 \begin{theorem}{}{5.3.6}
 在定理~\ref{thm:5.3.5} 的记号下,次序统计量$(x_{(i)},x_{(j)})(i<j)$的联合分布密度函数为
 \begin{equation}\label{eq:5.3.16}
-p_{ij}(y,z)=\frac{n!}{(i-1)!(j-i-1)!(n-j)!}[F(y)]^{i-1}[F(z)-F(y)]^{j-i-1}
-\cdot[1-F(z)]^{n-j}p(y)p(z),\quad y\leq z,
+\begin{aligned}
+p_{ij}(y,z)=\frac{n!}{(i-1)!(j-i-1)!(n-j)!}[F(y)]^{i-1}[F(z)-F(y)]^{j-i-1}&\\
+\cdot[1-F(z)]^{n-j}p(y)p(z),\quad y\leq z&,
+\end{aligned}
 \end{equation}
 \end{theorem}
 \begin{proof}
 对正能量$\Delta y,\Delta z$以及$y<z$,事件``$x_{(i)}\in(y,y+\Delta y],x_{(j)}\in(z,z+\Delta z]$''可以表示为``容量为$n$的样本$x_1,\dotsc,x_n$中有$i-1$个观测值小于等于$y$,一个落入区间$(y,y+\Delta y],j-i-1$个落入区间$(y+\Delta y,z]$,一个落入区间$(z,z+\Delta z]$,而余下$n-j$个大于$z+\Delta z$''(见图~\ref{fig:5.3.6}).
-\begin{figure}[!htp]
+\begin{figure}[!ht]
   \centering
 \begin{tikzpicture}[semithick]
 \draw(-6,0)--(6,0);
@@ -1089,8 +1137,9 @@ p_{ij}(y,z)=\frac{n!}{(i-1)!(j-i-1)!(n-j)!}[F(y)]^{i-1}[F(z)-F(y)]^{j-i-1}
 
 于是由多项分布可得
 \begin{align*}
-{}&P(x_{(i)}\in(y,y+\Delta y),x_{(j)}\in(z,z+\Delta z))\\
-\approx&\frac{n!}{(i-1)!1!(j-i-1)!1!(n-j)!}[F(y)]^{i-1}p(y)\Delta y[F(z)-F(y+\Delta y)]^{j-i-1}p(z)\Delta z[1-F(z+\Delta z)]^{n-j},
+P(x_{(i)}\in(y,y+\Delta y),x_{(j)}\in(z,z+\Delta z))
+\approx&\frac{n!}{(i-1)!1!(j-i-1)!1!(n-j)!}[F(y)]^{i-1}p(y)\Delta y\\
+ &\cdot[F(z)-F(y+\Delta y)]^{j-i-1}p(z)\Delta z[1-F(z+\Delta z)]^{n-j},
 \end{align*}
 考虑到$F(x)$的连续性,当$\Delta y\to0,\Delta z\to0$时有$F(y+\Delta y)\to F(y),F(z+\Delta z)\to F(z)$,于是
 \begin{align*}
@@ -1120,7 +1169,7 @@ x_{\left(\frac{n+1}2\right)},&n\;\text{为奇数}\\
 更一般地,样本$p$分位数$m_p$可如下定义:
 \[m_p=\begin{cases}
 x_{[np+1]},&\text{若}\;np\;\text{不是整数};\\
-\frac12(x_{np}+x_{(np+1)}),&\text{若}\;np\;\text{是整数}.
+\frac12\left(x_{np}+x_{(np+1)}\right),&\text{若}\;np\;\text{是整数}.
 \end{cases}\]
 譬如,若$n=10,p=0.35$,则$m_{0.35}=x_{(4)}$,若$n=20,p=0.45$,则$m_{0.45}=\frac12(x_{(9)}+x_{(10)})$.
 
@@ -1151,7 +1200,7 @@ m_{0.5}\dot{\sim}\left(x_{0.5},\frac1{4n\cdot p^2(x_{0.5})}\right).
 \begin{example}\label{exam:5.3.11}
 表~\ref{tab:5.3.7} 是某厂160名销售入员某月的销售量数据的有序样本,由该批数据可计算得到$x_{\min}=45,x_{\max}=319,m_{0.5}=181,Q_1=144,Q_3=212$.
 \end{example}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{某厂160名销售员的月销售量的有序样本}\label{tab:5.3.7}
 \begin{tabularx}{\textwidth}{YYYYYYYYYY}
@@ -1180,7 +1229,7 @@ m_{0.5}\dot{\sim}\left(x_{0.5},\frac1{4n\cdot p^2(x_{0.5})}\right).
 (1)画一个箱子,其两侧恰为第一4分位数和第三4分位数,在中位数位置上画一条竖线,它在箱子内.这个箱子包含了样本中50\%的数据;
 
 (2)在箱子左右两侧各引出一条水平线,分别至最小值和最大值为止.每条线段包含了样本中25\%的数据.
-\begin{figure}[!htp]
+\begin{figure}[!ht]
   \centering
 \begin{tikzpicture}[scale=3]
 \draw(0,0)--(3.5,0);
@@ -1197,7 +1246,7 @@ m_{0.5}\dot{\sim}\left(x_{0.5},\frac1{4n\cdot p^2(x_{0.5})}\right).
 \end{figure}
 
 箱线图可用来对样本数据分布的形状进行大致的判断.图~\ref{fig:5.3.8} 给出三种常见的箱线图,分别对应对称分布、左偏分布和右偏分布.
-\begin{figure}[!htp]
+\begin{figure}[!ht]
   \centering
 \begin{tikzpicture}[semithick]
 \draw(0,0)--(1.5,0)(3,0)--(4.2,0)(2.4,0.25)--(2.4,-0.25);
@@ -1224,6 +1273,64 @@ m_{0.5}\dot{\sim}\left(x_{0.5},\frac1{4n\cdot p^2(x_{0.5})}\right).
 \end{figure}
 
 如果我们要对几批数据进行比较,则可以在一张纸上同时画出这批数据的箱线图.图~\ref{fig:5.3.9} 是某厂20天生产的某种产品的直径数据画成的箱线图,从图中可以清楚地看出,第18天的产品出现了异常.
+\begin{figure}[!ht]
+  \centering
+\begin{tikzpicture}[>=Stealth,thick]
+\draw[decorate,decoration={snake,segment length=1mm,amplitude=0.5mm}](0,0)--(0,0.3);
+\draw[->](0,0.3)--(0,5);
+\foreach \x in{0.5,2.5,4.5}\draw(0,\x)--(0.06,\x);
+\node[left]at(0,0.5){30};\node[left]at(0,2.5){40};\node[left]at(0,4.5){50};
+\draw[->](0,0)--(11,0);
+\foreach\x in{0.5,1,...,10}\draw(\x,0)--(\x,0.06);
+\node[below]at(0.5,0){1};\node[below]at(1,0){2};\node[below]at(1.5,0){3};
+\node[below]at(2,0){4};\node[below]at(2.5,0){5};\node[below]at(3,0){6};
+\node[below]at(3.5,0){7};\node[below]at(4,0){8};\node[below]at(4.5,0){9};
+\node[below]at(5,0){10};\node[below]at(6,0){12};\node[below]at(7,0){14};
+\node[below]at(8,0){16};\node[below]at(9,0){18};\node[below]at(10,0){20};
+\draw(0.5,1)--(0.5,2)(0.3,2)--(0.7,2)--(0.7,2.9)--(0.3,2.9)--(0.3,2)(0.5,2.9)--(0.5,4.1)
+(0.3,2.45)--(0.7,2.45);
+\draw(1,1.1)--(1,2.1)(0.8,2.1)--(1.2,2.1)--(1.2,3)--(0.8,3)--(0.8,2.1)(1,3)--(1,4.05)
+(0.8,2.55)--(1.2,2.55);
+\draw(1.5,1.2)--(1.5,2)(1.3,2)--(1.7,2)--(1.7,2.9)--(1.3,2.9)--(1.3,2)(1.5,2.9)--(1.5,4)
+(1.3,2.45)--(1.7,2.45);
+\draw(2,1.3)--(2,2)(1.8,2)--(2.2,2)--(2.2,2.9)--(1.8,2.9)--(1.8,2)(2,2.9)--(2,4.1)
+(1.8,2.45)--(2.2,2.45);
+\draw(2.5,1.2)--(2.5,2)(2.3,2)--(2.7,2)--(2.7,2.9)--(2.3,2.9)--(2.3,2)(2.5,2.9)--(2.5,4)
+(2.3,2.45)--(2.7,2.45);
+\draw(3,1)--(3,2)(2.8,2)--(3.2,2)--(3.2,2.9)--(2.8,2.9)--(2.8,2)(3,2.9)--(3,4.1)
+(2.8,2.45)--(3.2,2.45);
+\draw(3.5,1.1)--(3.5,2.1)(3.3,2.1)--(3.7,2.1)--(3.7,3)--(3.3,3)--(3.3,2.1)(3.5,3)--(3.5,4.05)
+(3.3,2.55)--(3.7,2.55);
+\draw(4,1)--(4,2)(3.8,2)--(4.2,2)--(4.2,2.9)--(3.8,2.9)--(3.8,2)(4,2.9)--(4,4.1)
+(3.8,2.45)--(4.2,2.45);
+\draw(4.5,1.1)--(4.5,2.1)(4.3,2.1)--(4.7,2.1)--(4.7,3)--(4.3,3)--(4.3,2.1)(4.5,3)--(4.5,4.05)
+(4.3,2.55)--(4.7,2.55);
+\draw(5,1)--(5,2)(4.8,2)--(5.2,2)--(5.2,2.9)--(4.8,2.9)--(4.8,2)(5,2.9)--(5,4.1)
+(4.8,2.45)--(5.2,2.45);
+\draw(5.5,1.1)--(5.5,2)(5.3,2)--(5.7,2)--(5.7,2.9)--(5.3,2.9)--(5.3,2)(5.5,2.9)--(5.5,4)
+(5.3,2.45)--(5.7,2.45);
+\draw(6,1.1)--(6,2.1)(5.8,2.1)--(6.2,2.1)--(6.2,3)--(5.8,3)--(5.8,2.1)(6,3)--(6,4.05)
+(5.8,2.55)--(6.2,2.55);
+\draw(6.5,1)--(6.5,2)(6.3,2)--(6.7,2)--(6.7,2.9)--(6.3,2.9)--(6.3,2)(6.5,2.9)--(6.5,4.1)
+(6.3,2.45)--(6.7,2.45);
+\draw(7,1.2)--(7,2)(6.8,2)--(7.2,2)--(7.2,2.9)--(6.8,2.9)--(6.8,2)(7,2.9)--(7,4)
+(6.8,2.45)--(7.2,2.45);
+\draw(7.5,1.2)--(7.5,2)(7.3,2)--(7.7,2)--(7.7,2.9)--(7.3,2.9)--(7.3,2)(7.5,2.9)--(7.5,4)
+(7.3,2.45)--(7.7,2.45);
+\draw(8,1.2)--(8,2.1)(7.8,2.1)--(8.2,2.1)--(8.2,3)--(7.8,3)--(7.8,2.1)(8,3)--(8,3.9)
+(7.8,2.55)--(8.2,2.55);
+\draw(8.5,1.3)--(8.5,2)(8.3,2)--(8.7,2)--(8.7,2.9)--(8.3,2.9)--(8.3,2)(8.5,2.9)--(8.5,4)
+(8.3,2.45)--(8.7,2.45);
+\draw(9,1.6)--(9,2.5)(8.8,2.5)--(9.2,2.5)--(9.2,3.4)--(8.8,3.4)--(8.8,2.5)(9,3.4)--(9,4.3)
+(8.8,2.95)--(9.2,2.95);
+\draw(9.5,1.3)--(9.5,2)(9.3,2)--(9.7,2)--(9.7,2.9)--(9.3,2.9)--(9.3,2)(9.5,2.9)--(9.5,4.2)
+(9.3,2.45)--(9.7,2.45);
+\draw(10,1.3)--(10,2)(9.8,2)--(10.2,2)--(10.2,2.9)--(9.8,2.9)--(9.8,2)(10,2.9)--(10,4.2)
+(9.8,2.45)--(10.2,2.45);
+\end{tikzpicture}
+  \caption{20天某产品的直径的箱线图}\label{fig:5.3.9}
+\end{figure}
+
 \begin{xiti}
 \item 在一本书上我们随机地检查了10页,发现每页上的错误数为
 \[4\quad5\quad6\quad0\quad3\quad1\quad4\quad2\quad1\quad4\]
@@ -1315,4 +1422,5 @@ $x_{(1)}\leq x_{(2)}\leq\dotsb\leq x_{(n)}$是有序样本.现我们在某高校
 \end{align*}
 试画出箱线图.
 \end{xiti}
+
 
