@@ -1115,7 +1115,7 @@ p_{ij}(y,z)=\frac{n!}{(i-1)!(j-i-1)!(n-j)!}[F(y)]^{i-1}[F(z)-F(y)]^{j-i-1}&\\
 \end{equation}
 \end{theorem}
 \begin{proof}
-对正能量$\Delta y,\Delta z$以及$y<z$,事件``$x_{(i)}\in(y,y+\Delta y],x_{(j)}\in(z,z+\Delta z]$''可以表示为``容量为$n$的样本$x_1,\dotsc,x_n$中有$i-1$个观测值小于等于$y$,一个落入区间$(y,y+\Delta y],j-i-1$个落入区间$(y+\Delta y,z]$,一个落入区间$(z,z+\Delta z]$,而余下$n-j$个大于$z+\Delta z$''(见图~\ref{fig:5.3.6}).
+对正能量$\Delta y,\Delta z$以及$y<z$,事件``$x_{(i)}\in(y,y+\Delta y],x_{(j)}\in(z,z+\Delta z]$''可以表示为``容量为$n$的样本$x_1,\dotsc,x_n$中有$i-1$个观测值小于等于$y$,一个落入区间$(y,y+\Delta y],j-i-1$个落入区间$(y+\Delta y,z]$,一个落入区间$(z,z+\Delta z]$,而余下$n-j$个大于$z+\Delta z$''(见图~\ref{fig:5.3.6} ).
 \begin{figure}[!ht]
   \centering
 \begin{tikzpicture}[semithick]
@@ -1422,5 +1422,262 @@ $x_{(1)}\leq x_{(2)}\leq\dotsb\leq x_{(n)}$是有序样本.现我们在某高校
 \end{align*}
 试画出箱线图.
 \end{xiti}
+\section{三大抽样分布\label{sec:5.4}}
+大家很快会看到,有很多统计推断是基于正态分布的假设的,以标准正态变量为基石而构造的三个著名统计量在实际中有广泛的应用,这是因为这三个统计量不仅有明确背景,而且其抽样分布的密度函数有明显表达式,它们被称为统计中的``三大抽样分布''.
+
+若设$x_1,\dotsc,x_n$和$y_1,\dotsc,y_n$是来自标准正态分布的两个相互独立的样本,则此三个统计量的构造及其抽样分布如表~\ref{tab:5.4.1} 所示.
+\begin{table}[!ht]
+  \centering
+  \caption{三个著名统计量的构造及其抽样分布}\label{tab:5.4.1}
+\begin{tabularx}{\textwidth}{p{4cm}p{6.5cm}cc}
+\toprule
+统计量的构造&抽样分布密度函数&期望&方差\\
+\midrule
+$\chi^2=x_1^2+x_2^2+\dotsb+x_n^2$&$p(y)=\frac1{\Gamma\left(\frac n2\right)2^{n/2}}
+y^{n/2-1}\ee^{-\frac y2}\,(y>0)$&$n$&$2n$\\
+$F=\frac{(y_1^2+\dotsb+y_m^2)/m}{(x_1^2+\dotsc+x_n^2)/n}$&
+$p(y)=\frac{\Gamma\left(\frac{m+n}2\right)\left(\frac mn\right)^{m/2}}
+{\Gamma\left(\frac m2\right)\Gamma\left(\frac n2\right)}y^{\frac m2-1}
+\left(1+\frac mny\right)^{-\frac{m+n}2}$
+&\parbox{1.2cm}{$\begin{matrix}\frac{n}{n-2}\\(n>2)\end{matrix}$}
+&$\begin{matrix}\frac{2n^2(m+n-2)}{m(n-2)^2(n-4)}\\(n>4)\end{matrix}$\\
+$t=\frac{y_1}{\sqrt{(x_1^2+\dotsc+x_n^2)/n}}$&\parbox{6.5cm}{
+$\begin{matrix}p(y)=\frac{\Gamma\left(\frac{n+1}2\right)}
+{\sqrt{n\pi}\Gamma\left(\frac n2\right)}\left(1+\frac{y^2}n\right)^{-\frac{n+1}2}\\
+(-\infty<y<+\infty)
+\end{matrix}$}&$\begin{matrix}0\\n-1\end{matrix}$
+&$\begin{matrix}\frac n{n-2}\\(n>2)\end{matrix}$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+下面我们将对它们逐个进行推导与说明.
+\subsection{$\chi^2$分布(卡方分布)\label{ssec:5.4.1}}
+\begin{definition}{}{5.4.1}
+设$X_1,X_2,\dotsc,X_n$独立同分布于标准正态分布$N(0,1)$,则$\chi^2=X_1^2+\dotsc+X_n^2$的分布称为自由度为$n$的$\chi^2$分布\index{C!$\chi^2$分布},记为$\chi^2\sim\chi^2(n)$.
+\end{definition}
+
+在第三章我们已经指出,若$X\sim N(0,1)$,则$X^2\sim Ga(1/2,1/2)$,根据伽玛分布的可加性立有$\chi^2\sim Ga(n/2,n/2)=\chi^2(n)$,由此可见, $\chi^2(n)$分布是伽玛分布的特例,故$\chi^2(n)$分布的密度函数为
+\[p(y)=\frac{(1/2)^{\frac n2}}{\Gamma(n/2)}y^{\frac n2-1}\ee^{-\frac y2},\quad y>0,\]
+
+该密度函数的图像是一个只取非负值的偏态分布,见图~\ref{fig:5.4.1},其期望等于自由度,方差等于2倍自由度,即$E\chi^2=n\operatorname{Var}(\chi^2)=2n$.
+\begin{figure}[!ht]
+  \centering
+\begin{tikzpicture}[>=Stealth,semithick,xscale=0.5,yscale=40,samples=500]
+\draw[->](0,0)node[below left]{$O$}--(22,0);
+\foreach\x in{2,4,...,20}\draw(\x,0.002)--(\x,0)node[below]{\x};
+\draw[->](0,0)--(0,0.2);
+\foreach\x in{0.02,0.04,0.06,0.08,0.1,0.12,0.14,0.16,0.18}\draw(0,\x)node[left]{\x}--(0.12,\x);
+\draw[thick,domain=0:20]plot(\x,{(\x)*e^(-(\x)/2)/4});
+\draw(3.2,0.16)--(12,0.16)node[right=-2pt]{$n=4$};
+\draw[thick,dashed,domain=0:20]plot(\x,{(\x)^2*e^(-(\x)/2)/16});
+\draw[very thick,domain=0:8]plot(\x,{0.1*e^(-(\x-8)^2/14)});
+\draw[very thick,domain=8:20]plot(\x,{0.1*e^(-(\x-8)^2/40)});
+\draw(5.62,0.12)--(12,0.12)node[right=-2pt]{$n=6$};
+\draw(11.8,0.07)--(16,0.07)node[right=-2pt]{$n=10$};
+\end{tikzpicture}
+  \caption{$\chi^2(n)$分布的密度函数}\label{fig:5.4.1}
+\end{figure}
 
 
+当随机变量$\chi^2\sim\chi^2(n)$时,对给定$\alpha(0<\alpha<1)$,称满足$P(\chi^2\leq\chi_{1-\alpha}^2(n))=1-\alpha$的$\chi_{1-\alpha}^2$是自由度为$n$的卡方分布的$1-\alpha$分位数\index{F!分位数}.分位数$\chi_{1-\alpha}^2(n)$可以从附表3中查到.譬如$n=10,\alpha=0.05$,那么从附表3上查得
+\[\chi_{1-0.05}^2(10)=\chi_{0.95}^2(10)=18.31.\]
+\subsection{$F$分布\label{ssec:5.4.2}}
+\begin{definition}{}{}
+设$X_1\sim\chi^2(m),X_2\sim\chi^2(n),X_1$与$X_2$独立,则称$F+\frac{X_1/m}{X_2/n}$的分布是自由度为$m$与$n$的$F$分布\index{F!$F$分布},记为$F\sim F(m,n)$,其中$m$称为分子自由度, $n$称为分母自由度.
+\end{definition}
+下面分两步来导出$F$分布的密度函数.
+
+首先我们导出$Z=\frac{X_1}{X_2}$的密度函数,若记$p_1(x)$和$p_2(x)$分别为$\chi^2(m)$和$\chi^2(n)$的密度函数,根据独立随机变量商的分布的密度函数公式~\eqref{eq:3.3.22}. $Z$的密度函数为
+\begin{align*}
+p_Z(z)&=\int_0^{=\infty}x_2p_1(zx_2)p_2(x_2)\dd x_2\\
+&=\frac{z^{\frac{m}{2}-1}}{\Gamma \left( \frac{m}{2} \right) \Gamma \left( \frac{n}{2} \right) 2^{\frac{m+n}{2}}}\int_0^{+\infty}x_2^{\frac{m+n}2-1}\ee^{-\frac{x_2}2(1+z)}\dd x_2.
+\end{align*}
+运用变换$u=\frac{x_2}2(1+z)$,可得
+\[p_Z(z)=\frac{z^{\frac{m}{2}-1}\left( 1+z \right) ^{\frac{m+n}{2}}}{\Gamma \left( \frac{m}{2} \right) \Gamma \left( \frac{n}{2} \right)}\int_0^{+\infty}u^{\frac{m+n}2-1}\ee^{-u}\dd u.\]
+最后的定积分为伽马函数$\Gamma\left(\frac{m+n}2\right)$,从而
+\[
+p_Z\left( z \right) =\frac{\Gamma \left( \frac{m+n}{2} \right)}{\Gamma \left( \frac{m}{2} \right) \Gamma \left( \frac{n}{2} \right)}z^{\frac{m}{2}-1}\left( 1+z \right) ^{-\frac{m+n}{2}},\quad z>0.
+\]
+第二步,我们导出$F=\frac nm Z$的密度函数,对$y>0$,有
+\begin{align*}
+p_F\left( y \right) &=p_Z\left( \frac{m}{n}y \right) \cdot \frac{m}{n}\\
+&=\frac{\Gamma \left( \frac{m+n}{2} \right)}{\Gamma \left( \frac{m}{2} \right) \Gamma \left( \frac{n}{2} \right)}\left( \frac{m}{n}y \right) ^{\frac{m}{2}-1}\left( 1+\frac{m}{n}y \right) ^{-\frac{m+n}{2}}\cdot \frac{m}{n}\\
+&=\frac{\Gamma \left( \frac{m+n}{2} \right) \left( \frac{m}{n} \right) ^{\frac{m}{2}}}{\Gamma \left( \frac{m}{2} \right) \Gamma \left( \frac{n}{2} \right)}y^{\frac{m}{2}-1}\left( 1+\frac{m}{n}y \right) ^{-\frac{m+n}{2}}.
+\end{align*}
+这就是自由度为$m$与$n$的$F$分布的密度函数.该密度函数的图像是一个只取非负值的偏态分布(见图~\ref{5.4.2} )
+
+当随机变量$F\sim F(n,m)$时,对给定$\alpha(0<\alpha<1)$,称满足$P(F\leq F_{1-\alpha}(m,n))=1-\alpha$的$F_{1-\alpha}(m,n)$是自由度为$m$与$n$的$F$分布的$1-\alpha$分位数.
+
+由$F$分布的构造知,若$F\sim F(m,n)$,则有$1/F\sim F(n,m)$,故对给定$\alpha(0<\alpha<1)$,
+\[
+\alpha =P\left( \frac{1}{F}<F_{\alpha}\left( n,m \right) \right) =P\left( F\geq \frac{1}{F_{\alpha}\left( n,m \right)} \right).
+\]
+从而
+\[
+P\left( F\leq \frac{1}{F_{\alpha}\left( n,m \right)} \right) =1-\alpha,
+\]
+这说明
+\begin{equation}\label{eq:5.4.1}
+F_\alpha(n,m)=\frac1{F_{1-\alpha}(m,n)}.
+\end{equation}
+对小的$\alpha$,分位数$F_{1-\alpha}(m,n)$可以从附表5中查到,而分位数$F_\alpha(m,n)$则可通过 \eqref{eq:5.4.1} 得到.
+\begin{example}\label{exam:5.4.1}
+若取$m=10,n=5,\alpha=0.05$,那么从附表4上查得
+\[F_{1-0.05}(10,5)=F_{0.95}(10,5)=4.74,\]
+利用~\eqref{eq:5.4.1} 可得到
+\[F_{0.05}(10,5)=\frac1{F_{0.95}(5,10)}=\frac1{3.33}=0.3.\]
+\end{example}
+\subsection{$t$分布\label{eq:5.4.3}}
+\begin{definition}{}{5.4.3}
+设随机变量$X_1$与$X_2$独立且$X_1\sim N(0,1),X_2\sim\chi^2(n)$,则称$t=\frac{X_1}{\sqrt{X_2/n}}$的分布为自由度为$n$的$t$分布,记为$t\sim t(n)$.
+\end{definition}
+
+下面导出$t$分布的密度函数.由标准正态密度函数的对称性知, $X_1$与$-X_1$有相同分布,从而$t$与$-t$有相同分布.这意味着: 对任意实数$y$有
+\[P(0<t<y)=P(-<-t<y)=P(-y<-t<0).\]
+
+于是
+\[P(0<t<y)=\frac12P(t^2<y^2).\]
+
+由$F$变量构造可知, $t^2=\frac{X_1^2}{X_2^2/n}\sim F(1,n)$,将上式两边关于$y$求导可微$t$分布的密度函数为
+\begin{align*}
+p_t(y)&=yp_F(y^2)=\frac{\Gamma \left( \frac{1+n}{2} \right) \left( \frac{1}{n} \right) ^{\frac{1}{n}}}{\Gamma \left( \frac{1}{2} \right) \Gamma \left( \frac{n}{2} \right)}\left( y^2 \right) ^{\frac{1}{2}-1}\left( 1+\frac{1}{n}y^2 \right) ^{-\frac{1+n}{2}}y\\
+&=\frac{\Gamma \left( \frac{n+1}{2} \right)}{\sqrt{n\pi}\Gamma \left( \frac{n}{2} \right)}\left( 1+\frac{y^2}{n} \right) ^{-\frac{n+1}{2}},\quad -\infty<y<+\infty.
+\end{align*}
+这就是自由度为$n$的$t$分布的密度函数.
+
+$t$分布的密度函数的图像是一个关于纵轴对称的分布(图~\ref{fig:5.4.3} ),与标准正态分布的密度函数形状类似,只是峰比标准正态分布低一些,尾部的概率比标准正态分布的大一些.
+\begin{itemize}
+\item 自由度为$1$的$t$分布就是标准柯西分布,它的均值不存在;
+\item $n>1$时, $t$分布的数学期望存在切尾$0$;
+\item $n>2$时, $t$分布的方程存在,且为$n/(n-2)$;
+\item 当自由度较大(如$n\geq30$时), $t$分布可以用$N(0,1)$分布近似.
+\end{itemize}
+
+$t$分布是统计学中的一类重要分布,它与标准正态分布的微小差别是由英国统计学家哥塞特(Gosset)发现的.哥塞特年轻时在牛津大学学习数学和化学, 1899年开始在一家酿酒厂担任酿酒化学技师,从事试验和数据分析工作. 由于哥塞特接触的样本容量都较小,只有$4,5$过大量实验数据的积累,哥塞特发现$t=\sqrt{n-1}(\bar x-\mu)/s$的分布与传统认为的$N(0,1)$分布并不同,特别是尾部概率相差较大,表~\ref{tab:5.4.2} 列出了标准正态分布$N(0,1)$和自由度为4的$t$分布的一些尾部概率.
+\begin{table}[!ht]
+  \centering
+  \caption{$N(0,1)$和$t(4)$的尾部概率$P(|X|\geq c)$}\label{tab:5.4.2}
+\begin{tabularx}{\textwidth}{YYYYY}
+\toprule
+&c=2&c=2.5&c=3&c=3.5\\
+\midrule
+X\sim N(0,1)&0.0455&0.0124&0.0027&0.000465\\
+X\sim t(4)&0.1161&0.0668&0.0399&0.0249\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+由此,哥塞特怀疑是否有另一个分布族存在,通过深入研究,哥塞特于1908年``Studen''的笔名发表了此项研究结果,故后人也称$t$分布为学生氏分布. $t$分布的发现在统计学史上具有划时代的意义,打破了正态分布一统天下的局面,开创了小样本统计推断的新纪元.
+
+当随机变量$t\sim t(n)$,称满足$P(t\leq t_{1-\alpha}(n))=1-\alpha$的$t_{1-\alpha}(n)$是自由度为$n$的$t$分布的$1-\alpha$分位数. 分位数$t_{1-\alpha}(n)$可以从附表3中查到.譬如$n=10,\alpha=0.05$,那么从附表4上查得$t_{1-0.05}(10)=t_{0.95}(10)=1.812$.
+
+由于$t$分布的密度函数关于0对称,故其分位数间有如下关系
+\begin{equation}\label{eq:5.4.2}
+t_\alpha(n)=-t_{1-\alpha}(n).
+\end{equation}
+譬如, $t_{0.05}(10)=-t_{0.95}(10)=-1.812$.
+\subsection{一些重要结论}
+来自一般正态总体的样本均值$x$和样本方差$s_2$的抽样分布是应用最广的抽样分布,下面我们加以介绍.
+\begin{theorem}{}{5.4.1}
+设$x_1,\dotsc,x_n$是来自正态总体$N(\mu,\sigma^2)$的样本,其样本均值和样本方差分别为
+\[\bar x=\frac1n\sum_{i=1}^nx_i\;\text{和}\;s^2=\frac1{n-1}\sum_{i=1}^n(x_i-\bar x)^2,\]
+则有
+\begin{enumerate}[label=(\arabic*)]
+\item $\bar x$相互独立;
+\item $\bar x\sim N(\mu,\sigma^2/n)$;
+\item $\frac{(n-1)\cdot s^2}{\sigma^2}=\chi^2(n-1)$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+记$\bm X=(x_1,\dotsc,x_n)\TT$,则有
+\[E\bm X=\begin{pmatrix}
+\mu\vdots\mu
+\end{pmatrix},\operatorname{\bm X}=\sigma^2 \bm I.\]
+\end{proof}
+取一个$n$维正交矩阵$\bm A$,其第一行的每一个元素均为$1/\sqrt n$,如
+\[\bm A=\begin{pmatrix}
+\frac1{\sqrt n}&\frac{1}{\sqrt n}&\frac1{\sqrt n}&\cdots&\frac1{\sqrt n}\\
+\frac1{\sqrt{2\cdot1}}&-\frac1{\sqrt{2\cdot1}}&0&\cdots&0\\
+\frac1{\sqrt{3\cdot2}}&\frac1{\sqrt{3\cdot2}}&-\frac2{\sqrt{3\cdot2}}&\cdots&0\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+\frac1{\sqrt{n(n-1)}}&\frac1{\sqrt{n(n-1)}}&\frac1{\sqrt{n(n-1)}}&\cdots&
+-\frac1{\sqrt{n(n-1)}}
+\end{pmatrix}\]
+令$\bm Y=\bm A\bm X$,则由多维正态分布的性质知$\bm Y$仍服从$n$维正态分布,其均值和方差为
+\begin{align*}
+E\bm Y&\bm A\cdot E\bm X=\begin{pmatrix}
+\sqrt n\mu\\0\\\vdots\\0
+\end{pmatrix},\\
+\operatorname{Var}(\bm Y)&=\bm A\cdot\operatorname(\bm X\cdot\bm A\TT=\bm A\cdot\sigma^2\bm I\cdot \bm A\TT\\
+&=\sigma^2\bm A\bm A\TT=\sigma^2\bm I,
+\end{align*}
+由此, $\bm Y=(y_1,\dotsc,y_n)\TT$的各个分量相互独立,且都服从正态分布,其方差均为$\sigma^2$,而均值并不完全相同, $y_1$的均值为$\sqrt n\mu,y_2,\dotsc,y_n$的均值为$0$.注意到$\bar x=\frac1{\sqrt n}y_1$,这就证明了结论(2);由于$\sum_{i=1}^ny_i^2=\bm Y\TT\bm Y=\bm X\TT\bm A\TT\bm A\bm X=\sum_{i=1}^nx_i^2$,故而
+\begin{align*}
+(n-1)\cdot s^2&=\sum_{i=1}^n(x_i-\bar x)^2=\sum_{i=1}^nx_i^2-(\sqrt n\bar x)^2\\
+&=\sum_{i=1}^ny_i^2-y_1^2=\sum_{i=2}^ny_i^2,
+\end{align*}
+这证明结论(1);由于$y_2,\dotsc,y_n$独立同分布于$N(0,\sigma^2)$,于是
+\begin{equation}\label{eq:5.4.3}
+\frac{(n-1)\cdot s^2}{\sigma^2}=\sum_{i=2}^n\left(\frac{y_i}\sigma\right)^2\sim\chi^2(n-1),
+\end{equation}
+定理证明完成.
+\begin{corollary}{}{5.4.1}
+在定理~\ref{thm:5.4.1} 的记号下,有
+\begin{equation}\label{eq:5.4.4}
+t=\frac{\sqrt n(\bar x-\mu)}s\sim t(n-1).
+\end{equation}
+\end{corollary}
+\begin{proof}
+由定理~\ref{thm:5.4.1}(2)可以推出
+\begin{equation}\label{eq:5.4.5}
+\frac{\bar x-\mu}{\sigma/\sqrt n}\sim N(0,1),
+\end{equation}
+将~\ref{eq:5.4.4} 左端改写为
+\begin{equation}\label{eq:5.4.6}
+\frac{\sqrt{n}\left( \bar{x}-\mu \right)}{\sigma /\sqrt{n}}=\frac{\frac{\bar{x}-\mu}{\sigma /\sqrt{n}}}{\sqrt{\frac{\left( n-1 \right) \cdot s^2/\sigma ^2}{n-1}}}.
+\end{equation}
+由于分子是标准正态变量,分母的根号里是自由度为$n-1$的$t$变量除以它的自由度,且分子与分母相互独立,由$t$分布定义可知$t\sim t(n-1)$,推论证完.
+\end{proof}
+\begin{corollary}{}{5.4.2}
+设$x_1,\dotsc,x_m$是来自$N(\mu_1,\sigma_1^2)$的样本, $y_1,\dotsc,y_n$是来自$N(\mu_2,\sigma_2^2)$的样本,且此两样本相互独立,记
+\[s_x^2=\frac1{m-1}\sum_{i=1}^m(x_i-\bar x)^2,\quad s_y^2=\frac1{n-1}\sum_{i=1}^n
+(y_i-\bar y)^2,\]
+其中
+\[\bar x=\frac1m\sum_{i=1}^m x_i,\quad \bar y=\frac1n\sum_{i=1}^ny_i,\]
+则有
+\begin{equation}\label{eq5.4.7}
+F=\frac{s_x^2/\sigma_1^2}{s_y^2/\sigma_2^2}\sim F(m-1,n-1).
+\end{equation}
+特别,若$\sigma_1^2=\sigma_2^2$,则$F=s_x^2/s_y^2\sim F(m-1,n-1)$.
+\end{corollary}
+\begin{proof}
+由两样本独立可知, $s_x^2$与$s_y^2$相互独立,且
+\[\frac{(m-1)s_x^2}{\sigma_1^2}\sim\chi^2(m-1),\quad
+\frac{(n-1)s_y^2}{\sigma_1^2}\sim\chi^2(n-1).\]
+由$F$分布定义可知$F\sim F(m-1,n-1)$.
+\end{proof}
+\begin{corollary}{}{5.4.3}
+在推论~\ref{cor:5.4.2}的记号下,设$\sigma_1^2=\sigma_2^2=\sigma^2$,并记
+\[
+s_{w}^{2}=\frac{\left( m-1 \right) s_{x}^{2}+\left( n-1 \right) s_{y}^{2}}{m+n-2}=\frac{\sum_{i=1}^m{\left( x_i-\bar{x} \right) ^2}+\sum_{i=1}^n{\left( y_i-\bar{y} \right) ^2}}{m+n-2},
+\]
+则
+\begin{equation}\label{eq:5.4.8}
+\frac{\left( \bar{x}-\bar{y} \right) -\left( \mu _1-\mu _2 \right)}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}}\sim t\left( m+n-2 \right).
+\end{equation}
+\end{corollary}
+\begin{proof}
+由$\bar x\sim N(\mu_1,\sigma^2/m),\bar y\sim N(\mu_2,\sigma^2/n),\bar x$与$\bar y$独立,故有
+\[\bar x-\bar y\sim N\left(\mu_1-\mu_2,\left(\frac1m+\frac1n\right)\sigma^2\right),\]
+所以
+\begin{equation}\label{eq:5.4.9}
+\frac{\left( \bar{x}-\bar{y} \right) -\left( \mu _1-\mu _2 \right)}{\sigma \sqrt{\frac{1}{m}+\frac{1}{n}}}\sim N\left( \left( ,1 \right) \right).
+\end{equation}
+由定理~\ref{eq:5.4.1} 知, $\frac{(m-1)s_x^2}{\sigma^2}\sim\chi^2(m-1),
+\frac{(n-1)s_y^2}{\sigma^2}\sim\chi^2(n-1)$,且它们相互独立,则由可加性知
+\begin{equation}\label{eq:5.4.10}
+\frac{\left( m+n-2 \right) s_{w}^{2}}{\sigma ^2}=\frac{\left( m-1 \right) s_{x}^{2}+\left( n-1 \right) s_{y}^{2}}{\sigma ^2}\sim \chi ^2\left( m+n-2 \right).
+\end{equation}
+由于$\bar x-\bar y$与$s_w^2$相互独立,根据$t$分布的定义即可得到~\eqref{eq:5.4.8}.
+\end{proof}
