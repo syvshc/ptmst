@@ -443,7 +443,64 @@ n &   c_n  &  n &   c_n  &  n &   c_n  &  n &   c_n  &  n & c_n \\
 \end{example}
 
 \subsection{有效性}
+
+\subsection{有效性}\label{ssec:6.2.3}
+
+参数的无偏估计可以有很多, 如何在无偏估计中进行选择? 直观的想法是希望该估计围绕参数真值的波动越小越好, 波动大小可以用方差来衡量, 因此人们常用无偏估计的方差的大小作为度量无偏估计优劣的标准, 这就是有效性.
+
+\begin{definition}{}{6.2.3} %p297
+设 $\hat{\theta}_1,\hat{\theta}_2$ 是 $\theta$ 的两个无偏估计, 如果对任意的 $\theta\in\Theta$ 有
+\[\mathrm{Var}(\hat{\theta}_1)\leqslant\mathrm{Var}(\hat{\theta}_2)\]
+且至少有一个 $\theta\in\Theta$ 日使得上述不等号严格成立, 则称 $\hat{\theta}_1$ 比 $\hat{\theta}_2$ 有效.
+\end{definition}
+
+\begin{example}\label{exam:6.2.6}
+设 $x_1,\cdots,x_n$ 是取自某总体的样本, 记总体均值为 $\mu$, 总体方差为 $\sigma^2$, 则 $\hat{\mu}_1=x_1,\hat{\mu}_2=\hat{x}$ 都是 $\mu$ 的无偏估计，但
+\[\operatorname{Var}\left(\hat{\mu}_{1}\right)=\sigma^{2}, \quad \operatorname{Var}\left(\hat{\mu}_{2}\right)=\sigma^{2} / n\]
+显然, 只要 $n>1$, $\hat{\mu}_2$ 比$\hat{\mu}_1$ 有效. 这表明, 用全部数据的平均估计总体均值要比只使用部分数据更有效.
+\end{example}
+
+\begin{example}\label{exam:6.2.7}
+在例\ref{exam:6.2.2}中, 我们指出均匀总体 $U(0,\theta)$ 中 $\theta$ 的极大似然估计是 $x_{(n)}$, 由于 $E_{x_{(n)}}=\frac{n}{n+1}\theta$, 所以 $x_{(n)}$ 不是 $\theta$ 的无偏估计, 但是 $\theta$ 的渐近无偏估计. 经过修偏后可以得到 $\theta$ 的一个无偏估计: $\hat{\theta}_1=\frac{n+1}{n}x_{(n)}$. 且
+\begin{align*} 
+\operatorname{Var}\left(\hat{\theta}_{1}\right) 
+&=\left(\frac{n+1}{n}\right)^{2} \operatorname{Var}(x_{(n)}) \\ 
+&=\left(\frac{n+1}{n}\right)^{2} \frac{n}{(n+1)^{2}(n+2)} \theta^{2}=\frac{\theta^{2}}{n(n+2)}
+\end{align*}
+另一方面, 由矩法, 我们可以得到 $\theta$ 的另一个无偏估计 $\hat{\theta}_2=2\bar x$，且
+\[\operatorname{Var}(\hat{\theta}_{2})=4 \mathrm{V} \operatorname{ar}(\overline{x})=\frac{4}{n} \operatorname{Var}(X)=\frac{4}{n} \cdot \frac{\theta^{2}}{12}=\frac{\theta^{2}}{3 n}\]
+由此, 当 $n>1$ 时, $\hat{\mu}_1$ 比$\hat{\mu}_2$ 有效.
+\end{example}
+
 \subsection{均方误差}
+
+无偏性是估计的一个优良性质, 对无偏估计我们还可以通过其方差进行有效性比较. 然而不能由此认为: 有偏估计一定是不好的估计.
+
+在有些场合，有偏估计比无偏估计更优, 这就涉及如何对有偏估计进行评价. 一般而言, 在样本量一定时, 评价一个点估计的好坏使用的度最指标总是点估计值 $\hat{\theta}$ 与参数真值 $\theta$ 的距离的函数, 最常用的函数是距离的平方.由于具有随机性, 可以对该函数求期望, 这就是下式给出的均方误差
+\begin{equation}\label{eq:6.2.6}
+\operatorname{MSE}(\hat{\theta})=E(\hat{\theta}-\theta)^{2}
+\end{equation}
+均方误差是评价点估计的最一般的标准. 自然, 我们希望估计的均方误差越小越好.
+
+注意到
+\begin{align*} 
+\operatorname{MSE}(\hat{\theta}) 
+&=[E(\hat{\theta}-E \hat{\theta})+(E \hat{\theta}-\theta)]^{2} \\ &=E(\hat{\theta}-E \hat{\theta})^{2}+(E \hat{\theta}-\theta)^{2}+2 E[(\hat{\theta}-E \hat{\theta})(E \hat{\theta}-\theta)] \\ &=\operatorname{Var}(\hat{\theta})+(E \hat{\theta}-\theta)^{2} \end{align*}
+因此, 均方误差由点估计的方差与偏差的平方两部分组成. 如果 $\hat{\theta}$ 是 $\theta$ 的无偏估计, 则 $\operatorname{MSE}(\hat{\theta})=\operatorname{Var}(\hat{\theta})$, 此时用均方误差评价点估计与用方差是完全一样的, 这也说明了用方差考察无偏估计有效性是合理的. 当 $\hat{\theta}$ 不是 $\theta$ 的无偏估计时, 就要看其均方误差 $\operatorname{MSE}(\hat{\theta})$, 即不仅要看其方差大小, 还要看其偏差大小. 下面的例子说明在均方误差的含义下有些有偏估计优于无偏估计. 
+
+\begin{example}
+在例\ref{exam:6.2.7}中我们指出对均匀总体 $U(0,\theta)$, 由 $\theta$ 的最大似然估计得到的无偏估计是 $\hat{\theta}=(n+1)x_{(n)}/n$, 它的均方误差
+\[\operatorname{MSE}(\hat{\theta})=\operatorname{Var}(\tilde{\theta})=\frac{\theta^{2}}{n(n+2)}\]
+现我们考虑 $\theta$ 的形如 $\theta_\alpha=\alpha\cdot x_{(n)}$ 的估计, 其均方误差为
+\begin{align*}
+\operatorname{MSE}(\hat{\theta}_{\alpha}) 
+&=\operatorname{Var}(\alpha \cdot x_{(n)})+(\alpha E x_{\langle n)}-\theta)^{2} \\ 
+&=\alpha^{2} \operatorname{Var}(x_{(n)})+\left(\alpha \frac{n}{n+1} \theta-\theta\right)^{2} \\ 
+&=\alpha^{2} \frac{n}{(n+1)^{2}(n+2)} \theta^{2}+\left(\frac{n \cdot \alpha}{n+1}-1\right)^{2} \theta^{2} 
+\end{align*}
+用求导的方法不难求出当 $\alpha_{0}=(n+2) /(n+1)$ 时上述均方误差达到最小, 且 $\operatorname{MSE}\big(\frac{n+2}{n+1} x_{(n)}\big)=\frac{\theta^{2}}{(n+1)^{2}}$, 这表明 $\hat{\theta}_{0}=\frac{n+2}{n+1} x_{(n)}$ 虽是 $\theta$ 的有偏估计, 但其均方课差 $\operatorname{MSE}(\hat{\theta}_{0})=\frac{\theta^{2}}{(n+1)^{2}}<\frac{\theta^{2}}{n(n+2)}=\operatorname{MSE}(\hat{\theta})$. 所以在均方课差的标准下, 有偏估计 $\hat\theta$ 优于无偏估计 $\theta$.
+\end{example}
+
 \subsection{习题}
 
 \section{最小方差无偏估计}
