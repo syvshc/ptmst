@@ -24,7 +24,6 @@
 \begin{itemize}
 	\item 检查一个产品,只考察其合格与否,则其样本空间为 $ \Omega =\{\text{合格品,不合格品}\} $ , 这时可设计一个随机变量 $ X $ 如下:
 \end{itemize}
-
 \[
 \begin{array}{ccc}
 \text{样本点}   &       & X \text{的取值} \\\midrule
@@ -32,10 +31,7 @@
 \text{不合格品} &  \longrightarrow  & 1 \\
 \end{array}
 \]
-
-
 在此可将 $ X $ 解释为``检查一个产品中不合格品数".若此种产品的不合格品率为 $ p $ ,则 $ X $ 取各种值的概率可列表如下:
-
 \[
 \begin{array}{c|cc}
  X  &  0    &  1  \\\midrule
@@ -46,8 +42,6 @@
 \begin{itemize}
 	\item 检查三个产品,则有8个样本点,若记X为``三个产品中的不合格品数",则 $ X $ 与样本点之间有如下对应关系:
 \end{itemize}
-
-
 \[
 \begin{array}{ccc}
 \text{样本点}       &   &  X  \text{的取值} \\\midrule
@@ -61,9 +55,7 @@
  \omega_8=(1,1,1)  &  \longrightarrow  & 3 \\
 \end{array}
 \]
-
 这样 $ X $ 取各种值就是如下的互不相容的事件:
-
 \begin{equation} 
 \begin{array}{ll}
 { \{ X=0 \}=\{\omega_{1}\} ;} & \{  X=1 \}=\{\omega_{2}, \omega_{3}, \omega_{4} \} \\ 
@@ -72,7 +64,6 @@
 \end{equation}
 
 若此种产品的不合格品率为 $ p $ ,则 $ X $ 取各种值的概率可列表如下:
-
 \[ 
 \begin{array}{c|cccc}
 {x} & {0} & {1} & {2} & {3} \\ \midrule 
@@ -94,11 +85,9 @@ P & {(1-p)^{3}} & {3 p(1-p)^{2}} & {3 p^{2}(1-p)} & {p^{3}}
 \subsection{随机变量的分布函数}\label{ssec:2.1.2}
 
 随机变量 $ X $ 是样个点 $ \omega $ 的一个值函数.若 $ B $ 是某些实数组成的集合,即 $ B\subset R $ , $ R $ 表小实数集、则 $ X\subset B $ 表示如下的随机事件
-
 \[
 \omega X(\omega)\subset B \subset \Omega
 \]
-
 这就是我们可以用随性变立量得某些取值来表示随机事件的依据.臂如
 
 \begin{itemize}
@@ -108,17 +97,14 @@ P & {(1-p)^{3}} & {3 p(1-p)^{2}} & {3 p^{2}(1-p)} & {p^{3}}
 \end{itemize}
 
 为了掌握 $ X $ 的统计规律性,我们只要掌握 $ X $ 取各种值的概率.由于
-
 \[
 \{a < X \leq b \} = \{ X \leq b\} - \{x\leq a\},
 \]
 
 因此只要对任意实数 $ x $ ,知道了件 $ X\geq x $ 的概率就够了,这个概率具有累积特性,常用 $ F $ 表示.另外这个概率与 $ x $ 有关,不同的 $ x $ ,此累积概率的值也不同,为此记
-
 \[
 F(X,P(X\leq x))
 \]
-
 于是 $ F(x) $ 所有 $ x $ 都有定义,而 $ F(x) $ 是定义在 $ (\infty,+\infty ) $ 上、取值于 $ [0,1] $ 的一个函数.这就是我们下面要引入的分布函数.
 
 \begin{definition}{分布函数}{2.1.2}
@@ -130,21 +116,17 @@ F(X,P(X\leq x))
 \end{definition}
 
 \begin{example}\label{exam:2.1.1}
-	向半径为 $ r $ 的圆内随机抛一点,求此点到圆心之距离 $ X $ 的分布函数 $ F(x) $ ,并求 $ P\left(X>\frac{2 r}{3}\right) $ .
+	向半径为 $ r $ 的圆内随机抛一点,求此点到圆心之距离 $ X $ 的分布函数 $ F(x) $ ,并求 $ P\left(X>\tfrac{2 r}{3}\right) $ .
 	
 	解事件`` $ x=x $ "表示所抛之点落在半径为 $ x(0 \leqslant x \leqslant r) $ 的圆内,故由几何概率知
-	
 	\[ 
 	F(x)=P(X \leqslant x)=\frac{\pi x^{2}}{\pi r^{2}}=\left(\frac{x}{r}\right)^{2}
 	\]
-	
 	从而
-	
 	\[ 
 	P\left(X>\frac{2 r}{3}\right)=1-P\left(X \leqslant \frac{2 r}{3}\right)=1-\left(\frac{2}{3}\right)^{2}=\frac{5}{9}
 	\]
-	
-	
+
 \end{example}
 
 
@@ -173,13 +155,10 @@ F(X,P(X\leq x))
 \begin{proof}
 	(1)是显然的,下证(2).由于 $ F(x) $ 是事件 $ \{X \leqslant x\} $ 的概率,所以 $ 0\leq 
 	F(x)\leq 1 $ .由 $ F(x) $ 的单调性知,对任意整数 $ m $ 和 $ n $ ,有
-	
 	\[ 
 	\lim _{x \rightarrow-\infty} F(x)=\lim _{m \rightarrow-\infty} F(m), \lim _{x \rightarrow+\infty} F(x)=\lim _{n \rightarrow+\infty} F(n)
 	\]
-	
 	都存在.又由概率的可列可加性得
-	
 	\[ 
 	\begin{array}{ll}
 	1=P(-\infty<X<+\infty)&=P\left(\bigcup_{i=-\infty}^{+\infty}\{i-1<X \leqslant i\}\right) \\ 
@@ -189,7 +168,6 @@ F(X,P(X\leq x))
 	\]
 	
 	再证(3),因为 $ F(x) $ 是单调有界非降函数,所以其任一点 $ x_0 $ 的右极限 $ F(x_0+0) $ 必存在.为证右连续性,只要对单调下降的数列 $ x_{1}>x_{2}>\cdots>x_{n}>\cdots>x_{0} $ ,当 $ x_{n} \rightarrow x_{0}(n \rightarrow+\infty) $ 时,证明 $ \lim _{n \rightarrow+\infty} F\left(x_{n}\right)=F\left(x_{0}\right) $ 成立即可.因为
-	
 	\[ \begin{array}{ll}
 	F\left(x_{1}\right)-F\left(x_{0}\right)&=P\left(x_{0}<X \leqslant x_{1}\right)=P\left(\bigcup_{r=1}^{+\infty}\left\{x_{i+1}<X \leqslant x_{i}\right\}\right) \\
 	&=\sum_{i=1}^{+\infty} P\left(x_{i+1}<X \leqslant x_{i}\right)=\sum_{i=1}^{+\infty}\left[F\left(x_{i}\right)-F\left(x_{t+1}\right)\right] \\
@@ -198,7 +176,6 @@ F(X,P(X\leq x))
 \end{proof}
 
 由此得
-
 \[ 
 F\left(x_{0}\right)=\lim _{x \rightarrow+\infty} F\left(x_{n}\right)=F\left(x_{0}+0\right)
 \]
@@ -208,7 +185,6 @@ F\left(x_{0}\right)=\lim _{x \rightarrow+\infty} F\left(x_{n}\right)=F\left(x_{0
 以上三条基本性质是分布函数必须具有的性质,还可以证明:满足这三个基本性质的函数一定是某个随机变量的分布函数.从而这三个基本性质成为判别某个函数是否能成为分布函数的充要条件.
 
 有了随机变量 $ X $ 的分布函数,那么有关 $ X $ 的各种事件的概率都能方便地用分布函数来表示了,例如,对任意的实数 $ a $ 与 $ b $ ,有
-
 \[ 
 \begin{array}{rl}
 P(a<X \leqslant b)&=F(b)-F(a)\\ 
@@ -222,7 +198,6 @@ P(a \leqslant X<b)&=F(b-0)-F(a-0)
 \]
 
 特别当 $ F(x) $ 在 $ a $ 与 $ b $ 处连续时,有
-
 \[ 
 F(a-0)=F\langle a), \quad F(b-0)=F(b)
 \]
@@ -237,15 +212,19 @@ F(a-0)=F\langle a), \quad F(b-0)=F(b)
 	
 	它在整个数轴上是连续、单调严增函数,且 $ F(+\infty)=1, F(-\infty)=0 $ .由于此 $ F(x) $ 满足分布函数的三个基本性质,故 $ F(x) $ 是一个分布函数.称这个分布函数为\textbf{柯西分布函数}\index{K!柯西分布函数},其图形见图~\ref{fig:2.1.1}
 	
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.7\linewidth]{2-1-1}
-		\caption{柯西分布函数}
-		\label{fig:2.1.1}
-	\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}[>=Stealth,xscale=1.3,yscale=2,semithick]
+    \draw[->](-2,0)--(0,0)node[below left]{$O$}--(2,0)node[below]{$x$};
+    \draw[->](0,-0.5)--(0,1.3)node[left]{$F(x)$};
+    \draw[dashed](-2,1)--(2,1)(1,0)node[below]{$1$}--(1,0.75)--(0,0.75)node[left]{$F(1)$}
+    (-1,0)node[below]{$-1$}--(-1,0.25)--(0,0.25)node[right]{$F(-1)$};
+    \draw[thick,domain=-2:2,samples=100]plot(\x,{(atan(\x))/180+0.5});
+    \end{tikzpicture}
+    \caption{柯西分布函数}\label{fig:2.1.1}
+\end{figure}
 	
 	若X服从柯西分布,则
-	
 	\[ 
 	\begin{aligned} P(-1 \leqslant X \leqslant 1) &=F(1)-F(-1) \\ &=\frac{1}{\pi}[\arctan (1)-\arctan (-1)] \\ &=\frac{1}{\pi}\left[\frac{\pi}{4}-\left(-\frac{\pi}{4}\right)\right]=\frac{1}{2} \end{aligned}
 	\]
@@ -263,17 +242,13 @@ F(a-0)=F\langle a), \quad F(b-0)=F(b)
 	\end{equation}
 	
 	为 $ X $ 的\textbf{概率分布列}\index{K!柯西分布函数}或简称为\textbf{分布列}\index{F!分布列},记为 $ X \sim\left|p_{t}\right| $ ,分布列也可用如下列表方式来表示:
-	
 	\[
 	\begin{array}{c|ccccc}
 	X	&    x_{1}     &    x_{2}     &    \cdots     &     x_{n}    &   \cdots \\\midrule
 	P	&    p(x_1)     &    p(x_2)     &    \cdots     &    p(x_n)     &   \cdots \\
 	\end{array}
 	\]
-	
-	
-	或记成
-	
+	或记成	
 	\[ 
 	\left( \begin{array}{ccccc}{x_{1}} & {x_{2}} & {\cdots} & {x_{n}} & {\cdots} \\ {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\right)} & {\cdots}\end{array}\right)
 	\]
@@ -284,7 +259,6 @@ F(a-0)=F\langle a), \quad F(b-0)=F(b)
 第一章中我们已见过多个分布列,不同的离散随机变量可能有不同的分布列,甚至在一个样本空间上可以定义几个服从不同分布列的随机变量,这要看我们的研究需要,下面就是在同一样本空间上给出几个不同随机变量的具体例子.
 \begin{example}\label{exam:2.1.3}
 	掷两颗骰子,其样本空间O含有36个等可能的样本点
-	
 	\[ 
 	\Omega=\{(x, y) ; x, y=1,2, \cdots, 6\}
 	\]
@@ -297,11 +271,62 @@ F(a-0)=F\langle a), \quad F(b-0)=F(b)
 \end{example}
 
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-1-2}
-	\caption{同一样本空间上不同随机变量}
-	\label{fig:2.1.2}
+\begin{figure}[!ht]
+    \centering
+    \subfloat[点数之和$X$的定义]{
+        \begin{tikzpicture}[scale=0.5]
+        \draw(-0.5,0)--(8,0)(0,-0.5)--(0,7);
+        \foreach \x in{1,2,3,4,5,6}
+        \draw(\x,0)node[below]{$\x$}--(\x,0.12)(0,\x)node[left]{$\x$}--(0.12,\x);
+        \foreach \x in{1,2,3,4,5,6}\foreach \y in{1,2,3,4,5,6}
+        \fill(\x,\y)circle(2pt);
+        \foreach \x in{1.2,2.2,...,6.2}
+        \draw[rounded corners=1.5pt,xshift=-0.1cm,yshift=-0.1cm](\x,0.7)--(\x+0.2,1)--(1,\x+0.2)--(0.7,\x)--cycle;
+        \foreach \x in{1.2,2.2,...,5.2}
+        \draw[semithick,rounded corners=1.5pt,xshift=0.1cm,yshift=0.1cm,rotate around={180:(3.5,3.5)}]
+        (\x,0.7)--(\x+0.2,1)--(1,\x+0.2)--(0.7,\x)--cycle;
+        \foreach\x in{2,3,5}\node[fill=white,font=\footnotesize,inner sep=0pt]at(0.82,\x-1.5){$X=\x$};
+        \foreach \x in{4,6}\node[fill=white,font=\footnotesize,inner sep=0pt]
+        at(\x-1,0.42){$X=\x$};
+        \foreach \x in{7,...,12}\node[fill=white,font=\footnotesize,inner sep=0pt]
+        at(7.3,\x-6){$X=\x$};
+        \end{tikzpicture}
+    }\hfill
+    \subfloat[$6$点的个数$Y$的定义]{
+        \begin{tikzpicture}[scale=0.5]
+        \draw(-0.5,0)--(8,0)(0,-0.5)--(0,7);
+        \foreach \x in{1,2,3,4,5,6}
+        \draw(\x,0)node[below]{$\x$}--(\x,0.2)(0,\x)node[left]{$\x$}--(0.2,\x);
+        \foreach \x in{1,2,3,4,5,6}\foreach \y in{1,2,3,4,5,6}
+        \fill(\x,\y)circle(2pt);
+        \draw[rounded corners=1.5pt,semithick](0.8,0.8)--(5.2,0.8)--(5.2,5.2)--(0.8,5.2)--cycle;
+        \draw[rounded corners=1.5pt,semithick](0.8,5.7)--(0.8,6.3)[sharp corners]--(5.1,6.3)--
+        (6.3,5.1)[rounded corners=1.5pt]--(6.3,0.8)--(5.7,0.8)[sharp corners]--(5.7,5.1)
+        --(5.1,5.7)[rounded corners=1.5pt]--cycle;
+        \draw[semithick,rounded corners=1.5pt,xshift=0.1cm,yshift=0.1cm,rotate around={180:(3.5,3.5)}]
+        (1.2,0.7)--(1.4,1)--(1,1.4)--(0.7,1.2)--cycle;
+        \node[fill=white,font=\footnotesize,inner sep=0pt]at(3,3.5){$Y=0$};
+        \node[fill=white,font=\footnotesize,inner sep=0pt]at(7.3,3.5){$Y=1$};
+        \node[fill=white,font=\footnotesize,inner sep=0pt]at(7.3,6){$Y=2$};
+        \end{tikzpicture}
+    }\hfill
+    \subfloat[最大点数$Z$的定义]{
+        \begin{tikzpicture}[scale=0.5]
+        \draw(-0.5,0)--(8,0)(0,-0.5)--(0,7);
+        \foreach \x in{1,2,3,4,5,6}
+        \draw(\x,0)node[below]{$\x$}--(\x,0.2)(0,\x)node[left]{$\x$}--(0.2,\x);
+        \foreach \x in{1,2,3,4,5,6}\foreach \y in{1,2,3,4,5,6}
+        \fill(\x,\y)circle(2pt);
+        \draw[semithick](1,1)circle(0.25cm);
+        \foreach \x in {2,3,4,5,6}
+        \draw[rounded corners=1.5pt](1,\x-0.25)arc(270:90:0.25)--(\x+0.25,\x+0.25)
+        --(\x+0.25,1)arc(0:-180:0.25)--(\x-0.25,\x-0.25)--cycle;
+        \node[fill=white,font=\footnotesize,inner sep=0pt]at(1,0.4){$Z=1$};
+        \foreach \x in {2,3,4,5,6}
+        \node[fill=white,font=\footnotesize,inner sep=0pt]at(\x-0.54,\x-0.4){$Z=\x$};
+        \end{tikzpicture}
+    }
+    \caption{同一样本空间上不同随机变量}\label{fig:2.1.2}
 \end{figure}
 
 这三个随机变量的分布列可用古典方法算得如下:
@@ -338,11 +363,9 @@ P     &  \frac{1}{36}  &  \frac{2}{36}  &  \frac{3}{36}  &  \frac{4}{36}  &  \fr
 
 以上两条基本性质是分布列必须具有的性质,也是判别某个数列是否成为分布列的充要条件
 由离散随机变量X的分布列很容易写出X的分布函数:
-
 \[ 
 F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 \]
-
 它的图形是有限级(成无穷级)的阶梯函数,具体见下面的例子.不过在离散场合,常用来描述其分布的是分布列,很少用到分布函数.因为求离散随机变量X的有关事件的概率时,用分布列比用分布函数来得更方便.
 
 \begin{example}\label{exam:2.1.4}
@@ -352,8 +375,7 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 	x & -1 & 2 & 3 \\\midrule
 	P & 0.25 & 0.5 & 0.25 \\
 	\end{array}
-	\]
-	
+	\]	
 	试求 $ P(X \leqslant 0.5), P(1.5<X \leqslant 2.5) $ ,并写出 $ X $ 的分布函数.
 	
 	\textbf{解}
@@ -361,7 +383,6 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 	\[ 
 	\begin{array}{l}{P(X \leqslant 0.5)=P(X=-1)=0.25} \\ {P(1.5<X \leqslant 2.5)=P(X=2)=0.5}\end{array}
 	\]
-	
 	\[ 
 	F(x)=\left\{\begin{array}{ll}
 	{0,} & {x<-1} \\ 
@@ -375,34 +396,46 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 	
 	特别,常量 $ c $ 可看作仅取一个值的随机变量X,即
 	
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.7\linewidth]{2-1-3}
-		\caption{离散随机变量的分布雨数}
-		\label{fig:2.1.3}
-	\end{figure}
-	
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+    \draw[->](-2,0)--(0,0)node[below left]{$O$}--(3.5,0)node[below=1pt]{$x$};
+    \draw[->](0,-0.5)--(0,2.5)node[left]{$F(x)$};
+    \draw[thick](-2,0)--(-1,0)(-1,0.5)--(2,0.5)(2,1.5)--(3,1.5)(3,2)--(3.5,2);
+    \fill(-1,0.5)circle(1pt);\fill(2,1.5)circle(1pt);\fill(3,2)circle(1pt);
+    \filldraw[fill=white](-1,0)node[below]{$-1$}circle(1pt);\filldraw[fill=white](2,0.5)circle(1pt);
+    \filldraw[fill=white](3,1.5)circle(1pt);
+    \foreach \x in{1,2,3}\draw(\x,0.07)--(\x,0)node[below]{$\x$};
+    \foreach \x in{1,1.5,2}\draw(0.07,\x)--(0,\x);
+    \node[left]at(0,2){$1$};
+    \end{tikzpicture}
+    \caption{离散随机变量的分布函数}\label{fig:2.1.3}
+\end{figure}
 	\[ 
 	P(X=c)=1
 	\]
-	
 	这个分布常称为\textbf{单点分布}\index{D!单点分布}或\textbf{退化分布}\index{T!退化分布},它的分布函数是
-	
 	\begin{equation}
 	F(x)=\left\{\begin{array}{ll}
 	{0,} & {x<c} \\ 
 	{1,} & {x \geqslant c}
 	\end{array}\right.  \label{eq:2.1.3}
 	\end{equation}
-	
+
 	其图形为
-	
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.7\linewidth]{2-1-4}
-		\caption{单点分布函数}
-		\label{fig:2.1.4}
-	\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}[>=Stealth]
+    \draw[->](-0.3,0)--(0,0)node[below left]{$O$}--(4,0)node[below]{$x$};
+    \draw[->](0,-0.3)--(0,3)node[left]{$F(x)$};
+    \draw[thick](-0.3,0)--(0.8,0)node[below]{$c$}
+    (0.8,2)--(3.5,2);
+    \draw[dashed,semithick](0.8,0)--(0.8,2)--(0,2)node[left]{$1$};
+    \filldraw[fill=white](0.8,0)circle(1pt);
+    \fill(0.8,2)circle(1pt);
+    \end{tikzpicture}
+    \caption{单点分布函数}\label{fig:2.1.4}
+\end{figure}
 
 \end{example}
 
@@ -411,13 +444,11 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 \begin{example}\label{exam:2.1.5}
 	一汽车沿一街道行驶,需要经过3个设有红绿信号灯的路口,若设每个信号灯显示红绿两种信号的时间相等,且各个估号灯l.作相互独立.以x表示该汽车首次遇到红灯前已通过的路口数.试求 $ X $ 的概率分布列.
 	
-	解由题设可知, $ X $ 的可能取值为 $ 0,1.2.3 $ 又记 $ A= $ ``汽车在第i个路口遇到红灯", $ i=1,2,3 $ .因为 $ A_1,A_2,A_3 $ 相互独立,且
-	
+	解由题设可知, $ X $ 的可能取值为 $ 0,1.2.3 $ 又记 $ A= $ ``汽车在第i个路口遇到红灯", $ i=1,2,3 $ .因为 $ A_1,A_2,A_3 $ 相互独立,且	
 	\[ 
 	P\left(A_{t}\right)=P\left(A_{t}\right)=\frac{1}{2}, \quad i=1.2 .3
 	\]
-	所以得
-	
+	所以得	
 	\[ 
 	\begin{array}{l}
 	{P(X=0)=P\left(A_{1}\right)=\frac{1}{2}} \\ 
@@ -428,8 +459,6 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 	\]
 	
 	故 $ X $ 的分布列如下:
-	
-	% Table generated by Excel2LaTeX from sheet '1'
 	\begin{table}[htbp]
 		\centering
 		\begin{tabular}{c|cccc}
@@ -457,11 +486,49 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 	
 \end{example}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-1-5}
-	\caption{新生婴儿体重 $ X $ 的频率分布}
-	\label{fig:2.1.5}
+\begin{figure}[!ht]
+    \centering
+    \subfloat[$\Delta x=1$]{
+        \begin{tikzpicture}[>=Stealth,yscale=0.8,xscale=0.7]
+        \draw[decorate,decoration={snake,segment length=1mm,amplitude=0.5mm}]
+        (0,0)node[below]{$O$}--(0.6,0);
+        \draw[->](0.6,0)--(6.8,0)node[below]{$x$};
+        \draw[->](0,0)--(0,3)node[right]{$P/\Delta x$};
+        \draw[semithick](0.6,0)--(0.6,0.3)--(1.4,0.3)(1.4,0)--(1.4,0.7)--(2.2,0.7)
+        (2.2,0)--(2.2,1.7)(2.2,0)--(2.2,2.4)--(3,2.4)--(3,0)(3,1.7)--(3.8,1.7)--(3.8,0)
+        (3.8,0.8)--(4.6,0.8)--(4.6,0)(4.6,0.5)--(5.4,0.5)--(5.4,0)
+        (5.4,0.4)--(6.2,0.4)--(6.2,0);
+        \draw(1,0)--(1,-0.08)node[below]{$4$};\draw(1.8,0)--(1.8,-0.08)node[below]{$5$};
+        \draw(2.6,0)--(2.6,-0.08)node[below]{$6$};\draw(3.4,0)--(3.4,-0.08)node[below]{$7$};
+        \draw(4.2,0)--(4.2,-0.08)node[below]{$8$};\draw(5,0)--(5,-0.08)node[below]{$9$};
+        \draw(5.8,0)--(5.8,-0.08)node[below]{$10$};
+        \end{tikzpicture}
+    }\hfill
+    \subfloat[$\Delta x=0.1$]{
+        \begin{tikzpicture}[>=Stealth,yscale=0.8,xscale=0.6]
+        \draw[decorate,decoration={snake,segment length=1mm,amplitude=0.5mm}]
+        (0,0)node[below]{$O$}--(1,0);
+        \draw[->](1,0)--(6,0)node[below]{$x$};
+        \draw[->](0,0)--(0,3)node[right]{$P/\Delta x$};
+        \foreach \x in{5,6,7,8,9}\draw(\x-4,0)node[below]{$\x$}--(\x-4,-0.08);
+        \draw[semithick,domain=0.3:5.7,samples=100]plot(\x,{2*e^(-(\x-3)^2/2)+0.2});
+        \foreach \x in{1,1.1,...,5}
+        \draw(\x,0)--(\x,{2*e^(-(\x-3)^2/2)+0.2})--(\x+0.1,{2*e^(-(\x-3)^2/2)+0.2})
+        --(\x+0.1,0);
+        \end{tikzpicture}
+    }\hfill
+    \subfloat[$\Delta x\to 0$]{
+        \begin{tikzpicture}[>=Stealth,yscale=0.8,xscale=0.6]
+        \draw[decorate,decoration={snake,segment length=1mm,amplitude=0.5mm}]
+        (0,0)node[below]{$O$}--(1,0);
+        \draw[->](1,0)--(6,0)node[below]{$x$};
+        \draw[->](0,0)--(0,3)node[right]{$p(x)$};
+        \foreach \x in{5,6,7,8,9}\draw(\x-4,0)node[below]{$\x$}--(\x-4,-0.08);
+        \draw[semithick,domain=0.3:5.7,samples=100]plot(\x,{2*e^(-(\x-3)^2/2)+0.2});
+        \draw[dashed,semithick](2,0)--(2,1.37)(4,1.32)--(4,0);
+        \end{tikzpicture}
+    }
+    \caption{新生婴儿体重$X$的频率分布}\label{fig:2.1.5}
 \end{figure}
 
 下面给出连续随机变量的概率密度函数的定义.
@@ -479,14 +546,13 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 	
 	 $ F(x) $ 是(累积)概率函数,其导数 $ F'(x) $ 是概率密度函数,由此可看出 $ p(x) $ 被称为概率密度函数的理由.
 	
-	由~\ref{eq:2.1.5}式,可从分布函数求得密度函数.譬如例2.1.2给出的柯西分布函数处处可导,故柯西分布的密度函数为
-	
+	由~\ref{eq:2.1.5}式,可从分布函数求得密度函数.譬如例2.1.2给出的柯西分布函数处处可导,故柯西分布的密度函数为	
 	\[ 
 	p(x)=\frac{1}{\pi} \frac{1}{1+x^{2}},-\infty<x<+\infty
 	\]
 \end{definition}
 
- $ 密度函数的基本性质 $ 
+密度函数的基本性质:
 \begin{enumerate}
 \item 非负性: $ p(x) \geqslant 0 $ ;
 \item 正则性: $ : \int_{-\infty}^{+\infty} p(x) \dd x=1 $ .
@@ -496,7 +562,6 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 
 \begin{example}\label{exam:2.1.7}
 	已知随机变量 $ X $ 的密度函数为
-	
 	\[ 
 	p(x)=\left\{\begin{array}{ll}
 	{c,-1 \leqslant x \leqslant 1} \\ 
@@ -507,11 +572,9 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 	试求常数 $ c $ .
 	
 	\textbf{解} 由密度函数的正则性知
-	
 	\[ 
 	1=\int_{-\infty}^{+\infty} p(x) \dd x=\int_{-1}^{1} c \dd x=2 c
 	\]
-	
 	所以由 $ 2c=1 $ 得 $ c=0.5 $ .利用分段积分,我们还可求出 $ X $ 的分布函数.
 	
 	当 $ x<-1 $ 时,
@@ -530,7 +593,6 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 	\]
 	
 	所以得 $ X $ 的分布函数为
-	
 	\[ 
 	F(x)=\left\{\begin{array}{ll}
 	{0,} & {x<-1} \\ 
@@ -546,19 +608,31 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 (a)与(b)所示,这个分布称为区间(-1,1)上的均匀分布,记为U(-1,1).
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-1-6}
-	\caption{均匀分布 $ U(-1,1) $ 的密度函数和分布函数的图形}
-	\label{fig:2.1.6}
+    \centering
+    \subfloat[$p(x)$的图形]{
+        \begin{tikzpicture}[>=Stealth,xscale=2,yscale=4]
+        \draw[->](-1.3,0)--(0,0)node[below left]{$O$}--(1.3,0)node[below]{$x$};
+        \draw[->](0,-0.1)--(0,0.7)node[right]{$p(x)$};
+        \draw[thick](-1,0.4)--(0,0.4)node[above right]{$0.5$}--(1,0.4);
+        \draw[dashed,semithick](-1,0.4)--(-1,0)node[below]{$-1$}(1,.4)--(1,0)node[below]{$1$};
+        \end{tikzpicture}
+    }\hspace{2cm}
+    \subfloat[$F(x)$的图形]{
+        \begin{tikzpicture}[>=Stealth,xscale=1.8,yscale=2]
+        \draw[->](-1.4,0)--(0,0)node[below left]{$O$}--(1.4,0)node[below]{$x$};
+        \draw[->](0,-0.2)--(0,1.4)node[right]{$F(x)$};
+        \draw[thick](-1,0)node[below]{$-1$}--(1,1)--(1.3,1);
+        \draw[dashed,semithick](0,1)node[left]{$1$}--(1,1)--(1,0)node[below]{$1$};
+        \end{tikzpicture}
+    }
+    \caption{均匀分布$U(-1,1)$的密度函数和分布函数的图形}\label{fig:2.1.6}
 \end{figure}
 
 \begin{example}\label{exam:2.1.8}
 	设随机变量 $ X $ 的密度函数为
-	
 	\[ 
 	p(x)=\left\{\begin{array}{ll}{x,} & {0 \leqslant x<1} \\ {2-x,} & {1 \leqslant x<2} \\ {0,} & {\text{其它}}\end{array}\right.
 	\]
-	
 	试求 $ X $ 的分布函数 $ F(x) $ .
 	
 	\textbf{解} 当 $ x<0 $ 时,
@@ -582,7 +656,6 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 	\]
 	
 	综上所述,得 $ X $ 的分布函数为
-	
 	\[ 
 	F(x)=\left\{\begin{array}{ll}
 	{0,} & {x<0} \\ 
@@ -596,16 +669,32 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 这个分布被称为\textbf{辛普森分布}\index{X!辛普森分布}或\textbf{三角分布}\index{S!三角分布},其密度函数 $ p(x) $ 和分布函数 $ F(x) $ 的图形见下图~\ref{fig:2.1.7}.从图形上可看出:在区间 $ (0,1) $ 上 $ F(x) $ 是\textbf{下凸函数}\index{X!下凸函数},在区间 $ (1,2) $ 上 $ F(x) $ 是\textbf{上凸函数}\index{S!上凸函数}.
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-1-7}
-	\caption{辛普森分布}
-	\label{fig:2.1.7}
+    \centering
+    \subfloat[$p(x)$的图形]{
+        \begin{tikzpicture}[>=Stealth,scale=2]
+        \draw[->](-0.2,0)--(0,0)node[below left]{$O$}--(2.4,0)node[below]{$x$};
+        \draw[->](0,-0.2)--(0,1.4)node[right]{$p(x)$};
+        \draw[thick](0,0)--(1,1)--(2,0)node[below]{$2$};
+        \draw[dashed,semithick](0,1)node[left]{$1$}--(1,1)--(1,0)node[below]{$1$};
+        \end{tikzpicture}
+    }\hspace{2cm}
+    \subfloat[$F(x)$的图形]{
+        \begin{tikzpicture}[>=Stealth,xscale=1.8,yscale=2,samples=100]
+        \draw[->](-0.2,0)--(0,0)node[below left]{$O$}--(2.4,0)node[below]{$x$};
+        \draw[->](0,-0.2)--(0,1.4)node[right]{$F(x)$};
+        \draw[thick,domain=0:1]plot(\x,{(\x)^2/2});
+        \draw[thick,domain=1:2]plot(\x,{-(\x)^2/2+2*\x-1});
+        \draw[thick](2,1)--(2.4,1);
+        \draw[dashed,semithick](0,1)node[left]{$1$}--(2,1)--(2,0)node[below]{$2$};
+        \draw(1,0.05)--(1,0)node[below]{$1$};
+        \end{tikzpicture}
+    }
+    \caption{辛普森分布}\label{fig:2.1.7}
 \end{figure}
 
 以下我们对密度函数与分布列的异同点作一些说明.
 
 在离散随机变量场合,
-
 \[ 
 P(a<X \leqslant b)=\sum_{a<x_{i} \leqslant b} p\left(x_{i}\right)
 \]
@@ -613,20 +702,22 @@ P(a<X \leqslant b)=\sum_{a<x_{i} \leqslant b} p\left(x_{i}\right)
 其中诸 $ x_i $ ;为 $ X $ 的可能取值.
 
 而在连续随机变量场合,
-
 \[ 
 P(a<X \leqslant b)=\int_{a}^{b} p(x) \dd x
 \]
-
 其含义见下图.
 
-
-
 \begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-1-8}
-	\caption{}
-	\label{fig:2.1.8}
+    \centering
+    \begin{tikzpicture}[>=Stealth,xscale=2.2,yscale=2,samples=100]
+    \draw[->](-0.2,0)--(0,0)node[below left]{$O$}--(2.4,0)node[below]{$x$};
+    \draw[->](0,-0.2)--(0,1.4)node[right]{$p(x)$};
+    \draw[thick,domain=-0.2:2.3]plot(\x,{e^(-3*(\x-1.05)^2)});
+    \filldraw[thick,fill=gray!30,domain=0.5:1.6](0.5,0)node[below]{$a$}--(0.5,{e^(-3*(0.5-1.05)^2)})--
+    plot(\x,{e^(-3*(\x-1.05)^2)})--(1.6,{e^(-3*(1.6-1.05)^2)})--(1.6,0)node[below]{$b$}--cycle;
+    \node at(1.05,0.2){$P(a<X\leq b)$};
+    \end{tikzpicture}
+    \caption{连续随机变量场合的概率}\label{fig:2.1.8}
 \end{figure}
 
 从这个意义上讲,概率密度函数与概率分布列所起的作用是类似的,但它们之间的差别也是明显的,具体有
@@ -670,11 +761,17 @@ P(a<X \leqslant b)=\int_{a}^{b} p(x) \dd x
 
 下面我们再给出一些连续随机变量的例子.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-1-9}
-	\caption{既非离散、又非连续的分布函数示例}
-	\label{fig:2.1.9}
+\begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}[>=Stealth,scale=2]
+    \draw[->](-0.3,0)--(0,0)node[below left]{$O$}--(1.6,0)node[below]{$x$};
+    \draw[->](0,-0.2)--(0,1.4)node[right]{$F(x)$};
+    \draw[thick](0,0.5)node[left]{$0.5$}--(1,1)--(1.5,1)(-0.3,0)--(0,0);
+    \filldraw[fill=white](0,0)circle(0.5pt);
+    \fill(0,0.5)circle(0.5pt);
+    \draw[semithick,dashed](0,1)node[left]{$1$}--(1,1)--(1,0)node[below]{$1$};
+    \end{tikzpicture}
+    \caption{既非离散、又非连续的分布函数示例}\label{fig:2.1.9}
 \end{figure}
 
 \begin{example}\label{exam:2.1.10}
@@ -730,8 +827,7 @@ P(a<X \leqslant b)=\int_{a}^{b} p(x) \dd x
 	
 	当 $ x \geqslant a $ 时,因为 $ \{ X \leqslant x \} $ 是必然事件,所以 $ F(x)=P(X \leqslant x)=1 $ ;
 	当 $ 0 \leqslant x<a $ 时,有 $ F(x)=P(X \leqslant x)=P(0 \leqslant X \leqslant x)=k x $ ,其中 $ k $ 为比例系数.因为 $ 1=F(a)=ka $ ,所以得 $ k=1/a $ .
-	于是 $ X $ 的分布函数为
-	
+	于是 $ X $ 的分布函数为	
 	\[ 
 	F(x)=\left\{\begin{array}{ll}{0,} & {x<0} \\ {\frac{x}{a},} & {0 \leqslant x<a} \\ {1,} & {x \geqslant a}\end{array}\right.
 	\]
@@ -744,32 +840,43 @@ P(a<X \leqslant b)=\int_{a}^{b} p(x) \dd x
 	当 $ 0<x<a $ 时, $ p(x)=F(x)=1/a $ ;
 	
 	而在 $ x=0 $ 和 $ x=a $ 处, $ p(x) $ 可取任意值,一般就近取值为宜,这不会影响概率的计算,因为它们是几乎处处相等的密度函数.于是 $ x $ 的密度函数为
-	
 	\[ 
 	p(x)=\left\{\begin{array}{ll}
 	{\frac{1}{a},} & {0<x<a} \\ 
 	{0,} & {\text{其它}}
 	\end{array}\right.
 	\]
-	
 	这个分布就是区间 $ (0,a) $ 上的均匀分布,记为 $ U(0,a) $ ,其密度函数 $ p(x) $ 
 	和分布函数 $ F(x) $ 的图形见下图~\ref{fig:2.1.10}.
 \end{example}
 
 
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-1-10}
-	\caption{ $ (0,a) $ 上的均匀分布}
-	\label{fig:2.1.10}
+\begin{figure}[!ht]
+    \centering
+    \subfloat[$p(x)$的图形]{
+        \begin{tikzpicture}[>=Stealth,scale=2]
+        \draw[->](-0.3,0)--(0,0)node[below left]{$O$}--(2.1,0)node[below]{$x$};
+        \draw[->](0,-0.2)--(0,1.4)node[right]{$p(x)$};
+        \draw[thick](1.6,0.9)--(0,0.9)node[left]{$\frac1a$};
+        \draw[dashed,semithick](1.6,0.9)--(1.6,0)node[below]{$a$};
+        \end{tikzpicture}
+    }\hspace{2cm}
+    \subfloat[$F(x)$的图形]{
+        \begin{tikzpicture}[>=Stealth,scale=2]
+        \draw[->](-0.3,0)--(0,0)node[below left]{$O$}--(2.1,0)node[below]{$x$};
+        \draw[->](0,-0.2)--(0,1.4)node[right]{$F(x)$};
+        \draw[thick](1.6,1)--(0,1)node[left]{$1$};
+        \draw[dashed,semithick](1.6,1)--(1.6,0)node[below]{$a$};
+        \end{tikzpicture}
+    }
+    \caption{$(0,a)$上的均匀分布}\label{fig:2.1.10}
 \end{figure}
 
 其实此例就是第一章中所说的几何概率,这也建立了几何概率与均匀分布的联系.
 
 \begin{example}\label{exam:2.1.12}
-	设连续随机变量 $ X $ 的密度函数为
-	
+	设连续随机变量 $ X $ 的密度函数为	
 	\[ 
 	p(x)=\left\{\begin{array}{ll}
 	{4 x^{3},} & {0<x<1}; \\ 
@@ -922,13 +1029,11 @@ p(x)=\left\{\begin{array}{ll}
 \end{center}
 
 其中``甲乙"表示第一局甲胜第二局乙胜.因为赌技相同,所以在这四种情况中有三种可使甲获100法郎,只有一种情况(乙乙)下甲获0法郎.所以甲获得100法郎的可能性为 $ 3/4 $ ,获得0法郎的可能性为 $ 1/4 $ ,即 $ X $ 的分布列为
-
 \[ 
 \begin{array}{c|cc}{x} & {0} & {100} \\ \midrule
 P & {0.25} & {0.75} \\
 \end{array}
 \]
-
 经上述分析,帕斯卡认为,甲的``期望"所得应为: $ 0 \times 0.25+100 \times 0.75=75 $ 
 (法郎).即甲得75法郎,乙得25法郎.这种分法不仅考虑了已赌局数,而且还包括了对再赌下去的一种``期望",它比(1)的分法更为合理.
 \end{example}
@@ -940,7 +1045,6 @@ P & {0.25} & {0.75} \\
 (1)算术平均:如果有 $ n $ 个数 $ x_{1}, x_{2}, \cdots, x_{n} $ .,那么求这 $ n $ 个数的算术平均是很简单的事,只需将此 $ n $ 个数相加后除n即可.
 
 (2)加权平均:如果这 $ n $ 个数中有相同的,不妨设其中有 $ n $ ;个取值为 $ x_{i}, i=1,2, \cdots, k $ .将其列表为
-
 \[
 \begin{array}{c|cccc}
 \toprule
@@ -950,10 +1054,7 @@ P & {0.25} & {0.75} \\
 \bottomrule
 \end{array}
 \]
-
-
 则其``均值"应为
-
 \[ 
 \frac{1}{n} \sum_{i=1}^{k} n_{\dot{r}} x_{i}=\sum_{i=1}^{k} \frac{n_{i}}{n} x_{i}
 \]
@@ -967,24 +1068,19 @@ P & {0.25} & {0.75} \\
 \subsection{数学期望的定义}\label{ssec:2.2.2}
 
 \begin{definition}{数学期望}{2.2.1}
-	设离散随机变量 $ X $ 的分布列为
-	
+	设离散随机变量 $ X $ 的分布列为	
 	\[ 
 	p\left(x_{i}\right)=P\left(X=x_{i}\right), i=1,2, \cdots, n, \cdots
 	\]
 	
 	如果
-	
 	\[ 
 	\sum_{i=1}^{+\infty}\left|x_{i}\right| p\left(x_{i}\right)<+\infty
 	\]
-	
 	则称
-	
 	\begin{equation} 
 	E(X)=\sum_{i=1}^{+\infty} x_{i} p\left(x_{i}\right) \label{eq:2.2.1}
 	\end{equation}
-	
 	为随机变量 $ X $ 的\textbf{数学期望}\index{S!数学期望},或称为该分布的数学期望,简称\textbf{期望}\index{Q!期望}或\textbf{均值}\index{J!均值}.若级数 $ \sum_{k=1}^{+\infty}\left|x_{k}\right| p\left(x_{k}\right) $ 不收敛,则称 $ X $ 的数学期望不存在.
 \end{definition}
 
@@ -997,8 +1093,7 @@ P & {0.25} & {0.75} \\
 	\[ 
 	\int_{-\infty}^{+\infty}|x| p(x) \dd x<+\infty
 	\]
-	则称
-	
+	则称	
 	\begin{equation} 
 	E(X)=\int_{-\infty}^{+\infty} x p(x) \dd x \label{eq:2.2.2}
 	\end{equation}
@@ -1024,18 +1119,14 @@ P & {0.25} & {0.75} \\
 \end{example}
 
 所以每人平均验血次数为
-
 \[ 
 E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(1-p)^{k}+\frac{1}{k}
 \]
-
-去由此可知,只要选择 $ k $ 使
-
+由此可知,只要选择 $ k $ 使
 \[ 
 1-(1-p)^{k}+\frac{1}{k}<1, \text{或} \quad(1-p)^{k}>\frac{1}{k}
 \]
-
-,就可减少验血次数,而且还可适当选择 $ k $ 使其达到最小.譬如,当 $ p=0.1 $ 时对不同的 $ k $ , $ E(X) $ 的值如表~\ref{tab:2.2.1}所示.从表中可以看出:当 $ k \geqslant 34 $ 时,平均验血次数超过1,即比分别检验增加工作量;而当 $ k \leqslant 33 $ 时,平均验血次数在不同程度上得到了减少,特别在 $ k_{0}=4 $ 时,平均验血次数最少,验血工作量可减少 $ 40\% $ .
+就可减少验血次数,而且还可适当选择 $ k $ 使其达到最小.譬如,当 $ p=0.1 $ 时对不同的 $ k $ , $ E(X) $ 的值如表~\ref{tab:2.2.1}所示.从表中可以看出:当 $ k \geqslant 34 $ 时,平均验血次数超过1,即比分别检验增加工作量;而当 $ k \leqslant 33 $ 时,平均验血次数在不同程度上得到了减少,特别在 $ k_{0}=4 $ 时,平均验血次数最少,验血工作量可减少 $ 40\% $ .
 
 \begin{table}[htbp]
 	\centering
@@ -1085,11 +1176,9 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 	
 	
 	所以每张彩票的平均所得为
-	
 	\[ 
 	E(X)=0.5+0.45+0.45+0.45+0.45+0.9+0=3.2
 	\]
-	
 	这也意味:每一开奖组把筹得的500万元中的320万元以奖金形式返回给彩民,其余180万元则可用于福利事业及管理费用.
 	
 	从这个例子也可以看出,彩票中奖与否是随机的,但一种彩票的平均所得是可以预先算出的,计算平均所得也是设计一种彩票的基础.
@@ -1099,8 +1188,7 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 \begin{example}\label{exam:2.2.4}
 	设 $ x $ 服从区间 $ (a,b) $ 上的均匀分布,求 $ E(x) $ .
 	
-	\textbf{解} 由例~\ref{exam:2.1.11}知 $ X $ 的密度函数为
-	
+	\textbf{解} 由例~\ref{exam:2.1.11}知 $ X $ 的密度函数为	
 	\[ 
 	p(x)=\left\{\begin{array}{ll}
 	{\frac{1}{b-a}, }&{a<x<b} \\ {0,}&{\text{其它}}
@@ -1108,7 +1196,6 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 	\]
 	
 	所以
-	
 	\[ 
 	E(X)=\int_{a}^{b} x \cdot \frac{1}{b-a} d x=\frac{1}{b-a} \cdot\left.\frac{x^{2}}{2}\right|_{a} ^{b}=\frac{a+b}{2}
 	\]
@@ -1120,17 +1207,14 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 
 \begin{example}\label{exam:2.2.5}
 	柯西分布的数学期望不存在.因为柯西分布的密度函数为
-	
 	\[ 
 	p(x)=\frac{1}{\pi} \frac{1}{1+x^{2}},-\infty<x<+\infty
 	\]
 	
 	所以由
-	
 	\[ 
 	\int_{-\infty}^{+\infty}|x| \cdot \frac{1}{\pi} \frac{1}{1+x^{2}} \dd x=+\infty
 	\]
-	
 	知 $ E(X) $ 不存在.
 	
 \end{example}
@@ -1141,7 +1225,6 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 
 \begin{example}\label{exam:2.2.6}
 	已知随机变量 $ X $ 的分布列如下
-	
 	\[
 	\begin{array}{c|ccccc}
 	X &{-2} & {-1} & {0} & {1} & {2} \\ \midrule
@@ -1152,7 +1235,6 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 	要求 $ Y=X^2 $ 的数学期望,为此要分两步进行:
 	
 	第一步,先求 $ Y=X^2 $ 的分布,这可从 $ X $ 的分布导出,即
-	
 	\[
 	\begin{array}{c|ccccc}
 	X^2    & (-2)^2 & (-1)^2 & 0^2    & 1^2    & 2^2 \\\midrule
@@ -1161,7 +1243,6 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 	\]
 	
 	然后对相等的值进行合并,并把对应的概率相加,可得
-	
 	\[
 	\begin{array}{c|ccc}
 	X^2    & 0     & 1     & 4 \\\midrule
@@ -1170,20 +1251,17 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 	\]
 	
 	第二步,利用 $ X^2 $ 的分布求 $ E(X^2) $ ,即得
-	
 	\[
 	E\left(X^{2}\right)=0 \times 0.1+1 \times 0.4+4 \times 0.5=2.4
 	\]
 	
 	假如我们用等值合并前的分布求 $ E(X^2) $ ,可得相同的结果
-	
 	\[
 	E\left(X^{2}\right)=(-2)^{2} \times 0.2+(-1)^{2} \times 0.1+0^{2} \times 0.1+1^{2} \times 0.3+2^{2} \times 0.3=2.4
 	\]
 	
 	这两种算法本质上是一回事,但后者的计算实质上是在 $ X $ 的分布 $ (0.2,
 	0.1,0.1,0.3,0.3) $ 基础上、而将取值改为 $ \left((-2)^{2},(-1)^{2}, 0^{2}, 1^{2}, 2^{2}\right) $ 计算出来的.由此启发我们:若进一步要求 $ E(X^3) $ 和 $ E(X^4) $ ,我们不需要先求 $ X^3 $ 的分布和 $ E\left(X^{4}\right) $ 的分布,而直接用 $ X $ 的分布来求,具体如下.
-	
 	\[
 	\begin{aligned} 
 	E\left(X^{3}\right) &=(-2)^{3} \times 0.2+(-1)^{3} \times 0.1+0^{3} \times 0.1+1^{3} \times 0.3+2^{3} \times 0.3=0 \\ E\left(X^{4}\right) &=(-2)^{4} \times 0.2+(-1)^{4} \times 0.1+0^{4} \times 0.1+1^{4} \times 0.3+2^{4} \times 0.3=8.4 
@@ -1197,7 +1275,6 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 一般场合,有如下定理:
 \begin{theorem}{}{2.2.1}
 	若随机变量 $ X $ 的分布用分布列 $ p(x_i) $ 或用密度函数 $ p(x) $ 表示,则 $ X $ 的某一函数 $ g(X) $ 的数学期望为
-	
 	\begin{equation}
 	E[g(X)]=\left\{\begin{array}{ll}
 	{\sum_{i} g\left(x_{i}\right) p\left(x_{i}\right)}&{\text{在离散场合;}} \\ {\int_{-\infty}^{+\infty} g(x) p(x) \dd x} &{\text{在连续场合.}} 
@@ -1222,7 +1299,6 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 
 \begin{property}
 	对任意常数 $ a $ ,有
-	
 	\begin{equation}
 	E ( a X ) = a E ( X ) \label{eq:2.2.4}
 	\end{equation}
@@ -1235,7 +1311,6 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 
 \begin{property}
 	对任意的两个函数 $ g_1(x) $ 和 $ g_2(x) $ ,有
-	
 	\begin{equation}
 	E \left[ g _ { 1 } ( X ) \pm g _ { 2 } ( X ) \right] = E \left[ g _ { 1 } ( X ) \right] \pm E \left[ g _ { 2 } ( X ) \right] \label{eq:2.2.5}
 	\end{equation}
@@ -1250,7 +1325,6 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 	某公司经销某种原料,根据历史资料表明:这种原料的市场需求量X(单位:吨)服从 $ (300,500) $ 上的均匀分布.每售出1吨该原料,公司可获利1.5(千元);若积压1吨,则公司损失0.5(千元).问公司应该组织多少货源,可使平均收益最大?
 	
 	\textbf{解} 设公司组织该货源 $ a $ 吨.则显然应该有 $ 300\leqslant a \leqslant 500 $ .又记Y为在 $ a $ 吨货源的条件下的收益额(单位:千元),则收益额 $ Y $ 为需求量 $ X $ 的函数,即 $ Y=g(X) $ .由题设条件知:当 $ x \geqslant a $ 时,则此 $ a $ 吨货源全部售出,共获利 $ 1.5a $ .当 $ X<a $ 时,则售出 $ X $ 吨(获利 $ 1.5X $ ),且还有 $ a-X $ 吨积压(获利 $ -0.5(a-x) $ ),所以共获利 $ 1.5 X - 0.5 ( a - X ) $ ,由此知
-	
 	\[
 	g ( X ) = \left\{ \begin{array} {ll}
 	{ 1.5 a , } & {\text{若}  X \geqslant a } \\ 
@@ -1265,7 +1339,6 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 	\]
 	
 	由定理~\ref{thm:2.2.1}得
-	
 	\[
 	\begin{aligned} E(Y) &=\int_{-\infty}^{+\infty} g(x) p_{X}(x) \dd x=\int_{300}^{500} g(x) \frac{1}{200} \dd x \\ &=\frac{1}{200}\left\{\int_{a}^{500} 1.5 a \dd x+\int_{300}^{a}(2 x-0.5 a) \dd x\right\} \\ &=\frac{1}{200}\left(-a^{2}+900 a-300^{2}\right) \end{aligned}
 	\]
@@ -1360,7 +1433,7 @@ p(x)=\left\{\begin{array}{ll}
 {0,} & {\text{其它}}
 \end{array}\right.
 \]
-试求 $ \frac{1}{x^{2}} $ 的数学期望.
+试求 $ \tfrac{1}{x^{2}} $ 的数学期望.
 \item 设 $ X $ 为仅取非负整数的离散随机变量,若其数学期望存在,证明
 
 \[
@@ -1372,7 +1445,6 @@ E(X)=\int_{0}^{+\infty}[1-F(x)] \dd x-\int_{-\infty}^{0} F(x) \dd x
 
 
 随机变量 $ X $ 的数学期望 $ E(X) $ 是一种位置特征数,它刻画了 $ X $ 的取值总在 $ E(X $ )周围波动.但这个位置特征数无法反映出随机变量取值的``波动"大小,譬如X与Y的分布列分别为
-
 \[
 \begin{array}{c|ccccc|ccc}
 X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
@@ -1386,18 +1458,14 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 设随机变量X的均值为 $ a=E(X) $ , $ X $ 的取值当然不一定恰好是 $ a $ ,会有偏离.偏离的量 $ X-a $ 有正有负,为了不使正负偏离彼此抵消,我们一般考虑 $ (X-a)^2 $ ,而不去考虑数学上难以处理的绝对值 $ |X-a| $ .因为 $ (X-a)^2 $ 仍是一个随机变量,所以取其均值 $ E(X-a)^2 $ 就可以作为刻画X的``波动"程度,这个量被称作 $ X $ 的方差,其定义如下.
 \begin{definition}{方差}{2.3.1}
 	若随机变量 $ X^2 $ 的数学期望 $ E(X^2) $ 存在,则称偏差平方 $ (X-EX)^2 $ 的数学期望 $ E(X-EX)^2 $ 为随机变量 $ X $ (或相应分布)的\textbf{方差}\index{F!方差},记为
-	
 	\begin{equation}
 	\operatorname{Var}(X)=E(X-E(X))^{2}=\left\{\begin{array}{ll}
 	{\sum_{i}\left(x_{i}-E(X)\right)^{2} p\left(x_{i}\right)} &{\text{在离散场合;}}\\
 	{\int_{-\infty}^{+\infty}(x-E(X))^{2} p(x) \dd x} &{\text{在连续场合.}}
 	\end{array}\right. \label{eq:2.3.1}
 	\end{equation}
-	
 	称方差的正平方根 $ \sqrt{\operatorname{Var}(X)} $ 为随机变量 $ X $ (或相应分布)的\textbf{标准差}\index{B!标准差},记为 $ \boldsymbol{\sigma}(X) $ ,或 $ \sigma_X $ .
 \end{definition}
-
-
 
 方差与标准差的功能相似,它们都是用来描述随机变量取值的集中与分散程度(即散布大小)的两个特征数.方差与标准差愈小,随机变量的取值愈集中;方差与标准差愈大,随机变量的取值愈分散.
 
@@ -1406,7 +1474,6 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 
 \begin{example}\label{exam:2.3.1}
 	图~\ref{fig:2.3.1}上有三个分布:三角分布、均匀分布和倒三角分布的密度函数及它们的图形.从图上可以看出,这三个分布都位于区间(-1,1)上,并且关于纵轴对称,从而得知这三个分布的期望均为0.但它们的方差不等(因此标准差也不等),这可分别由各自的分布算得
-	
 	\[
 	\begin{aligned}
 	\operatorname{Var}\left(X_{1}\right)&=E\left(X_{1}^{2}\right)=\int_{-1}^{\theta} x^{2}(1+x) \dd x+\int_{0}^{1} x^{2}(1-x) \dd x=\frac{1}{6}\\
@@ -1420,73 +1487,73 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 \end{example}
 
 
-\begin{figure}[h!]
-	\begin{minipage}{0.3\textwidth}
-		\includegraphics[width=0.7\linewidth]{2-3-1-a}
-		\includegraphics[width=0.7\linewidth]{2-3-1-b}
-		\includegraphics[width=0.7\linewidth]{2-3-1-c}
-	\end{minipage}
-	\begin{minipage}{0.3\textwidth}
-		
-		\[
-		p_{1}(x)=\left\{\begin{array}{ll}
-		{1+x,} & {-1 \leqslant x<0 ;} \\ 
-		{1-x,} & {0 \leqslant x<1 ;} \\ 
-		{0}    & {\text{其它.}}
-		\end{array}\right.
-		\]
-		
-		\[
-		p_{2}(x)=\left\{\begin{array}{ll}
-		{1 / 2,} & {-1<x<1 ;} \\ 
-		{0,}     & {\text{其它.}}
-		\end{array}\right.
-		\]
-		
-		\[
-		p_{3}(x)=\left\{\begin{array}{ll}
-		{-x,} & {-1 \leqslant x<0 ;} \\ 
-		{x,}  & {0 \leqslant x<1 ;}   \\ 
-		{0,}  & {\text{其它.}}
-		\end{array}\right.
-		\]
-		
-	\end{minipage}\qquad \quad
-	\begin{minipage}{0.3\textwidth}
-		
-		\vspace{-5ex}
-		\begin{center}
-			期望 \quad 方差 \quad 标准差
-		\end{center}
-		
-		\vspace*{-2ex}
-		
-		\[
-		{0 \qquad \quad \frac{1}{6} \qquad 0.4082}
-		\]
-		
-		\vspace{3ex}
-		
-		\[
-		{0 \qquad \quad \frac{1}{3} \qquad 0.5774}
-		\]
-		
-		
-		\vspace{3ex} 
-		
-		\[
-		{0 \qquad \quad \frac{1}{2} \qquad 0.7071} 
-		\]
-		
-		
-	\end{minipage}
-	\caption{比较三个分布的方差与标准差}
-	\label{fig:2.3.1}
+\begin{figure}[!ht]
+    \begin{enumerate}
+        \item 三角分布
+        \noindent\begin{minipage}{0.3\textwidth}
+            \begin{tikzpicture}[>=Stealth,scale=1.3]
+            \draw[->](-1.3,0)--(0,0)node[below right]{$O$}--(1.3,0)node[below]{$x$};
+            \draw[->](0,-0.3)--(0,2)node[right]{$p_1(x)$};
+            \draw[thick](-1,0)node[below]{$-1$}--(0,1.5)--(1,0)node[below]{$1$};
+            \end{tikzpicture}
+        \end{minipage}\hfill
+        \begin{minipage}{0.3\textwidth}
+            \[p_1(x)=\begin{cases}
+            1+x,&-1\leq x<0;\\
+            1-x,&0\leq x<1;\\
+            0,&\text{其他}.
+            \end{cases}\]
+        \end{minipage}
+        \begin{minipage}{0.3\textwidth}
+            \[0\quad\frac16\quad0.4082\]
+        \end{minipage}
+        \item 均匀分布
+        
+        \noindent\begin{minipage}{0.3\textwidth}
+            \begin{tikzpicture}[>=Stealth,scale=1.3]
+            \draw[->](-1.3,0)--(0,0)node[below right]{$O$}--(1.3,0)node[below]{$x$};
+            \draw[->](0,-0.3)--(0,2)node[right]{$p_2(x)$};
+            \draw[thick](-1,1)--(1,1);
+            \draw[semithick,dashed](-1,0)node[below]{$-1$}--(-1,1)
+            (1,1)--(1,0)node[below]{$1$};
+            \end{tikzpicture}
+        \end{minipage}\hfill
+        \begin{minipage}{0.3\textwidth}
+            \[p_2(x)=\begin{cases}
+            1/2,&-1<x<1;\\
+            0,&\text{其他}.
+            \end{cases}\]
+        \end{minipage}
+        \begin{minipage}{0.3\textwidth}
+            \[0\quad\frac13\quad0.5774\]
+        \end{minipage}
+        \item 倒三角分布
+        
+        \noindent\begin{minipage}{0.3\textwidth}
+            \begin{tikzpicture}[>=Stealth,scale=1.3]
+            \draw[->](-1.3,0)--(0,0)node[below right]{$O$}--(1.3,0)node[below]{$x$};
+            \draw[->](0,-0.3)--(0,2)node[right]{$p_3(x)$};
+            \draw[thick](-1,1.4)--(0,0)--(1,1.4);
+            \draw[semithick,dashed](-1,0)node[below]{$-1$}--(-1,1.4)
+            (1,1.4)--(1,0)node[below]{$1$};
+            \end{tikzpicture}
+        \end{minipage}\hfill
+        \begin{minipage}{0.3\textwidth}
+            \[p_3(x)=\begin{cases}
+            -x,&-1\leq x<0;\\
+            x,&0\leq x<1;\\
+            0,&\text{其他}.
+            \end{cases}\]
+        \end{minipage}
+        \begin{minipage}{0.3\textwidth}
+            \[0\quad\frac12\quad0.7071\]
+        \end{minipage}
+    \end{enumerate}
+    \caption{比较三个分布的方差与标准差}\label{fig:2.3.1}
 \end{figure}
 
 \begin{example}\label{exam:2.3.2}
 	某人有一笔资金,可投入两个项目:房产和商业,其收益都与市场状态有关.若把未来市场划分为好、中、差三个等级,其发生的概率分别为 $ 0.2、0.7、0.1 $ .通过调查,该投资者认为投资于房产的收益 $ X $ (万元)和投资于商业的收益 $ Y $ (万元)的分布分别为
-	
 	\[
 	\begin{array}{c|ccccc|ccc}
 	X     & 11    & 3     & -3    &       & Y     & 6     & 4     & -1 \\
@@ -1497,7 +1564,6 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 	请问:该投资者如何投资为好?
 	
 	\textbf{解} 我们先考察数学期望(平均收益)
-	
 	\[
 	\begin{array}{c}
 	{E(X)=11 \times 0.2+3 \times 0.7+(-3) \times 0.1=4.0 (\text{万元})} \\ 
@@ -1506,7 +1572,6 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 	\]
 	
 	从平均收益看,投资房产收益大,可比投资商业多收益0.1万元.下面我们再来计算它们各自的方差
-	
 	\[
 	\begin{aligned} 
 	\operatorname{Var}(X) & =(11-4)^{2} 1 \times 0.2+(3-4)^{2} \times 0.7+(-3-4)^{2} \times 0.1=15.4 \\ 
@@ -1515,7 +1580,6 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 	\]
 	
 	及标准差
-	
 	\[
 	\sigma(X)=\sqrt{15.4}=3.92, \sigma(Y)=\sqrt{3.29}=1.81
 	\]
@@ -1535,7 +1599,6 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 	
 	\begin{proof}
 		因为 $ \operatorname{Var}(X)=E(X-E(X))^{2}=E\left(X^{2}-2 X \cdot E(X)+(E(X))^{2}\right) $ , 由数学期望的性质2.2.3可得
-		
 		\[
 		\operatorname{var}(X)=E\left(X^{2}\right)-2 E(X) \cdot E(X)+(E(X))^{2}=E\left(X^{2}\right)-(E(X))^{2}
 		\]
@@ -1552,7 +1615,6 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 
 \begin{proof}
 	若 $ c $ 是常数,则
-	
 	\[
 	\operatorname{Var}(c)=E(c-E(c))^{2}=E(c-c)^{2}=0
 	\]
@@ -1566,7 +1628,6 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 
 \begin{proof}
 	若 $ a,b $ 是常数,则
-	
 	\[
 	\begin{aligned} \operatorname{Var}(a X+b) &=E(a X+b-E(a X+b))^{2} \\ &=E(a(X-E(X)))^{2} \\ &=a^{2} \operatorname{Var}(X) \end{aligned}
 	\]
@@ -1579,7 +1640,6 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 	设 $ X $ 为掷一颗骰子出现的点数,试求 $ \operatorname{Var}(\boldsymbol{X}) $ .
 	
 	\textbf{解}
-	
 	\[
 	\begin{array}{rl}
 	{E(X)} & {=\frac{1}{6}(1+2+3+4+5+6)=\frac{7}{2}} \\ {E\left(X^{2}\right)} & {=\frac{1}{6}\left(1^{2}+2^{2}+3^{2}+4^{2}+5^{2}+6^{2}\right)=\frac{91}{6}} \\ {\operatorname{Var}(X)} & {=\frac{91}{6}-\frac{49}{4}=\frac{35}{12}=2.917}
@@ -1595,7 +1655,6 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 
 \begin{theorem}{切比雪夫不等式}{2.3.1}\index{Q!切比雪夫不等式}
 	(切比雪夫 $ (1821一1894) $ 不等式)设随机变量 $ X $ 的数学期望和方差都存在,则对任意常数 $ \varepsilon>0 $ ,有
-	
 	\begin{equation}
 	P(|X-E X| \geqslant \epsilon) \leqslant \frac{\operatorname{Var}(X)}{\varepsilon^{2}} \label{eq:2.3.2}
 	\end{equation}
@@ -1607,7 +1666,6 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 
 \begin{proof}
 	没 $ X $ 是一个连续随机变量,其密度函数为 $ p(x) $ .记 $ E(X)=a $ ,我们有
-	
 	\[
 	\begin{array}{ll}
 	{P(|X-a| \geqslant \varepsilon)} & {=\int_{\{x | x-a \geq \epsilon\}} p(x) \dd x \leq \int_{\{x | x-a>c\}} \frac{(x-a)^{2}}{\varepsilon^{2}} p(x) \dd x} \\ 
@@ -1627,31 +1685,23 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 
 \begin{proof}
 	充分性是显然的,下面证必要性.设 $ \operatorname{Var}(X)=0 $ ,这时 $ E(X) $ 存在.因为
-	
 	\[
 	| | X-E(X)|>0|=\bigcup_{n=1}^{+\infty}\left\{|X-E(X)| \geqslant \frac{1}{n}\right\}
 	\]
-	
 	所以有
-	
 	\[
 	\begin{aligned} P(|X-E(X)|>0) &=P\left(\bigcup_{n=1}^{n}\left\{|x-E(X)| \geqslant \frac{1}{n}\right\}\right) \\ & \leqslant \sum_{n=1}^{+\infty} P\left(|X-E(X)| \geqslant \frac{1}{n}\right) \leqslant \sum_{n=1}^{+\infty} \frac{\operatorname{Var}(X)}{(1 / n)^{2}}=0 \end{aligned}
 	\]
-	
 	其中最后一个不等式用到了切比雪夫不等式.由此可知
-	
 	\[
 	P(|X-E(X)|>0)=0
 	\]
 	
 	因而有
-	
 	\[
 	P(|X-E(X)|=0)=1
 	\]
-	
 	即
-	
 	\[
 	P(X=E(X))=1
 	\]
@@ -1694,7 +1744,6 @@ a \leqslant E(X) \leqslant b, \operatorname{Var}(X) \leqslant\left(\frac{b-a}{2}
 \operatorname{Var}(X) \leqslant\left(\frac{x_{\mathrm{n}}-x_{1}}{2}\right)^{2}
 \]
 \item 设 $ g(x) $ 为随机变置 $ X $ 取值的集合上的非负不减函数,且 $ E(g(X)) $ 存在,证明:对任意的 $ \varepsilon>0 $ ,有
-
 \[
 P(X>\varepsilon) \leqslant \frac{E(g(X))}{g(\varepsilon)}
 \]
@@ -1716,37 +1765,28 @@ P(X \geqslant x) \leqslant \frac{E\left(\ee ^{a X}\right)}{\ee ^{a x}}
 如果记 $ X $ 为n重伯努利试验中成功(记为事件 $ A $ )的次数,则 $ X $ 的可能取值为 $ 0,1, \cdots, n $ .记 $ p $ 为每次试验中 $ A $ 发生的概率,即 $ P(A)=p $ ,则 $ P(\bar{A})=1-p $ .
 
 因为 $ n $ 重伯努利试验的基本结果可以记作
-
-
 \[
 \omega=\left(\omega_{1}, \omega_{2}, \cdots, \omega_{n}\right)
 \]
-
 其中 $ \omega_{i} $ 或者为 $ A $ ,或者为 $ \bar{A} $ .这样的 $ \omega $ 共有 $ 2^{n} $ 个,这 $ 2^{n} $ 个样本点 $ \omega $ 组成了样本空间 $ \Omega $ .
 
 下面求 $ X $ 的分布列,即求事件 $ \{X=k\} $ 的概率.若某个样本点
-
 \[
 \omega=\left(\omega_{1}, \omega_{2}, \cdots, \omega_{n}\right) \in | X=k \}
 \]
-
 意味着 $ \omega_{1}, \omega_{2}, \cdots, \omega_{n} $ 中有 $ k $ 个 $ A $ , $ n-k $ 个 $ \bar{A} $ ,所以由独立性知,
-
 \[
 P(\omega)=p^{k}(1-p)^{n-k}
 \]
 
 而事件 $ \{X=k\} $ 中这样的 $ \omega $ 共有 $ \left( \begin{array}{l}{n} \\ {k}\end{array}\right) $ 个,所以 $ x $ 的分布列为
-
 \begin{equation}
 P(X=k)=\left( \begin{array}{l}{n} \\ {k}\end{array}\right) p^{k}(1-p)^{n-k}, k=0,1, \cdots, n \label{eq:2.4.1}
 \end{equation}
 
-
 这个分布称为\textbf{二项分布}\index{E!二项分布},记为 $ X \sim b(n, p) $ .
 
 容易验证其和恒为1,即
-
 \[
 \sum_{n=0}^{n} \left( \begin{array}{l}{n} \\ {k}\end{array}\right) p^{k}(1-p)^{n-k}=[p+(1-p)]^{n}=1
 \]
@@ -1765,7 +1805,6 @@ P(X=k)=\left( \begin{array}{l}{n} \\ {k}\end{array}\right) p^{k}(1-p)^{n-k}, k=0
 	某特效药的临床有效率为0.95,今有10人服用,问至少有8人治愈的概率是多少?
 	
 	\textbf{解} 设 $ X $ 为10人中被治愈的人数,则 $ X \sim b(10,0.95) $ ,而所求概率为
-	
 	\[
 	\begin{aligned} P(X \geqslant 8) &=P(X=8)+P(X=9)+P(X=10) \\ &=\left( \begin{array}{c}{10} \\ {8}\end{array}\right) 0.95^{8} 0.05^{2}+\left( \begin{array}{c}{10} \\ {9}\end{array}\right) 0.95^{9} 0.05+\left( \begin{array}{c}{10} \\ {10}\end{array}\right) 0.95^{10} \\ &=0.0746+0.3151+0.5988=0.9885 \end{aligned}
 	\]
@@ -1787,13 +1826,11 @@ P(X=k)=\left( \begin{array}{l}{n} \\ {k}\end{array}\right) p^{k}(1-p)^{n-k}, k=0
 \subsubsection{二点分布}
 
  $ n=1 $ 时的二项分布 $ b(1,p) $ 称为\textbf{二点分布}\index{E!二点分布},或称 $ 0-1 $ 分布,其分布列为:
-
 \begin{equation}
 P(X=x)=p^{x}(1-p)^{1-x}, x=0,1 \label{eq:2.4.2}
 \end{equation}
 
 或记为
-
 \[
 \begin{array}{c|cc}
 X     & 0     & 1 \\\midrule
@@ -1803,7 +1840,6 @@ P     & 1-p   & p \\
 
 二点分布 $ b(1,p) $ 主要用来描述一次伯努利试验中成功(记为 $ A $ )出现次数(0或1).
 很多随机现象的样本空间 $ a $ 常可一分为二,记为 $ A $ 与 $ \bar{A} $ ,由此形成伯努利试验. $ n $ 重伯努利试验是由 $ n $ 个相同的、独立进行的伯努利试验组成,若将第 $ i $ 个伯努利试验中 $ A $ 出现的次数记为 $ X_{i}(i=1,2, \cdots, n) $ ,则 $ X_i $ 相互独立,且服从相同的二点分布 $ b(1,p) $ .此时其和
-
 \[
 X=X_{1}+X_{2}+\cdots+X_{n}
 \]
@@ -1813,13 +1849,11 @@ X=X_{1}+X_{2}+\cdots+X_{n}
 \subsubsection{二项分布的数学期望和方差}
 
 设随机变量 $ X \sim b(n, p) $ ,则
-
 \[
 \begin{aligned} E(X) &=\sum_{k=0}^{n} k \left( \begin{array}{c}{n} \\ {k}\end{array}\right) p^{k}(1-p)^{n-k}=n p \sum_{k=1}^{n} \left( \begin{array}{c}{n-1} \\ {k-1}\end{array}\right) p^{k-1}(1-p)^{(n-1)-(k-1)} \\ &=n p[p+(1-p)]^{n-1}=n p \end{aligned}
 \]
 
 又因为
-
 \[
 \begin{array}{ll}
 {E\left(X^{2}\right)} & {=\sum_{k=0}^{n} k^{2} \left( 
@@ -1860,9 +1894,7 @@ X=X_{1}+X_{2}+\cdots+X_{n}
 {}&{=n(n-1) p^{2}+n p}
 \end{array}
 \]
-
 由此得 $ X $ 的方差为
-
 \[
 \operatorname{var}(X)=E\left(X^{2}\right)-(E(X))^{2}=n(n-1) p^{2}+n p-(n p)^{2}=n p(1-p)
 \]
@@ -1884,11 +1916,44 @@ X=X_{1}+X_{2}+\cdots+X_{n}
 	\label{tab:2.4.1}%
 \end{table}%
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-4-1}
-	\caption{二项分布 $ b(n,p) $ 的线条图}
-	\label{fig:2.4.1}
+\begin{figure}[!ht]
+    \centering
+    \raisebox{0.75cm}{\begin{tikzpicture}[thick]
+        \draw(0,0.3)--(0,3.6);
+        \draw(0.1,1.3)--(0,1.3)node[left]{$0.1$}
+        (0.1,2.3)--(0,2.3)node[left]{$0.2$}
+        (0.1,3.3)--(0,3.3)node[left]{$0.3$};
+        \end{tikzpicture}}
+    \subfloat[$b(10,0,2)$的线条图(右偏)]{
+        \begin{tikzpicture}[thick,xscale=0.5]
+        \draw(0,0)node[below]{$0$}--(0,1.3)(1,0)node[below]{$1$}--(1,2.7)
+        (2,0)node[below]{$2$}--(2,3.3)(3,0)node[below]{$3$}--(3,2.3)
+        (4,0)node[below]{$4$}--(4,1.3)(5,0)node[below]{$5$}--(5,0.3)
+        (6,0)node[below]{$6$}--(6,0.1)(7,0)node[below]{$7$}--(7,0.1);
+        \draw(0,0)--(7.3,0);
+        \end{tikzpicture}
+    }\hfill
+    \subfloat[$b(10,0,5)$的线条图(对称)]{
+        \begin{tikzpicture}[thick,xscale=0.5]
+        \draw(1,0)node[below]{$1$}--(1,0.15)(2,0)node[below]{$2$}--(2,0.6)
+        (3,0)node[below]{$3$}--(3,1.4)(4,0)node[below]{$4$}--(4,2.3)
+        (5,0)node[below]{$5$}--(5,3.3)(6,0)node[below]{$6$}--(6,2.3)
+        (7,0)node[below]{$7$}--(7,1.4)(8,0)node[below]{$8$}--(8,0.7)
+        (9,0)node[below]{$9$}--(9,0.1);
+        \draw(0.7,0)--(9.3,0);
+        \end{tikzpicture}
+    }\hfill
+    \subfloat[$b(10,0,8)$的线条图(左偏)]{
+        \begin{tikzpicture}[thick,xscale=0.5]
+        \draw(4,0)node[below]{$4$}--(4,0.2)(5,0)node[below]{$5$}--(5,0.4)
+        (6,0)node[below]{$6$}--(6,1.3)(7,0)node[below]{$7$}--(7,2.4)
+        (8,0)node[below]{$8$}--(8,3.3)(9,0)node[below]{$9$}--(9,2.9)
+        (10,0)node[below]{$10$}--(10,1.3)(11,0)node[below]{$11$}--(11,0.3);
+        \draw(3.7,0)--(11.3,0);
+        \draw[very thick](8,0)--(8,3.3);
+        \end{tikzpicture}
+    }
+    \caption{二项分布$b(n,p)$的线条图}\label{fig:2.4.1}
 \end{figure}
 
 从上图可以看出:
@@ -1901,7 +1966,6 @@ X=X_{1}+X_{2}+\cdots+X_{n}
 	甲、乙两棋手约定进行10局比赛,以赢的局数多者为胜.设在每局中甲赢的概率为0.6,乙赢的概率为0.4.如果各局比赛是独立进行的,试问甲胜、乙胜、不分胜负的概率各为多少?
 	
 	\textbf{解} 以 $ X $ 表示10局比赛中甲赢的局数,则 $ X \sim b(10,0.6) $ .所以
-	
 	\[
 	P(\text{甲胜})= P(X \geqslant 6)=\sum_{k=6}^{10} \left( 
 	\begin{array}{l}{10} \\ 
@@ -1910,7 +1974,6 @@ X=X_{1}+X_{2}+\cdots+X_{n}
 	\right) 
 	0.6^{k} 0.4^{10-k}=0.6330 ,
 	\]
-	
 	\[
 	P(\text{乙胜}) =P(X \leqslant 4)=\sum_{k=0}^{+} \left( 
 	\begin{array}{c}{10} \\ 
@@ -1919,12 +1982,11 @@ X=X_{1}+X_{2}+\cdots+X_{n}
 	\right) 
 	0.6^{k} 0.4^{10-k}=0.1663 ,
 	\]
-	
 	\[
 	P(\text{不分胜负})=P(X=5)=\left( \begin{array}{c}{10} \\ {5}\end{array}\right) 0.6^{5} 0.4^{5}=0.2007
 	\]
 	
-	可见甲胜的可能性达63.3%,而乙胜的可能性只有16.63%,它比不分胜负的可能性还要小.最后两个概率之和0.3670表示乙不输的概率.
+	可见甲胜的可能性达63.3\%,而乙胜的可能性只有16.63\%,它比不分胜负的可能性还要小.最后两个概率之和0.3670表示乙不输的概率.
 \end{example}
 
 \subsection{泊松分布}\label{ssec:2.4.2}
@@ -1932,21 +1994,17 @@ X=X_{1}+X_{2}+\cdots+X_{n}
 \subsubsection{泊松分布}\index{B!泊松分布}
 
 泊松分布是1837年由法国数学家泊松(Poison S.D.1781-1840)首次提出的.泊松分布的概率分布列是
-
 \begin{equation}
 P(X=k)=\frac{\lambda^{k}}{k !} \ee ^{-\lambda}, k=0,1,2, \cdots \label{eq:2.4.3}
 \end{equation}
-
 其中参数 $ \lambda >0 $ ,记为 $ X \sim P(\lambda) $ .
 
 对泊松分布而言,很容易验证其和为1:
-
 \[
 \sum_{k=0}^{+\infty} \frac{\lambda^{k}}{k !} \ee ^{-\lambda}=\ee ^{-\lambda} \sum_{k=0}^{+\infty} \frac{\lambda^{k}}{k !}=\ee ^{-\lambda} \ee ^{\lambda}=1
 \]
 
 泊松分布是一种常用的离散分布,它常与单位时间(或单位面积、单位产品等)上的计数过程相联系,譬如,
-
 \begin{itemize}
 	\item 在单位时间内,电话总机接到用户呼唤的次数;
 	\item 在单位时间内,一电路受到外界电磁波的冲击次数;
@@ -1960,25 +2018,19 @@ P(X=k)=\frac{\lambda^{k}}{k !} \ee ^{-\lambda}, k=0,1,2, \cdots \label{eq:2.4.3}
 \subsubsection{泊松分布的数学期望和方差}
 
 设随机变量 $ X \sim P(\lambda) $ ,则
-
 \[
 E(X)=\sum_{k=0}^{+\infty} k \frac{\lambda^{k}}{k !} \ee ^{-\lambda}=\lambda \ee ^{-\lambda} \sum_{k=1}^{+\infty} \frac{\lambda^{k-1}}{(k-1) !}=\lambda \ee ^{-\lambda} \ee ^{\lambda}=\lambda
 \]
-
 这表明:泊松分布 $ P(\lambda) $ 的数学期望就是参数 $ \lambda $ .
 
 又因为
-
 \[
 \begin{aligned} E\left(X^{2}\right) &=\sum_{k=0}^{+\infty} k^{2} \frac{\lambda^{k}}{k !} \ee ^{-\lambda}=\sum_{k=1}^{+\infty} k \frac{\lambda^{k}}{(k-1) !} \ee ^{-\lambda} \\ &=\sum_{k=1}^{+\infty}[(k-1)+1] \frac{\lambda^{k}}{(k-1) !} \ee ^{-\lambda} \\ &=\lambda^{2} \ee ^{-\lambda} \sum_{k=2}^{+\infty} \frac{\lambda^{k-2}}{(k-2) !}+\lambda \ee ^{-\lambda} \sum_{k=1}^{+\infty} \frac{\lambda^{k-1}}{(k-1) !} \\ &=\lambda^{2}+\lambda \end{aligned}
 \]
-
 由此得 $ X $ 的方差为
-
 \[
 \operatorname{Var}(X)=E\left(X^{2}\right)-(E(X))^{2}=\lambda^{2}+\lambda-\lambda^{2}=\lambda
 \]
-
 也就是说,泊松分布 $ P(\lambda) $ 中的参数 $ \lambda $ 既是数学期望又是方差.
 
 为了看出不同的 $ \lambda $ 的值,其泊松分布 $ P(\lambda) $ 的变化情况,下表给出了 $ \lambda =
@@ -1997,11 +2049,45 @@ E(X)=\sum_{k=0}^{+\infty} k \frac{\lambda^{k}}{k !} \ee ^{-\lambda}=\lambda \ee 
 	\label{tab:2.4.2}%
 \end{table}%
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-4-2}
-	\caption{二项分布 $ b(n，p) $ 的线条图}
-	\label{fig:2.4.2}
+\begin{figure}[!ht]
+    \centering
+    \raisebox{0.45cm}{\begin{tikzpicture}[thick]
+        \draw(0,0)--(0,4.3);
+        \draw(0.1,1)--(0,1)node[left]{$0.1$}
+        (0.1,2)--(0,2)node[left]{$0.2$}
+        (0.1,3)--(0,3)node[left]{$0.3$}
+        (0.1,4)--(0,4)node[left]{$0.4$};
+        \end{tikzpicture}}
+    \subfloat[$P(0.8)$的线条图]{
+        \begin{tikzpicture}[thick,xscale=0.5]
+        \draw(0,0)node[below]{$0$}--(0,4.3)(1,0)node[below]{$1$}--(1,3.4)
+        (2,0)node[below]{$2$}--(2,1.6)(3,0)node[below]{$3$}--(3,0.3)
+        (4,0)node[below]{$4$}--(4,0.15)(5,0)node[below]{$5$}--(5,0.1);
+        \draw(0,0)--(5.3,0);
+        \end{tikzpicture}
+    }\hfill
+    \subfloat[$P(2.0)$的线条图]{
+        \begin{tikzpicture}[thick,xscale=0.5]
+        \draw(0,0)node[below]{$0$}--(0,1.2)
+        (1,0)node[below]{$1$}--(1,2.6)(2,0)node[below]{$2$}--(2,2.6)
+        (3,0)node[below]{$3$}--(3,1.8)(4,0)node[below]{$4$}--(4,1)
+        (5,0)node[below]{$5$}--(5,0.3)(6,0)node[below]{$6$}--(6,0.1)
+        (7,0)node[below]{$7$}--(7,0.1);
+        \draw(-0.3,0)--(7.3,0);
+        \end{tikzpicture}
+    }\hfill
+    \subfloat[$b(10,0,8)$的线条图(左偏)]{
+        \begin{tikzpicture}[thick,xscale=0.5]
+        \draw(0,0)node[below]{$0$}--(0,0.2)
+        (1,0)node[below]{$1$}--(1,0.8)(2,0)node[below]{$2$}--(2,1.6)
+        (3,0)node[below]{$3$}--(3,1.9)
+        (4,0)node[below]{$4$}--(4,1.9)(5,0)node[below]{$5$}--(5,1.7)
+        (6,0)node[below]{$6$}--(6,1.4)(7,0)node[below]{$7$}--(7,0.7)
+        (8,0)node[below]{$8$}--(8,0.3)(9,0)node[below]{$9$}--(9,0.15);
+        \draw(-0.3,0)--(9.3,0);
+        \end{tikzpicture}
+    }
+    \caption{二项分布$b(n,p)$的线条图}\label{fig:2.4.2}
 \end{figure}
 
 从图中可以看出:
@@ -2015,13 +2101,11 @@ E(X)=\sum_{k=0}^{+\infty} k \frac{\lambda^{k}}{k !} \ee ^{-\lambda}=\lambda \ee 
 	一铸件的砂眼(缺陷)数服从参数为 $ \lambda=0.5 $ 的泊松分布,试求此铸件上至多有1个砂眼(合格品)的概率和至少有2个砂眼(不合格品)的概率.
 	
 \textbf{解} 以$ X $表示这种铸件的砂眼数,由题意知 $ X \sim P(0.5) $ .则此种铸件上至多有1个砂眼的概率为
-
 \[
 P(X \leqslant 1)=\frac{0.5^{0}}{0 !} \mathrm{e}^{-0} 5+\frac{0.5^{1}}{1 !} \mathrm{e}^{-0.5}=0.91
 \]
 
 至少有2个砂眼的概率为
-
 \[
 P(X \geqslant 2)=1-P(X \leqslant 1)=0.09
 \]
@@ -2036,13 +2120,10 @@ P(X \geqslant 2)=1-P(X \leqslant 1)=0.09
 	\[
 	P(X \leqslant n) \geqslant 0.90
 	\]
-	
-	为了寻求此种 $ n $ ,可以利用泊松分布表,附表1对各种 $ \lambda $ 的值,给出了泊松分布函数 $ P(X \leqslant x)=\sum_{k=0}^{x} \frac{\lambda^{k}}{k !} e^{-\lambda} $ 的数值表.在 $ \lambda=8 $ 时,可从附表1中查得
-	
+	为了寻求此种 $ n $ ,可以利用泊松分布表,附表1对各种 $ \lambda $ 的值,给出了泊松分布函数 $ P(X \leqslant x)=\sum_{k=0}^{x} \tfrac{\lambda^{k}}{k !} e^{-\lambda} $ 的数值表.在 $ \lambda=8 $ 时,可从附表1中查得
 	\[
 	P(X \leqslant 11)=0.888, P(X \leqslant 12)=0.936 .
 	\]
-	
 	所以月初进货12(件)时,能满足 $ 93.6\% $ 的顾客的需求.
 \end{example}
 
@@ -2052,7 +2133,6 @@ P(X \geqslant 2)=1-P(X \leqslant 1)=0.09
 
 \begin{theorem}{泊松定理}{2.4.1}
 	(\textbf{泊松定理})\index{B!泊松定理}在 $ n $ 重伯努利试验中,记事件 $ A $ 在一次试验中发生的概率为 $ p_{n} $ (与试验次数 $ n $ 有关),如果当 $ n \rightarrow+\infty $ 时,有 $ n p_{n} \rightarrow \lambda $ ,则
-	
 	\begin{equation}
 	\lim _{n \rightarrow+\infty} \left( \begin{array}{l}{n} \\ {k}\end{array}\right) p_{n}^{k}\left(1-p_{n}\right)^{n-k}=\frac{\lambda^{k}}{k !} \ee ^{-\lambda} \label{eq:2.4.4}
 	\end{equation}
@@ -2061,7 +2141,6 @@ P(X \geqslant 2)=1-P(X \leqslant 1)=0.09
 
 \begin{proof}
 	记 $ n p_{n}=\lambda_{n} $ ,即 $ p_{n}=\lambda_{n} / n $ ,我们可得
-	
 	\[
 	\begin{array}{ll}
 	{\left( 
@@ -2082,13 +2161,11 @@ P(X \geqslant 2)=1-P(X \leqslant 1)=0.09
 	\]
 	
 	对固定的 $ k $ 有
-	
 	\[
 	\begin{array}{l}{\lim _{n \rightarrow+\infty} \lambda_{n}=\lambda_{i}} \\ {\lim _{n \rightarrow+\infty}\left(1-\frac{\lambda_{n}}{n}\right)^{n-k}=e^{-\lambda}} \\ {\lim _{n \rightarrow+\infty}\left(1-\frac{1}{n}\right) \cdots\left(1-\frac{k-1}{n}\right)=1}\end{array}
 	\]
 	
 	从而
-	
 	\[
 	\lim _{n \rightarrow+\infty} \left( \begin{array}{l}{n} \\ {k}\end{array}\right) p_{n}^{k}\left(1-p_{n}\right)^{n-k}=\frac{\lambda^{k}}{k !} \ee ^{-\lambda}
 	\]
@@ -2098,7 +2175,6 @@ P(X \geqslant 2)=1-P(X \leqslant 1)=0.09
 \end{proof}
 
 由于泊松定理是在 $ n p_{n} \rightarrow \lambda $ 条件下获得的,故在计算二项分布 $ b(n,p) $ 时,当 $ n $ 很大, $ p $ 很小,而乘积 $ \lambda=n p $ 大小适中时,可以用泊松分布作近似,即
-
 \begin{equation}
 \left( \begin{array}{l}{n} \\ {k}\end{array}\right) p_{n}^{k}\left(1-p_{n}\right)^{n-k} \approx \frac{(n p)^{k}}{k !} \ee ^{-n p}, k=0,1,2 \cdots \label{eq:2.4.5}
 \end{equation}
@@ -2112,7 +2188,7 @@ P(X \geqslant 2)=1-P(X \leqslant 1)=0.09
 	\begin{tabular}{c|c|c|c|c|c}
 		\toprule
 		\multirow{4}{*}{k}   & \multicolumn{4}{c|}{二项分布}                                                                  & 泊松近似                                  \\
-		& \multicolumn{4}{c|}{按 $ C_{n}^{k} p^{k}(1-p)^{n-k} $ 计算}                                     & 按 $ \frac{(n p)^{k}}{k !} e^{-n p} $ 计算 \\\cline{2-6}
+		& \multicolumn{4}{c|}{按 $ C_{n}^{k} p^{k}(1-p)^{n-k} $ 计算}                                     & 按 $ \tfrac{(n p)^{k}}{k !} e^{-n p} $ 计算 \\\cline{2-6}
 		& $ n=10 $ & $ n=20 $ & $ n=40 $ & $ n=100 $ & \multirow{2}{*}{ $ \lambda=n p=1 $ }      \\
 		& $ p=0.1 $ & $ p=0.05 $ & $ p=0.025 $ & $ p=0.01 $ &                                       \\\midrule
 		0                    & 0.349                & 0.358                & 0.363                & 0.366                & 0.368                                 \\
@@ -2131,16 +2207,13 @@ P(X \geqslant 2)=1-P(X \leqslant 1)=0.09
 	已知某种疾病的发病率为0.001,某单位共有5000人.问该单位患有这种疾病的人数不超过5人的概率为多少?
 	
 	\textbf{解} 设该单位患有这种疾病的人数为 $ X $ ,则有 $ X\sim b(5000,0.001) $ ,而我们所求的为
-	
 	\[
 	P(X \leqslant 5)=\sum_{k=0}^{3} \left( 
 	\begin{array}{c}{5000} \\ 
 	{k}
 	\end{array}\right) 0.001^{k} 0.999^{500-k}
 	\]
-	
 	这个概率的计算量很大.由于 $ n $ 很大, $ p $ 很小,且 $ \lambda=n p=5 $ .所以用泊松近似得
-	
 	\[
 	P(X \leqslant 5) \approx \sum_{k=0}^{5} \frac{5^{k}}{k !} \ee ^{-5}=0.616
 	\]
@@ -2210,13 +2283,11 @@ P(X \geqslant 2)=1-P(X \leqslant 1)=0.09
 从一个有限总体中进行不放回抽样常会遇到超几何分布.
 
 设有 $ N $ 个产品,其中有 $ M $ 个不合格品.若从中不放回地随机抽取n个,则其中含有的不合格品的个数 $ X $ 服从超几何分布,记为 $ X \sim h(n, N, M) $ .超几何分布的概率分布列为(见第一章中例1.2.3)
-
 \begin{equation}
 P(X=k)=\frac{\left( \begin{array}{c}{M} \\ {k}\end{array}\right) \left( \begin{array}{c}{N-M} \\ {n-k}\end{array}\right)}{\left( \begin{array}{c}{N} \\ {n}\end{array}\right)} k=0,1, \cdots, r \label{eq:2.4.6}
 \end{equation}
 
 其中 $ r=\min \{M, n\} $ ,且 $ M \leqslant N, n \leqslant N, n, N, M $ 均为正整数.若要验证以上给出的确实为一个概率分布列,只须注意到有组合等式(见习题1.2)
-
 \[
 \sum_{k=0}^{r} \left( \begin{array}{c}{M} \\ {k}\end{array}\right) \left( \begin{array}{c}{N-M} \\ {n-k}\end{array}\right)=\left( \begin{array}{l}{N} \\ {n}\end{array}\right)
 \]
@@ -2224,7 +2295,6 @@ P(X=k)=\frac{\left( \begin{array}{c}{M} \\ {k}\end{array}\right) \left( \begin{a
 \subsubsection{超几何分布的数学期望和方差}
 
 若 $ X \sim h(n, N, M) $ ,则 $ X $ 的数学期望为
-
 \[
 E(X)=\sum_{k=0}^{r} k \frac{\left( 
 	\begin{array}{c}
@@ -2246,7 +2316,6 @@ E(X)=\sum_{k=0}^{r} k \frac{\left(
 \]
 
 又因为
-
 \[
 \begin{array}{ll}
 {E(X)} & {=\sum_{k=0}^{r} k \frac{\left( \begin{array}{c}{M} \\
@@ -2305,7 +2374,6 @@ E(X)=\sum_{k=0}^{r} k \frac{\left(
 \]
 
 由此得 $ X $ 的方差为
-
 \[
 \operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}=\frac{n M(N-M)(N-n)}{N^{2}(N-1)}
 \]
@@ -2313,7 +2381,6 @@ E(X)=\sum_{k=0}^{r} k \frac{\left(
 \subsubsection{超几何分布的二项近似}
 
 当 $ n \ll N $ 时,即抽取个数 $ n $ 远小于产品总数 $ N $ 时,每次抽取后,总体中的不合格品率 $ p=M/N $ 改变甚微,所以不放回抽样可近似地看成放回抽样,这时超几何分布可用二项分布近似:
-
 \begin{equation}
 \frac{\left( 
 	\begin{array}{c}
@@ -2343,7 +2410,6 @@ E(X)=\sum_{k=0}^{r} k \frac{\left(
 \subsubsection{几何分布}
 
 在伯努利试验序列中,记每次试验中事件 $ A $ 发生的概率为 $ p $ ,如果 $ X $ 为事件 $ A $ 首次出现时的试验次数,则 $ X $ 的可能取值为 $ 1,2, \cdots $ ,称 $ X $ 服从几何分布,记为 $ \boldsymbol{X} \sim G e(p) $ ,其分布列为
-
 \begin{equation}
 P(X=k)=(1-p)^{k-1} p, k=1,2, \cdots \label{eq:2.4.8}
 \end{equation}
@@ -2360,13 +2426,11 @@ P(X=k)=(1-p)^{k-1} p, k=1,2, \cdots \label{eq:2.4.8}
 \subsubsection{几何分布的数学期望和方差}
 
 设随机变量 $ X $ 服从几何分布 $ Ge(p) $ ,令 $ g=1-p $ ,利用逐项微分可得 $ X $ 的数学期望为
-
 \[
 \begin{aligned} E(X) &=\sum_{k=1}^{+\infty} k p q^{k-1} =p \sum_{k=1}^{+\infty} k q^{k-1}=p \sum_{k=1}^{+\infty} \frac{\dd q^{k}}{\dd q} \\ &=p \frac{\dd}{\dd q}\left(\sum_{k=0}^{+\infty} q^{k}\right)=p \frac{\dd}{\dd q}\left(\frac{1}{1-q}\right)=\frac{p}{(1-q)^{2}}=\frac{1}{\rho} \end{aligned}
 \]
 
 又因为
-
 \[
 \begin{aligned} 
 E\left(X^{2}\right) &=\sum_{i=1}^{+\infty} k^{2} p q^{k-1}=p\left[\sum_{k=1}^{+\infty} k(k-1) q^{k-1}+\sum_{k=1}^{+\infty} k q^{k-1}\right] \\ 
@@ -2377,7 +2441,6 @@ E\left(X^{2}\right) &=\sum_{i=1}^{+\infty} k^{2} p q^{k-1}=p\left[\sum_{k=1}^{+\
 \]
 
 由此得 $ X $ 的方差为
-
 \[
 \operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}=\frac{2 q}{p^{2}}+\frac{1}{p}-\frac{1}{p^{2}}=\frac{1-p}{p^{2}}
 \]
@@ -2387,7 +2450,6 @@ E\left(X^{2}\right) &=\sum_{i=1}^{+\infty} k^{2} p q^{k-1}=p\left[\sum_{k=1}^{+\
 
 \begin{theorem}{}{2.4.2}
 	(几何分布的无记忆性)设 $ X \sim G e(p) $ ,则对任意正整数 $ m $ 与 $ n $ 有
-	
 	\begin{equation}
 	P(X>m+n | X>m)=P(X>n) \label{eq:2.4.9}
 	\end{equation}
@@ -2398,13 +2460,11 @@ E\left(X^{2}\right) &=\sum_{i=1}^{+\infty} k^{2} p q^{k-1}=p\left[\sum_{k=1}^{+\
 
 \begin{proof}
 	因为
-	
 	\[
 	P(X>n)=\sum_{k=n+1}^{+\infty}(1-p)^{k-1} p=\frac{p(1-p)^{n}}{1-(1-p)}=(1-p)^{n}
 	\]
 	
 	所以对任意的正整数 $ m $ 与 $ n $ ,条件概率
-	
 	\[
 	\begin{aligned} P(X>m+n | X>m) &=\frac{P(X>m+n)}{P(X>m)}=\frac{(1-p)^{m+\pi}}{(1-p)^{m}} \\ &=(1-p)^{n}=P(X>n) \end{aligned}
 	\]
@@ -2417,7 +2477,6 @@ E\left(X^{2}\right) &=\sum_{i=1}^{+\infty} k^{2} p q^{k-1}=p\left[\sum_{k=1}^{+\
 作为几何分布的一种延伸,我们注意下面的负二项分布,亦称巴斯卡分布:
 
 在伯努利试验序列中,记每次试验中事件 $ A $ 发生的概率为 $ p $ ,如果 $ X $ 为事件 $ A $ 第 $ r $ 次出现时的试验次数,则 $ X $ 的可能取值为 $ r, r+1, \cdots, r+m, \cdots $ .称 $ x $ 服从负二项分布或巴斯卡分布,其分布列为
-
 \begin{equation}
 P(X=k)=\left( \begin{array}{l}{k-1} \\ {r-1}\end{array}\right) p^{r}(1-p)^{k-r}, k=r, r+1, \cdots \label{eq:2.4.10}
 \end{equation}
@@ -2472,22 +2531,36 @@ p(x)=\left\{
 \subsubsection{正态分布的密度函数和分布函数}
 
 若随机变量X的密度函数为
-
 \begin{equation}
 p(x)=\frac{1}{\sqrt{2 \pi} \sigma} \ee ^{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}},-\infty<x<+\infty \label{eq:2.5.1}
 \end{equation}
 
 则称 $ X $ 服从正态分布,称 $ X $ 为\textbf{正态变量}\index{Z!正态变量},记作 $ X \sim N\left(\mu, \sigma^{2}\right) $ .其中参数 $ -\infty< \mu<+\infty, \sigma>0 $ .其密度函数 $ p(x) $ 的图形如图~\ref{fig:2.5.1}a所示. $ p(x) $ 是一条钟形曲线,中间高、二边低、左右关于 $ u $ 对称,以是正态分布的中心,且在x=u附近取值的可能性大,在两侧取值的可能性小. $ \mu \pm \sigma $ 是该曲线的拐点.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{../../Ptmst/figure/2-5-1}
-	\caption{正态分布}
-	\label{fig:2.5.1}
+\begin{figure}[!ht]
+    \centering
+    \subfloat[密度函数$p(x)$]{
+        \begin{tikzpicture}[semithick,yscale=2,>=Stealth]
+        \draw[->](-2.7,0)--(0,0)node[below=1pt]{$\mu$}--(2.7,0)node[below]{$x$};
+        \draw[->](0,0)--(0,1.4)node[right]{$p(x)$};
+        \draw[samples=100,domain=-2.5:2.5,thick]plot(\x,{e^(-(\x)^2)+0.04});
+        \draw[dashed](-0.8,{e^(-0.64)+0.04})--(-0.8,0)node[below]{$\mu-\sigma$}
+        (0.8,{e^(-0.64)+0.04})--(0.8,0)node[below]{$\mu+\sigma$};
+        \draw(0.8,{e^(-0.64)+0.04})--(-0.8,{e^(-0.64)+0.04});
+        \end{tikzpicture}
+    }\hspace{1.5cm}
+    \subfloat[分布函数$F(x)$]{
+        \begin{tikzpicture}[semithick,yscale=2,>=Stealth]
+        \draw[->](-2.7,0)--(0,0)node[below=1pt]{$\mu$}--(2.7,0)node[below]{$x$};
+        \draw[->](0,0)--(0,1.4)node[right]{$F(x)$};
+        \draw[samples=100,domain=-2.5:2.5,thick]plot(\x,{(atan(\x))/135+0.55});
+        \draw[dashed](-2.5,1.1)--(2.5,1.1);
+        \end{tikzpicture}
+    }
+    \caption{正态分布}\label{fig:2.5.1}
 \end{figure}
 
 正态分布 $ N\left(\mu, \sigma^{2}\right) $ 的分布函数为
-
 \begin{equation}
 F(x)=\frac{1}{\sqrt{2 \pi} \sigma} \int_{-\infty}^{x} \ee ^{-\frac{(t-\mu)^{2}}{2 \sigma^{2}}} \dd t \label{eq:2.5.2}
 \end{equation}
@@ -2500,11 +2573,44 @@ F(x)=\frac{1}{\sqrt{2 \pi} \sigma} \int_{-\infty}^{x} \ee ^{-\frac{(t-\mu)^{2}}{
 
 ·从图~\ref{fig:2.5.2}(b)中可以看出:如果固定 $ \mu $ ,改变 $ \sigma $ 的值,则 $ \sigma $ 愈小,曲线呈高而瘦; $ \sigma $ 愈大,曲线呈矮而胖.也就是说正态密度函数的尺度由参数 $ \sigma $ 所确定,因此称 $ \sigma $ 为\textbf{尺度参数}\index{C!尺度参数}.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.35\linewidth]{2-5-2}
-	\caption{}
-	\label{fig:2.5.2}
+\begin{figure}[!ht]
+    \centering
+    \subfloat[$\sigma$固定, $\mu$值改变]{
+        \begin{tikzpicture}[semithick,>=Stealth,samples=100]
+        \draw[->](-0.5,0)--(0,0)node[below left]{$O$}--(6.5,0)node[below]{$x$};
+        \draw[->](0,-0.4)--(0,4)node[right]{$p(x)$};
+        \draw[domain=-0.3:3.7,thick]plot(\x,{3*e^(-(\x-1.7)^2/1.3)});
+        \draw(1.7,0)node[below]{$\mu$}--(1.7,3);
+        \node[inner sep=0pt](a)at(3,3.2){$\sigma=1$};
+        \draw[->](a)--(2.2,{3*e^(-0.5^2/1.3)});
+        \begin{scope}[xshift=2.5cm]
+        \draw[domain=-0.3:3.7,thick]plot(\x,{3*e^(-(\x-1.7)^2/1.3)});
+        \draw(1.7,0)node[below]{$\mu_1$}--(1.7,3);
+        \node[inner sep=0pt](a)at(3,3.2){$\sigma=1$};
+        \draw[->](a)--(2.2,{3*e^(-0.5^2/1.3)});
+        \end{scope}
+        \end{tikzpicture}
+    }
+    \subfloat[$\mu$固定, $\sigma$值改变]{
+        \begin{tikzpicture}[semithick,>=Stealth,samples=150]
+        \draw[->](0,0)--(0,0)node[below left]{$O$}--(6.8,0)node[below]{$x$};
+        \draw[->](0,0)--(0,4)node[right]{$p(x)$};
+        \draw(3.4,0)--(3.4,3.65);
+        \draw[domain=1:5.6,thick]plot(\x,{3.6*e^(-(\x-3.4)^2)+0.05});
+        \draw[domain=0.6:6,thick]plot(\x,{1.8*e^(-0.5*(\x-3.4)^2)+0.025});
+        \draw[domain=0.2:6.4,thick]plot(\x,{1.2*e^(-0.3*(\x-3.4)^2)+0.012});
+        \draw[dashed](3.4,1.212)--(0,1.212)node[left]{$0.266$}
+        (3.4,1.825)--(0,1.825)node[left]{$0.399$}
+        (3.4,3.65)--(0,3.65)node[left]{$0.798$};
+        \node[inner sep=0pt](a)at(5.2,3.6){$\sigma=0.5$};
+        \node[inner sep=0pt](b)at(5.2,2.4){$\sigma=1.0$};
+        \node[inner sep=0pt](c)at(5.2,1.6){$\sigma=1.5$};
+        \draw[->](a)--(3.7,{3.6*e^(-0.3^2)+0.05});
+        \draw[->](b)--(3.7,{1.8*e^(-0.5*0.09)+0.025});
+        \draw[->](c)--(4.1,{1.2*e^(-0.3*(4.1-3.4)^2)+0.012});
+        \end{tikzpicture}
+    }
+    \caption{正态密度函数}\label{fig:2.5.2}
 \end{figure}
 
 \subsubsection{标准正态分布}
@@ -2512,7 +2618,6 @@ F(x)=\frac{1}{\sqrt{2 \pi} \sigma} \int_{-\infty}^{x} \ee ^{-\frac{(t-\mu)^{2}}{
 称 $ \mu=0, \sigma=1 $ 时的正态分布 $ N(0,1) $ 为\textbf{标准正态分布}\index{B!标准正态分布}.
 
 通常记标准正态变量为 $ U $ ,记标准正态分布的密度函数为 $ \varphi(u) $ ,分布函数为面 $ \Phi(u) $ ,即
-
 \[
 \begin{array}{ll}
 {\varphi(u)=\frac{1}{\sqrt{2 \pi}} \ee ^{-\frac{\mu^{2}}{2}}} & {,-\infty<u<+\infty} \\ 
@@ -2545,20 +2650,17 @@ F(x)=\frac{1}{\sqrt{2 \pi} \sigma} \int_{-\infty}^{x} \ee ^{-\frac{(t-\mu)^{2}}{
 \subsubsection{一般正态分布的标准化}
 
 正态分布有一个家族
-
 \[
 \mathscr{P}=\left\{N\left(\mu, \sigma^{2}\right) ;-\infty<\mu<+\infty, \sigma>0\right\}
 \]
 
 标准正态分布 $ N(0,1) $ 是其一个成员.实际上很少有随机变量恰好服从标准正态分布.以下定理说明:对一般正态分布都可以通过一个线性变换(标准化)化成标准正态分布.因此与正态变量有关的一切事件的概率都可通过查标准正态分布函数表获得.由此可见标准正态分布 $ N(0,1 $ )对一般正态分布 $ N\left(\mu, \sigma^{2}\right) $ 的计算起着关键的作用.
-
 \begin{theorem}{}{2.5.1}
 	若 $ X \sim N\left(\mu, \sigma^{2}\right) $ ,则 $ U=(X-\mu) / \sigma \sim N(0,1) $ .
 \end{theorem}
 
 \begin{proof}
 	记 $ x $ 与 $ U $ 的分布函数分别为 $ p_{X}(x) $ 与 $ p_{U}(u) $ ,则由分布函数的定义知
-	
 	\[
 	F_{U}(u)=P(U \leqslant u)=P\left\{\frac{X-u}{\sigma} \leqslant u\right\}=P(X \leqslant \mu+\sigma u)=F_{X}(\mu+\sigma u)
 	\]
@@ -2569,7 +2671,6 @@ F(x)=\frac{1}{\sqrt{2 \pi} \sigma} \int_{-\infty}^{x} \ee ^{-\frac{(t-\mu)^{2}}{
 	\]
 	
 	由此得
-	
 	\[
 	U=\frac{X-\mu}{\sigma}-N(0,1)
 	\]
@@ -2577,11 +2678,9 @@ F(x)=\frac{1}{\sqrt{2 \pi} \sigma} \int_{-\infty}^{x} \ee ^{-\frac{(t-\mu)^{2}}{
 
 
 由以上定理,我们马上可以得到一些在实际中有用的计算公式,若 $ X \sim N\left(\mu, \sigma^{2}\right) $ ,则
-
 \begin{equation}
 P(X \leqslant c)=\Phi\left(\frac{c-\mu}{\sigma}\right) \label{eq:2.5.3}
 \end{equation}
-
 \begin{equation}
 P(a<X \leqslant b)=\Phi\left(\frac{b-\mu}{\sigma}\right)-\Phi\left(\frac{a-\mu}{\sigma}\right) \label{eq:2.5.4}
 \end{equation}
@@ -2658,7 +2757,6 @@ P(a<X \leqslant b)=\Phi\left(\frac{b-\mu}{\sigma}\right)-\Phi\left(\frac{a-\mu}{
 \subsubsection{正态分布的数学期望与方整}
 
 设随机变量 $ X \sim N\left(\mu, \sigma^{2}\right) $ ,由于 $ U=(X-\mu) / \sigma \sim N(0,1) $ ,所以 $ U $ 的数学期望为
-
 \[
 E(U)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty} u \ee ^{-\frac{x^{2}}{2}} \dd u
 \]
@@ -2672,7 +2770,6 @@ E(X)=\mu+\sigma \times 0=\mu
 也就是说,正态分布 $ N\left(\mu, \sigma^{2}\right) $ 中的 $ p $ 为数学期望.
 
 又因为
-
 \[
 \begin{array}{ll}
 {\operatorname{Var}(U)} & {=E\left(U^{2}\right)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty} u^{2} \ee ^{-\frac{\mu^{2}}{2}} \dd u} \\ 
@@ -2683,7 +2780,6 @@ E(X)=\mu+\sigma \times 0=\mu
 \]
 
 因为 $ X=\sigma U+\mu $ ,所以由方差的性质得
-
 \[
 \operatorname{Var}(X)=\operatorname{Var}(\sigma U+\mu)=\sigma^{2}
 \]
@@ -2691,7 +2787,6 @@ E(X)=\mu+\sigma \times 0=\mu
 这说明,正态分布 $ N\left(\mu, \sigma^{2}\right) $ 中另一个参数 $ \sigma^{2} $ 就是方差.
 
 在求正态分布的数学期望和方差中,用到了一种变换:令 $ U=(X-\mu) / \sigma $ ,由 $ E(U)=0, \operatorname{Var}(U)=1 $ ,然后再去求出X的数学期望和方差.这个变换具有普遍意义,也就是对任意随机变量 $ X $ ,如果X的数学期望为 $ \mu $ ,方差为 $ \sigma^{2} $ ,则称
-
 \[
 X^{*}=\frac{X-\mu}{\sigma}
 \]
@@ -2703,11 +2798,9 @@ E\left(X^{*}\right)=0, \quad \operatorname{Var}\left(X^{*}\right)=1
 
 \subsubsection{正态分布的 $ 3\sigma $ 原则}
 设 $ X \sim N\left(\mu, \sigma^{2}\right) $ ,则
-
 \begin{equation}
 P(|X-\mu|<k \sigma)=\Phi(k)-\Phi(-k)=\left\{\begin{array}{ll}{0.6826,} & {k=1} \\ {0.9545,} & {k=2} \\ {0.9973,} & {k=3}\end{array}\right. \label{eq:2.5.5}
 \end{equation}
-
 从上式中可以看出:尽管正态变量的取值范围是 $ (-\infty,+\infty) $ ,但它的 $ 99.73\% $ 的值落在 $ (\mu-3 a, \mu+3 \sigma) $ 内.这个性质被实际工作者称作是正态分布的`` $ 3\sigma $ 原则 ".正态分布的 $ 3\sigma $ 原则在实际工作中很有用,工业生产上用的控制图,和一些产品质量指数(如 $ C_{p}, C_{*} $ )都是根据 $ 3\sigma $ 原则制定的
 
 
@@ -2716,7 +2809,6 @@ P(|X-\mu|<k \sigma)=\Phi(k)-\Phi(-k)=\left\{\begin{array}{ll}{0.6826,} & {k=1} \
 \subsubsection{均匀分布的密度函数和分布函数}
 
 若随机变量X的密度函数(见图~\ref{fig:2.5.3}(a))为
-
 \begin{equation}
 p(x)=\left\{
 \begin{array}{ll}
@@ -2725,9 +2817,7 @@ p(x)=\left\{
 \end{array}
 \right. \label{eq:2.5.6}
 \end{equation}
-
 则称 $ X $ 服从区间 $ (a,b) $ 上的\textbf{均匀分布}\index{J!均匀分布},记作 $ X \sim U(a, b) $ ,其分布函数(见图~\ref{fig:2.5.3}(b))为
-
 \begin{equation}
 F(x)=\left\{
 \begin{array}{ll}
@@ -2738,11 +2828,27 @@ F(x)=\left\{
 \right. \label{eq:2.5.7}
 \end{equation}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-5-3}
-	\caption{ $ (a,b) $ 上的均匀分布}
-	\label{fig:2.5.3}
+\begin{figure}[!ht]
+    \centering
+    \subfloat[密度函数$p(x)$]{
+        \begin{tikzpicture}[semithick,>=Stealth,samples=100,scale=2.5]
+        \draw[->](0,0)node[below left]{$O$}--(1.7,0)node[below]{$x$};
+        \draw[->](0,0)--(0,1.2)node[right]{$p(x)$};
+        \draw[thick](0.3,0.6)--(1.3,0.6);\node[left]at(0,0.6){$\frac1{b-a}$};
+        \draw[dashed](0.3,0.6)--(0.3,0)node[below]{$a$}
+        (1.3,0.6)--(1.3,0)node[below]{$b$};
+        \end{tikzpicture}
+    }
+    \subfloat[分布函数$F(x)$]{
+        \begin{tikzpicture}[semithick,>=Stealth,samples=100,scale=2.5]
+        \draw[->](0,0)node[below left]{$O$}--(1.7,0)node[below]{$x$};
+        \draw[->](0,0)--(0,1.2)node[right]{$F(x)$};
+        \draw[thick](0.3,0)node[below]{$a$}--(1.2,0.9)--(1.7,0.9);
+        \draw(1.2,0)node[below]{$b$}--(1.2,0.03);
+        \draw(0,0.9)node[left]{$1$}--(0.03,0.9);
+        \end{tikzpicture}
+    }
+    \caption{$(a,b)$上的均匀分布}\label{fig:2.5.3}
 \end{figure}
 
 均匀分布的背景可视作随机点 $ X $ 落在区间 $ (a,b) $ 上的位置.均匀分布在实际中经常使用,譬如一个半径为r的汽车轮胎,因为轮胎圆周上的任一点接触地面的可能性是相同的,所以轮胎圆周接触地面的位置 $ X $ 是服从 $ (0,2 \pi r) $ 上的均匀分布,这只要看一看报废轮胎的四周磨损程度几乎是相同的就可明白均匀分布的含义了.
@@ -2751,7 +2857,6 @@ F(x)=\left\{
 	设随机变量 $ X $ 服从 $ (0,10) $ 上的均匀分布,现对 $ X $ 进行4次独立观测,试求至少有3次观测值大于5的概率.
 	
 	\textbf{解} 设随机变量 $ Y $ 是4次独立观测中观测值大于5的次数,则 $ Y \sim b(4, p) $ ,其中 $ p=P(X>5) $ .由 $ X \sim U(0,10) $ ,知 $ X $ 的密度函数为
-	
 	\[
 	p(x)=\left\{
 	\begin{array}{ll}
@@ -2761,13 +2866,11 @@ F(x)=\left\{
 	\]
 	
 	所以
-	
 	\[
 	p=P(X>5)=\int_{5}^{10} \frac{1}{10} \dd x=\frac{1}{2}
 	\]
 	
 	于是
-	
 	\[
 	P(Y \geqslant 3)=\left( \begin{array}{l}{4} \\ {3}\end{array}\right) p^{3}(1-p)+\left( \begin{array}{l}{4} \\ {4}\end{array}\right) p^{4}=4\left(\frac{1}{2}\right)^{4}+\left(\frac{1}{2}\right)^{4}=\frac{5}{16}
 	\]
@@ -2776,7 +2879,6 @@ F(x)=\left\{
 \subsubsection{均匀分布的数学期望和方差}
 
 设随机变量 $ X \sim U(a, b) $ ,则
-
 \[
 E(X)=\int_{a}^{b} \frac{x}{b-a} d x=\frac{b^{2}-a^{2}}{2(b-a)}=\frac{a+b}{2}
 \]
@@ -2784,13 +2886,11 @@ E(X)=\int_{a}^{b} \frac{x}{b-a} d x=\frac{b^{2}-a^{2}}{2(b-a)}=\frac{a+b}{2}
 这正是区间 $ (a,b) $ 的中点.
 
 又因为
-
 \[
 E\left(X^{2}\right)=\int_{a}^{b} \frac{x^{2}}{b-a} \dd x=\frac{b^{3}-a^{3}}{3(b-a)}=\frac{a^{2}+a b+b^{2}}{3}
 \]
 
 由此得 $ X $ 的方差为
-
 \[
 \operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}=\frac{a^{2}+a b+b^{2}}{3}-\frac{(a+b)^{2}}{4}=\frac{(b-a)^{2}}{12}
 \]
@@ -2800,7 +2900,6 @@ E\left(X^{2}\right)=\int_{a}^{b} \frac{x^{2}}{b-a} \dd x=\frac{b^{3}-a^{3}}{3(b-
 \subsubsection{指数分布的密度函数和分布函数}
 
 若随机变量 $ X $ 的密度函数(见图~\ref{fig:2.5.4})为
-
 \begin{equation}
 p(x)=\left\{\begin{array}{ll}
 {\lambda \ee ^{-\lambda x},} & {x \geqslant 0} \\ 
@@ -2809,7 +2908,6 @@ p(x)=\left\{\begin{array}{ll}
 \end{equation}
 
 则称 $ X $ 服从\textbf{指数分布}\index{Z!指数分布},记作 $ X \sim E x p(\lambda) $ ,其中参数 $ \lambda>0 $ .指数分布的分布函数为
-
 \begin{equation}
 F(x)=\left\{\begin{array}{ll}
 {1-\ee ^{-\lambda x},} & {x \geqslant 0} \\ 
@@ -2817,11 +2915,24 @@ F(x)=\left\{\begin{array}{ll}
 \end{array}\right. \label{eq:2.5.9}
 \end{equation}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-5-4}
-	\caption{参数为 $ \lambda $ 的指数分布密度函数}
-	\label{fig:2.5.4}
+\begin{figure}[!ht]
+    \centering
+    \begin{tikzpicture}[semithick,>=Stealth,samples=100]
+    \draw[->](0,0)node[below left]{$O$}--(4,0)node[below]{$x$};
+    \draw[->](0,0)--(0,3.6)node[right]{$p(x)$};
+    \foreach \x in{1,2,3}
+    \draw(\x,0)node[below]{$\x$}--(\x,0.08)(0,\x)node[left]{$\x$}--(0.08,\x);
+    \draw[domain=0:3.6]plot(\x,{e^(-\x)});
+    \draw[domain=0:3.6](0,0.5)node[left]{$0.5$}--plot(\x,{0.5*e^(-0.5*\x)});
+    \draw[domain=0:3.6]plot(\x,{3*e^(-3*\x)});
+    \node[inner sep=0pt](a)at(1,2){$\lambda=3$};
+    \node[inner sep=0pt](b)at(1.5,1){$\lambda=1$};
+    \node[inner sep=0pt](c)at(3,0.6){$\lambda=0.5$};
+    \draw[->](a)--(0.2,{3*e^(-3*0.2)});
+    \draw[->](b)--(0.85,{e^(-0.85)});
+    \draw[->](c)--(2.6,{0.5*e^(-0.5*2.6)});
+    \end{tikzpicture}
+    \caption{参数为$\lambda$的指数分布密度函数}\label{fig:2.5.4}
 \end{figure}
 
 因为指数分布随机变量只可能取非负实数,所以指数分布常被用作各种``寿命"
@@ -2830,7 +2941,6 @@ F(x)=\left\{\begin{array}{ll}
 \subsubsection{指数分布的数学期望和方差}
 
 设随机变量 $ X-E x p(\lambda) $ ,则
-
 \[
 \begin{aligned} 
 E(X) &=\int_{0}^{+\infty} x \lambda \ee ^{-\lambda x} \dd x=\int_{0}^{+\infty} x \dd\left(-\ee ^{-\lambda x}\right) \\
@@ -2841,13 +2951,11 @@ E(X) &=\int_{0}^{+\infty} x \lambda \ee ^{-\lambda x} \dd x=\int_{0}^{+\infty} x
 在指数分布中,有时记 $ \theta=1 / \lambda $ ,则 $ \theta $ 为指数分布的数学期望.
 
 又因为
-
 \[
 \begin{aligned} E\left(X^{2}\right) &=\int_{0}^{+\infty} x^{2} \lambda \ee ^{-\lambda x} \dd x=\int_{0}^{+\infty} x^{2} \dd\left(-\ee ^{-\lambda x}\right) \\ &=-x^{2}\left.\ee ^{-\lambda x}\right|_{0} ^{+\infty}+2 \int_{0}^{+\infty} x \ee ^{-\lambda x} \dd x=\frac{2}{\lambda^{2}} \end{aligned}
 \]
 
 由此得 $ X $ 的方差为
-
 \[
 \operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}=\frac{2}{\lambda^{2}}-\frac{1}{\lambda^{2}}=\frac{1}{\lambda^{2}}
 \]
@@ -2858,7 +2966,6 @@ E(X) &=\int_{0}^{+\infty} x \lambda \ee ^{-\lambda x} \dd x=\int_{0}^{+\infty} x
 
 \begin{theorem}{指数分布的无记忆性}{2.5.2}
 	如果 $ X-E x p(\lambda) $ ,则对任意 $ s>0,t>0 $ ,有
-	
 	\begin{equation}
 	P(X>s+t | X>s)=P(X>t) \label{eq:2.5.10}
 	\end{equation}
@@ -2868,13 +2975,11 @@ E(X) &=\int_{0}^{+\infty} x \lambda \ee ^{-\lambda x} \dd x=\int_{0}^{+\infty} x
 
 \begin{proof}
 	证明因为 $ X \sim E x p(\lambda) $ ,所以 $ P(X>s)=\ee ^{-\lambda s}, s>0 $ .又因为
-	
 	\[
 	\{X>s+t\} \subseteq\{X>s\}
 	\]
 	
 	于是条件概率
-	
 	\[
 	P(X>s+t | X>s)=\frac{P(X>s+t)}{P(X>s)}=\frac{\ee ^{-\lambda(s+t)}}{\ee ^{-\lambda s}}=\ee ^{-\lambda t}=P(X>t)
 	\]
@@ -2890,7 +2995,6 @@ E(X) &=\int_{0}^{+\infty} x \lambda \ee ^{-\lambda x} \dd x=\int_{0}^{+\infty} x
 	如果某设备在任何长为 $ t $ 的时间 $ [0,t] $ 内发生故障的次数 $ N(t) $ 服从参数为 $ \lambda t $ 的泊松分布,则相继两次故障之间的时间间隔T服从参数为 $ \lambda $ 的指数分布.
 	
 	\textbf{解} 设 $ N(t) \sim P(\lambda t) $ ,即
-	
 	\[
 	P\{N(t)=k\}=\frac{(\lambda t)^{k}}{k !} \ee ^{-\lambda t}, \quad k=0,1, \cdots
 	\]
@@ -2900,7 +3004,6 @@ E(X) &=\int_{0}^{+\infty} x \lambda \ee ^{-\lambda x} \dd x=\int_{0}^{+\infty} x
 	当 $ t<0 $ 时,有 $ F_{T}(t)=P(T \leqslant t)=0 $ ;
 	
 	当 $ t \geqslant 0 $ 时,有
-	
 	\[
 	F_{T}(t)=P(T \leqslant t)=1-P(T>\iota)=1-P\{N(t)=0\}=1-\ee ^{-\lambda t}
 	\]
@@ -2913,7 +3016,6 @@ E(X) &=\int_{0}^{+\infty} x \lambda \ee ^{-\lambda x} \dd x=\int_{0}^{+\infty} x
 \subsubsection{伽玛函数}
 
 称以下函数
-
 \begin{equation}
 \Gamma(\alpha)=\int_{0}^{+\infty} x^{a \cdot 1} \ee ^{-x} \dd x \label{eq:2.5.11}
 \end{equation}
@@ -2921,7 +3023,7 @@ E(X) &=\int_{0}^{+\infty} x \lambda \ee ^{-\lambda x} \dd x=\int_{0}^{+\infty} x
 为\textbf{伽玛函数}\index{G!伽玛函数},其中参数 $ a>0 $ .伽玛函数具有如下性质:
 
 \begin{enumerate}
-	\item $ \Gamma(1)=1, \Gamma\left(\frac{1}{2}\right)=\sqrt{\pi} $ 
+	\item $ \Gamma(1)=1, \Gamma\left(\tfrac{1}{2}\right)=\sqrt{\pi} $ 
 	\item $ \Gamma(\alpha+1)=\alpha \Gamma(\alpha) $ (可用分部积分法证得).当 $ a $ 为自然数 $ n $ 时,有
 	\[
 	\Gamma(n+1)=n \Gamma(n)=n !
@@ -2931,7 +3033,6 @@ E(X) &=\int_{0}^{+\infty} x \lambda \ee ^{-\lambda x} \dd x=\int_{0}^{+\infty} x
 \subsubsection{伽玛分布}
 
 若随机变量X的密度函数为
-
 \begin{equation}
 p(x)=\left\{\begin{array}{ll}{\frac{\lambda^{a}}{\Gamma(\alpha)} x^{a-1} \ee ^{-\lambda x},} & {x \geqslant 0} \\ {0,} & {x<0}\end{array}\right. \label{eq:2.5.12}
 \end{equation}
@@ -2945,29 +3046,57 @@ p(x)=\left\{\begin{array}{ll}{\frac{\lambda^{a}}{\Gamma(\alpha)} x^{a-1} \ee ^{-
 	\item $ 2<a $ 时, $ p(x) $ 是单峰函数,先下凸、中间上凸、后下凸.且 $ a $ 越大, $ p(x) $ 越近似于正态密度.
 \end{itemize}
 ·
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-5-5}
-	\caption{ $ \lambda $ 固定、不同 $ a $ 的伽玛密度函数曲线}
-	\label{fig:2.5.5}
+\begin{figure}[!ht]
+    \centering
+    \subfloat{
+        \begin{tikzpicture}[semithick,>=Stealth,samples=150,yscale=2,xscale=0.9]
+        \draw[->](0,0)node[below left]{$O$}--(4.4,0)node[below]{$x$};
+        \draw[->](0,0)--(0,1.7)node[right]{$p(x)$};
+        \draw[thick,domain=0.12:2.6]plot(\x,{e^(-\x)/sqrt(\x)/1.77});
+        \draw[thick,domain=0:3]plot(\x,{e^(-\x)});
+        \draw[thick,domain=0:4]plot(\x,{2.5*(\x)*e^(-\x)});
+        \node[inner sep=0pt](a)at(2,0.45){$\alpha=1$};
+        \node[inner sep=0pt](b)at(1,1.2){$\alpha<1$};
+        \node[inner sep=0pt](c)at(3,0.8){$\alpha>1$};
+        \draw[->](a)--(2,{e^(-2)});
+        \draw[->](b)--(0.2,{e^(-0.2)/sqrt(0.2)/1.77});
+        \draw[->](c)--(3,{2.5*(3)*e^(-3)});
+        \node[below]at(1,0){\phantom{$\frac{\alpha-1}\lambda$}};
+        \end{tikzpicture}
+    }
+    \subfloat{
+        \begin{tikzpicture}[semithick,>=Stealth,samples=150,yscale=2,xscale=0.9]
+        \draw[->](0,0)node[below left]{$O$}--(4.4,0)node[below]{$x$};
+        \draw[->](0,0)--(0,1.7)node[right]{$p(x)$};
+        \draw[thick,domain=0:4]plot(\x,{2.5*(\x)*e^(-\x)});
+        \draw[dashed](1,{2.5*e^(-1)})--(1,0)node[below]{$\frac{\alpha-1}\lambda$};
+        \node at(2.3,1){$1<\alpha\leq2$};
+        \end{tikzpicture}
+    }
+    \subfloat{
+        \begin{tikzpicture}[semithick,>=Stealth,samples=150,yscale=2,xscale=0.7]
+        \draw[->](0,0)node[below left]{$O$}--(7,0)node[below]{$x$};
+        \draw[->](0,0)--(0,1.7)node[right]{$p(x)$};
+        \draw[thick,domain=0:6]plot(\x,{2.5*(\x)^2)*e^(-\x)});
+        \draw[dashed](2,{1.5*2^2*e^(-1.5)})--(2,0)node[below]{$\frac{\alpha-1}\lambda$};
+        \end{tikzpicture}
+    }
+    \caption{$\lambda$固定、不同$\alpha$的伽玛密度曲线}\label{fig:2.5.5}
 \end{figure}
 
 \subsubsection{伽玛分布 $ G a(\alpha, \lambda) $ 的数学期望和方整}
 
 利用伽玛函数的性质,不难算得伽玛分布 $ \operatorname{Ga}(\alpha, \lambda) $ 的数学期望为
-
 \[
 E(X)=\frac{\lambda^{a}}{\Gamma(\alpha)} \int_{0}^{+\infty} x^{\alpha} \ee ^{-\lambda x} \dd x=\frac{\Gamma(\alpha+1)}{\Gamma(\alpha)} \frac{1}{\lambda}=\frac{\alpha}{\lambda}
 \]
 
 又因为
-
 \[
 E\left(X^{2}\right)=\frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_{0}^{+\infty} x^{a+1} \ee ^{-\lambda x} \dd x=\frac{\Gamma(\alpha+2)}{\lambda^{2} \Gamma(\alpha)}=\frac{\alpha(\alpha+1)}{\lambda^{2}}
 \]
 
 由此得 $ X $ 的方差为
-
 \[
 \operatorname{Var}(X)=E\left(X^{2}\right)-[E(X)]^{2}=\frac{\alpha(\alpha+1)}{\lambda^{2}}-\left(\frac{\alpha}{\lambda}\right)^{2}=\frac{\alpha}{\lambda^{2}}
 \]
@@ -2988,7 +3117,6 @@ E\left(X^{2}\right)=\frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_{0}^{+\infty} x
 \end{enumerate}
 
 其密度函数为
-
 \begin{equation}
 p(x)=\left\{
 \begin{array}{ll}
@@ -2997,11 +3125,9 @@ p(x)=\left\{
 \end{array}
 \right. \label{eq:2.5.15}
 \end{equation}
-
 这里 $ n $ 是 $ \chi^{2} $ 分布的唯一参数,称为自由度,它可以是正实数,但更多的是取正整数,其统计含义以后再介绍.
 
 因为 $ \chi^{2} $ 分布是特殊的伽玛分布,故由伽玛分布的期望和方差,很容易得到 $ \chi^{2} $ 分布的期望和方差为
-
 \[
 E(X)=n, \quad \operatorname{Var}(X)=2 n
 \]
@@ -3010,7 +3136,6 @@ E(X)=n, \quad \operatorname{Var}(X)=2 n
 	电子产品的失效常常是由子外界的``冲击引起".若在 $ (0,t) $ 内发生冲击的次数 $ N(t) $ 服从参数为 $ \lambda t $ 的泊松分布,试证第 $ n $ 次冲击来到的时间 $ S_{n} $ 服从伽玛分布 $ G a(n, \lambda) $ .
 	\textbf{证} 因为事件``第 $ n $ 次冲击来到的时间 $ S_{n} $ .小于等于 $ t $ "等价于事件`` $ (0,t) $ 
 	内发生冲击的次数 $ N(t) $ 大于等于 $ n $ ",即
-	
 	\[
 	\left\{S_{n} \leqslant t\right\}=\{N(t) \geqslant n\}
 	\]
@@ -3021,17 +3146,14 @@ E(X)=n, \quad \operatorname{Var}(X)=2 n
 	\]
 	
 	用分部积分法可以验证下列等式
-	
 	\begin{equation}
 	\sum_{k=0}^{n-1} \frac{(\lambda t)^{k}}{k !} \ee ^{-\lambda t}=\frac{\lambda^{n}}{\Gamma(n)} \int_{t}^{+\infty} x^{n-1} \ee ^{-\lambda x} \dd x \label{eq:2.5.16}
 	\end{equation}
 	
 	所以
-	
 	\[
 	F(t)=\frac{\lambda^{n}}{\Gamma(n)} \int_{0}^{t} x^{n-1} \ee ^{-\lambda x} \dd x
 	\]
-	
 	这就表明 $ S_{n} \sim G a(n, \lambda) $ .证毕.
 \end{example}
 
@@ -3040,7 +3162,6 @@ E(X)=n, \quad \operatorname{Var}(X)=2 n
 \subsubsection{贝塔函数}
 
 称以下函数
-
 \begin{equation}
 B(a, b)=\int_{0}^{1} x^{a-1}(1-x)^{b-1} \dd x \label{eq:2.5.17}
 \end{equation}
@@ -3075,7 +3196,6 @@ B(a, b)=\int_{0}^{1} x^{a-1}(1-x)^{b-1} \dd x \label{eq:2.5.17}
 \subsection{贝塔分布}\label{ssec:2.5.6}
 
 若随机变量 $ X $ 的密度函数为
-
 \begin{equation}
 p(x)=\left\{\begin{array}{ll}
 {\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} x^{a-1}(1-x)^{b-1},} & { 0<x<1}\\ 
@@ -3087,10 +3207,59 @@ p(x)=\left\{\begin{array}{ll}
 则称 $ X $ 服从\textbf{贝塔分布}\index{B!贝塔分布},记作 $ X \sim B e(a, b) $ ,其中 $ a>0,b>0 $ 都是形状参数.图~\ref{fig:2.5.6}给出几种典型的贝塔密度函数曲线.
 
 \begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-5-6}
-	\caption{贝塔密度函数曲线}
-	\label{fig:2.5.6}
+    \centering
+    \subfloat{
+        \begin{tikzpicture}[semithick,>=Stealth,samples=150,scale=2.3]
+        \draw[->](0,0)node[below left]{$O$}--(1.25,0)node[below]{$x$};
+        \draw[->](0,0)--(0,1.5)node[right]{$p(x)$};
+        \draw[thick,domain=0:1] plot(\x,{5*(\x)*(1-\x)^2});
+        \draw[thick,domain=0.12:0.88] plot(\x,{(\x)^(-1/2)*(1-\x)^(-1/2)-1.7});
+        \draw[dashed](1,0)--(1,1.5);
+        \node[inner sep=0pt](a)at(0.35,1.2){\scalebox{1.2}{$a<1\atop b<1$}};
+        \node[inner sep=0pt](b)at(0.65,1){\scalebox{1.2}{$a<1\atop b>1$}};
+        \draw[->](a)--(0.2,{(0.2)^(-1/2)*(1-0.2)^(-1/2)-1.7});
+        \draw[->](b)--(0.45,{5*(0.45)*(1-0.45)^2});
+        \draw[dashed](1/3,0)node[below]{$x_1$}--(1/3,{5*(1/3)*(1-1/3)^2});
+        \draw[dashed](0.5,0)node[below]{$x_2$}--(0.5,{(0.5)^(-1/2)*(1-0.5)^(-1/2)-1.7});
+        \end{tikzpicture}
+    }
+    \subfloat{
+        \begin{tikzpicture}[semithick,>=Stealth,samples=150,scale=2.3]
+        \draw[->](0,0)node[below left]{$O$}--(1.25,0)node[below]{$x$};
+        \draw[->](0,0)--(0,1.5)node[right]{$p(x)$};
+        \draw[thick,domain=0:1] plot(\x,{1.4*(1-\x)^2});
+        \draw[thick,domain=0:1] plot(\x,{1.4*(\x)^2});
+        \node[inner sep=0pt](a)at(0.35,1.2){\scalebox{1.2}{$a<1\atop b\geq1$}};
+        \node[inner sep=0pt](b)at(0.65,1.2){\scalebox{1.2}{$a\geq1\atop b>1$}};
+        \draw[->](a)--(0.2,{1.4*(0.8)^2});
+        \draw[->](b)--(0.8,{1.4*0.8^2});
+        \draw[dashed](1,0)--(1,1.5);
+        \end{tikzpicture}
+    }
+    \subfloat{
+        \begin{tikzpicture}[semithick,>=Stealth,samples=150,scale=2.3]
+        \draw[->](0,0)node[below left]{$O$}--(1.25,0)node[below]{$x$};
+        \draw[->](0,0)--(0,1.5)node[right]{$p(x)$};
+        \draw[thick,domain=0:1] plot(\x,{1*(1-\x)^(1/2)});
+        \draw[thick,domain=0:1] plot(\x,{1*(\x)^(1/2)});
+        \node[inner sep=0pt](a)at(0.35,1.2){\scalebox{1.2}{$a=1\atop b>1$}};
+        \node[inner sep=0pt](b)at(0.65,1.2){\scalebox{1.2}{$a>1\atop b=1$}};
+        \draw[->](a)--(0.2,{1*(0.8)^(1/2)});
+        \draw[->](b)--(0.8,{1*0.8^(1/2)});
+        \draw[dashed](1,0)--(1,1.5);
+        \end{tikzpicture}
+    }
+    \subfloat{
+        \begin{tikzpicture}[semithick,>=Stealth,samples=150,scale=2.3]
+        \draw[->](0,0)node[below left]{$O$}--(1.25,0)node[below]{$x$};
+        \draw[->](0,0)--(0,1.5)node[right]{$p(x)$};
+        \draw[thick](0,0.7)--(1,0.7);
+        \draw[dashed](1,0)node[below]{$1$}--(1,0.7);
+        \node[inner sep=0pt](a)at(0.6,1){\scalebox{1.2}{$a=1\atop b=1$}};
+        \draw[->](a)--(0.3,0.7);
+        \end{tikzpicture}
+    }
+    \caption{贝塔密度函数曲线}\label{fig:2.5.6}
 \end{figure}
 
 从上图可以看出:
@@ -3107,19 +3276,16 @@ p(x)=\left\{\begin{array}{ll}
 \subsubsection{贝塔分布 $ Be(a,b) $ 的数学期望和方差}
 
 利用贝塔函数的性质,不难算得贝塔分布 $ Be(a,b) $ 的数学期望为
-
 \[
 \begin{aligned} E(X) &=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \int_{0}^{1} x^{a}(1-x)^{b-1} \dd x \\ &=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \cdot \frac{\Gamma(a+1) \Gamma(b)}{\Gamma(a+b+1)}=\frac{a}{a+b} \end{aligned}
 \]
 
 又因为
-
 \[
 \begin{aligned} E\left(X^{2}\right) &=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \int_{0}^{1} x^{a+1}(1-x)^{b-1} \dd x=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} \cdot \frac{\Gamma(a+2) \Gamma(b)}{\Gamma(a+b+2)} \\ &=\frac{a(a+1)}{(a+b)(a+b+1)} \end{aligned}
 \]
 
 由此得 $ X $ 的方差为
-
 \[
 \operatorname{Var}(X)=\frac{a(a+1)}{(a+b)(a+b+1)}-\left(\frac{a}{a+b}\right)^{2}=\frac{a b}{(a+b)^{2}(a+b+1)}
 \]
@@ -3137,25 +3303,25 @@ p(x)=\left\{\begin{array}{ll}
 		\midrule
 		二项分布 $ b(n, p) $ & $ p_{k}=\left( \begin{array}{l}{n} \\ {k}\end{array}\right) p^{k}(1-p)^{n-k}, \quad k=0,1, \cdots, n $ & $ n p $ & $ n p(1-p) $ \\
 		\midrule
-		泊松分布 $ P(\lambda) $ & $ p_{k}=\frac{\lambda^{k}}{k !} \ee ^{-\lambda}, \quad k=0,1, \cdots $ & $ \lambda $ & $ \lambda $ \\
+		泊松分布 $ P(\lambda) $ & $ p_{k}=\tfrac{\lambda^{k}}{k !} \ee ^{-\lambda}, \quad k=0,1, \cdots $ & $ \lambda $ & $ \lambda $ \\
 		\midrule
-		超几何分布 $ h(n, N, M) $ & $ p_{k}=\frac{\left( \begin{array}{l}{M} \\ {k}\end{array}\right) \left( \begin{array}{l}{N-M} \\ {n-k}\end{array}\right)}{\left( \begin{array}{l}{N} \\ {n}\end{array}\right)}, \begin{array}{l}{k=0,1, \cdots, r} \\ {r=\min \{M, n\}}\end{array} $ & $ n \frac{M}{N} $ & $ \frac{n M(N-M)(N-n)}{N^{2}(N-1)} $ \\
+		超几何分布 $ h(n, N, M) $ & $ p_{k}=\tfrac{\left( \begin{array}{l}{M} \\ {k}\end{array}\right) \left( \begin{array}{l}{N-M} \\ {n-k}\end{array}\right)}{\left( \begin{array}{l}{N} \\ {n}\end{array}\right)}, \begin{array}{l}{k=0,1, \cdots, r} \\ {r=\min \{M, n\}}\end{array} $ & $ n \tfrac{M}{N} $ & $ \tfrac{n M(N-M)(N-n)}{N^{2}(N-1)} $ \\
 		\midrule
-		几何分布 $ G e(p) $ & $ p_{k}=(1-p)^{k-1} p, \quad k=1,2, \cdots $ & $ \frac{1}{p} $ & $ \frac{1-p}{p^{2}} $ \\
+		几何分布 $ G e(p) $ & $ p_{k}=(1-p)^{k-1} p, \quad k=1,2, \cdots $ & $ \tfrac{1}{p} $ & $ \tfrac{1-p}{p^{2}} $ \\
 		\midrule
-		负二项分布 $ N b(r, p) $ & $ p_{k}=\left( \begin{array}{l}{k-1} \\ {r-1}\end{array}\right)(1-p)^{k-x} p^{r}, \quad k=r, r+1, \cdots $ & $ \frac{r}{p} $ & $ \frac{r(1-p)}{p^{2}} $ \\
+		负二项分布 $ N b(r, p) $ & $ p_{k}=\left( \begin{array}{l}{k-1} \\ {r-1}\end{array}\right)(1-p)^{k-x} p^{r}, \quad k=r, r+1, \cdots $ & $ \tfrac{r}{p} $ & $ \tfrac{r(1-p)}{p^{2}} $ \\
 		\midrule
-		征态分布 $ N\left(\mu, \sigma^{2}\right) $ & $ p(x)=\frac{1}{\sqrt{2 \pi} \sigma} \exp \left\{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}\right\}, \quad-\infty<x<+\infty $ & $ \mu $ & $ \sigma^{2} $ \\
+		征态分布 $ N\left(\mu, \sigma^{2}\right) $ & $ p(x)=\tfrac{1}{\sqrt{2 \pi} \sigma} \exp \left\{-\tfrac{(x-\mu)^{2}}{2 \sigma^{2}}\right\}, \quad-\infty<x<+\infty $ & $ \mu $ & $ \sigma^{2} $ \\
 		\midrule
-		均匀分布  & $ p(x)=\frac{1}{b-a}, \quad a<x<b $ & $ \frac{a+b}{2} $ & $ \frac{(b-a)^{2}}{12} $ \\
+		均匀分布  & $ p(x)=\tfrac{1}{b-a}, \quad a<x<b $ & $ \tfrac{a+b}{2} $ & $ \tfrac{(b-a)^{2}}{12} $ \\
 		\midrule
-		指数分布 $ E x p(\lambda) $ & $ p(x)=\lambda e^{-\lambda x}, \quad x \geqslant 0 $ & $ \frac{1}{\lambda} $ & $ \frac{1}{\lambda^{2}} $ \\
+		指数分布 $ E x p(\lambda) $ & $ p(x)=\lambda e^{-\lambda x}, \quad x \geqslant 0 $ & $ \tfrac{1}{\lambda} $ & $ \tfrac{1}{\lambda^{2}} $ \\
 		\midrule
-		伽马分布 $ G a(a, \lambda) $ & $ p(x)=\frac{\lambda^{a}}{\Gamma(\alpha)} x^{a-1} \ee ^{-\lambda x}, \quad x \geqslant 0 $ & $ \frac{a}{\lambda} $ & $ \frac{\alpha}{\lambda^{2}} $ \\
+		伽马分布 $ G a(a, \lambda) $ & $ p(x)=\tfrac{\lambda^{a}}{\Gamma(\alpha)} x^{a-1} \ee ^{-\lambda x}, \quad x \geqslant 0 $ & $ \tfrac{a}{\lambda} $ & $ \tfrac{\alpha}{\lambda^{2}} $ \\
 		\midrule
-		 $ \chi^{2}(n) $ 分布    & $ p(x)=\frac{x^{n / 2-1} \ee ^{-x / 2}}{\Gamma(n / 2) 2^{n / 2}}, \quad x \geqslant 0 $ & $ n $ &  2 $ n $ \\
+		 $ \chi^{2}(n) $ 分布    & $ p(x)=\tfrac{x^{n / 2-1} \ee ^{-x / 2}}{\Gamma(n / 2) 2^{n / 2}}, \quad x \geqslant 0 $ & $ n $ &  2 $ n $ \\
 		\midrule
-		贝塔分布 $ B e(a, b) $ & $ p(x)=\frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} x^{a-1}(1 \quad x)^{b-1}, \quad 0<x<1 $ & $ \frac{a}{a+b} $ & $ \frac{a b}{(a+b)^{2}(a+b+1)} $ \\\bottomrule
+		贝塔分布 $ B e(a, b) $ & $ p(x)=\tfrac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} x^{a-1}(1 \quad x)^{b-1}, \quad 0<x<1 $ & $ \tfrac{a}{a+b} $ & $ \tfrac{a b}{(a+b)^{2}(a+b+1)} $ \\\bottomrule
 		\multicolumn{4}{l}{注:表中仅列出各分布密度函数的非零区城.} \\
 	\end{tabular}%
 	\label{tab:2.5.1}%
@@ -3164,7 +3330,7 @@ p(x)=\left\{\begin{array}{ll}
 
 \begin{xiti}
 \item 设随机变量 $ X $ 服从区间 $ (2,5) $ 上的均匀分布,求对 $ X $ 进行3次独立观测中,至少有2次的观测值大于3的概率.
-\item 在 $ (0,1) $ 上任取一点记为 $ X $ ,试求 $ P\left(X^{2}-\frac{3}{4} X+\frac{1}{8} \geqslant 0\right) $ .
+\item 在 $ (0,1) $ 上任取一点记为 $ X $ ,试求 $ P\left(X^{2}-\tfrac{3}{4} X+\tfrac{1}{8} \geqslant 0\right) $ .
 \item 设 $ K $ 服从 $ (1,6) $ 上的均匀分布,求方程 $ x^{2}+K x+1=0 $ 有实根的概率.
 \item 设流经一个 $ 2 \Omega $ 电阻上的电流I是一个随机变量,它均匀分布在 $ 9A $ 至 $ 11A $ 之间.试求此电阻上消耗的平均功率,其中功率 $ W=2 I^{2} $ .
 \item 某种圆盘的直径在区间 $ (a,b) $ 上跟从均匀分布,试求此种圆盘的平均面积.
@@ -3256,7 +3422,7 @@ p(x)=\frac{1}{40 \sqrt{2 \pi}} \ee ^{\frac{(x-20)^{2}}{3200}}, \quad-\infty<x<+\
 \item 设随机变量 $ X $ 服从正态分布 $ N\left(\mu, \sigma^{2}\right) $ ,试问:随着 $ \sigma $ 的增大,概率 $ P(|X-\mu|<\sigma) $ 是如何变化的?
 \item 设随机变量 $ X $ 服从参数为 $ a=160 $ 和 $ \sigma $ 的正态分布,若要求 $ P(120<X \leqslant 200) \geqslant 0.90 $ ,允许 $ a $ 最大为多少?
 \item 设随机变量 $ X \sim N\left(\mu, \sigma^{2}\right) $ ,求 $ E | X-\mu | $ .
-\item 设 $ X \sim N\left(0, \sigma^{2}\right) $ ,证明: $ E_{1} X |=\sigma \sqrt{\frac{2}{\pi}} $ .
+\item 设 $ X \sim N\left(0, \sigma^{2}\right) $ ,证明: $ E_{1} X |=\sigma \sqrt{\tfrac{2}{\pi}} $ .
 \item 设随机变量 $ X $ 服从伽玛分布 $ G a(2,0.5) $ ,试求 $ P(X<4) $ .
 \item 某地区漏缴税款的比例 $ X $ 服从参数 $ a=2,b=9 $ 的贝塔分布,试求此比例小于 $ 10\% $ 的概率及平均漏缴税款的比例.
 \item 某班级学生中数学成绩不及格的比率 $ x $ 服从 $ a=1,b=4 $ 的贝塔分布,试求 $ P(X>E(X)) $ .
@@ -3271,16 +3437,13 @@ p(x)=\frac{1}{40 \sqrt{2 \pi}} \ee ^{\frac{(x-20)^{2}}{3200}}, \quad-\infty<x<+\
 \subsection{离散随机变最函数的分布}\label{ssec:2.6.1}
 
 离散随机变量函数的分布是比较容易求得的.设 $ X $ 是离散随机变量, $ X $ 的分布列为
-
 \[
 \begin{array}{c|ccccc}
 {X} & {x_{1}} & {x_{2}} & {\dots} & {x_{n}} & {\dots} \\ \midrule 
 P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\right)} & {\cdots}
 \end{array}
 \]
-
 则 $ Y=g(X) $ 也是一个离散随机变量,此时 $ Y $ 的分布列就可很简单地表示为
-
 \[
 \begin{array}{c|ccccc}
 {X} & {g(x_{1})} & {g(x_{2})} & {\dots} & {g(x_{n})} & {\dots} \\ \midrule 
@@ -3292,7 +3455,6 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 
 \begin{example}\label{exam:2.6.1}
 	已知随机变量 $ X $ 的分布列如下,求 $ Y=x^{2}+X $ 的分布列.
-	
 	\[
 	\begin{array}{c|ccccc}
 	x & {-2} & {-1} & {0} & {1} & {2} \\ \midrule
@@ -3301,7 +3463,6 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 	\]
 	
 	\textbf{解} $ Y=x^{2}+X $ 的分布列为
-	
 	\[
 	\begin{array}{c|ccccc}
 	Y & {2} & {0} & {0} & {2} & {6} \\ \midrule 
@@ -3310,7 +3471,6 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 	\]
 	
 	再对相等的值合并,得
-	
 	\[
 	\begin{array}{c|ccc}
 	Y & {0} & {2} & {6} \\ \midrule 
@@ -3330,7 +3490,6 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 
 \begin{theorem}{}{2.6.1}
 	设 $ X $ 是连续随机变量,其密度函数为 $ p_{x}(x) $ . $ Y=g(X) $ 是另一个随机变量,若 $ y=g(x) $ 严格单调,其反函数 $ h(y) $ 有连续导函数,则 $ Y=g(X) $ 的密度函数为
-	
 	\begin{equation}
 	p_{Y}(y)=\left\{
 	\begin{array}{ll}
@@ -3346,25 +3505,21 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 	证明不妨设 $ g(x) $ 是严格单调增函数,这时它的反函数 $ h(y) $ 也是严格单调增函数,且 $ h'(y)>0 $ .记 $ a=g(-\infty), b=g(+\infty) $ ,这意味着 $ y=g(x) $ 仅在区间 $ (a,b) $ 取值,于是
 	
 	当 $ y<a $ 时,
-	
 	\[
 	F_{\mathrm{Y}}(y)=P(Y \leqslant y)=0
 	\]
 	
 	当 $ y>b $ 时,
-	
 	\[
 	F_{\mathrm{Y}}(y)=P(Y \leqslant y)=1
 	\]0
 	
 	当 $ a \leqslant y \leqslant b $ 时,
-	
 	\[
 	\begin{aligned} F_{Y}(y) &=P(Y \leqslant y)=P(g(X) \leqslant y) \\ &=P(X \leqslant h(y))=\int_{-\infty}^{h(y)} p(x) \dd x \end{aligned}
 	\]
 	
 	由此得 $ Y $ 的密度函数为
-	
 	\[
 	p_{\mathrm{Y}}(y)=\left\{
 	\begin{array}{ll}
@@ -3384,7 +3539,6 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 
 \begin{proof}
 	当 $ a>0 $ 时, $ Y=ax+b $ 是严格增函数,仍在 $ (-\infty,+\infty) $ 上取值,其反函数为 $ X=(Y-b)/a $ ,由定理2.6.1可得
-	
 	\[
 	\begin{aligned} 
 	p_{Y}(y) &=p_{X}\left(\frac{y-b}{a}\right) \frac{1}{a}=\frac{1}{\sqrt{2 \pi} \sigma} \exp \left\{-\frac{1}{2 \sigma^{2}}\left(\frac{y-b}{a}-\mu\right)^{2}\right\} \frac{1}{a} \\ 
@@ -3395,12 +3549,10 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 	这就是正态分布 $ N\left(a \mu+b, a^{2} \sigma^{2}\right) $ 的密度函数.
 	
 	当 $ a<0 $ 时, $ Y=aX+b $ 是严格减函数,仍在 $ (-\infty,+\infty) $ 上取值,其反函数为 $ X=(Y-b)/a $ ,由定理2.6.1可得
-	
 	\[
 	p_{Y}(y)=\frac{1}{\sqrt{2 \pi}|a| \sigma} \exp \left\{-\frac{(y-a \mu-b)^{2}}{2 a^{2} \sigma^{2}}\right\}
 	\]
-	
-	这是正态分布 $ N\left(a \mu+b, a^{2} \sigma^{2}\right) $ 的密度函数,结论得证.
+    这是正态分布 $ N\left(a \mu+b, a^{2} \sigma^{2}\right) $ 的密度函数,结论得证.
 	
 \end{proof}
 
@@ -3435,7 +3587,6 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 
 \begin{theorem}{对数正态分布}{2.6.3}
 	设随机变量 $ X \sim N\left(\mu, \sigma^{2}\right) $ ,则 $ Y=e^{x} $ 的概率密度函数为
-	
 	\begin{equation}
 	p_{Y}(y)=\left\{\begin{array}{ll}
 	{\frac{1}{\sqrt{2 \pi} y} \exp \left\{-\frac{(\ln y-\mu)^{2}}{2 \sigma^{2}}\right\},} & {x>0} \\ 
@@ -3450,7 +3601,6 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 	当 $ y \leqslant 0 $ 时, $ F_{Y}(y)=0 $ ,从而 $ p_{Y}(y)=0 $ .
 	
 	当 $ y>0 $ 时, $ Y $ 的密度函数为
-	
 	\[
 	p_{Y}(y)=\frac{1}{\sqrt{2 \pi \sigma}} \exp \left\{-\frac{(\ln y-\mu)^{2}}{2 \sigma^{2}}\right\} \frac{1}{y}=\frac{1}{\sqrt{2 \pi} y \sigma} \exp \left\{-\frac{(\ln y-\mu)^{2}}{2 \sigma^{2}}\right\}
 	\]
@@ -3476,7 +3626,6 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 	
 	当 $ y<0 $ 时, $ p_{Y}(y)=0 $ .
 	当 $ y \geqslant 0 $ 时,
-	
 	\[
 	p_{Y}(y)=p_{X}\left(\frac{y}{k}\right) \frac{1}{k}=\frac{\lambda^{a}}{k \Gamma(\alpha)}\left(\frac{y}{k}\right)^{a-1} \exp \left\{-\lambda \frac{y}{k}\right\}=\frac{(\lambda / k)^{a}}{\Gamma(\alpha)} y^{a-1} \exp \left\{-\frac{\lambda}{k} y\right\}
 	\]
@@ -3499,19 +3648,16 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 	\]
 	
 	当 $ 0 \leqslant y<1 $ 时,有
-	
 	\[
 	F_{Y}(y)=P(Y \leqslant y)=P\left(F_{X}(X) \leqslant y\right)=P\left(X \leqslant F_{x}^{-1}(y)\right)=F_{X}\left(F^{-1}(y)\right)=y
 	\]
 	
 	当 $ y \geqslant 1 $ 时,因为 $ \left\{F_{X}(X) \leqslant y\right\} $ 是必然事件,所以
-	
 	\[
 	F_{Y}(y)=P(Y \leqslant y)=P\left(F_{X}\langle X) \leqslant y\right)=1
 	\]
 	
 	综上所述, $ Y=F_{X}(X) $ 的分布函数为
-	
 	\[
 	F_{Y}(y)=\left\{\begin{array}{ll}{0,} & {y<0} \\ {y,} & {0 \leqslant y<1} \\ {1,} & {y \geqslant 1}\end{array}\right.
 	\]
@@ -3527,19 +3673,16 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 	设随机变量 $ X $ 服从标准正态分布 $ N(0,1) $ ,试求了 $ Y=X^{2} $ 的分布.
 	
 	\textbf{解} 解先求 $ Y $ 的分布函数 $ F_{Y}(y) $ .由于 $ Y=X^{2} \geqslant 0 $ ,故当 $ y \leqslant 0 $ 时,有 $ F_{Y}(y)=0 $ ,从面 $ p_{\mathrm{Y}}(y)=0 $ .当 $ y>0 $ 时,有
-	
 	\[
 	F_{Y}(y)=P(Y \leqslant y)=P\left(X^{2} \leqslant y\right)=P(-\sqrt{y} \leqslant X \leqslant \sqrt{y})=2 \Phi(\sqrt{y})-1
 	\]
 	
 	因此 $ Y $ 的分布函数为
-	
 	\[
 	F_{Y}(y)=\left\{\begin{array}{cl}{2 \Phi(\sqrt{y})-1,} & {y>0} \\ {0,} & {y \leqslant 0}\end{array}\right.
 	\]
 	
 	再用求导的方法求出 $ Y $ 的密度函数
-	
 	\[
 	\begin{array}{ll}
 	{p_{\mathrm{Y}}(y)} & {=\left\{
@@ -3560,7 +3703,6 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 
 \begin{example}\label{exam:2.6.4}
 	设随机变量 $ X $ 的密度函数为
-	
 	\[
 	p_{X}(x)=\left\{\begin{array}{ll}
 	{\frac{2 x}{\pi^{2}},} & {0<x<\pi} \\ 
@@ -3572,34 +3714,37 @@ P & {p\left(x_{1}\right)} & {p\left(x_{2}\right)} & {\cdots} & {p\left(x_{n}\rig
 	\textbf{解} 由于 $ X $ 在 $ (0, \pi) $ 内取值,所以 $ Y=\sin X $ 的可能取值区间为 $ (0,1) $ .在 $ Y $ 的可能取值区间外, $ p_{Y}(y)=0 $ .
 	当 $ 0<y<1 $ 时,使 $ \{ Y \leqslant y \} $ 的 $ x $ 取值范围为两个互不相交的区间,见图~\ref{fig:2.6.1}.
 	
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.7\linewidth]{2-6-1}
-		\caption{ $ y=\sin x $ 的图形}
-		\label{fig:2.6.1}
-	\end{figure}
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[xscale=1.3,>=Stealth,yscale=1.8,semithick]
+    \draw[->](0,0)node[below left]{$O$}--(3.6,0)node[below]{$x$};
+    \draw[->](0,0)--(0,1.2)node[right]{$y$};
+    \draw(pi,0.866)--(0,0.866)node[left]{$y$};
+    \draw[thick,samples=100,domain=0:pi]plot(\x,{sin(\x r)})--(pi,0)node[below]{$\pi$};
+    \draw[dashed](pi/3,0)node[below=2pt]{$x_1$}--(pi/3,0.866)
+    (2*pi/3,0)node[below=2pt]{$x_2$}--(2*pi/3,0.866)
+    (pi/2,0)node[below]{$\pi/2$}--(pi/2,1);
+    \draw[very thick](0,0)--(pi/3,0)(pi,0)--(2*pi/3,0);
+    \end{tikzpicture}
+    \caption{$y=\sin x$的图形}\label{fig:2.6.1}
+\end{figure}
 	
 	\[
 	\begin{array}{l}{\Delta_{1}(y)=\left[0, x_{1}\right]=[0, \arcsin y]} \\ {\Delta_{2}(y)=\left[x_{2}, \pi\right]=[\pi-\arcsin y, \pi]}\end{array}
 	\]
 	
 	于是
-	
 	\[
 	\begin{aligned} | Y \leqslant y \} &=| X \in \Delta_{1}(y) \} \cup\left|X \in \Delta_{2}(y)\right| \\ &=\{0 \leqslant X \leqslant \arcsin y\} \cup\{\pi-\arcsin y \leqslant X \leqslant \kappa\} \end{aligned}
 	\]
-	
 	故
-	
 	\[
 	\begin{array}{ll}
 	{F_{\mathrm{Y}}(y)} & {=P(Y \leqslant y)=\int_{0}^{\arcsin y} p_{X}(x) \dd x+\int_{x-\text { arcsin } y}^{\pi} p_{X}(x) \dd x} \\ 
 	{} & {=\int_{0}^{\arcsin } \frac{2 x}{\pi^{2}} \dd x+\int_{\pi-\arcsin y}^{\pi} \frac{2 x}{x^{2}} \dd x}
 	\end{array}
 	\]
-	
 	在上式两端对 $ y $ 求导,得
-	
 	\[
 	p_{Y}(y)=\frac{2 \arcsin y}{\pi^{2} \sqrt{1-y^{2}}}+\frac{2(\pi-\arcsin y)}{\pi^{2} \sqrt{1-y^{2}}}=\frac{2}{\pi \sqrt{1-y^{2}}}, \quad 0<y<1
 	\]
@@ -3696,12 +3841,10 @@ p(x)=\left\{
 
 \begin{definition}{$ k $ 阶矩}{2.7.1}
 	设 $ X $ 为随机变量, $ k $ 为正整数.如果以下的数学期望都存在,则称
-	
 	\begin{equation}
 	\mu_{k}=E\left(X^{k}\right) \label{eq:2.7.1}
 	\end{equation}
 	为 $ X $ 的 \textbf{ $ k $ 阶原点矩}\index{K! $ k $ 阶原点矩}.称
-	
 	\begin{equation}
 	\nu_{k}=E(X-E(X))^{k} \label{eq:2.7.2}
 	\end{equation}
@@ -3712,20 +3855,17 @@ p(x)=\left\{
 显然,一阶原点矩就是数学期望,二阶中心矩就是方差.由于 $ |X|^{k-1} \leqslant |X|^{k}+1 $ ,故 $ k $ 阶矩存在时, $ k-1 $ 阶矩也存在,从而低于 $ k $ 的各阶矩都存在.
 
 中心矩和原点矩之间有一个简单的关系,事实上
-
 \[
 v_{k}=E(X-E(X))^{k}=E\left(X-\mu_{1}\right)^{k}=\sum_{i=0}^{k} \left( \begin{array}{l}{k} \\ {i}\end{array}\right) \mu_{i}\left(-\mu_{1}\right)^{k-i}
 \]
 
 故前四阶中心矩可分别用原点矩表示如下:
-
 \[
 \begin{array}{l}{v_{1}=0} \\ {v_{2}=\mu_{2}-\mu_{1}^{2}} \\ {v_{3}=\mu_{3}-3 \mu_{2} \mu_{1}+2 \mu_{1}^{3}} \\ {v_{4}=\mu_{4}-4 \mu_{3} \mu_{1}+6 \mu_{2} \mu_{1}^{2}-3 \mu_{1}^{4}}\end{array}
 \]
 
 \begin{example}\label{exam:2.7.1}
 	设随机变量 $ X \sim N\left(0, \sigma^{2}\right) $ ,则
-	
 	\[
 	\begin{aligned} 
 	\mu_{k} &=E\left(X^{k}\right)=\frac{1}{\sqrt{2 \pi} \sigma} \int_{-\infty}^{+\infty} x^{k} \exp \left\{-\frac{x^{2}}{2 \sigma^{2}}\right\} \dd x \\ 
@@ -3734,19 +3874,16 @@ v_{k}=E(X-E(X))^{k}=E\left(X-\mu_{1}\right)^{k}=\sum_{i=0}^{k} \left( \begin{arr
 	\]
 	
 	在 $ k $ 为奇数时,上述被积函数是奇函数,故
-	
 	\[
 	u_{k}=0, k=1,3,5, \cdots
 	\]
 	
 	在 $ k $ 为偶数时,上述被积函数是偶函数,再利用变换 $ z=u^{2} / 2 $ ,可得
-	
 	\[
 	\begin{aligned} \mu_{k} &=\sqrt{\frac{2}{\pi}} \sigma^{k} 2^{(k-1) / 2} \int_{0}^{+\infty} z^{(k-1) / 2} \ee ^{-z} \dd z=\sqrt{\frac{2}{\pi}} \sigma^{k} 2^{(k-1) / 2} \Gamma\left(\frac{k+1}{2}\right) \\ &=\sigma^{k}(k-1)(k-3) \cdots 1, \quad k=2,4,6, \cdots \end{aligned}
 	\]
 	
 	故 $ \mathrm{N}\left(0, \sigma^{2}\right) $ 分布的前四阶原点矩为
-	
 	\[
 	\mu_{1}=0, \quad \mu_{2}=\sigma^{2}, \quad \mu_{3}=0, \quad \mu_{4}=3 \sigma^{4}
 	\]
@@ -3767,7 +3904,6 @@ v_{k}=E(X-E(X))^{k}=E\left(X-\mu_{1}\right)^{k}=\sum_{i=0}^{k} \left( \begin{arr
 
 \begin{definition}{变异系数}{2.7.2}
 	设随机变量 $ X $ 的二阶矩存在,则称比值
-	
 	\begin{equation}
 	C_{v}(X)=\frac{\sqrt{\operatorname{Var}(X)}}{E(X)}=\frac{\sigma(X)}{E(X)} \label{eq:2.7.3}
 	\end{equation}
@@ -3778,7 +3914,6 @@ v_{k}=E(X-E(X))^{k}=E\left(X-\mu_{1}\right)^{k}=\sum_{i=0}^{k} \left( \begin{arr
 
 \begin{example}\label{exam:2.7.2}
 	用 $ X $ 表示某种同龄树的高度,其量纲是米 $ (m) $ ,用 $ Y $ 表示某年龄段儿童的身高,其量纲也是米 $ (m) $ .设 $ E(X)=10, \operatorname{Var}(X)=1, E(Y)=1, \operatorname{Var}(Y)=0.04 $ ,你是否可以从 $ \operatorname{Var}(X)=1 $ 和 $ \operatorname{Var}(Y)=0.04 $ 就认为 $ Y $ 的波动小?这就有一个取值相对大小的问题.在此用变异系数进行比较是恰当的.因为X的变异系数为
-	
 	\[
 	C_{v}(X)=\frac{\sigma(X)}{E(X)} \Rightarrow \frac{1}{10}=0.1
 	\]
@@ -3795,7 +3930,6 @@ v_{k}=E(X-E(X))^{k}=E\left(X-\mu_{1}\right)^{k}=\sum_{i=0}^{k} \left( \begin{arr
 \begin{definition}{分位数}{2.7.3}
 	设连续随机变量 $ X $ 的分布函数为 $ F(x) $ ,密度函数为 $ p(x) $ .
 	对任意 $ p \in(0,1) $ ,称满足条件
-	
 	\begin{equation}
 	F\left(x_{p}\right)=\int_{-\infty}^{x_{p}} p(x) \dd x=p \label{eq:2.7.4}
 	\end{equation}
@@ -3820,8 +3954,7 @@ v_{k}=E(X-E(X))^{k}=E\left(X-\mu_{1}\right)^{k}=\sum_{i=0}^{k} \left( \begin{arr
 
 要善于区分分位数与上侧分位数的差别,本书指定用分位数表,而有一些书使用的是上侧分位数表,无论用什么表,书中都有说明.
 
-分位数与上侧分位数是可以相互转换的,其转换公式如下.
-
+分位数与上侧分位数是可以相互转换的,其转换公式如下:
 \begin{equation}
 x_{p}^{\prime}=x_{1-p} ; \quad x_{p}=x_{1-p}^{\prime} \label{eq:2.7.6}
 \end{equation}
@@ -3842,17 +3975,14 @@ x_{p}^{\prime}=x_{1-p} ; \quad x_{p}=x_{1-p}^{\prime} \label{eq:2.7.6}
 	\end{itemize}
 	
 	又由定理2.5.1可知:一般正态分布 $ N\left(\mu, \sigma^{2}\right) $ 的 $ p $ 分位数 $ x_{p} $ 是方程
-	
 	\[
 	\Phi\left(\frac{x_{p}-\mu}{\sigma}\right)=p
 	\]
 	的解,所以由
-	
 	\[
 	\frac{x_{p}-\mu}{\sigma}=u_{p}
 	\]
 	可得 $ x_{p} $ 与 $ u_{p} $ 的关系式
-	
 	\begin{equation}
 	x_{p}=\mu+\sigma u_{p} \label{eq:2.7.7}
 	\end{equation}
@@ -3863,7 +3993,6 @@ x_{p}^{\prime}=x_{1-p} ; \quad x_{p}=x_{1-p}^{\prime} \label{eq:2.7.6}
 \end{example}
 
 分位数在统计中经常被使用,特别对统计中常用的三大分布: $ \chi^{2} $ 分布、 $ t $ 分布和 $ F $ 分布,都特地编制了它们的分位数表.以后分别以 $ \chi_{\mathrm{a}}^{2}(n), t_{\alpha}(n) , F_{a}(n, m) $ 记这些分布的 $ \alpha $ 分位数.例 $ \alpha=0.05, n=10, m=15 $ 时,查附表3、附表4、附表5,可得
-
 \[
 \chi_{1-\alpha}^{2}(n)=18.307 ; \quad t_{1},_{a}(n)=1.8125 ; \quad F_{1-a}(n, m)=2.54
 \]
@@ -3875,7 +4004,6 @@ x_{p}^{\prime}=x_{1-p} ; \quad x_{p}=x_{1-p}^{\prime} \label{eq:2.7.6}
 \begin{definition}{中位数}{2.7.4}
 	设连续随机变量 $ X $ 的分布函数为 $ F(x) $ ,密度函数为 $ p(x) $ .
 	称 $ p=0.5 $ 时的 $ p $ 分位数 $ x_{0.5} $ 为此分布的\textbf{中位数}\index{Z!中位数},即 $ x_{0.5} $ 满足
-	
 	\begin{equation}
 	F\left(x_{0.5}\right)=\int_{-\infty}^{x_{0}} p(x) \dd x=0.5 \label{eq:2.7.8}
 	\end{equation}
@@ -3897,7 +4025,6 @@ x_{p}^{\prime}=x_{1-p} ; \quad x_{p}=x_{1-p}^{\prime} \label{eq:2.7.6}
 
 \begin{example}\label{exam:2.7.4}
 	指数分布 $ E x p(\lambda) $ 的中位数 $ x_{0.5} $ 是方程
-	
 	\[
 	1-\ee ^{-\lambda x 0.5}=0.5
 	\]
@@ -3907,7 +4034,6 @@ x_{p}^{\prime}=x_{1-p} ; \quad x_{p}=x_{1-p}^{\prime} \label{eq:2.7.6}
 	\]
 	
 	假如,某城市电话的通话时间 $ X(min) $ 服从均值 $ E(X)=2(min) $ 的指数分布,此时由 $ \lambda=0.5 $ 可得中位数为
-	
 	\[
 	x_{0.5}=\frac{\ln 2}{0.5}=1.39(\min )
 	\]
@@ -3947,7 +4073,6 @@ x_{p}^{\prime}=x_{1-p} ; \quad x_{p}=x_{1-p}^{\prime} \label{eq:2.7.6}
 
 \begin{definition}{峰度系数}{2.7.6}
 	设随机变量 $ X $ 的四阶矩存在,则称比值
-	
 	\begin{equation}
 	\beta_{2}=\frac{E(X-E(X))^{4}}{\left[E(X-E(X))^{2}\right]^{2}}-3=\frac{\nu_{4}}{\left(\nu_{2}\right)^{2}}-3 \label{eq:2.7.10}
 	\end{equation}
@@ -3958,7 +4083,6 @@ x_{p}^{\prime}=x_{1-p} ; \quad x_{p}=x_{1-p}^{\prime} \label{eq:2.7.6}
 偏度系数刻画的是分布的对称性,而峰度系数刻画的是分布的峰峭性.
 
 峰度系数把正态分布的峰峭性作为标准,因为正态分布 $ N\left(\mu, \sigma^{2}\right) $ 的四阶中心矩为 $ \nu_{4}=3 \sigma^{4} $ ,所以其峰度系数为
-
 \[
 \beta_{2}=\frac{\nu_{4}}{\left(\nu_{2}\right)^{2}}-3=\frac{3 a^{4}}{\sigma^{4}}-3=0
 \]
@@ -3966,7 +4090,6 @@ x_{p}^{\prime}=x_{1-p} ; \quad x_{p}=x_{1-p}^{\prime} \label{eq:2.7.6}
 这说明:任一正态分布的峰度 $ \beta_{2}=0 $ .
 
 可见,这里谈论的``峰度"不是指密度函数的峰值高低,那么``峰度"的含义到底是什么呢?或者换句话说,我们应该如何刻画密度函数的峰峭性呢?我们知道从图形上看密度函数曲线下的面积等于1,若随机变量取值较集中,则其密度函数的峰值必高无疑,所以密度函数峰值的高低含有随机变量取值的集中程度.为了消除这个因素,我们不妨考察``标准化"后的分布的峰峭性,即用
-
 \[
 X^{*}=\frac{X-E(X)}{\sqrt{\operatorname{Var}(X)}}
 \]
